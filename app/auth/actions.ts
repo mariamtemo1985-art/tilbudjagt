@@ -42,7 +42,10 @@ export async function signUpAction(formData: FormData) {
   const { error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { display_name: displayName, preferred_language: "da" } },
+    options: {
+      data: { display_name: displayName, preferred_language: "da" },
+      emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/auth/callback`,
+    },
   });
   if (error) redirectWithMessage("/register", "error", "تعذر إنشاء الحساب. قد يكون البريد مستخدماً أو إعدادات التسجيل غير مكتملة.");
   redirectWithMessage("/login", "message", "تم إرسال رسالة تأكيد إلى بريدك الإلكتروني إذا كان تأكيد البريد مفعّلاً.");
