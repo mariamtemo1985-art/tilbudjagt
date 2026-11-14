@@ -8,7 +8,7 @@ export default async function AccountPage() {
   try {
     supabase = await createSupabaseServerClient();
   } catch {
-    redirect("/login?error=قاعدة البيانات لم تُربط بعد.");
+    redirect(`/login?error=${encodeURIComponent("قاعدة البيانات لم تُربط بعد.")}`);
   }
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
