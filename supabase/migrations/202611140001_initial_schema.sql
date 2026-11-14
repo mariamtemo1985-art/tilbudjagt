@@ -13,7 +13,7 @@ create table public.user_profiles (
 );
 
 create or replace function public.prevent_profile_role_change()
-returns trigger language plpgsql security definer set search_path = public
+returns trigger language plpgsql security definer set search_path = ''
 as $$
 begin
   if old.role is distinct from new.role and coalesce(auth.role(), '') <> 'service_role' then
@@ -28,7 +28,7 @@ before update on public.user_profiles
 for each row execute function public.prevent_profile_role_change();
 
 create or replace function public.is_admin()
-returns boolean language sql stable security definer set search_path = public
+returns boolean language sql stable security definer set search_path = ''
 as $$
   select exists (
     select 1 from public.user_profiles
@@ -161,7 +161,7 @@ on public.user_profiles for insert to authenticated
 with check (id = auth.uid() and role = 'user');
 
 create policy "Users can update their own basic profile"
-on public.user_profiles for update to authenticated
+on public.user_profiles for update
 using (id = auth.uid())
 with check (id = auth.uid());
 
