@@ -13,21 +13,22 @@ This branch is the isolated implementation branch for the full platform. The exi
 
 ## Supabase setup
 
-1. Create a Supabase project owned by the site operator.
-2. Open SQL Editor and apply `supabase/migrations/202611140001_initial_schema.sql`.
-3. Configure Auth email sign-in and allowed redirect URLs for the production domain and local development.
-4. Add the environment variables from `.env.example` to the hosting provider. Never commit real keys.
-5. Keep the service-role key server-side only. Do not put it in a `NEXT_PUBLIC_*` variable.
+1. Create and open the TilbudJagt Supabase project.
+2. Review and apply both SQL files in the Supabase SQL Editor, in filename order:
+   - `supabase/migrations/202611140001_initial_schema.sql`
+   - `supabase/migrations/202611140002_auth_profile_trigger.sql`
+3. Configure Auth email sign-in and allowed redirect URLs for the production domain and the Vercel preview domain.
+4. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to Vercel for Production and Preview. The publishable key can be used as the public client key; never use an `sb_secret` key in a `NEXT_PUBLIC_*` variable.
+5. Keep any service-role/secret key server-side only. Never paste real keys into GitHub or public chat.
 
-The initial migration creates profiles, stores, offers, saved offers, moderated comments, user interests, merchant submissions, VIP memberships, and feed-import history. Row-level security is enabled. Public visitors can read only active offers and active stores. User submissions are held for moderation. Stripe membership state and AWIN feed imports must be written by trusted server-side processes.
+The migrations create profiles, stores, offers, saved offers, moderated comments, user interests, merchant submissions, VIP memberships, and feed-import history. Row-level security is enabled. Public visitors can read only active offers and active stores. User submissions are held for moderation. Stripe membership state and AWIN feed imports must be written by trusted server-side processes.
 
 ## Stripe setup
 
-1. Create a recurring EUR? No — the agreed billing currency is DKK.
-2. Create a recurring VIP price of 40 DKK per month in Stripe.
-3. Add the price ID as `STRIPE_VIP_PRICE_ID`.
-4. Configure a webhook endpoint on the server and verify webhook signatures before updating membership rows.
-5. Do not activate checkout until tax/VAT treatment, cancellation flow, customer portal, terms, and webhook handling have been tested.
+1. Create a recurring VIP price of 40 DKK per month in Stripe.
+2. Add the price ID as `STRIPE_VIP_PRICE_ID`.
+3. Configure a webhook endpoint on the server and verify webhook signatures before updating membership rows.
+4. Do not activate checkout until tax/VAT treatment, cancellation flow, customer portal, terms, and webhook handling have been tested.
 
 ## Safety and release rules
 
@@ -39,4 +40,4 @@ The initial migration creates profiles, stores, offers, saved offers, moderated 
 
 ## Current repository findings
 
-The current repository is a very small prototype: it contains a static `index.html`, a separate React/Next-style page in a directory whose name contains a zero-width character, and no root package manifest or production backend configuration. The prototype contains hard-coded example offers and a stale VIP price. The new foundation is kept separate so it cannot silently replace the existing site.
+The original `main` branch is still separate from this platform foundation. The new foundation branch contains the Next.js application, Supabase authentication and database migrations, and moderated offer-submission flow. The live production domain remains on `main` until an explicit release is approved.
