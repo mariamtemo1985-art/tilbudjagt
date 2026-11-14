@@ -32,7 +32,7 @@ const copy = {
     email: "Din e-mailadresse", join: "Tilmeld", footer: "TilbudJagt gør det lettere at finde og dele gode tilbud. Tjek altid pris og vilkår hos butikken.",
     vipTitle: "TilbudJagt VIP", vipText: "Få en mere personlig tilbudsoplevelse for 40 kr./md.",
     vipList: ["Personlige tilbud baseret på dine interesser", "Gemte favoritter og tilbudsoverblik", "Ingen skjulte gebyrer – opsig når du vil"],
-    close: "Luk", login: "Log ind", account: "Opret konto", allStores: "Alle butikker",
+    close: "Luk", login: "Log ind", account: "Opret konto", allStores: "Alle butikker", sample: "Eksempel",
   },
   en: {
     tagline: "The hunt for great deals starts here", search: "Search products, stores and deals…",
@@ -52,7 +52,7 @@ const copy = {
     email: "Your email address", join: "Subscribe", footer: "TilbudJagt makes it easier to find and share great deals. Always check prices and terms with the retailer.",
     vipTitle: "TilbudJagt VIP", vipText: "A more personal deal experience for DKK 40/month.",
     vipList: ["Personalised deals based on your interests", "Saved favourites and deal overview", "No hidden fees – cancel anytime"],
-    close: "Close", login: "Log in", account: "Create account", allStores: "All stores",
+    close: "Close", login: "Log in", account: "Create account", allStores: "All stores", sample: "Example",
   },
   ar: {
     tagline: "صيد أفضل العروض يبدأ من هون", search: "ابحث عن منتج أو متجر أو عرض…",
@@ -72,7 +72,7 @@ const copy = {
     email: "بريدك الإلكتروني", join: "اشتراك", footer: "TilbudJagt تساعدك تكتشف العروض وتشاركها. تحقق دائماً من السعر والشروط عند المتجر.",
     vipTitle: "عضوية TilbudJagt VIP", vipText: "تجربة عروض شخصية مقابل 40 كرونة دنماركية شهرياً.",
     vipList: ["عروض حسب اهتماماتك", "حفظ المفضلة ومتابعة العروض", "بدون رسوم مخفية – ألغِ متى شئت"],
-    close: "إغلاق", login: "تسجيل الدخول", account: "إنشاء حساب", allStores: "كل المتاجر",
+    close: "إغلاق", login: "تسجيل الدخول", account: "إنشاء حساب", allStores: "كل المتاجر", sample: "مثال",
   },
 } as const;
 
@@ -143,7 +143,7 @@ export default function HomePage() {
           <div className="deal-votes"><button className={voted.includes(deal.id)?"vote-btn voted":"vote-btn"} onClick={()=>setVoted(old=>old.includes(deal.id)?old.filter(x=>x!==deal.id):[...old,deal.id])}><ThumbsUp size={18}/><b>{deal.votes+(voted.includes(deal.id)?1:0)}</b></button><span>{t.vote}</span></div>
           <div className="deal-visual"><span>{deal.symbol}</span><b>{deal.discount}</b></div>
           <div className="deal-info"><div className="deal-meta"><span className="store-label"><Store size={13}/> {deal.store}</span><span><Clock3 size={12}/> {deal.time}</span></div><h3>{deal.title}</h3><p>{deal.note}</p><div className="deal-bottom"><span className="deal-price">{deal.price}</span><span className="deal-tag">{deal.tag}</span><span className="comments"><MessageCircle size={14}/> {deal.comments} {t.comments}</span></div></div>
-          <div className="deal-actions"><button className={saved.includes(deal.id)?"save-btn saved":"save-btn"} onClick={()=>setSaved(old=>old.includes(deal.id)?old.filter(x=>x!==deal.id):[...old,deal.id])} aria-label={t.saved}><Heart size={18} fill={saved.includes(deal.id)?"currentColor":"none"}/></button><button className="deal-link" onClick={()=>setVipOpen(true)}>{t.view} <ArrowRight size={15}/></button></div>
+          <div className="deal-actions"><button className={saved.includes(deal.id)?"save-btn saved":"save-btn"} onClick={()=>setSaved(old=>old.includes(deal.id)?old.filter(x=>x!==deal.id):[...old,deal.id])} aria-label={t.saved}><Heart size={18} fill={saved.includes(deal.id)?"currentColor":"none"}/></button><span className="deal-link preview-link">{t.sample}</span></div>
         </article>)}</div>
         {!visibleDeals.length&&<div className="empty-state">{t.noResults}</div>}
       </div></section>
