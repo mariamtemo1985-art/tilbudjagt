@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="da" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TilbudJagt.dk – أفضل العروض في الدنمارك</title>
+  <meta name="description" content="اكتشف أفضل العروض والخصومات من المتاجر الدنماركية.">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#f4f7fb;color:#172033;font-family:Arial,sans-serif}
+    header{background:#fff;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:5}
+    .bar{max-width:1150px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:25px;font-weight:800;color:#1456d9}
+    .logo span{color:#f07818}
+    nav a{margin:0 10px;color:#596579;text-decoration:none;font-weight:600}
+    .button{border:0;border-radius:12px;padding:12px 18px;background:#f07818;color:#fff;font-weight:700;cursor:pointer}
+    .hero{background:linear-gradient(120deg,#0b3d91,#1769e8);color:#fff;text-align:center;padding:58px 20px}
+    .hero h1{font-size:42px;margin:0 0 14px}
+    .hero p{font-size:19px;margin:0 0 25px;color:#dce9ff}
+    .hero .button{background:#fff;color:#1558d2}
+    main{max-width:1150px;margin:auto;padding:34px 20px}
+    .section-title{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}
+    .section-title h2{margin:0;font-size:27px}
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:25px}
+    .filter{border:0;background:#fff;color:#566273;border-radius:10px;padding:10px 16px;cursor:pointer;box-shadow:0 2px 8px #14213d12}
+    .filter.active{background:#1558d2;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:#fff;border:1px solid #e7ebf2;border-radius:18px;overflow:hidden;box-shadow:0 8px 22px #14213d0d}
+    .card-top{height:90px;background:linear-gradient(135deg,#dbe9ff,#f7f9ff);display:flex;align-items:center;justify-content:center;font-size:42px}
+    .card-body{padding:18px}
+    .tag{display:inline-block;background:#fff0e5;color:#df6410;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:700}
+    .store{color:#687589;font-size:13px;margin-top:12px}
+    .card h3{font-size:18px;line-height:1.45;margin:9px 0}
+    .price{font-size:23px;font-weight:800;color:#1456d9}
+    .old{font-size:13px;color:#8993a2;text-decoration:line-through;margin-right:6px}
+    .visit{display:block;text-align:center;text-decoration:none;background:#1456d9;color:#fff;border-radius:10px;padding:11px;margin-top:16px;font-weight:700}
+    .vip{margin-top:40px;background:#182235;color:#fff;border-radius:18px;padding:30px;text-align:center}
+    .vip h2{margin-top:0}
+    footer{margin-top:35px;background:#fff;border-top:1px solid #e5e7eb;padding:25px;text-align:center;color:#778195}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:32px}}
+    @media(max-width:560px){.bar{padding:14px}.bar nav{display:none}.grid{grid-template-columns:1fr}.hero{padding:42px 16px}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="logo">Tilbud<span>Jagt</span>.dk</div>
+    <nav>
+      <a href="#offers">Alle tilbud</a>
+      <a href="#vip">VIP</a>
+      <a href="#about">Om os</a>
+    </nav>
+    <button class="button" onclick="document.getElementById('vip').scrollIntoView()">Opret tilbud</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Find de bedste tilbud</h1>
+  <p>أقوى العروض والخصومات من المتاجر الدنماركية في مكان واحد</p>
+  <a class="button" href="#offers">Se tilbuddene</a>
+</section>
+
+<main id="offers">
+  <div class="section-title">
+    <h2>أحدث العروض</h2>
+    <strong id="count">4 عروض</strong>
+  </div>
+
+  <div class="filters">
+    <button class="filter active" data-category="all">🔥 كل العروض</button>
+    <button class="filter" data-category="groceries">🛒 مواد غذائية</button>
+    <button class="filter" data-category="electronics">💻 إلكترونيات</button>
+    <button class="filter" data-category="home">🏡 المنزل</button>
+  </div>
+
+  <div class="grid">
+    <article class="card" data-category="groceries">
+      <div class="card-top">🛒</div>
+      <div class="card-body">
+        <span class="tag">خصم 40%</span>
+        <div class="store">Netto</div>
+        <h3>عروض اللحوم الطازجة الأسبوعية</h3>
+        <div class="price">29.95 كرونة</div>
+        <a class="visit" href="#">عرض المتجر</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="electronics">
+      <div class="card-top">📺</div>
+      <div class="card-body">
+        <span class="tag">عرض مميز</span>
+        <div class="store">Bilka</div>
+        <h3>تلفزيون ذكي بشاشة 55 بوصة</h3>
+        <div class="price">2,999 كرونة</div>
+        <a class="visit" href="#">عرض المتجر</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="groceries">
+      <div class="card-top">🥦</div>
+      <div class="card-body">
+        <span class="tag">عرض يومي</span>
+        <div class="store">Lidl</div>
+        <h3>خضار وفواكه طازجة من الإنتاج المحلي</h3>
+        <div class="price">10.00 كرونة</div>
+        <a class="visit" href="#">عرض المتجر</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="home">
+      <div class="card-top">🏠</div>
+      <div class="card-body">
+        <span class="tag">الأكثر طلبًا</span>
+        <div class="store">Føtex</div>
+        <h3>مسحوق غسيل أريال – عبوة توفيرية</h3>
+        <div class="price">89.00 كرونة</div>
+        <a class="visit" href="#">عرض المتجر</a>
+      </div>
+    </article>
+  </div>
+
+  <section class="vip" id="vip">
+    <h2>احصل على تنبيهات العروض</h2>
+    <p>اشترك للحصول على أفضل العروض مباشرة عبر تيليغرام.</p>
+    <button class="button" onclick="alert('سيتم تفعيل التسجيل قريبًا')">اشترك الآن</button>
+  </section>
+</main>
+
+<footer id="about">
+  TilbudJagt.dk © 2026 – أفضل العروض والخصومات في الدنمارك
+</footer>
+
+<script>
+  const filters = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.card');
+  const count = document.getElementById('count');
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      filters.forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+
+      const category = button.dataset.category;
+      let visible = 0;
+
+      cards.forEach(card => {
+        const show = category === 'all' || card.dataset.category === category;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      count.textContent = visible + ' عروض';
+    });
+  });
+</script>
+
+</body>
+</html>
