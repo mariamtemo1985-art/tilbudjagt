@@ -115,7 +115,7 @@ export default function HomePage() {
           <select aria-label="Language" className="language" value={lang} onChange={e => setLang(e.target.value as Language)}>
             <option value="da">DA</option><option value="en">EN</option><option value="ar">AR</option>
           </select>
-          <a className="login-btn" href="/login">{t.login}</a><a className="login-btn" href="/register">{t.account}</a>
+          <a className="login-btn" href="/login">{t.login}</a><a className="login-btn" href="/register">{t.account}</a><a className="login-btn" href="/submit">{t.submit}</a>
           <button className="vip-btn" type="button" onClick={() => setVipOpen(true)}><Sparkles size={15} /> {t.vip}</button>
           <button className="menu-btn" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Menu">{mobileMenu ? <X /> : <Menu />}</button>
         </div>
