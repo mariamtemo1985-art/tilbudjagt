@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tilbudjagt.dk/sitemap.xml
+Sitemap: https://tilbudjagt.dk/sitemap.xml
