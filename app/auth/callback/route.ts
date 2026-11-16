@@ -3,7 +3,9 @@ import { createServerClient } from "@supabase/ssr";
 
 export async function GET(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const key =
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const code = request.nextUrl.searchParams.get("code");
   const next = request.nextUrl.searchParams.get("next") ?? "/account";
   const safeNext = next.startsWith("/") && !next.startsWith("//") ? next : "/account";
