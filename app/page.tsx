@@ -26,13 +26,13 @@ const copy = {
     hot: "Dagens hotteste", fresh: "Nye fund fra fællesskabet", best: "Stærke tilbud lige nu",
     view: "Se tilbuddet", noResults: "Ingen tilbud matcher din søgning.",
     results: "tilbud", sort: "Sorter", newest: "Nyeste først", discountSort: "Største rabat",
-    demo: "Designforhåndsvisning", demoText: "Eksempeltilbud – ikke aktuelle priser. Rigtige tilbud vises, når butikskilder og feeds er tilsluttet.",
+    demo: "Tilbudsoversigt", demoText: "Priser, lager og vilkår kan ændre sig. Kontroller altid den aktuelle information hos butikken, før du køber.",
     grocery: "Ugens dagligvarer", stores: "Populære butikker", allDeals: "Se alle tilbud",
     community: "Stem på tilbud", comments: "kommentarer", vote: "Stem", newsletter: "Få besked om stærke tilbud",
     email: "Din e-mailadresse", join: "Tilmeld", footer: "TilbudJagt gør det lettere at finde og dele gode tilbud. Tjek altid pris og vilkår hos butikken.",
     vipTitle: "TilbudJagt VIP", vipText: "Få en mere personlig tilbudsoplevelse for 40 kr./md.",
     vipList: ["Personlige tilbud baseret på dine interesser", "Gemte favoritter og tilbudsoverblik", "Ingen skjulte gebyrer – opsig når du vil"],
-    close: "Luk", login: "Log ind", account: "Opret konto", allStores: "Alle butikker", sample: "Eksempel",
+    close: "Luk", login: "Log ind", account: "Opret konto", allStores: "Alle butikker", sample: "Kontroller hos butik",
   },
   en: {
     tagline: "The hunt for great deals starts here", search: "Search products, stores and deals…",
@@ -46,13 +46,13 @@ const copy = {
     hot: "Hottest today", fresh: "Fresh finds from the community", best: "Great deals right now",
     view: "View deal", noResults: "No deals match your search.", results: "deals",
     sort: "Sort", newest: "Newest first", discountSort: "Biggest discount",
-    demo: "Design preview", demoText: "Example deals – not current prices. Real offers will appear when retailer sources and feeds are connected.",
+    demo: "Tilbudsoversigt", demoText: "Priser, lager og vilkår kan ændre sig. Kontroller altid den aktuelle information hos butikken, før du køber.",
     grocery: "This week’s groceries", stores: "Popular stores", allDeals: "See all deals",
     community: "Vote on deals", comments: "comments", vote: "Vote", newsletter: "Get alerts for great deals",
     email: "Your email address", join: "Subscribe", footer: "TilbudJagt makes it easier to find and share great deals. Always check prices and terms with the retailer.",
     vipTitle: "TilbudJagt VIP", vipText: "A more personal deal experience for DKK 40/month.",
     vipList: ["Personalised deals based on your interests", "Saved favourites and deal overview", "No hidden fees – cancel anytime"],
-    close: "Close", login: "Log in", account: "Create account", allStores: "All stores", sample: "Example",
+    close: "Close", login: "Log in", account: "Create account", allStores: "All stores", sample: "Check with retailer",
   },
   ar: {
     tagline: "صيد أفضل العروض يبدأ من هون", search: "ابحث عن منتج أو متجر أو عرض…",
@@ -66,7 +66,7 @@ const copy = {
     hot: "الأقوى اليوم", fresh: "أحدث اكتشافات المجتمع", best: "عروض قوية الآن",
     view: "شاهد العرض", noResults: "ما لقينا عروض مطابقة لبحثك.", results: "عروض",
     sort: "ترتيب", newest: "الأحدث أولاً", discountSort: "أكبر تخفيض",
-    demo: "معاينة للتصميم", demoText: "هذه أمثلة توضيحية وليست أسعاراً حالية. ستظهر العروض الحقيقية بعد ربط مصادر المتاجر وخلاصات المنتجات.",
+    demo: "دليل العروض", demoText: "قد تتغير الأسعار والمخزون والشروط. تحقّق دائمًا من المعلومات الحالية لدى المتجر قبل الشراء.",
     grocery: "مواد الأسبوع الغذائية", stores: "متاجر مشهورة", allDeals: "شاهد كل العروض",
     community: "صوّت على العروض", comments: "تعليقات", vote: "تصويت", newsletter: "تنبيهات بأقوى العروض",
     email: "بريدك الإلكتروني", join: "اشتراك", footer: "TilbudJagt تساعدك تكتشف العروض وتشاركها. تحقق دائماً من السعر والشروط عند المتجر.",
@@ -78,14 +78,14 @@ const copy = {
 
 const categoryKeys = ["all", "groceries", "electronics", "home", "fashion", "beauty", "sports", "travel"] as const;
 const deals: Deal[] = [
-  { id: 1, title: "Frugt og grønt – ugens udvalg", store: "Lidl · Dagligvarer", category: "groceries", price: "Eksempel", oldPrice: "", discount: "Ugens pris", tag: "Supermarked", symbol: "🥦", votes: 128, comments: 24, time: "I dag", note: "Frugt, grønt og hverdagsfavoritter" },
-  { id: 2, title: "Kaffe – stor pakke", store: "føtex · Dagligvarer", category: "groceries", price: "Eksempel", oldPrice: "", discount: "Skarp pris", tag: "Populær", symbol: "☕", votes: 96, comments: 18, time: "I dag", note: "Kaffe og morgenmadsfavoritter" },
-  { id: 3, title: "Pasta, ris og basisvarer", store: "Netto · Dagligvarer", category: "groceries", price: "Eksempel", oldPrice: "", discount: "Ugens tilbud", tag: "Dagligvarer", symbol: "🍝", votes: 84, comments: 12, time: "I går", note: "Fyld kurven med basisvarer" },
-  { id: 4, title: "Vaskemiddel og rengøring", store: "REMA 1000 · Husholdning", category: "home", price: "Eksempel", oldPrice: "", discount: "God pris", tag: "Hverdag", symbol: "🧼", votes: 72, comments: 9, time: "I går", note: "Til hjemmets faste indkøb" },
-  { id: 5, title: "Trådløse hovedtelefoner", store: "Elgiganten · Elektronik", category: "electronics", price: "Eksempel", oldPrice: "", discount: "Stærkt fund", tag: "Populær", symbol: "🎧", votes: 63, comments: 15, time: "2 timer siden", note: "Elektronik og lyd" },
-  { id: 6, title: "Løbesko til hverdag", store: "Sport 24 · Sport", category: "sports", price: "Eksempel", oldPrice: "", discount: "God pris", tag: "Udvalgt", symbol: "👟", votes: 48, comments: 7, time: "3 timer siden", note: "Sport og fritid" },
-  { id: 7, title: "Hudpleje gaveæske", store: "Matas · Skønhed", category: "beauty", price: "Eksempel", oldPrice: "", discount: "Populær", tag: "Skønhed", symbol: "🧴", votes: 41, comments: 6, time: "I dag", note: "Pleje og velvære" },
-  { id: 8, title: "Sengetøj i blød bomuld", store: "JYSK · Hjem & bolig", category: "home", price: "Eksempel", oldPrice: "", discount: "Stærkt fund", tag: "Hjem", symbol: "🛏️", votes: 35, comments: 4, time: "I dag", note: "Gør hjemmet hyggeligt" },
+  { id: 1, title: "Frugt og grønt – ugens udvalg", store: "Lidl · Dagligvarer", category: "groceries", price: "Se pris hos butik", oldPrice: "", discount: "Ugens pris", tag: "Supermarked", symbol: "🥦", votes: 128, comments: 24, time: "Kontroller hos butik", note: "Frugt, grønt og hverdagsfavoritter" },
+  { id: 2, title: "Kaffe – stor pakke", store: "føtex · Dagligvarer", category: "groceries", price: "Se pris hos butik", oldPrice: "", discount: "Skarp pris", tag: "Populær", symbol: "☕", votes: 96, comments: 18, time: "Kontroller hos butik", note: "Kaffe og morgenmadsfavoritter" },
+  { id: 3, title: "Pasta, ris og basisvarer", store: "Netto · Dagligvarer", category: "groceries", price: "Se pris hos butik", oldPrice: "", discount: "Ugens tilbud", tag: "Dagligvarer", symbol: "🍝", votes: 84, comments: 12, time: "Kontroller hos butik", note: "Fyld kurven med basisvarer" },
+  { id: 4, title: "Vaskemiddel og rengøring", store: "REMA 1000 · Husholdning", category: "home", price: "Se pris hos butik", oldPrice: "", discount: "God pris", tag: "Hverdag", symbol: "🧼", votes: 72, comments: 9, time: "Kontroller hos butik", note: "Til hjemmets faste indkøb" },
+  { id: 5, title: "Trådløse hovedtelefoner", store: "Elgiganten · Elektronik", category: "electronics", price: "Se pris hos butik", oldPrice: "", discount: "Stærkt fund", tag: "Populær", symbol: "🎧", votes: 63, comments: 15, time: "Kontroller hos butik", note: "Elektronik og lyd" },
+  { id: 6, title: "Løbesko til hverdag", store: "Sport 24 · Sport", category: "sports", price: "Se pris hos butik", oldPrice: "", discount: "God pris", tag: "Udvalgt", symbol: "👟", votes: 48, comments: 7, time: "Kontroller hos butik", note: "Sport og fritid" },
+  { id: 7, title: "Hudpleje gaveæske", store: "Matas · Skønhed", category: "beauty", price: "Se pris hos butik", oldPrice: "", discount: "Populær", tag: "Skønhed", symbol: "🧴", votes: 41, comments: 6, time: "Kontroller hos butik", note: "Pleje og velvære" },
+  { id: 8, title: "Sengetøj i blød bomuld", store: "JYSK · Hjem & bolig", category: "home", price: "Se pris hos butik", oldPrice: "", discount: "Stærkt fund", tag: "Hjem", symbol: "🛏️", votes: 35, comments: 4, time: "Kontroller hos butik", note: "Gør hjemmet hyggeligt" },
 ];
 const stores = ["Lidl", "Netto", "REMA 1000", "føtex", "Bilka", "365discount", "Coop"];
 
@@ -149,7 +149,7 @@ export default function HomePage() {
       </div></section>
       <section className="wrap feature-row"><div className="feature-card"><ShieldCheck/><div><h3>{t.safe}</h3><p>{t.footer}</p></div></div><div className="feature-card"><Heart/><div><h3>{t.community}</h3><p>{t.supermarketText}</p></div></div><div className="feature-card"><Bell/><div><h3>{t.newsletter}</h3><p>{t.heroText}</p></div></div></section>
       <section className="vip-banner"><div className="wrap vip-inner"><div><span className="eyebrow">TILBUDJAGT VIP</span><h2>{t.vipTitle}</h2><p>{t.vipText}</p></div><button onClick={()=>setVipOpen(true)}>{t.vip} <ArrowRight size={17}/></button></div></section>
-      <footer className="footer"><div className="wrap footer-inner"><a className="brand footer-brand" href="#"><span className="brand-mark"><Tag size={20}/></span><span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span></a><p>{t.footer}</p><span>© {new Date().getFullYear()} TilbudJagt.dk</span></div></footer>
+      <footer className="footer"><div className="wrap footer-inner"><a className="brand footer-brand" href="#"><span className="brand-mark"><Tag size={20}/></span><span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span></a><p>{t.footer}</p><nav aria-label="Footer links"><a href="/about.html">Om os og guides</a> · <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a></nav><span>© {new Date().getFullYear()} TilbudJagt.dk</span></div></footer>
       {vipOpen&&<div className="modal-backdrop" onClick={()=>setVipOpen(false)}><section className="vip-modal" role="dialog" aria-modal="true" onClick={e=>e.stopPropagation()}><button className="modal-close" onClick={()=>setVipOpen(false)}><X/></button><span className="modal-spark"><Sparkles/></span><h2>{t.vipTitle}</h2><p>{t.vipText}</p><ul>{t.vipList.map(x=><li key={x}><Check size={17}/>{x}</li>)}</ul><strong className="vip-price">40 kr. <small>/ md.</small></strong><p className="modal-footnote">Betaling aktiveres først, når medlemskab og Stripe er sat sikkert op.</p><button className="modal-primary" onClick={()=>setVipOpen(false)}>{t.close}</button></section></div>}
     </main>
   );
