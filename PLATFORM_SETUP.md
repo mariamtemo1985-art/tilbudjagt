@@ -18,7 +18,7 @@ This branch is the isolated implementation branch for the full platform. The exi
    - `supabase/migrations/202611140001_initial_schema.sql`
    - `supabase/migrations/202611140002_auth_profile_trigger.sql`
 3. Configure Auth email sign-in and allowed redirect URLs for the production domain and the Vercel preview domain.
-4. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to Vercel for Production and Preview. The publishable key can be used as the public client key; never use an `sb_secret` key in a `NEXT_PUBLIC_*` variable.
+4. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` to Vercel for Production and Preview. The publishable key can be used as the public client key; never use an `sb_secret` key in a `NEXT_PUBLIC_*` variable.
 5. Keep any service-role/secret key server-side only. Never paste real keys into GitHub or public chat.
 
 The migrations create profiles, stores, offers, saved offers, moderated comments, user interests, merchant submissions, VIP memberships, and feed-import history. Row-level security is enabled. Public visitors can read only active offers and active stores. User submissions are held for moderation. Stripe membership state and AWIN feed imports must be written by trusted server-side processes.
