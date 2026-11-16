@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import {
   ArrowDownUp, ArrowRight, Bell, Check, ChevronDown, Heart, Menu, Search,
   ShieldCheck, Sparkles, Tag, TrendingUp, X, Zap, Flame, MessageCircle,
@@ -97,6 +97,9 @@ export default function HomePage() {
   const [voted, setVoted] = useState<number[]>([]);
   const [sort, setSort] = useState("newest");
   const [vipOpen, setVipOpen] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterConsent, setNewsletterConsent] = useState(false);
+  const [newsletterStatus, setNewsletterStatus] = useState("");
   const [mobileMenu, setMobileMenu] = useState(false);
   const t = copy[lang], rtl = lang === "ar";
   const visibleDeals = useMemo(() => {
@@ -105,6 +108,17 @@ export default function HomePage() {
     return list;
   }, [category, query, sort]);
   const categoryName = (key: string) => t[key as keyof typeof t] || key;
+  const joinVipWaitlist = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setNewsletterStatus("Sender…");
+    const response = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: newsletterEmail, consent: newsletterConsent }),
+    });
+    setNewsletterStatus(response.ok ? "Tak! Tjek din indbakke." : "Kunne ikke sende endnu. Prøv igen senere.");
+    if (response.ok) setNewsletterEmail("");
+  };
   const toggleCategory = (key: string) => { setCategory(key); document.getElementById("deals")?.scrollIntoView({behavior:"smooth"}); };
   return (
     <main dir={rtl ? "rtl" : "ltr"}>
@@ -147,10 +161,10 @@ export default function HomePage() {
         </article>)}</div>
         {!visibleDeals.length&&<div className="empty-state">{t.noResults}</div>}
       </div></section>
-      <section className="wrap feature-row"><div className="feature-card"><ShieldCheck/><div><h3>{t.safe}</h3><p>{t.footer}</p></div></div><div className="feature-card"><Heart/><div><h3>{t.community}</h3><p>{t.supermarketText}</p></div></div><div className="feature-card"><Bell/><div><h3>{t.newsletter}</h3><p>{t.heroText}</p></div></div></section>
+      <section className="wrap feature-row"><div className="feature-card"><ShieldCheck/><div><h3>{t.safe}</h3><p>{t.footer}</p></div></div><div className="feature-card"><Heart/><div><h3>{t.community}</h3><p>{t.supermarketText}</p></div></div><div className="feature-card"><Bell/><div><h3>VIP-interesseliste</h3><p>Gratis tilmelding uden betaling. Få en velkomstmail og besked, når medlemskabet er klar.</p><form onSubmit={joinVipWaitlist}><input aria-label="E-mail" type="email" value={newsletterEmail} onChange={e=>setNewsletterEmail(e.target.value)} placeholder="Din e-mailadresse" required/><label><input type="checkbox" checked={newsletterConsent} onChange={e=>setNewsletterConsent(e.target.checked)} required/> Jeg accepterer at modtage information om TilbudJagt VIP.</label><button type="submit">Tilmeld</button><small>{newsletterStatus}</small></form></div></div></section>
       <section className="vip-banner"><div className="wrap vip-inner"><div><span className="eyebrow">TILBUDJAGT VIP</span><h2>{t.vipTitle}</h2><p>{t.vipText}</p></div><button onClick={()=>setVipOpen(true)}>{t.vip} <ArrowRight size={17}/></button></div></section>
       <footer className="footer"><div className="wrap footer-inner"><a className="brand footer-brand" href="#"><span className="brand-mark"><Tag size={20}/></span><span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span></a><p>{t.footer}</p><nav aria-label="Footer links"><a href="/about.html">Om os og guides</a> · <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a></nav><span>© {new Date().getFullYear()} TilbudJagt.dk</span></div></footer>
-      {vipOpen&&<div className="modal-backdrop" onClick={()=>setVipOpen(false)}><section className="vip-modal" role="dialog" aria-modal="true" onClick={e=>e.stopPropagation()}><button className="modal-close" onClick={()=>setVipOpen(false)}><X/></button><span className="modal-spark"><Sparkles/></span><h2>{t.vipTitle}</h2><p>{t.vipText}</p><ul>{t.vipList.map(x=><li key={x}><Check size={17}/>{x}</li>)}</ul><strong className="vip-price">40 kr. <small>/ md.</small></strong><p className="modal-footnote">Betaling aktiveres først, når medlemskab og Stripe er sat sikkert op.</p><button className="modal-primary" onClick={()=>setVipOpen(false)}>{t.close}</button></section></div>}
+      {vipOpen&&<div className="modal-backdrop" onClick={()=>setVipOpen(false)}><section className="vip-modal" role="dialog" aria-modal="true" onClick={e=>e.stopPropagation()}><button className="modal-close" onClick={()=>setVipOpen(false)}><X/></button><span className="modal-spark"><Sparkles/></span><h2>{t.vipTitle}</h2><p>{t.vipText}</p><ul>{t.vipList.map(x=><li key={x}><Check size={17}/>{x}</li>)}</ul><strong className="vip-price">40 kr. <small>/ md.</small></strong><p className="modal-footnote">Betaling er midlertidigt deaktiveret. Dette er kun en gratis interesseliste.</p><button className="modal-primary" onClick={()=>setVipOpen(false)}>{t.close}</button></section></div>}
     </main>
   );
 }
