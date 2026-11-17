@@ -27,8 +27,10 @@ export async function GET(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL; const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!email) return new NextResponse("Ugyldigt eller udløbet afmeldingslink.", { status: 400 });
   if (!url || !key) return new NextResponse("Afmelding er midlertidigt utilgængelig.", { status: 503 });
-  const deleted = await fetch(`${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}`, { method: "DELETE", headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const deleted = await fetch(`${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}`, { method: "DELETE", headers: { apikey: key, Authorization: `Bearer ${key}`, Prefer: "return=representation" } });
   if (!deleted.ok) return new NextResponse("Afmelding kunne ikke gennemføres.", { status: 502 });
+  const removed = await deleted.json().catch(() => []);
+  if (!Array.isArray(removed) || removed.length === 0) return new NextResponse(page, { headers: { "Content-Type": "text/html; charset=utf-8" } });
   const resend = process.env.RESEND_API_KEY; const from = process.env.RESEND_FROM_EMAIL;
   if (resend && from) await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${resend}`, "Content-Type": "application/json" }, body: JSON.stringify({ from, to: [email], subject: "Du er afmeldt TilbudJagt VIP-listen", html: `<h2>Din afmelding er bekræftet</h2><p>Du er nu afmeldt TilbudJagt VIP-listen og vil ikke modtage flere VIP-beskeder.</p><p>Du kan altid tilmelde dig igen på <a href="https://www.tilbudjagt.dk/">TilbudJagt.dk</a>.</p>` }) });
   return new NextResponse(page, { headers: { "Content-Type": "text/html; charset=utf-8" } });
