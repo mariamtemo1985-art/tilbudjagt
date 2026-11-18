@@ -7,7 +7,7 @@ import { STORES, STORE_CATEGORIES, type StoreCategory } from "@/lib/stores";
 const CATEGORY_KEYS = Object.keys(STORE_CATEGORIES) as StoreCategory[];
 
 export default function AdminPage() {
-  const [token, setToken] = useState("");
+  const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [slug, setSlug] = useState("");
   const [category, setCategory] = useState<StoreCategory>("dagligvarer");
@@ -18,11 +18,11 @@ export default function AdminPage() {
   const [descriptionDa, setDescriptionDa] = useState("");
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
-  const [showToken, setShowToken] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    const saved = sessionStorage.getItem("tj_admin_token");
-    if (saved) setToken(saved);
+    const saved = sessionStorage.getItem("tj_admin_pw");
+    if (saved) setPassword(saved);
   }, []);
 
   const slugify = (value: string) =>
@@ -39,13 +39,12 @@ export default function AdminPage() {
     event.preventDefault();
     setBusy(true);
     setMessage("Gemmer…");
-    sessionStorage.setItem("tj_admin_token", token);
+    sessionStorage.setItem("tj_admin_pw", password);
     try {
       const response = await fetch("/api/admin/stores", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "x-admin-password": password },
         body: JSON.stringify({
-          token,
           store: {
             name,
             slug: slug || slugify(name),
@@ -60,7 +59,7 @@ export default function AdminPage() {
       });
       const data = (await response.json().catch(() => ({}))) as { error?: string };
       if (!response.ok) {
-        setMessage(data.error || "لم يتم الحفظ. تحقق من البيانات.");
+        setMessage(response.status === 401 ? "كلمة السر غير صحيحة." : data.error || "لم يتم الحفظ. تحقق من البيانات.");
       } else {
         setMessage("تم الحفظ. سيظهر المتجر على الموقع بعد دقيقة تقريبًا.");
         setName("");
@@ -93,25 +92,25 @@ export default function AdminPage() {
         <span className="eyebrow muted">ADMIN</span>
         <h1>إدارة المتاجر</h1>
         <p className="admin-intro">
-          تُحفظ البيانات في ملف المتاجر داخل GitHub ثم يُعيد Vercel نشر الموقع
-          تلقائيًا. أدخل GitHub token (صلاحية Contents: Read and write على مستودع
-          tilbudjagt) مرة واحدة؛ يبقى في هذا المتصفح فقط ولا يُحفظ في الخادم.
+          تُحفظ البيانات في ملف المتاجر داخل الموقع ثم يُعيد Vercel نشر الموقع
+          تلقائيًا خلال دقيقة تقريبًا. أدخل كلمة سر الإدارة مرة واحدة؛ تبقى في هذا
+          المتصفح فقط ولا تُحفظ في الخادم.
         </p>
 
         <form className="admin-card" onSubmit={submit}>
           <label className="admin-field">
-            <span><KeyRound size={14} /> GitHub token</span>
+            <span><KeyRound size={14} /> كلمة سر الإدارة</span>
             <div className="admin-token-row">
               <input
-                type={showToken ? "text" : "password"}
-                value={token}
-                onChange={(event) => setToken(event.target.value)}
-                placeholder="github_pat_… أو ghp_…"
-                autoComplete="off"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="كلمة السر"
+                autoComplete="current-password"
                 required
               />
-              <button type="button" onClick={() => setShowToken(!showToken)}>
-                {showToken ? "إخفاء" : "إظهار"}
+              <button type="button" onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? "إخفاء" : "إظهار"}
               </button>
             </div>
           </label>

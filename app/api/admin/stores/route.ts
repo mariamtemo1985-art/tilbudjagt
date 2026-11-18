@@ -15,7 +15,6 @@ const CATEGORIES = [
 ];
 
 type Body = {
-  token?: unknown;
   store?: {
     name?: unknown;
     slug?: unknown;
@@ -53,12 +52,17 @@ function httpsUrl(value: string): string | null {
 }
 
 export async function POST(request: NextRequest) {
-  const body = (await request.json().catch(() => null)) as Body | null;
-  const token = text(body?.token, 400);
-  if (!token || token.length < 20) {
-    return NextResponse.json({ error: "Mangler gyldig GitHub-token." }, { status: 401 });
+  const expectedPassword = process.env.ADMIN_PASSWORD ?? "";
+  const token = process.env.GITHUB_ADMIN_TOKEN ?? "";
+  const suppliedPassword = request.headers.get("x-admin-password") ?? "";
+  if (!expectedPassword || suppliedPassword !== expectedPassword) {
+    return NextResponse.json({ error: "Forkert adgangskode." }, { status: 401 });
+  }
+  if (!token) {
+    return NextResponse.json({ error: "Serveren mangler GitHub-nøglen." }, { status: 500 });
   }
 
+  const body = (await request.json().catch(() => null)) as Body | null;
   const input = body?.store ?? {};
   const name = text(input.name, 80);
   const slug = slugify(text(input.slug, 80) || name);
