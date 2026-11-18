@@ -1,3 +1,5 @@
+import rawStores from "@/content/stores.json";
+
 export type StoreCategory =
   | "dagligvarer"
   | "elektronik"
@@ -10,7 +12,7 @@ export type StoreCategory =
 export type StoreNetwork = "Awin" | "Adtraction" | "Partner-ads" | "Adservice";
 
 /**
- * partner  = godkendt partneraftale; linket er et tracking-link og skal mærkes som reklame.
+ * partner   = godkendt partneraftale; linket er et tracking-link og skal mærkes som reklame.
  * directory = butikken findes, men der er ingen godkendt aftale; linket er et almindeligt
  *             link uden provision og må ikke præsenteres som et tilbud.
  */
@@ -25,7 +27,6 @@ export type Store = {
   network?: StoreNetwork;
   affiliateUrl?: string;
   description: { da: string; en: string; ar: string };
-  /** Dato hvor link/aftale sidst blev kontrolleret (ISO 8601). */
   checkedAt?: string;
 };
 
@@ -42,144 +43,7 @@ export const STORE_CATEGORIES: Record<
   stormagasin: { da: "Stormagasin", en: "Department store", ar: "متجر شامل" },
 };
 
-export const STORES: Store[] = [
-  {
-    slug: "bazta-dk",
-    name: "Bazta DK",
-    category: "stormagasin",
-    status: "partner",
-    network: "Awin",
-    website: "https://dk.bazta.com",
-    affiliateUrl:
-      "https://www.awin1.com/cread.php?awinmid=128395&awinaffid=3155813&ued=https%3A%2F%2Fdk.bazta.com",
-    description: {
-      da: "Dansk online stormagasin med bolig, elektronik, sport, have og meget mere.",
-      en: "Danish online department store with home, electronics, sports and garden products.",
-      ar: "متجر دنماركي شامل يضم مستلزمات المنزل والإلكترونيات والرياضة والحديقة.",
-    },
-    checkedAt: "2026-11-18T00:27:38.000Z",
-  },
-  {
-    slug: "netto",
-    name: "Netto",
-    category: "dagligvarer",
-    status: "directory",
-    website: "https://netto.dk",
-    description: {
-      da: "Dansk supermarkedskæde med butikker i hele landet.",
-      en: "Danish supermarket chain with stores across the country.",
-      ar: "سلسلة سوبرماركت دنماركية لها فروع في كل البلاد.",
-    },
-  },
-  {
-    slug: "foetex",
-    name: "føtex",
-    category: "dagligvarer",
-    status: "directory",
-    website: "https://foetex.dk",
-    description: {
-      da: "Supermarked med dagligvarer, friskvarer og nonfood.",
-      en: "Supermarket with groceries, fresh food and non-food items.",
-      ar: "سوبرماركت للمواد الغذائية الطازجة والمنتجات المنزلية.",
-    },
-  },
-  {
-    slug: "rema-1000",
-    name: "REMA 1000",
-    category: "dagligvarer",
-    status: "directory",
-    website: "https://rema1000.dk",
-    description: {
-      da: "Discountsupermarked med fokus på dagligvarer.",
-      en: "Discount supermarket focused on everyday groceries.",
-      ar: "سوبرماركت خصومات يركز على المواد الغذائية اليومية.",
-    },
-  },
-  {
-    slug: "lidl",
-    name: "Lidl",
-    category: "dagligvarer",
-    status: "directory",
-    website: "https://www.lidl.dk",
-    description: {
-      da: "Dagligvarekæde med fast sortiment og ugentlige kampagner.",
-      en: "Grocery chain with everyday products and weekly campaigns.",
-      ar: "سلسلة مواد غذائية بمنتجات يومية وعروض أسبوعية.",
-    },
-  },
-  {
-    slug: "bilka",
-    name: "Bilka",
-    category: "dagligvarer",
-    status: "directory",
-    website: "https://bilka.dk",
-    description: {
-      da: "Varehus med dagligvarer, elektronik og boligudstyr.",
-      en: "Hypermarket with groceries, electronics and home goods.",
-      ar: "هايبرماركت يضم مواد غذائية وإلكترونيات ومستلزمات منزلية.",
-    },
-  },
-  {
-    slug: "elgiganten",
-    name: "Elgiganten",
-    category: "elektronik",
-    status: "directory",
-    website: "https://www.elgiganten.dk",
-    description: {
-      da: "Elektronikkæde med computere, telefoner og husholdningsapparater.",
-      en: "Electronics retailer with computers, phones and home appliances.",
-      ar: "متجر إلكترونيات للحواسيب والهواتف والأجهزة المنزلية.",
-    },
-  },
-  {
-    slug: "power",
-    name: "POWER",
-    category: "elektronik",
-    status: "directory",
-    website: "https://www.power.dk",
-    description: {
-      da: "Elektronikkæde med hvidevarer og forbrugerelektronik.",
-      en: "Electronics chain with appliances and consumer electronics.",
-      ar: "سلسلة إلكترونيات للأجهزة المنزلية والإلكترونيات الاستهلاكية.",
-    },
-  },
-  {
-    slug: "jysk",
-    name: "JYSK",
-    category: "hjem",
-    status: "directory",
-    website: "https://jysk.dk",
-    description: {
-      da: "Boligkæde med møbler, sengelinned og haveudstyr.",
-      en: "Home chain with furniture, bedding and garden items.",
-      ar: "سلسلة مستلزمات منزلية تشمل الأثاث والمفروشات والحديقة.",
-    },
-  },
-  {
-    slug: "matas",
-    name: "Matas",
-    category: "skoenhed",
-    status: "directory",
-    website: "https://www.matas.dk",
-    description: {
-      da: "Kæde med skønhedspleje, kosmetik og helseprodukter.",
-      en: "Retailer for skincare, cosmetics and health products.",
-      ar: "متجر للعناية بالبشرة ومستحضرات التجميل ومنتجات الصحة.",
-    },
-  },
-  {
-    slug: "sport24",
-    name: "Sport 24",
-    category: "sport",
-    status: "directory",
-    website: "https://www.sport24.dk",
-    description: {
-      da: "Sportsbutik med tøj, sko og udstyr til træning og fritid.",
-      en: "Sports store with clothing, shoes and equipment.",
-      ar: "متجر رياضي للملابس والأحذية والمعدات.",
-    },
-  },
-];
+export const STORES: Store[] = rawStores as Store[];
 
 export function getStore(slug: string): Store | undefined {
   return STORES.find((store) => store.slug === slug);
