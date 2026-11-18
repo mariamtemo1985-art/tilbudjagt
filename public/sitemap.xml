@@ -21,6 +21,11 @@
   <url><loc>https://tilbudjagt.dk/butikker/jysk</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://tilbudjagt.dk/butikker/matas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://tilbudjagt.dk/butikker/sport24</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url>
+    <loc>https://tilbudjagt.dk/guides</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url><loc>https://tilbudjagt.dk/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://tilbudjagt.dk/contact.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tilbudjagt.dk/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
