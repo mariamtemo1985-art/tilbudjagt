@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Search, Store as StoreIcon, Tag } from "lucide-react";
 import { STORE_CATEGORIES, type Store, type StoreCategory } from "@/lib/stores";
 
@@ -19,15 +18,16 @@ const CATEGORY_ORDER: CategoryKey[] = [
 ];
 
 export default function StoreBrowser({ stores }: { stores: Store[] }) {
-  const params = useSearchParams();
-  const initialQuery = params.get("q") ?? "";
-  const initialCategory = params.get("kategori");
-  const [query, setQuery] = useState(initialQuery);
-  const [category, setCategory] = useState<CategoryKey>(
-    CATEGORY_ORDER.includes(initialCategory as CategoryKey)
-      ? (initialCategory as CategoryKey)
-      : "alle",
-  );
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<CategoryKey>("alle");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    if (q) setQuery(q);
+    const k = params.get("kategori");
+    if (k && CATEGORY_ORDER.includes(k as CategoryKey)) setCategory(k as CategoryKey);
+  }, []);
 
   const visible = useMemo(() => {
     const needle = query.trim().toLowerCase();

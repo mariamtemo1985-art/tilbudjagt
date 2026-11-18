@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Tag } from "lucide-react";
 import { STORES } from "@/lib/stores";
 import StoreBrowser from "./store-browser";
@@ -33,9 +32,7 @@ export default function StoresPage() {
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>
       </header>
-      <Suspense fallback={<div className="wrap stores-section">Indlæser butikker…</div>}>
-        <StoreBrowser stores={STORES} />
-      </Suspense>
+      <StoreBrowser stores={STORES} />
       <footer className="footer">
         <div className="wrap footer-inner">
           <a className="brand footer-brand" href="/">
