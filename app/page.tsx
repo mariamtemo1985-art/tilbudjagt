@@ -132,6 +132,7 @@ export default function HomePage() {
         </a>
         <nav className={mobileMenu ? "nav nav-open" : "nav"}>
           <a href="/butikker">{t.explore}</a>
+          <a href="/guides">Guides</a>
           <a href="/about.html">Om os</a>
           <a href="/contact.html">Kontakt</a>
         </nav>
@@ -318,7 +319,7 @@ export default function HomePage() {
           </a>
           <p>{t.footer}</p>
           <nav aria-label="Footer links">
-            <a href="/butikker">Butikker</a> · <a href="/about.html">Om os og guides</a> ·{" "}
+            <a href="/butikker">Butikker</a> · <a href="/guides">Guides</a> · <a href="/about.html">Om os</a> ·{" "}
             <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a>
           </nav>
           <span>© {new Date().getFullYear()} TilbudJagt.dk</span>
