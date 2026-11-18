@@ -30,6 +30,7 @@ const copy = {
     grocery: "Ugens dagligvarer", stores: "Populære butikker", allDeals: "Se alle tilbud",
     community: "Stem på tilbud", comments: "kommentarer", vote: "Stem", newsletter: "Få besked om stærke tilbud",
     email: "Din e-mailadresse", join: "Tilmeld", footer: "TilbudJagt gør det lettere at finde og dele gode tilbud. Tjek altid pris og vilkår hos butikken.",
+    partnerTitle: "Udvalgt partner", partnerText: "Se udvalgte produkter hos Bazta DK.", partnerCta: "Besøg Bazta", partnerDisclosure: "Reklamelink: TilbudJagt kan modtage provision, hvis du klikker på linket og handler hos Bazta. Din pris ændres ikke.",
     vipTitle: "TilbudJagt VIP", vipText: "Få en mere personlig tilbudsoplevelse for 40 kr./md.",
     vipList: ["Personlige tilbud baseret på dine interesser", "Gemte favoritter og tilbudsoverblik", "Ingen skjulte gebyrer – opsig når du vil"],
     close: "Luk", login: "Log ind", account: "Opret konto", allStores: "Alle butikker", sample: "Kontroller hos butik",
@@ -50,6 +51,7 @@ const copy = {
     grocery: "This week’s groceries", stores: "Popular stores", allDeals: "See all deals",
     community: "Vote on deals", comments: "comments", vote: "Vote", newsletter: "Get alerts for great deals",
     email: "Your email address", join: "Subscribe", footer: "TilbudJagt makes it easier to find and share great deals. Always check prices and terms with the retailer.",
+    partnerTitle: "Featured partner", partnerText: "Browse selected products at Bazta DK.", partnerCta: "Visit Bazta", partnerDisclosure: "Affiliate link: TilbudJagt may receive a commission if you click the link and make a purchase at Bazta. Your price does not change.",
     vipTitle: "TilbudJagt VIP", vipText: "A more personal deal experience for DKK 40/month.",
     vipList: ["Personalised deals based on your interests", "Saved favourites and deal overview", "No hidden fees – cancel anytime"],
     close: "Close", login: "Log in", account: "Create account", allStores: "All stores", sample: "Check with retailer",
@@ -70,6 +72,7 @@ const copy = {
     grocery: "مواد الأسبوع الغذائية", stores: "متاجر مشهورة", allDeals: "شاهد كل العروض",
     community: "صوّت على العروض", comments: "تعليقات", vote: "تصويت", newsletter: "تنبيهات بأقوى العروض",
     email: "بريدك الإلكتروني", join: "اشتراك", footer: "TilbudJagt تساعدك تكتشف العروض وتشاركها. تحقق دائماً من السعر والشروط عند المتجر.",
+    partnerTitle: "شريك مختار", partnerText: "تصفّح منتجات مختارة لدى Bazta DK.", partnerCta: "زيارة Bazta", partnerDisclosure: "رابط تسويق بالعمولة: قد تحصل TilbudJagt على عمولة إذا ضغطت على الرابط وأتممت شراءً لدى Bazta. السعر عليك لا يتغير.",
     vipTitle: "عضوية TilbudJagt VIP", vipText: "تجربة عروض شخصية مقابل 40 كرونة دنماركية شهرياً.",
     vipList: ["عروض حسب اهتماماتك", "حفظ المفضلة ومتابعة العروض", "بدون رسوم مخفية – ألغِ متى شئت"],
     close: "إغلاق", login: "تسجيل الدخول", account: "إنشاء حساب", allStores: "كل المتاجر", sample: "مثال",
@@ -88,6 +91,7 @@ const deals: Deal[] = [
   { id: 8, title: "Sengetøj i blød bomuld", store: "JYSK · Hjem & bolig", category: "home", price: "Se pris hos butik", oldPrice: "", discount: "Stærkt fund", tag: "Hjem", symbol: "🛏️", votes: 35, comments: 4, time: "Kontroller hos butik", note: "Gør hjemmet hyggeligt" },
 ];
 const stores = ["Lidl", "Netto", "REMA 1000", "føtex", "Bilka", "365discount", "Coop"];
+const baztaAffiliateUrl = "https://www.awin1.com/cread.php?awinmid=128395&awinaffid=3155813&ued=https%3A%2F%2Fdk.bazta.com";
 
 export default function HomePage() {
   const [lang, setLang] = useState<Language>("da");
@@ -161,6 +165,7 @@ export default function HomePage() {
         </article>)}</div>
         {!visibleDeals.length&&<div className="empty-state">{t.noResults}</div>}
       </div></section>
+      <section className="wrap partner-section" aria-labelledby="partner-title"><div className="partner-card"><div className="partner-copy"><span className="eyebrow muted">PARTNER</span><h2 id="partner-title">{t.partnerTitle}</h2><p>{t.partnerText}</p><p className="partner-disclosure">{t.partnerDisclosure}</p></div><a className="partner-cta" href={baztaAffiliateUrl} target="_blank" rel="sponsored noopener noreferrer">{t.partnerCta} <ArrowRight size={16}/></a></div></section>
       <section className="wrap feature-row"><div className="feature-card"><ShieldCheck/><div><h3>{t.safe}</h3><p>{t.footer}</p></div></div><div className="feature-card"><Heart/><div><h3>{t.community}</h3><p>{t.supermarketText}</p></div></div><div className="feature-card"><Bell/><div><h3>VIP-interesseliste</h3><p>Gratis tilmelding uden betaling. Få en velkomstmail og besked, når medlemskabet er klar.</p><form onSubmit={joinVipWaitlist}><input aria-label="E-mail" type="email" value={newsletterEmail} onChange={e=>setNewsletterEmail(e.target.value)} placeholder="Din e-mailadresse" required/><label><input type="checkbox" checked={newsletterConsent} onChange={e=>setNewsletterConsent(e.target.checked)} required/> Jeg accepterer at modtage information om TilbudJagt VIP.</label><button type="submit">Tilmeld</button><small>{newsletterStatus}</small></form></div></div></section>
       <section className="vip-banner"><div className="wrap vip-inner"><div><span className="eyebrow">TILBUDJAGT VIP</span><h2>{t.vipTitle}</h2><p>{t.vipText}</p></div><button onClick={()=>setVipOpen(true)}>{t.vip} <ArrowRight size={17}/></button></div></section>
       <footer className="footer"><div className="wrap footer-inner"><a className="brand footer-brand" href="#"><span className="brand-mark"><Tag size={20}/></span><span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span></a><p>{t.footer}</p><nav aria-label="Footer links"><a href="/about.html">Om os og guides</a> · <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a></nav><span>© {new Date().getFullYear()} TilbudJagt.dk</span></div></footer>
