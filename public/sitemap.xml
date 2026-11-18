@@ -5,4 +5,23 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://tilbudjagt.dk/butikker</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>https://tilbudjagt.dk/butikker/bazta-dk</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/netto</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/foetex</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/rema-1000</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/lidl</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/bilka</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/elgiganten</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/power</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/jysk</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/matas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/sport24</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://tilbudjagt.dk/contact.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tilbudjagt.dk/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
