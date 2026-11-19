@@ -241,5 +241,161 @@
       "en": "Motatos in the TilbudJagt store directory.",
       "ar": "Motatos في دليل متاجر TilbudJagt."
     }
+  },
+  {
+    "slug": "zalando",
+    "name": "Zalando",
+    "category": "mode",
+    "status": "directory",
+    "website": "https://www.zalando.dk",
+    "description": {
+      "da": "Onlinemodebutik med tøj, sko og accessories fra mange brands.",
+      "en": "Zalando in the TilbudJagt store directory.",
+      "ar": "Zalando في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "boozt",
+    "name": "Boozt",
+    "category": "mode",
+    "status": "directory",
+    "website": "https://www.boozt.com/dk/da",
+    "description": {
+      "da": "Nordisk onlinemodebutik med tøj, sko og skønhedsprodukter.",
+      "en": "Boozt in the TilbudJagt store directory.",
+      "ar": "Boozt في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "hm",
+    "name": "H&M",
+    "category": "mode",
+    "status": "directory",
+    "website": "https://www2.hm.com/da_dk/index.html",
+    "description": {
+      "da": "International modekæde med tøj og accessories til hele familien.",
+      "en": "H&M in the TilbudJagt store directory.",
+      "ar": "H&M في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "sephora",
+    "name": "Sephora",
+    "category": "skoenhed",
+    "status": "directory",
+    "website": "https://www.sephora.dk",
+    "description": {
+      "da": "Skønhedsbutik med makeup, hudpleje og parfume.",
+      "en": "Sephora in the TilbudJagt store directory.",
+      "ar": "Sephora في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "intersport",
+    "name": "INTERSPORT",
+    "category": "sport",
+    "status": "directory",
+    "website": "https://www.intersport.dk",
+    "description": {
+      "da": "Sportsbutik med sportstøj, sko og udstyr.",
+      "en": "INTERSPORT in the TilbudJagt store directory.",
+      "ar": "INTERSPORT في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "jdsports",
+    "name": "JD Sports",
+    "category": "sport",
+    "status": "directory",
+    "website": "https://www.jdsports.dk",
+    "description": {
+      "da": "Sport- og streetwearbutik med sko og tøj fra kendte brands.",
+      "en": "JD Sports in the TilbudJagt store directory.",
+      "ar": "JD Sports في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "ikea",
+    "name": "IKEA",
+    "category": "hjem",
+    "status": "directory",
+    "website": "https://www.ikea.com/dk/da/",
+    "description": {
+      "da": "Møbler og boligindretning til hjemmet.",
+      "en": "IKEA in the TilbudJagt store directory.",
+      "ar": "IKEA في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "bahne",
+    "name": "Bahne",
+    "category": "hjem",
+    "status": "directory",
+    "website": "https://www.bahne.dk",
+    "description": {
+      "da": "Boligbutik med møbler, køkkenudstyr og interiør.",
+      "en": "Bahne in the TilbudJagt store directory.",
+      "ar": "Bahne في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "proshop",
+    "name": "Proshop",
+    "category": "elektronik",
+    "status": "directory",
+    "website": "https://www.proshop.dk",
+    "description": {
+      "da": "Onlinebutik med elektronik, computere og hvidevarer.",
+      "en": "Proshop in the TilbudJagt store directory.",
+      "ar": "Proshop في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "komplett",
+    "name": "Komplett",
+    "category": "elektronik",
+    "status": "directory",
+    "website": "https://www.komplett.dk",
+    "description": {
+      "da": "Onlinebutik med elektronik, gaming og hvidevarer.",
+      "en": "Komplett in the TilbudJagt store directory.",
+      "ar": "Komplett في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "magasin",
+    "name": "Magasin",
+    "category": "stormagasin",
+    "status": "directory",
+    "website": "https://www.magasin.dk",
+    "description": {
+      "da": "Stormagasin med mode, skønhed, bolig og elektronik.",
+      "en": "Magasin in the TilbudJagt store directory.",
+      "ar": "Magasin في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "salling",
+    "name": "Salling",
+    "category": "stormagasin",
+    "status": "directory",
+    "website": "https://www.salling.dk",
+    "description": {
+      "da": "Varehus med dagligvarer, mode, bolig og elektronik.",
+      "en": "Salling in the TilbudJagt store directory.",
+      "ar": "Salling في دليل متاجر TilbudJagt."
+    }
+  },
+  {
+    "slug": "loevbjerg",
+    "name": "Løvbjerg",
+    "category": "dagligvarer",
+    "status": "directory",
+    "website": "https://www.loevbjerg.dk",
+    "description": {
+      "da": "Dansk supermarkedskæde med dagligvarer og tilbudsaviser.",
+      "en": "Løvbjerg in the TilbudJagt store directory.",
+      "ar": "Løvbjerg في دليل متاجر TilbudJagt."
+    }
   }
 ]
