@@ -70,3 +70,76 @@
 .guides-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#164c33;color:#fff;border-radius:14px;padding:22px;margin:22px 0 40px;max-width:860px}
 .guides-cta h2{font:800 19px Manrope;margin:0 0 4px}.guides-cta p{font-size:11px;color:#cfe0d4;margin:0}
 @media(max-width:650px){.admin-grid{grid-template-columns:1fr}.guides-cta{flex-direction:column;align-items:flex-start}.admin-section h1{font-size:24px}}
+
+/* App install banner */
+.tj-app-banner {
+  position: fixed;
+  z-index: 60;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: min(360px, calc(100vw - 24px));
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "icon content" "actions actions";
+  gap: 10px 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #dbe5dc;
+  box-shadow: 0 10px 30px rgba(15, 61, 46, 0.16);
+  animation: tj-app-banner-in 220ms ease-out;
+}
+.tj-app-banner__close {
+  position: absolute;
+  top: 6px;
+  inset-inline-end: 8px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #6b7a6f;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.tj-app-banner__close:hover { background: #f1f5f1; }
+.tj-app-banner__icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #e8f3ea;
+  color: #1f6b3a;
+}
+.tj-app-banner__content { grid-area: content; padding-inline-end: 20px; }
+.tj-app-banner__content strong { display: block; font-size: 15px; color: #123524; }
+.tj-app-banner__content p { margin: 2px 0 0; font-size: 13px; line-height: 1.4; color: #4d5f53; }
+.tj-app-banner__actions { grid-area: actions; display: flex; gap: 8px; justify-content: flex-end; }
+.tj-app-banner__primary,
+.tj-app-banner__secondary {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tj-app-banner__primary { background: #1f6b3a; color: #ffffff; }
+.tj-app-banner__primary:hover { background: #18552e; }
+.tj-app-banner__secondary { background: #eef3ee; color: #2f4637; }
+.tj-app-banner__secondary:hover { background: #e2eae2; }
+@keyframes tj-app-banner-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 520px) {
+  .tj-app-banner {
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    width: auto;
+  }
+}
