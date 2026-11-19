@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookOpen, Tag } from "lucide-react";
-import { GUIDES, getGuide } from "@/lib/guides";
+import { getGuide, getPublishedGuides } from "@/lib/guides";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = true;
+export const revalidate = 3600;
+
 export function generateStaticParams() {
-  return GUIDES.map((guide) => ({ slug: guide.slug }));
+  return getPublishedGuides().map((guide) => ({ slug: guide.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -36,7 +39,7 @@ export default async function GuidePage({ params }: PageProps) {
     "@type": "Article",
     headline: guide.title,
     description: guide.description,
-    dateModified: "2026-11-19",
+    dateModified: guide.publishAt || "2026-11-19",
     inLanguage: "da-DK",
     author: { "@type": "Organization", name: "TilbudJagt.dk" },
     publisher: { "@type": "Organization", name: "TilbudJagt.dk" },
