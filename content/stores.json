@@ -217,5 +217,17 @@
       "en": "ALDI in the TilbudJagt store directory.",
       "ar": "ALDI في دليل متاجر TilbudJagt."
     }
+  },
+  {
+    "slug": "nemlig",
+    "name": "nemlig.com",
+    "category": "dagligvarer",
+    "status": "directory",
+    "website": "https://www.nemlig.com/",
+    "description": {
+      "da": "Dansk online supermarked med dagligvarer leveret til døren.",
+      "en": "nemlig.com in the TilbudJagt store directory.",
+      "ar": "nemlig.com في دليل متاجر TilbudJagt."
+    }
   }
 ]
