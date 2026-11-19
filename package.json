@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:links": "node scripts/check-affiliate-links.mjs",
+    "check:links:all": "node scripts/check-affiliate-links.mjs --all"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
