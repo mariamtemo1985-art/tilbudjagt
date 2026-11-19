@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./auth.css";
 import "./submit.css";
+import AppInstallBanner from "@/components/AppInstallBanner";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tilbudjagt.dk"),
@@ -32,7 +33,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="da">
-      <body>{children}</body>
+      <body>{children}<AppInstallBanner /></body>
     </html>
   );
 }
