@@ -397,5 +397,20 @@
       "en": "Løvbjerg in the TilbudJagt store directory.",
       "ar": "Løvbjerg في دليل متاجر TilbudJagt."
     }
+  },
+  {
+    "slug": "okologisk-supermarked",
+    "name": "Økologisk-Supermarked",
+    "category": "dagligvarer",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://www.okologisk-supermarked.dk/shop/frontpage.html",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=100052",
+    "description": {
+      "da": "Online supermarked med økologiske og bæredygtige dagligvarer.",
+      "en": "Online supermarket with organic and sustainable groceries.",
+      "ar": "سوبرماركت إلكتروني يبيع مواد غذائية عضوية ومستدامة."
+    },
+    "checkedAt": "2026-11-19T02:21:37.000Z"
   }
 ]
