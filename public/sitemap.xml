@@ -40,4 +40,47 @@
   <url><loc>https://tilbudjagt.dk/produkter</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://tilbudjagt.dk/vilkaar.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://tilbudjagt.dk/cookies.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/normal</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/meny</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/spar</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/superbrugsen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/kvickly</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/365discount</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/aldi</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/nemlig</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/motatos</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/zalando</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/boozt</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/hm</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/sephora</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/intersport</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/jdsports</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/ikea</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/bahne</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/proshop</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/komplett</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/magasin</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/salling</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/loevbjerg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/okologisk-supermarked</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/soundliving</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/myprotein</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/holdit</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/vivara</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/sharkninja</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/dyson</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/emp</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/lounge-by-zalando</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/samsung</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/bymoller</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/flicks</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/offi</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/batteribyen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/din-printer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/brusefilteret</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/care-copenhagen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/hugcare</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/beauty4me</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/billige-teste</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://tilbudjagt.dk/butikker/fit-fun</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
