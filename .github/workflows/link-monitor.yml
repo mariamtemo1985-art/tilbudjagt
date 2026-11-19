@@ -1,0 +1,66 @@
+name: Store Link Monitor
+
+on:
+  schedule:
+    # Every Monday at 05:30 UTC (06:30 Danish winter time), before the weekly report.
+    - cron: "30 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: store-link-monitor
+  cancel-in-progress: true
+
+jobs:
+  links:
+    name: Check store links
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Check all store links
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run check:links:all 2>&1 | tee link-report.txt
+
+      - name: Add summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Store link check"
+            echo ""
+            echo "Branch: \`${GITHUB_REF_NAME}\`"
+            echo ""
+            if [ -f link-report.txt ]; then
+              echo '```text'
+              tail -n 80 link-report.txt
+              echo '```'
+            else
+              echo "No report file was produced."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: link-report.txt
+          if-no-files-found: warn
+          retention-days: 30
