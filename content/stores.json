@@ -427,5 +427,109 @@
       "ar": "علامة صوتيات دنماركية تقدم مكبرات صوت وسماعات بتصميم عصري."
     },
     "checkedAt": "2026-11-19T02:35:02.000Z"
+  },
+  {
+    "slug": "myprotein",
+    "name": "Myprotein",
+    "category": "sport",
+    "status": "directory",
+    "website": "https://www.myprotein.dk",
+    "description": {
+      "da": "Sport og fitness: protein, kosttilskud og træningstøj.",
+      "en": "Sports and fitness: protein, supplements and training gear.",
+      "ar": "رياضة ولياقة: بروتين ومكملات غذائية وملابس تدريب."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "holdit",
+    "name": "Holdit",
+    "category": "elektronik",
+    "status": "directory",
+    "website": "https://holdit.dk",
+    "description": {
+      "da": "Dansk elektronikbutik med mobiler, tilbehør og smartudstyr.",
+      "en": "Danish electronics shop with phones, accessories and smart devices.",
+      "ar": "متجر إلكترونيات دنماركي للهواتف والإكسسوارات والأجهزة الذكية."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "vivara",
+    "name": "Vivara",
+    "category": "hjem",
+    "status": "directory",
+    "website": "https://www.vivara.dk",
+    "description": {
+      "da": "Have, fugle og dyr: foder, huse og haveudstyr.",
+      "en": "Garden, birds and pets: feed, houses and garden gear.",
+      "ar": "حديقة وطيور وحيوانات: أعلاف وبيوت ومستلزمات حديقة."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "sharkninja",
+    "name": "SharkNinja",
+    "category": "hjem",
+    "status": "directory",
+    "website": "https://www.sharkninja.dk",
+    "description": {
+      "da": "Køkkenmaskiner og rengøring: Shark støvsugere og Ninja køkkenudstyr.",
+      "en": "Kitchen and cleaning: Shark vacuums and Ninja kitchen appliances.",
+      "ar": "أجهزة مطبخ وتنظيف: مكانس Shark وأجهزة Ninja."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "dyson",
+    "name": "Dyson",
+    "category": "hjem",
+    "status": "directory",
+    "website": "https://www.dyson.dk",
+    "description": {
+      "da": "Støvsugere, luftrensere og hårpleje fra Dyson.",
+      "en": "Vacuum cleaners, air purifiers and hair care from Dyson.",
+      "ar": "مكانس ومنقيات هواء وأدوات شعر من Dyson."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "emp",
+    "name": "EMP",
+    "category": "mode",
+    "status": "directory",
+    "website": "https://www.emp.dk",
+    "description": {
+      "da": "Band- og rocktøj, merchandise og accessories.",
+      "en": "Band and rock clothing, merchandise and accessories.",
+      "ar": "ملابس وإكسسوارات فرق الروك والموسيقى."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "lounge-by-zalando",
+    "name": "Lounge by Zalando",
+    "category": "mode",
+    "status": "directory",
+    "website": "https://www.loungebyzalando.dk",
+    "description": {
+      "da": "Outlet med mærkevarer til reducerede priser.",
+      "en": "Outlet with branded fashion at reduced prices.",
+      "ar": "أوتلت أزياء بماركات عالمية بأسعار مخفضة."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "samsung",
+    "name": "Samsung",
+    "category": "elektronik",
+    "status": "directory",
+    "website": "https://www.samsung.com/dk/",
+    "description": {
+      "da": "Mobiler, TV, hvidevarer og andet elektronik fra Samsung.",
+      "en": "Phones, TVs, home appliances and more electronics from Samsung.",
+      "ar": "هواتف وتلفزيونات وأجهزة منزلية وإلكترونيات من سامسونج."
+    },
+    "checkedAt": "2026-11-19T02:44:07.000Z"
   }
 ]
