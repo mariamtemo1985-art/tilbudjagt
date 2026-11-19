@@ -55,7 +55,13 @@ export default function AppInstallBanner() {
     } catch {
       // localStorage may be blocked; still show the banner once per visit.
     }
-    setLang(detectLang());
+    let saved: string | null = null;
+    try {
+      saved = window.localStorage.getItem("tilbudjagt_lang");
+    } catch {
+      // ignore storage restrictions
+    }
+    setLang(saved === "da" || saved === "en" || saved === "ar" ? saved : detectLang());
     const timer = window.setTimeout(() => setVisible(true), SHOW_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, []);
