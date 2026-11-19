@@ -687,13 +687,15 @@
     "slug": "fit-fun",
     "name": "Fit & Fun",
     "category": "pleje",
-    "status": "directory",
+    "status": "partner",
     "website": "https://www.fit-fun.dk/",
     "description": {
       "da": "Dansk webshop med saunatæpper, wellness- og restitutionsudstyr.",
       "en": "Danish webshop with sauna blankets, wellness and recovery equipment.",
       "ar": "متجر دنماركي لأغطية الساونا ومعدات العافية والاستشفاء."
     },
-    "checkedAt": "2026-11-19T13:23:50.943767+00:00"
+    "checkedAt": "2026-11-19T14:49:02.807974+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116738"
   }
 ]
