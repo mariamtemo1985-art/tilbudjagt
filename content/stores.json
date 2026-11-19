@@ -531,5 +531,20 @@
       "ar": "هواتف وتلفزيونات وأجهزة منزلية وإلكترونيات من سامسونج."
     },
     "checkedAt": "2026-11-19T02:44:07.000Z"
+  },
+  {
+    "slug": "bymoller",
+    "name": "ByMøller",
+    "category": "elektronik",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://bymoller.com/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=115972",
+    "description": {
+      "da": "Dansk webshop med computere, elektronik og tilbehør.",
+      "en": "Danish webshop with computers, electronics and accessories.",
+      "ar": "متجر دنماركي للكمبيوتر والإلكترونيات والملحقات."
+    },
+    "checkedAt": "2026-11-19T07:44:26.804548+00:00"
   }
 ]
