@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Store as StoreIcon, Tag } from "lucide-react";
 import ShareStoreButton from "@/components/ShareStoreButton";
+import AdSlot from "@/components/AdSlot";
 import { STORE_CATEGORIES, STORES, getStore, isAffiliateLink } from "@/lib/stores";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -117,6 +118,9 @@ export default async function StorePage({ params }: PageProps) {
           </span>
         </div>
       </section>
+      <div className="wrap">
+        <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_STORE} />
+      </div>
       <footer className="footer">
         <div className="wrap footer-inner">
           <a className="brand footer-brand" href="/">
@@ -130,7 +134,8 @@ export default async function StorePage({ params }: PageProps) {
           </a>
           <p>© {new Date().getFullYear()} TilbudJagt.dk</p>
           <nav aria-label="Footer links">
-            <a href="/about.html">Om os</a> · <a href="/contact.html">Kontakt</a> ·{" "}
+            <a href="/about.html">Om os</a> · <a href="/annoncering">Annoncering</a> ·{" "}
+            <a href="/contact.html">Kontakt</a> ·{" "}
             <a href="/privacy.html">Privatlivspolitik</a>
           </nav>
         </div>
