@@ -78,7 +78,7 @@ export default function ProductBrowser({ products, categories }: Props) {
               className="product-card"
               href={p.url}
               target="_blank"
-              rel="sponsored nofollow noopener"
+              rel="sponsored nofollow noopener noreferrer"
             >
               <span className="product-img">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
