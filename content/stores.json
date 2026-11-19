@@ -21,9 +21,9 @@
     "status": "directory",
     "website": "https://netto.dk",
     "description": {
-      "da": "Dansk supermarkedskæde med butikker i hele landet.",
-      "en": "Danish supermarket chain with stores across the country.",
-      "ar": "سلسلة سوبرماركت دنماركية لها فروع في كل البلاد."
+      "da": "Netto er en dansk discountkæde med mange lokale butikker. Sortimentet dækker dagligvarer, friske varer, brød og basisvarer til hverdagen, og butikkerne har løbende ugentlige tilbud.",
+      "en": "Netto is a Danish discount chain with many local stores. Its assortment covers groceries, fresh food, bread and everyday essentials, with recurring weekly offers.",
+      "ar": "نتو سلسلة دنماركية للخصومات ولها فروع محلية كثيرة. تشمل تشكيلتها المواد الغذائية والمنتجات الطازجة والخبز ومستلزمات اليوم، مع عروض أسبوعية متجددة."
     }
   },
   {
@@ -33,9 +33,9 @@
     "status": "directory",
     "website": "https://foetex.dk",
     "description": {
-      "da": "Supermarked med dagligvarer, friskvarer og nonfood.",
-      "en": "Supermarket with groceries, fresh food and non-food items.",
-      "ar": "سوبرماركت للمواد الغذائية الطازجة والمنتجات المنزلية."
+      "da": "føtex er en dansk supermarkedskæde med et bredt sortiment af dagligvarer, friske varer, kød, fisk, bageri og nonfood. Kæden henvender sig til både daglig indkøb og større indkøb.",
+      "en": "føtex is a Danish supermarket chain with a broad range of groceries, fresh food, meat, fish, bakery and non-food. It serves both everyday shopping and larger purchases.",
+      "ar": "فيوتكس سلسلة سوبرماركت دنماركية بتشكيلة واسعة من المواد الغذائية والمنتجات الطازجة واللحوم والأسماك والمخبوزات والمنتجات غير الغذائية. تناسب التسوق اليومي والشراء بكميات أكبر."
     }
   },
   {
@@ -45,9 +45,9 @@
     "status": "directory",
     "website": "https://rema1000.dk",
     "description": {
-      "da": "Discountsupermarked med fokus på dagligvarer.",
-      "en": "Discount supermarket focused on everyday groceries.",
-      "ar": "سوبرماركت خصومات يركز على المواد الغذائية اليومية."
+      "da": "REMA 1000 er en discountkæde med danske butikker og fokus på dagligvarer til hverdagen. Sortimentet er enkelt og praktisk, med løbende tilbud på udvalgte varer.",
+      "en": "REMA 1000 is a discount chain with Danish stores focused on everyday groceries. Its assortment is simple and practical, with recurring offers on selected items.",
+      "ar": "ريما 1000 سلسلة خصومات لها فروع في الدنمارك وتركز على المواد الغذائية اليومية. تشكيلتها بسيطة وعملية، مع عروض متجددة على منتجات مختارة."
     }
   },
   {
@@ -57,9 +57,9 @@
     "status": "directory",
     "website": "https://www.lidl.dk",
     "description": {
-      "da": "Dagligvarekæde med fast sortiment og ugentlige kampagner.",
-      "en": "Grocery chain with everyday products and weekly campaigns.",
-      "ar": "سلسلة مواد غذائية بمنتجات يومية وعروض أسبوعية."
+      "da": "Lidl er en international discountkæde med butikker i Danmark. Sortimentet omfatter dagligvarer, friske varer, bageri, frost og skiftende ugentlige kampagner.",
+      "en": "Lidl is an international discount chain with stores in Denmark. Its assortment includes groceries, fresh food, bakery, frozen goods and changing weekly campaigns.",
+      "ar": "ليدل سلسلة خصومات دولية لها فروع في الدنمارك. تشمل تشكيلتها المواد الغذائية والمنتجات الطازجة والمخبوزات والمجمدات وحملات أسبوعية متغيرة."
     }
   },
   {
@@ -69,9 +69,9 @@
     "status": "directory",
     "website": "https://bilka.dk",
     "description": {
-      "da": "Varehus med dagligvarer, elektronik og boligudstyr.",
-      "en": "Hypermarket with groceries, electronics and home goods.",
-      "ar": "هايبرماركت يضم مواد غذائية وإلكترونيات ومستلزمات منزلية."
+      "da": "Bilka er en dansk varehuskæde med dagligvarer, elektronik, boligudstyr, tøj og haveartikler. Butikkerne er større og henvender sig til kunder, der vil samle flere indkøb ét sted.",
+      "en": "Bilka is a Danish hypermarket chain with groceries, electronics, home goods, clothing and garden items. Its larger stores are designed for shoppers who want several purchases in one place.",
+      "ar": "بيلكا سلسلة هايبرماركت دنماركية تضم المواد الغذائية والإلكترونيات ومستلزمات المنزل والملابس وأدوات الحديقة. فروعها أكبر وتناسب من يريد جمع عدة مشتريات في مكان واحد."
     }
   },
   {
@@ -141,9 +141,9 @@
     "status": "directory",
     "website": "https://www.normal.dk/",
     "description": {
-      "da": "Normal er en dansk butikskæde med fast lavpris på rengøringsmidler, kosmetik og personlig pleje.",
-      "en": "Normal in the TilbudJagt store directory.",
-      "ar": "Normal في دليل متاجر TilbudJagt."
+      "da": "Normal er en dansk butikskæde med fast lavpris på rengøringsmidler, kosmetik, personlig pleje og hverdagsvarer. Sortimentet skifter løbende, og butikkerne findes i flere byer.",
+      "en": "Normal is a Danish retail chain offering everyday low prices on cleaning products, cosmetics, personal care and household items. The assortment changes regularly, with stores in several cities.",
+      "ar": "نورمال سلسلة متاجر دنماركية تقدم أسعارًا منخفضة على منظفات التنظيف ومستحضرات التجميل والعناية الشخصية ومستلزمات المنزل. تتغير التشكيلة باستمرار ولها فروع في عدة مدن."
     }
   },
   {
@@ -153,9 +153,9 @@
     "status": "directory",
     "website": "https://meny.dk/",
     "description": {
-      "da": "Meny er en dansk supermarkedskæde med fokus på friskvarer, kvalitet og et bredt dagligvaresortiment. Kæden henvender sig til kunder, der ønsker mere end et standard supermarked.",
+      "da": "Meny er en dansk supermarkedskæde med fokus på friske varer, kvalitet og et bredt dagligvaresortiment. Butikkerne henvender sig til kunder, der ønsker mere end et standard supermarked.",
       "en": "Meny is a Danish supermarket chain focused on fresh produce, quality and a broad grocery assortment. It is aimed at shoppers looking for more than a standard supermarket.",
-      "ar": "Meny سلسلة سوبرماركت دنماركية تركز على المنتجات الطازجة والجودة وتشكيلة واسعة من مواد البقالة. تناسب المتسوقين الذين يبحثون عن تجربة أوسع من السوبرماركت التقليدي."
+      "ar": "ميني سلسلة سوبرماركت دنماركية تركز على المنتجات الطازجة والجودة وتشكيلة واسعة من مواد البقالة. تناسب المتسوقين الذين يبحثون عن تجربة أوسع من السوبرماركت التقليدي."
     }
   },
   {
@@ -165,9 +165,9 @@
     "status": "directory",
     "website": "https://spar.dk/",
     "description": {
-      "da": "SPAR er en dagligvarekæde med lokale butikker over hele Danmark. Sortimentet dækker dagligvarer, friskvarer og varer til hverdagen.",
-      "en": "SPAR is a grocery chain with local stores across Denmark. Its assortment covers groceries, fresh food and everyday essentials.",
-      "ar": "SPAR سلسلة بقالة تضم متاجر محلية في أنحاء الدنمارك. تشمل تشكيلتها مواد البقالة والمنتجات الطازجة ومستلزمات الحياة اليومية."
+      "da": "SPAR er en dagligvarekæde med lokale butikker over hele Danmark. Sortimentet består af dagligvarer og lokale varer, og åbningstiderne kan variere fra butik til butik.",
+      "en": "SPAR is a grocery chain with local stores across Denmark. Its assortment includes everyday groceries and local products, and opening hours can vary by store.",
+      "ar": "سبار سلسلة مواد غذائية لها فروع محلية في أنحاء الدنمارك. تشمل تشكيلتها المواد الغذائية اليومية ومنتجات محلية، وقد تختلف ساعات العمل من فرع لآخر."
     }
   },
   {
@@ -177,9 +177,9 @@
     "status": "directory",
     "website": "https://superbrugsen.dk/",
     "description": {
-      "da": "SuperBrugsen er en Coop-supermarkedskæde med lokale butikker og et bredt dagligvaresortiment. Butikkerne har også fokus på lokale varer og specialiteter.",
-      "en": "SuperBrugsen is a Coop supermarket chain with local stores and a broad grocery assortment. The stores also focus on local products and specialties.",
-      "ar": "SuperBrugsen سلسلة سوبرماركت تابعة لـ Coop وتضم متاجر محلية وتشكيلة واسعة من مواد البقالة. تركز متاجرها أيضًا على المنتجات المحلية والتخصصات."
+      "da": "SuperBrugsen er en Coop-supermarkedskæde med lokale butikker i hele Danmark. Sortimentet omfatter dagligvarer, friske varer og et udvalg af nonfood.",
+      "en": "SuperBrugsen is a Coop supermarket chain with local stores across Denmark. Its assortment includes groceries, fresh food and a selection of non-food items.",
+      "ar": "سوبر بروغسن سلسلة سوبرماركت تابعة لـ Coop ولها فروع محلية في أنحاء الدنمارك. تشمل تشكيلتها المواد الغذائية والمنتجات الطازجة ومجموعة من المنتجات غير الغذائية."
     }
   },
   {
@@ -189,9 +189,9 @@
     "status": "directory",
     "website": "https://kvickly.dk/",
     "description": {
-      "da": "Kvickly er et Coop-varehus med dagligvarer, elektronik og boligartikler samlet under ét tag. Kæden passer til større indkøb og hverdagens behov.",
-      "en": "Kvickly is a Coop department-store format bringing groceries, electronics and household goods together under one roof. It suits larger shopping trips and everyday needs.",
-      "ar": "Kvickly متجر شامل تابع لـ Coop يجمع مواد البقالة والإلكترونيات ومستلزمات المنزل تحت سقف واحد. يناسب التسوق الأكبر والاحتياجات اليومية."
+      "da": "Kvickly er et Coop-varehus med dagligvarer, elektronik, boligartikler og sæsonvarer. Butikkerne er større og samler flere varekategorier under ét tag.",
+      "en": "Kvickly is a Coop hypermarket with groceries, electronics, home items and seasonal goods. Its larger stores bring several product categories together under one roof.",
+      "ar": "كفيكلي هايبرماركت تابع لـ Coop يضم المواد الغذائية والإلكترونيات ومستلزمات المنزل والمنتجات الموسمية. تجمع فروعه الأكبر عدة فئات من المنتجات تحت سقف واحد."
     }
   },
   {
@@ -201,9 +201,9 @@
     "status": "directory",
     "website": "https://365discount.dk/",
     "description": {
-      "da": "365discount er Coops discountkæde med dagligvarer til lave priser. Sortimentet er enkelt og fokuseret på hverdagens basisvarer.",
-      "en": "365discount is Coop's discount chain offering groceries at low prices. The range is simple and focused on everyday essentials.",
-      "ar": "365discount هي سلسلة متاجر خصم تابعة لـ Coop توفر مواد البقالة بأسعار منخفضة. تشكيلتها بسيطة وتركز على الأساسيات اليومية."
+      "da": "365discount er Coops discountkæde med dagligvarer til lave priser. Sortimentet er enkelt og fokuseret på hverdagens basisvarer, med løbende tilbud.",
+      "en": "365discount is Coop's discount chain with groceries at low prices. Its assortment is simple and focused on everyday essentials, with recurring offers.",
+      "ar": "365discount سلسلة الخصومات التابعة لـ Coop وتقدم مواد غذائية بأسعار منخفضة. تشكيلتها بسيطة وتركز على أساسيات اليوم، مع عروض متجددة."
     }
   },
   {
@@ -213,9 +213,9 @@
     "status": "directory",
     "website": "https://www.aldi.dk/",
     "description": {
-      "da": "ALDI er en international discountkæde med dagligvarer i Danmark. Sortimentet omfatter basisvarer, friskvarer og udvalgte specialvarer.",
-      "en": "ALDI is an international discount chain with groceries in Denmark. Its assortment includes basics, fresh food and selected specials.",
-      "ar": "ALDI سلسلة خصم دولية توفر مواد البقالة في الدنمارك. تشمل تشكيلتها الأساسيات والمنتجات الطازجة ومنتجات مختارة."
+      "da": "ALDI er en international discountkæde med butikker i Danmark. Sortimentet omfatter dagligvarer, friske varer og skiftende ugentlige tilbud; udvalget kan variere fra butik til butik.",
+      "en": "ALDI is an international discount chain with stores in Denmark. Its assortment includes groceries, fresh food and changing weekly offers; availability can vary by store.",
+      "ar": "ألدي سلسلة خصومات دولية لها فروع في الدنمارك. تشمل تشكيلتها المواد الغذائية والمنتجات الطازجة وعروضًا أسبوعية متغيرة؛ وقد يختلف التوفر من فرع لآخر."
     }
   },
   {
@@ -225,9 +225,9 @@
     "status": "directory",
     "website": "https://www.nemlig.com/",
     "description": {
-      "da": "nemlig.com er et dansk online supermarked med dagligvarer leveret til døren. Du kan handle dagligvarer, friskvarer og husholdningsartikler online.",
-      "en": "nemlig.com is a Danish online supermarket delivering groceries to your door. You can shop groceries, fresh food and household essentials online.",
-      "ar": "nemlig.com سوبرماركت دنماركي عبر الإنترنت يوصل مواد البقالة إلى باب منزلك. يمكنك التسوق منه لمواد البقالة والمنتجات الطازجة ومستلزمات المنزل."
+      "da": "nemlig.com er et dansk online supermarked med dagligvarer og husholdningsartikler leveret til døren. Leveringsområder, tidsvinduer og gebyrer afhænger af adressen.",
+      "en": "nemlig.com is a Danish online supermarket delivering groceries and household items to your door. Delivery areas, time slots and fees depend on the address.",
+      "ar": "نيمليغ دوت كوم سوبرماركت دنماركي عبر الإنترنت يوصل المواد الغذائية ومستلزمات المنزل إلى الباب. تعتمد مناطق التوصيل والمواعيد والرسوم على العنوان."
     }
   },
   {
@@ -237,9 +237,9 @@
     "status": "directory",
     "website": "https://www.motatos.dk/",
     "description": {
-      "da": "Motatos er en onlinebutik med overskudsvarer og dagligvarer til nedsatte priser. Formålet er at mindske madspild ved at sælge varer, der ellers ville gå tabt.",
-      "en": "Motatos is an online store selling surplus groceries at reduced prices. Its goal is to reduce food waste by selling products that might otherwise be discarded.",
-      "ar": "Motatos متجر إلكتروني يبيع مواد غذائية فائضة بأسعار مخفضة. يهدف إلى تقليل هدر الطعام عبر بيع منتجات كان يمكن أن تُفقد."
+      "da": "Motatos er en onlinebutik med overskudsvarer og dagligvarer til nedsatte priser. Vareudvalget og holdbarhedsdatoerne varierer, så tjek altid den konkrete vare.",
+      "en": "Motatos is an online store for surplus groceries and everyday items at reduced prices. Availability and best-before dates vary, so always check the specific item.",
+      "ar": "موتاتوس متجر إلكتروني يبيع فائض المواد الغذائية ومستلزمات اليوم بأسعار مخفضة. يختلف التوفر وتواريخ الصلاحية، لذا تحقق دائمًا من المنتج المحدد."
     }
   },
   {
@@ -249,9 +249,9 @@
     "status": "directory",
     "website": "https://www.zalando.dk",
     "description": {
-      "da": "Onlinemodebutik med tøj, sko og accessories fra mange brands.",
-      "en": "Zalando in the TilbudJagt store directory.",
-      "ar": "Zalando في دليل متاجر TilbudJagt."
+      "da": "Zalando er en online modeplatform med tøj, sko og accessories fra mange brands. Udvalg, levering og returnering vises på Zalandos egen side.",
+      "en": "Zalando is an online fashion platform offering clothing, shoes and accessories from many brands. Assortment, delivery and returns are shown on Zalando’s own site.",
+      "ar": "زالاندو منصة أزياء إلكترونية تضم ملابس وأحذية وإكسسوارات من علامات تجارية متعددة. تظهر التشكيلة وخيارات التوصيل والإرجاع على موقع زالاندو."
     }
   },
   {
@@ -261,9 +261,9 @@
     "status": "directory",
     "website": "https://www.boozt.com/dk/da",
     "description": {
-      "da": "Nordisk onlinemodebutik med tøj, sko og skønhedsprodukter.",
-      "en": "Boozt in the TilbudJagt store directory.",
-      "ar": "Boozt في دليل متاجر TilbudJagt."
+      "da": "Boozt er en nordisk onlinebutik med mode, skønhed og accessories fra forskellige brands. Levering og returnering afhænger af markedet og vises ved køb.",
+      "en": "Boozt is a Nordic online store for fashion, beauty and accessories from various brands. Delivery and returns depend on the market and are shown at checkout.",
+      "ar": "بوزت متجر إلكتروني شمالي للأزياء والجمال والإكسسوارات من علامات متعددة. تعتمد خيارات التوصيل والإرجاع على السوق وتظهر عند الشراء."
     }
   },
   {
@@ -273,9 +273,9 @@
     "status": "directory",
     "website": "https://www2.hm.com/da_dk/index.html",
     "description": {
-      "da": "International modekæde med tøj og accessories til hele familien.",
-      "en": "H&M in the TilbudJagt store directory.",
-      "ar": "H&M في دليل متاجر TilbudJagt."
+      "da": "H&M er en international modekæde med tøj, accessories og hjemprodukter. Sortimentet findes både i fysiske butikker og på H&Ms onlinebutik.",
+      "en": "H&M is an international fashion chain with clothing, accessories and home products. Its assortment is available in physical stores and through H&M’s online store.",
+      "ar": "إتش أند إم سلسلة أزياء دولية تضم ملابس وإكسسوارات ومنتجات منزلية. تتوفر تشكيلتها في المتاجر الفعلية وعلى متجر إتش أند إم الإلكتروني."
     }
   },
   {
@@ -285,9 +285,9 @@
     "status": "directory",
     "website": "https://www.sephora.dk",
     "description": {
-      "da": "Skønhedsbutik med makeup, hudpleje og parfume.",
-      "en": "Sephora in the TilbudJagt store directory.",
-      "ar": "Sephora في دليل متاجر TilbudJagt."
+      "da": "Sephora er en skønhedskæde med makeup, hudpleje, parfume og hårpleje fra mange brands. Sortimentet findes i butikker og online.",
+      "en": "Sephora is a beauty retailer offering makeup, skincare, fragrance and haircare from many brands. Its assortment is available in stores and online.",
+      "ar": "سيفورا متجر متخصص في الجمال يضم مستحضرات التجميل والعناية بالبشرة والعطور والعناية بالشعر من علامات متعددة. تتوفر تشكيلتها في المتاجر وعبر الإنترنت."
     }
   },
   {
@@ -297,9 +297,9 @@
     "status": "directory",
     "website": "https://www.intersport.dk",
     "description": {
-      "da": "Sportsbutik med sportstøj, sko og udstyr.",
-      "en": "INTERSPORT in the TilbudJagt store directory.",
-      "ar": "INTERSPORT في دليل متاجر TilbudJagt."
+      "da": "INTERSPORT er en sportsforretning med sko, sportstøj og udstyr til mange aktiviteter. Sortimentet kan variere mellem butikker og online.",
+      "en": "INTERSPORT is a sports retailer with shoes, sportswear and equipment for many activities. Assortment can vary between stores and online.",
+      "ar": "إنترسبورت متجر رياضي يضم أحذية وملابس رياضية ومعدات لأنشطة متعددة. قد تختلف التشكيلة بين الفروع وعبر الإنترنت."
     }
   },
   {
@@ -309,9 +309,9 @@
     "status": "directory",
     "website": "https://www.jdsports.dk",
     "description": {
-      "da": "Sport- og streetwearbutik med sko og tøj fra kendte brands.",
-      "en": "JD Sports in the TilbudJagt store directory.",
-      "ar": "JD Sports في دليل متاجر TilbudJagt."
+      "da": "JD Sports er en sports- og modeforretning med sneakers, sportstøj og kendte brands. Udvalget kan variere mellem butikker og online.",
+      "en": "JD Sports is a sports and fashion retailer with sneakers, sportswear and well-known brands. Availability can vary between stores and online.",
+      "ar": "جي دي سبورتس متجر رياضي وأزياء يضم أحذية رياضية وملابس رياضية وعلامات معروفة. قد يختلف التوفر بين الفروع وعبر الإنترنت."
     }
   },
   {
@@ -321,9 +321,9 @@
     "status": "directory",
     "website": "https://www.ikea.com/dk/da/",
     "description": {
-      "da": "Møbler og boligindretning til hjemmet.",
-      "en": "IKEA in the TilbudJagt store directory.",
-      "ar": "IKEA في دليل متاجر TilbudJagt."
+      "da": "IKEA er en international møbel- og boligkæde med møbler, opbevaring, køkken og boligindretning. Levering og sortiment afhænger af varehus og onlinebutik.",
+      "en": "IKEA is an international furniture and home chain with furniture, storage, kitchen and home furnishings. Delivery and assortment depend on the store and online availability.",
+      "ar": "إيكيا سلسلة دولية للأثاث والمنزل تضم أثاثًا وحلول تخزين ومستلزمات مطبخ وديكورًا منزليًا. يعتمد التوصيل والتشكيلة على الفرع والمتجر الإلكتروني."
     }
   },
   {
@@ -333,9 +333,9 @@
     "status": "directory",
     "website": "https://www.bahne.dk",
     "description": {
-      "da": "Boligbutik med møbler, køkkenudstyr og interiør.",
-      "en": "Bahne in the TilbudJagt store directory.",
-      "ar": "Bahne في دليل متاجر TilbudJagt."
+      "da": "Bahne er en dansk detailkæde med produkter til hjem, køkken og gaveidéer. Sortimentet kan variere mellem butikker og online.",
+      "en": "Bahne is a Danish retailer with products for the home, kitchen and gifting. Assortment can vary between stores and online.",
+      "ar": "بانه متجر تجزئة دنماركي يضم منتجات للمنزل والمطبخ وأفكار الهدايا. قد تختلف التشكيلة بين الفروع وعبر الإنترنت."
     }
   },
   {
@@ -360,9 +360,9 @@
     "status": "directory",
     "website": "https://www.komplett.dk",
     "description": {
-      "da": "Onlinebutik med elektronik, gaming og hvidevarer.",
-      "en": "Komplett in the TilbudJagt store directory.",
-      "ar": "Komplett في دليل متاجر TilbudJagt."
+      "da": "Komplett er en nordisk onlinebutik med elektronik, computere, mobiltelefoner og gamingudstyr. Lagerstatus, levering og pris vises på Kompletts side.",
+      "en": "Komplett is a Nordic online store for electronics, computers, mobile phones and gaming equipment. Stock, delivery and price are shown on Komplett’s site.",
+      "ar": "كومبليت متجر إلكتروني شمالي يضم إلكترونيات وحواسيب وهواتف ومعدات ألعاب. تظهر حالة المخزون والتوصيل والسعر على موقع كومبليت."
     }
   },
   {
@@ -372,9 +372,9 @@
     "status": "directory",
     "website": "https://www.magasin.dk",
     "description": {
-      "da": "Stormagasin med mode, skønhed, bolig og elektronik.",
-      "en": "Magasin in the TilbudJagt store directory.",
-      "ar": "Magasin في دليل متاجر TilbudJagt."
+      "da": "Magasin er et dansk stormagasin med mode, skønhed, bolig og mad. Sortimentet samler flere kategorier under ét tag i de fysiske varehuse og online.",
+      "en": "Magasin is a Danish department store with fashion, beauty, home and food. Its assortment brings several categories together in its physical stores and online.",
+      "ar": "ماغاسين متجر شامل دنماركي يضم الأزياء والجمال والمنزل والطعام. تجمع تشكيلته عدة فئات تحت سقف واحد في الفروع وعبر الإنترنت."
     }
   },
   {
@@ -384,9 +384,9 @@
     "status": "directory",
     "website": "https://www.salling.dk",
     "description": {
-      "da": "Varehus med dagligvarer, mode, bolig og elektronik.",
-      "en": "Salling in the TilbudJagt store directory.",
-      "ar": "Salling في دليل متاجر TilbudJagt."
+      "da": "Salling er en dansk stormagasin- og varehuskæde med mode, bolig, elektronik og mad. Sortimentet kan variere mellem de enkelte varehuse.",
+      "en": "Salling is a Danish department store and hypermarket chain with fashion, home, electronics and food. Assortment can vary between individual stores.",
+      "ar": "سالينغ سلسلة متاجر شاملة وهايبرماركت دنماركية تضم الأزياء والمنزل والإلكترونيات والطعام. قد تختلف التشكيلة بين الفروع."
     }
   },
   {
@@ -396,9 +396,9 @@
     "status": "directory",
     "website": "https://www.lovbjerg.dk",
     "description": {
-      "da": "Dansk supermarkedskæde med dagligvarer og tilbudsaviser.",
-      "en": "Løvbjerg in the TilbudJagt store directory.",
-      "ar": "Løvbjerg في دليل متاجر TilbudJagt."
+      "da": "Løvbjerg er en dansk supermarkedskæde med butikker i Danmark. Sortimentet består af dagligvarer og friske varer, og butikkerne har løbende tilbudsaviser.",
+      "en": "Løvbjerg is a Danish supermarket chain with stores in Denmark. Its assortment includes groceries and fresh food, and the stores publish recurring offer leaflets.",
+      "ar": "لوفبييرغ سلسلة سوبرماركت دنماركية لها فروع في الدنمارك. تشمل تشكيلتها المواد الغذائية والمنتجات الطازجة، وتنشر الفروع نشرات عروض متجددة."
     },
     "checkedAt": "2026-11-19T18:41:48Z"
   },
@@ -411,9 +411,9 @@
     "website": "https://www.okologisk-supermarked.dk/shop/frontpage.html",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=100052",
     "description": {
-      "da": "Online supermarked med økologiske og bæredygtige dagligvarer.",
-      "en": "Online supermarket with organic and sustainable groceries.",
-      "ar": "سوبرماركت إلكتروني يبيع مواد غذائية عضوية ومستدامة."
+      "da": "Økologisk-Supermarked er et online supermarked med økologiske og bæredygtige dagligvarer. Sortimentet og leveringsmulighederne kan variere, så tjek betingelserne ved bestilling.",
+      "en": "Økologisk-Supermarked is an online supermarket with organic and sustainable groceries. Its assortment and delivery options can vary, so check the terms when ordering.",
+      "ar": "أوكولوجيسك سوبرماركت متجر إلكتروني للمواد الغذائية العضوية والمستدامة. قد تختلف التشكيلة وخيارات التوصيل، لذا تحقق من الشروط عند الطلب."
     },
     "checkedAt": "2026-11-19T02:21:37.000Z"
   },
