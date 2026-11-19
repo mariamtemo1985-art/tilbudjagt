@@ -212,6 +212,122 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+  {
+    slug: "fortrydelsesret-og-retur",
+    kicker: "Forbrug",
+    title: "Fortrydelsesret og retur: sådan gør du i Danmark",
+    description:
+      "Hvornår har du 14 dages fortrydelsesret, hvad er undtaget, og hvem betaler returfragten? En kort guide til returreglerne ved onlinekøb.",
+    lead:
+      "Når du handler online, har du som udgangspunkt 14 dages fortrydelsesret. Men der er undtagelser, og det er værd at kende dem, før du klikker køb.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "14 dage fra modtagelsen",
+        paragraphs: [
+          "Ved fjernsalg – for eksempel netbutikker – har du normalt 14 dage til at fortryde købet. Fristen regnes fra den dag, du modtager varen. Du skal give butikken besked inden for fristen og sende varen retur inden for yderligere 14 dage.",
+          "Du må gerne prøve varen, som du ville gøre i en fysisk butik. Men den skal returneres i væsentligt samme stand og mængde, som da du modtog den.",
+        ],
+      },
+      {
+        heading: "Det er undtaget",
+        paragraphs: [
+          "Nogle varer kan ikke fortrydes. Det gælder blandt andet varer, der er fremstillet efter dine ønsker, letfordærvelige varer, og forseglede varer, hvor forseglingen er brudt af hygiejniske årsager – for eksempel visse kosmetikprodukter og undertøj.",
+          "Digitale produkter kan også være undtaget, hvis du har accepteret at få leveret dem med det samme og har oplyst det til butikken. Læs altid butikkens returvilkår, før du køber.",
+        ],
+      },
+      {
+        heading: "Hvem betaler returfragten?",
+        paragraphs: [
+          "Det er butikken, der skal oplyse, om du selv skal betale for at sende varen retur. Mange butikker oplyser det i deres handelsbetingelser. Hvis det ikke er oplyst, skal butikken betale returfragten.",
+          "Ved retur skal du normalt få købsprisen og den oprindelige leveringspris tilbage, når butikken har modtaget varen. Nogle butikker trækker returomkostninger fra, hvis det er aftalt.",
+        ],
+      },
+      {
+        heading: "Reklamationsret er noget andet",
+        paragraphs: [
+          "Reklamationsretten gælder, når varen er defekt eller mangelfuld. I Danmark er den som udgangspunkt 2 år for nye varer. Den gælder også, selv om fortrydelsesfristen er udløbet.",
+          "Gem ordrebekræftelse og kvittering. Kontakt butikken så hurtigt som muligt, hvis varen ikke fungerer, som den skal.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "spot-falske-anmeldelser",
+    kicker: "Tryghed",
+    title: "Sådan spotter du falske anmeldelser",
+    description:
+      "Mange stjerner betyder ikke altid et godt køb. Se på mønstre, datoer og formuleringer, før du lader anmeldelser afgøre dit køb.",
+    lead:
+      "Anmeldelser kan være en god hjælp, men de kan også være købt eller skrevet af butikken selv. Her er nogle tegn, du kan kigge efter.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "Se på fordelingen, ikke gennemsnittet",
+        paragraphs: [
+          "En vare med mange 5-stjernede anmeldelser og næsten ingen 2- eller 3-stjernede kan være et tegn på, at anmeldelserne er styret. Reelle produkter har ofte en mere blandet fordeling, fordi forskellige købere har forskellige behov.",
+          "Læs de kritiske anmeldelser først. De fortæller ofte mere om svaghederne end de positive.",
+        ],
+      },
+      {
+        heading: "Tjek datoer og mønstre",
+        paragraphs: [
+          "Mange anmeldelser med samme dato eller inden for få dage kan være et tegn på en kampagne. Se også, om de samme formuleringer går igen, eller om anmeldelserne alle bruger samme længde og struktur.",
+          "Det er ikke i sig selv bevis på snyd, men det er værd at være opmærksom.",
+        ],
+      },
+      {
+        heading: "Søg efter konkrete detaljer",
+        paragraphs: [
+          "Troværdige anmeldelser nævner ofte konkrete detaljer: hvordan varen blev brugt, hvad der fungerede, og hvad der ikke gjorde. Anmeldelser, der kun roser i generelle vendinger, giver mindre værdi.",
+          "Se også efter billeder eller opdateringer, hvor køberen fortæller om brugen over tid.",
+        ],
+      },
+      {
+        heading: "Brug flere kilder",
+        paragraphs: [
+          "Sammenlign anmeldelser fra flere sider, og se om butikken svarer på kritik. En butik, der håndterer klager åbent, er ofte mere troværdig end en, hvor alle anmeldelser er perfekte.",
+          "Hvis noget virker for godt til at være sandt, så vent og undersøg nærmere, før du køber.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "black-friday-tjekliste",
+    kicker: "Sæson",
+    title: "Black Friday-tjekliste: køb rigtigt tilbud",
+    description:
+      "Black Friday er fyldt med rabatter, men ikke alle er reelle. Brug tjeklisten, så du ikke køber til falsk førpris.",
+    lead:
+      "Black Friday lokker med store procenter, men rabatten er kun god, hvis du kender prisen i forvejen. Her er en kort tjekliste.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "Lav en ønskeliste i god tid",
+        paragraphs: [
+          "Beslut før kampagnen, hvad du faktisk mangler. Skriv modeller og cirkapriser ned, så du kan sammenligne med tilbuddet. Uden en liste er det svært at vurdere, om rabatten er reel.",
+        ],
+      },
+      {
+        heading: "Tjek førprisen",
+        paragraphs: [
+          "Se på den pris, varen normalt koster – ikke kun den pris, butikken kalder førpris. Hvis du har set varen billigere for nylig, er rabatten mindre, end den ser ud.",
+        ],
+      },
+      {
+        heading: "Sammenlign den samlede pris",
+        paragraphs: [
+          "Husk fragt, levering og eventuelle medlemskrav. En rabat på 200 kroner kan forsvinde, hvis leveringen koster ekstra.",
+        ],
+      },
+      {
+        heading: "Vent på det rigtige tilbud",
+        paragraphs: [
+          "Der kommer flere kampagner i løbet af året. Hvis tilbuddet ikke er klart bedre end det, du normalt ser, så vent. Det er bedre at købe det rigtige produkt til en god pris end at købe et produkt, du ikke har brug for.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
