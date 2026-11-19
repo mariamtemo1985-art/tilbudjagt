@@ -153,9 +153,9 @@
     "status": "directory",
     "website": "https://meny.dk/",
     "description": {
-      "da": "Dansk supermarkedskæde med dagligvarer, friskvarer og online indkøb.",
-      "en": "Meny in the TilbudJagt store directory.",
-      "ar": "Meny في دليل متاجر TilbudJagt."
+      "da": "Meny er en dansk supermarkedskæde med fokus på friskvarer, kvalitet og et bredt dagligvaresortiment. Kæden henvender sig til kunder, der ønsker mere end et standard supermarked.",
+      "en": "Meny is a Danish supermarket chain focused on fresh produce, quality and a broad grocery assortment. It is aimed at shoppers looking for more than a standard supermarket.",
+      "ar": "Meny سلسلة سوبرماركت دنماركية تركز على المنتجات الطازجة والجودة وتشكيلة واسعة من مواد البقالة. تناسب المتسوقين الذين يبحثون عن تجربة أوسع من السوبرماركت التقليدي."
     }
   },
   {
@@ -165,9 +165,9 @@
     "status": "directory",
     "website": "https://spar.dk/",
     "description": {
-      "da": "Dansk dagligvarekæde med lokale butikker over hele landet.",
-      "en": "SPAR in the TilbudJagt store directory.",
-      "ar": "SPAR في دليل متاجر TilbudJagt."
+      "da": "SPAR er en dagligvarekæde med lokale butikker over hele Danmark. Sortimentet dækker dagligvarer, friskvarer og varer til hverdagen.",
+      "en": "SPAR is a grocery chain with local stores across Denmark. Its assortment covers groceries, fresh food and everyday essentials.",
+      "ar": "SPAR سلسلة بقالة تضم متاجر محلية في أنحاء الدنمارك. تشمل تشكيلتها مواد البقالة والمنتجات الطازجة ومستلزمات الحياة اليومية."
     }
   },
   {
@@ -177,9 +177,9 @@
     "status": "directory",
     "website": "https://superbrugsen.dk/",
     "description": {
-      "da": "Coop-supermarked med dagligvarer og lokale specialiteter.",
-      "en": "SuperBrugsen in the TilbudJagt store directory.",
-      "ar": "SuperBrugsen في دليل متاجر TilbudJagt."
+      "da": "SuperBrugsen er en Coop-supermarkedskæde med lokale butikker og et bredt dagligvaresortiment. Butikkerne har også fokus på lokale varer og specialiteter.",
+      "en": "SuperBrugsen is a Coop supermarket chain with local stores and a broad grocery assortment. The stores also focus on local products and specialties.",
+      "ar": "SuperBrugsen سلسلة سوبرماركت تابعة لـ Coop وتضم متاجر محلية وتشكيلة واسعة من مواد البقالة. تركز متاجرها أيضًا على المنتجات المحلية والتخصصات."
     }
   },
   {
@@ -189,9 +189,9 @@
     "status": "directory",
     "website": "https://kvickly.dk/",
     "description": {
-      "da": "Coop-varehus med dagligvarer, elektronik og boligartikler.",
-      "en": "Kvickly in the TilbudJagt store directory.",
-      "ar": "Kvickly في دليل متاجر TilbudJagt."
+      "da": "Kvickly er et Coop-varehus med dagligvarer, elektronik og boligartikler samlet under ét tag. Kæden passer til større indkøb og hverdagens behov.",
+      "en": "Kvickly is a Coop department-store format bringing groceries, electronics and household goods together under one roof. It suits larger shopping trips and everyday needs.",
+      "ar": "Kvickly متجر شامل تابع لـ Coop يجمع مواد البقالة والإلكترونيات ومستلزمات المنزل تحت سقف واحد. يناسب التسوق الأكبر والاحتياجات اليومية."
     }
   },
   {
@@ -201,9 +201,9 @@
     "status": "directory",
     "website": "https://365discount.dk/",
     "description": {
-      "da": "Coops discountkæde med dagligvarer til lave priser.",
-      "en": "365discount in the TilbudJagt store directory.",
-      "ar": "365discount في دليل متاجر TilbudJagt."
+      "da": "365discount er Coops discountkæde med dagligvarer til lave priser. Sortimentet er enkelt og fokuseret på hverdagens basisvarer.",
+      "en": "365discount is Coop's discount chain offering groceries at low prices. The range is simple and focused on everyday essentials.",
+      "ar": "365discount هي سلسلة متاجر خصم تابعة لـ Coop توفر مواد البقالة بأسعار منخفضة. تشكيلتها بسيطة وتركز على الأساسيات اليومية."
     }
   },
   {
@@ -213,9 +213,9 @@
     "status": "directory",
     "website": "https://www.aldi.dk/",
     "description": {
-      "da": "International discountkæde med dagligvarer i Danmark.",
-      "en": "ALDI in the TilbudJagt store directory.",
-      "ar": "ALDI في دليل متاجر TilbudJagt."
+      "da": "ALDI er en international discountkæde med dagligvarer i Danmark. Sortimentet omfatter basisvarer, friskvarer og udvalgte specialvarer.",
+      "en": "ALDI is an international discount chain with groceries in Denmark. Its assortment includes basics, fresh food and selected specials.",
+      "ar": "ALDI سلسلة خصم دولية توفر مواد البقالة في الدنمارك. تشمل تشكيلتها الأساسيات والمنتجات الطازجة ومنتجات مختارة."
     }
   },
   {
@@ -225,9 +225,9 @@
     "status": "directory",
     "website": "https://www.nemlig.com/",
     "description": {
-      "da": "Dansk online supermarked med dagligvarer leveret til døren.",
-      "en": "nemlig.com in the TilbudJagt store directory.",
-      "ar": "nemlig.com في دليل متاجر TilbudJagt."
+      "da": "nemlig.com er et dansk online supermarked med dagligvarer leveret til døren. Du kan handle dagligvarer, friskvarer og husholdningsartikler online.",
+      "en": "nemlig.com is a Danish online supermarket delivering groceries to your door. You can shop groceries, fresh food and household essentials online.",
+      "ar": "nemlig.com سوبرماركت دنماركي عبر الإنترنت يوصل مواد البقالة إلى باب منزلك. يمكنك التسوق منه لمواد البقالة والمنتجات الطازجة ومستلزمات المنزل."
     }
   },
   {
@@ -237,9 +237,9 @@
     "status": "directory",
     "website": "https://www.motatos.dk/",
     "description": {
-      "da": "Onlinebutik med overskudsvarer og dagligvarer til nedsatte priser.",
-      "en": "Motatos in the TilbudJagt store directory.",
-      "ar": "Motatos في دليل متاجر TilbudJagt."
+      "da": "Motatos er en onlinebutik med overskudsvarer og dagligvarer til nedsatte priser. Formålet er at mindske madspild ved at sælge varer, der ellers ville gå tabt.",
+      "en": "Motatos is an online store selling surplus groceries at reduced prices. Its goal is to reduce food waste by selling products that might otherwise be discarded.",
+      "ar": "Motatos متجر إلكتروني يبيع مواد غذائية فائضة بأسعار مخفضة. يهدف إلى تقليل هدر الطعام عبر بيع منتجات كان يمكن أن تُفقد."
     }
   },
   {

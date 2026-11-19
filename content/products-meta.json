@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-19T21:19:30.714Z",
-  "total": 4017,
+  "updatedAt": "2026-11-19T22:08:17.074312Z",
+  "total": 5326,
   "stores": {
     "proshop": 1500,
     "okologisk-supermarked": 694,
@@ -13,7 +13,9 @@
     "hugcare": 18,
     "brusefilteret": 24,
     "fit-fun": 42,
-    "flicks": 13
+    "flicks": 13,
+    "dyson": 109,
+    "bazta-dk": 1200
   },
   "errors": []
 }
