@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ArrowRight, BookOpen, Tag } from "lucide-react";
-import { GUIDES } from "@/lib/guides";
+import { getPublishedGuides } from "@/lib/guides";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Guides – sådan vurderer du et tilbud",
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
+  const guides = getPublishedGuides();
   return (
     <main>
       <header className="header wrap">
@@ -35,7 +38,7 @@ export default function GuidesPage() {
         </p>
       </section>
       <section className="wrap guides-list">
-        {GUIDES.map((guide) => (
+        {guides.map((guide) => (
           <article className="guide-card" id={guide.slug} key={guide.slug}>
             <span className="eyebrow">{guide.kicker}</span>
             <h2>
