@@ -24,7 +24,8 @@ export default function ProductBrowser({ products, categories }: Props) {
       return (
         p.name.toLowerCase().includes(q) ||
         p.brand.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q)
+        p.category.toLowerCase().includes(q) ||
+        (p.description ?? "").toLowerCase().includes(q)
       );
     });
   }, [products, query, category]);
