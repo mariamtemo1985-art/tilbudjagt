@@ -87,7 +87,7 @@ export default async function StorePage({ params }: PageProps) {
             className={partner ? "partner-cta" : "store-direct-cta"}
             href={href}
             target="_blank"
-            rel={partner ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+            rel={partner ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
           >
             Besøg {store.name} <ArrowRight size={16} />
           </a>
