@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./auth.css";
 import "./submit.css";
+import { Analytics } from "@vercel/analytics/next";
 import AppInstallBanner from "@/components/AppInstallBanner";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="da">
-      <body>{children}<AppInstallBanner /></body>
+      <body>{children}<AppInstallBanner /><Analytics /></body>
     </html>
   );
 }
