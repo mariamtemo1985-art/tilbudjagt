@@ -80,6 +80,7 @@ export default async function StorePage({ params }: PageProps) {
         </div>
 
         <div className="store-detail-actions">
+          <span className="visit-hint">Klik her for at åbne butikkens hjemmeside:</span>
           <a
             className={partner ? "partner-cta" : "store-direct-cta"}
             href={href}
