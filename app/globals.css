@@ -175,8 +175,21 @@
 .product-more{margin:22px auto 0;display:block;padding:10px 22px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;font:inherit;cursor:pointer}
 @media(max-width:520px){.product-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 
-/* Share store */
-.share-store{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:9px 16px;border:1px solid #d1d5db;border-radius:999px;background:#fff;color:inherit;font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s ease,border-color .15s ease}
-.share-store:hover{background:#f3f4f6;border-color:#9ca3af}
-.share-store.copied{border-color:#16a34a;color:#15803d;background:#f0fdf4}
-@media(max-width:520px){.share-store{width:100%;justify-content:center}}
+/* Store groups and supermarket logos */
+.store-group{margin-top:34px}
+.store-group-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:13px}
+.store-group-head h2{font:800 24px Manrope;letter-spacing:-.7px;margin:5px 0 4px;color:var(--ink)}
+.store-group-head p{font-size:11px;line-height:1.6;color:#68776d;margin:0;max-width:680px}
+.store-group-count{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 9px;border-radius:50px;background:#eaf3e7;color:var(--green);font:800 13px Manrope;flex-shrink:0}
+.supermarket-grid{grid-template-columns:repeat(5,1fr)}
+.supermarket-card{border-color:#d8e6d9;background:linear-gradient(180deg,#fbfdf9,#fff)}
+.supermarket-card .store-card-main{align-items:flex-start}
+.store-logo{width:62px;height:62px;border-radius:12px;background:#fff;border:1px solid #e1ebe0;padding:6px;overflow:hidden}
+.store-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.supermarket-card .store-card-body{padding-top:2px}
+.supermarket-card .store-card-body strong{font-size:12px}
+.supermarket-card .status-badge{margin-top:5px}
+.supermarket-card .store-card-info{padding-top:1px}
+.store-group-andre .store-card{background:#fcfcfa}
+@media(max-width:900px){.supermarket-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.supermarket-grid{grid-template-columns:repeat(2,1fr)}.store-group{margin-top:27px}.store-group-head{align-items:flex-start;gap:9px}.store-group-head h2{font-size:20px}.store-group-head p{font-size:10px}.store-group-count{min-width:29px;height:29px;font-size:11px}.store-logo{width:50px;height:50px;padding:4px;border-radius:10px}.supermarket-card .store-card-main{padding:9px;gap:8px}.supermarket-card .store-card-body strong{font-size:11px}}
