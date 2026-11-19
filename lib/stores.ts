@@ -7,7 +7,8 @@ export type StoreCategory =
   | "mode"
   | "skoenhed"
   | "sport"
-  | "stormagasin";
+  | "stormagasin"
+  | "pleje";
 
 export type StoreNetwork = "Awin" | "Adtraction" | "Partner-ads" | "Adservice";
 
@@ -41,6 +42,7 @@ export const STORE_CATEGORIES: Record<
   skoenhed: { da: "Skønhed", en: "Beauty", ar: "جمال" },
   sport: { da: "Sport & fritid", en: "Sports", ar: "رياضة" },
   stormagasin: { da: "Stormagasin", en: "Department store", ar: "متجر شامل" },
+  pleje: { da: "Personlig pleje", en: "Personal care", ar: "العناية الشخصية" },
 };
 
 export const STORES: Store[] = rawStores as Store[];

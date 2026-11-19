@@ -82,6 +82,7 @@ const CATEGORY_TILES: { key: StoreCategory; icon: ReactNode }[] = [
   { key: "skoenhed", icon: <Scissors /> },
   { key: "sport", icon: <Dumbbell /> },
   { key: "stormagasin", icon: <Building2 /> },
+  { key: "pleje", icon: <Sparkles /> },
 ];
 
 const bazta = STORES.find((store) => store.slug === "bazta-dk")!;

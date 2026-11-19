@@ -12,6 +12,7 @@ const CATEGORIES = [
   "skoenhed",
   "sport",
   "stormagasin",
+  "pleje",
 ];
 
 type Body = {
