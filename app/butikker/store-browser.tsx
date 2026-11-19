@@ -189,7 +189,7 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
                       target="_blank"
                       rel={
                         store.status === "partner"
-                          ? "sponsored noopener noreferrer"
+                          ? "sponsored nofollow noopener noreferrer"
                           : "noopener noreferrer"
                       }
                       aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
