@@ -193,5 +193,17 @@
       "en": "Kvickly in the TilbudJagt store directory.",
       "ar": "Kvickly في دليل متاجر TilbudJagt."
     }
+  },
+  {
+    "slug": "365discount",
+    "name": "365discount",
+    "category": "dagligvarer",
+    "status": "directory",
+    "website": "https://365discount.dk/",
+    "description": {
+      "da": "Coops discountkæde med dagligvarer til lave priser.",
+      "en": "365discount in the TilbudJagt store directory.",
+      "ar": "365discount في دليل متاجر TilbudJagt."
+    }
   }
 ]
