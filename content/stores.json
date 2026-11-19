@@ -488,14 +488,16 @@
     "slug": "dyson",
     "name": "Dyson",
     "category": "hjem",
-    "status": "directory",
+    "status": "partner",
     "website": "https://www.dyson.dk",
     "description": {
       "da": "Støvsugere, luftrensere og hårpleje fra Dyson.",
       "en": "Vacuum cleaners, air purifiers and hair care from Dyson.",
       "ar": "مكانس ومنقيات هواء وأدوات شعر من Dyson."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-19T21:32:39.047100+00:00",
+    "network": "Awin",
+    "affiliateUrl": "https://www.awin1.com/cread.php?awinmid=25185&awinaffid=3155813&ued=https%3A%2F%2Fwww.dyson.dk%2F"
   },
   {
     "slug": "emp",
