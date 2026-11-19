@@ -8,6 +8,8 @@ import {
   Laptop, Shirt, Sofa, Scissors, Dumbbell, Building2,
 } from "lucide-react";
 import { STORE_CATEGORIES, STORES, type StoreCategory } from "@/lib/stores";
+import AdSlot from "@/components/AdSlot";
+import SponsoredBanner from "@/components/SponsoredBanner";
 
 type Language = "da" | "en" | "ar";
 
@@ -193,6 +195,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SponsoredBanner />
+      <div className="wrap">
+        <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME} />
+      </div>
+
       <section className="wrap store-section" id="stores">
         <div className="section-title">
           <div>
@@ -331,7 +338,7 @@ export default function HomePage() {
           <p>{t.footer}</p>
           <nav aria-label="Footer links">
             <a href="/produkter">Produkter</a> · <a href="/butikker">Butikker</a> · <a href="/guides">Guides</a> · <a href="/about.html">Om os</a> ·{" "}
-            <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a> · <a href="/vilkaar.html">Vilkår</a> · <a href="/cookies.html">Cookies</a>
+            <a href="/annoncering">Annoncering</a> · <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a> · <a href="/vilkaar.html">Vilkår</a> · <a href="/cookies.html">Cookies</a>
           </nav>
           <span>© {new Date().getFullYear()} TilbudJagt.dk</span>
         </div>
