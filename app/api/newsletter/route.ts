@@ -1,5 +1,6 @@
 import { createHmac, timingSafeEqual } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
+import { clientIp, rateLimit, tooManyRequests } from "@/lib/rate-limit";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const secret = () => process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.RESEND_API_KEY || "";
@@ -37,8 +38,13 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const limited = rateLimit(`newsletter:${clientIp(request)}`, 5, 10 * 60 * 1000);
+  if (!limited.ok) return tooManyRequests(limited.retryAfter);
   try {
-    const body = await request.json(); const email = String(body?.email || "").trim().toLowerCase();
+    if (Number(request.headers.get("content-length") || 0) > 5_000) {
+      return NextResponse.json({ error: "Invalid request." }, { status: 413 });
+    }
+    const body = await request.json(); const email = String(body?.email || "").trim().toLowerCase().slice(0, 254);
     if (!emailPattern.test(email) || body?.consent !== true) return NextResponse.json({ error: "Valid email and consent are required." }, { status: 400 });
     const resend = process.env.RESEND_API_KEY; const from = process.env.RESEND_FROM_EMAIL;
     if (!resend || !from) return NextResponse.json({ error: "Email service is not configured yet." }, { status: 503 });
