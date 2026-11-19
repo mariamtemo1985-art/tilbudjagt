@@ -1,0 +1,178 @@
+name: Security & DNS Monitor
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check website, TLS and DNS
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const tls = require('node:tls');
+          const failures = [];
+          const rows = [];
+
+          const add = (name, ok, detail) => {
+            rows.push(`| ${ok ? '✅' : '❌'} | ${name} | ${detail} |`);
+            if (!ok) failures.push(`${name}: ${detail}`);
+          };
+
+          const get = async (url) => {
+            const started = Date.now();
+            const res = await fetch(url, {
+              redirect: 'follow',
+              signal: AbortSignal.timeout(20000),
+              headers: { 'user-agent': 'TilbudJagt-Monitor/1.0' },
+            });
+            return { res, ms: Date.now() - started };
+          };
+
+          const doh = async (name, type) => {
+            const res = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(name)}&type=${type}`, {
+              signal: AbortSignal.timeout(15000),
+            });
+            const json = await res.json();
+            return (json.Answer || []).map((answer) => answer.data || '');
+          };
+
+          (async () => {
+            for (const path of ['/', '/butikker', '/guides', '/privacy.html', '/cookies.html', '/robots.txt', '/sitemap.xml']) {
+              try {
+                const { res, ms } = await get(`https://www.tilbudjagt.dk${path}`);
+                add(`Page ${path}`, res.status === 200, `HTTP ${res.status}, ${ms} ms`);
+              } catch (error) {
+                add(`Page ${path}`, false, String(error.message || error));
+              }
+            }
+
+            try {
+              const { res } = await get('https://www.tilbudjagt.dk/');
+              const expected = [
+                ['strict-transport-security', 'max-age='],
+                ['content-security-policy', 'default-src'],
+                ['x-content-type-options', 'nosniff'],
+                ['x-frame-options', 'sameorigin'],
+                ['referrer-policy', 'strict-origin'],
+                ['permissions-policy', 'camera=()'],
+              ];
+              for (const [header, needle] of expected) {
+                const value = res.headers.get(header) || '';
+                add(`Header ${header}`, value.toLowerCase().includes(needle), value ? value.slice(0, 120) : 'missing');
+              }
+            } catch (error) {
+              add('Security headers', false, String(error.message || error));
+            }
+
+            await new Promise((resolve) => {
+              const socket = tls.connect(
+                { host: 'www.tilbudjagt.dk', servername: 'www.tilbudjagt.dk', port: 443, timeout: 15000 },
+                () => {
+                  const cert = socket.getPeerCertificate();
+                  const days = Math.floor((new Date(cert.valid_to).getTime() - Date.now()) / 86400000);
+                  add('TLS certificate', days > 14, `expires ${cert.valid_to} (${days} days)`);
+                  socket.end();
+                  resolve();
+                },
+              );
+              socket.on('error', (error) => {
+                add('TLS certificate', false, error.message);
+                resolve();
+              });
+              socket.on('timeout', () => {
+                add('TLS certificate', false, 'timeout');
+                socket.destroy();
+                resolve();
+              });
+            });
+
+            try {
+              const mx = await doh('tilbudjagt.dk', 'MX');
+              add('MX record', mx.some((value) => value.includes('mx.simply.com')), mx.join(', ') || 'missing');
+            } catch (error) {
+              add('MX record', false, String(error.message || error));
+            }
+
+            try {
+              const txt = (await doh('tilbudjagt.dk', 'TXT')).join(' ');
+              add('SPF root', txt.includes('include:spf.simply.com') && txt.includes('-all'), txt.slice(0, 160));
+            } catch (error) {
+              add('SPF root', false, String(error.message || error));
+            }
+
+            try {
+              const txt = (await doh('_dmarc.tilbudjagt.dk', 'TXT')).join(' ');
+              add('DMARC policy', /p=(reject|quarantine)/i.test(txt), txt.slice(0, 160));
+            } catch (error) {
+              add('DMARC policy', false, String(error.message || error));
+            }
+
+            try {
+              const txt = (await doh('send.tilbudjagt.dk', 'TXT')).join(' ');
+              add('SPF send (Resend)', txt.includes('amazonses.com'), txt.slice(0, 160));
+            } catch (error) {
+              add('SPF send (Resend)', false, String(error.message || error));
+            }
+
+            try {
+              const txt = (await doh('resend._domainkey.send.tilbudjagt.dk', 'TXT')).join(' ');
+              add('DKIM send (Resend)', txt.includes('p='), `${txt.slice(0, 80)}...`);
+            } catch (error) {
+              add('DKIM send (Resend)', false, String(error.message || error));
+            }
+
+            try {
+              const { res } = await get('https://www.tilbudjagt.dk/sitemap.xml');
+              const body = await res.text();
+              add('Sitemap content', body.includes('/butikker'), `${body.length} bytes`);
+            } catch (error) {
+              add('Sitemap content', false, String(error.message || error));
+            }
+
+            const report = `## Security & DNS report\n\nRun: ${new Date().toISOString()}\n\n| Status | Check | Detail |\n|---|---|---|\n${rows.join('\n')}\n`;
+            fs.writeFileSync('report.md', report);
+            console.log(report);
+            if (failures.length) {
+              console.error('FAILURES:', failures.join(' | '));
+              process.exit(1);
+            }
+          })().catch((error) => {
+            console.error(error);
+            fs.writeFileSync('report.md', `## Security & DNS report\n\nMonitor crashed: ${error.message}\n`);
+            process.exit(1);
+          });
+          NODE
+
+      - name: Open or update alert issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="[Security Monitor] Website or DNS check failed"
+          [ -f report.md ] || echo "Monitor did not produce a report." > report.md
+          NUM=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --repo "$GITHUB_REPOSITORY" --body-file report.md
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body-file report.md
+          fi
+
+      - name: Close alert issue after recovery
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="[Security Monitor] Website or DNS check failed"
+          NUM=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --repo "$GITHUB_REPOSITORY" --body "✅ All checks passed again at $(date -u +%Y-%m-%dT%H:%M:%SZ). Closing this alert."
+            gh issue close "$NUM" --repo "$GITHUB_REPOSITORY"
+          fi
