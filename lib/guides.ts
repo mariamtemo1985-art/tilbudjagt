@@ -1,0 +1,219 @@
+export type GuideSection = { heading: string; paragraphs: string[] };
+
+export type Guide = {
+  slug: string;
+  kicker: string;
+  title: string;
+  description: string;
+  lead: string;
+  updated: string;
+  sections: GuideSection[];
+};
+
+export const GUIDES: Guide[] = [
+  {
+    slug: "gennemskue-et-godt-tilbud",
+    kicker: "Forbrug",
+    title: "Sådan gennemskuer du et godt tilbud",
+    description:
+      "Fire enkle spørgsmål hjælper dig med at vurdere, om et nedsat prisskilt er en reel besparelse, eller om du betaler for meget.",
+    lead:
+      "Et nedsat prisskilt er ikke automatisk en besparelse. Med fire spørgsmål kan du hurtigt afgøre, om tilbuddet er reelt.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "1. Hvad har varen kostet tidligere?",
+        paragraphs: [
+          "Butikker viser ofte en førpris, men den er kun nyttig, hvis den faktisk har været brugt. Tænk over, om du selv har set varen til en lignende pris inden for de seneste uger. Hvis prisen er sat ned fra et niveau, der aldrig rigtigt har været gældende, er besparelsen mindre, end skiltet antyder.",
+          "Skriv gerne prisen ned, når du ser en vare, du overvejer at købe senere. Det giver dig et personligt referencepunkt, som er mere retvisende end et kortvarigt kampagneskilt.",
+        ],
+      },
+      {
+        heading: "2. Hvad er enhedsprisen?",
+        paragraphs: [
+          "Pakker med forskellige størrelser kan se ens ud på hylden, men prisen pr. kilo, liter eller styk kan variere meget. Enhedsprisen er den mest retfærdige måde at sammenligne to produkter på, især i dagligvarebutikker.",
+          "Vær også opmærksom på mængderabat, der lokker dig til at købe mere, end du kan nå at bruge. En stor pakke er kun en besparelse, hvis indholdet bliver brugt.",
+        ],
+      },
+      {
+        heading: "3. Er der betingelser?",
+        paragraphs: [
+          "Nogle tilbud kræver medlemskab, app, kupon eller køb af et bestemt antal varer. Læs de små linjer, før du tager stilling til prisen. Det er også værd at tjekke, om varen er på lager i den butik, du regner med at besøge.",
+          "Online tilbud kan have begrænset lagerbeholdning og ændrede leveringsvilkår. Kontrollér derfor altid den endelige pris ved betaling, inklusive fragt og eventuelle gebyrer.",
+        ],
+      },
+      {
+        heading: "4. Har du faktisk brug for varen?",
+        paragraphs: [
+          "Det mest effektive filter er dit eget behov. Et tilbud, du ikke havde brug for, er aldrig en besparelse – uanset hvor stort et procenterne ser ud. Overvej, hvor ofte du vil bruge varen, og om den erstatter noget, du allerede har.",
+          "Hvis du er i tvivl, så vent en dag. Mange impulskøb føles mindre oplagte, når den første begejstring har lagt sig.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "sammenlign-dagligvarepriser",
+    kicker: "Dagligvarer",
+    title: "Sådan sammenligner du dagligvarepriser uden at blive snydt",
+    description:
+      "Lær at sammenligne kilopriser, spotte mængderabat og planlægge ugens indkøb, så tilbudsaviserne bliver en reel besparelse.",
+    lead:
+      "Dagligvarer fylder mest i de fleste husholdningers budget. Med en fast metode kan du bruge tilbudsaviserne uden at købe for meget.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "Start med en madplan",
+        paragraphs: [
+          "Kig i køleskab og fryser, før du åbner tilbudsaviserne. Byg ugens måltider op omkring det, du allerede har, og brug tilbuddene til at fylde hullerne ud. På den måde undgår du at købe varer, der ender med at blive smidt ud.",
+          "En enkel madplan behøver ikke være detaljeret. Det er nok at beslutte, hvilke dage der skal være varme retter, og hvad der skal bruges til frokost og mellemmåltider.",
+        ],
+      },
+      {
+        heading: "Sammenlign kilopriser, ikke pakningspriser",
+        paragraphs: [
+          "Butikkernes hylder viser ofte prisen pr. kilo eller liter i lille skrift. Brug den, når du sammenligner mærker og størrelser. To pakker kan koste næsten det samme, men indeholde meget forskellige mængder.",
+          "Ved frugt og grønt kan udbyttet variere. En billig pose gulerødder med dårlig kvalitet kan ende med at være dyrere end en lidt dyrere pose, hvor mere af indholdet kan bruges.",
+        ],
+      },
+      {
+        heading: "Pas på mængderabat",
+        paragraphs: [
+          "3-for-2 og lignende tilbud er kun gode, hvis varen har lang holdbarhed eller kan fryses. Tjek holdbarhedsdatoen, før du tager den store pakke med. Konserves, tørvarer og frysevarer er ofte sikre køb, mens friske mejeriprodukter kræver mere planlægning.",
+        ],
+      },
+      {
+        heading: "Handl med en liste",
+        paragraphs: [
+          "En fast indkøbsliste mindsker impulskøb markant. Skriv listen ud fra madplanen, og hold dig til den. Hvis du handler ind efter arbejde, når du er sulten, er risikoen for ekstra køb størst.",
+          "Det kan også betale sig at vælge én butik til de faste basisvarer og kun tage de ekstra ture til andre butikker, når besparelsen tydeligt opvejer transporttiden.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "elektroniktilbud-tjekliste",
+    kicker: "Elektronik",
+    title: "Elektroniktilbud: tjek modelnummer, garanti og fragt",
+    description:
+      "Elektronik har store prisforskelle og hyppige kampagner. En kort tjekliste hjælper dig med at undgå at købe en ældre model til ny pris.",
+    lead:
+      "Elektronik er et af de områder, hvor tilbud oftest ser bedre ud, end de er. Tjek modelnummer, garanti og samlet pris, før du køber.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "Find det præcise modelnummer",
+        paragraphs: [
+          "Producenternes navne er ofte ens på tværs af årgange. Skriv modelnummeret ned fra produktets side og søg på det, før du sammenligner priser. Så undgår du at sammenligne en ny model med en ældre udgave, der blot hedder næsten det samme.",
+          "Modelnummeret står typisk på emballagen, i produktbeskrivelsen eller på et typeskilt bag på apparatet.",
+        ],
+      },
+      {
+        heading: "Sammenlign den samlede pris",
+        paragraphs: [
+          "Levering, installation og eventuelle gebyrer kan ændre regnestykket. Skriv den samlede pris ned for hver forhandler, inklusive fragt, før du beslutter dig. En billigere vare kan blive dyrere, hvis leveringen koster ekstra.",
+          "Ved større hvidevarer bør du også tjekke, om den gamle maskine skal afhentes, og om det koster ekstra.",
+        ],
+      },
+      {
+        heading: "Kontrollér garanti og reklamationsret",
+        paragraphs: [
+          "Når du køber hos en dansk forhandler, gælder dansk reklamationsret. Ved køb fra udenlandske webshops kan reglerne være anderledes, og returprocessen kan være dyrere. Læs vilkårene, før du betaler.",
+          "Gem ordrebekræftelse og kvittering, så du kan dokumentere købet, hvis der opstår en fejl.",
+        ],
+      },
+      {
+        heading: "Se på drift og energiforbrug",
+        paragraphs: [
+          "For hvidevarer kan energimærket have større betydning for økonomien end en rabat på få hundrede kroner. Sammenlign årligt energiforbrug, og overvej, hvor længe du regner med at beholde apparatet.",
+          "Støjniveau er også værd at tjekke, især hvis maskinen skal stå tæt på køkken eller stue.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "affiliate-links-forklaret",
+    kicker: "Om TilbudJagt",
+    title: "Affiliate-links forklaret: sådan tjener TilbudJagt penge",
+    description:
+      "Hvad er et affiliate-link, hvordan fungerer det, og hvad betyder det for din pris? Få en enkel forklaring på, hvordan TilbudJagt finansieres.",
+    lead:
+      "Nogle af linkene på TilbudJagt er affiliate-links. Her forklarer vi, hvad det betyder – og hvorfor din pris ikke ændrer sig.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "Hvad er et affiliate-link?",
+        paragraphs: [
+          "Et affiliate-link er et link til en butik, som indeholder en sporingskode. Hvis du klikker på linket og køber en vare, kan butikken registrere, at købet kom fra TilbudJagt. Butikken betaler så en lille provision til os.",
+          "Provisionen betales af butikken og lægges ikke oveni den pris, du ser hos butikken. Du betaler det samme, som hvis du var gået direkte til butikkens hjemmeside.",
+        ],
+      },
+      {
+        heading: "Hvorfor mærker vi linkene?",
+        paragraphs: [
+          "Danske regler kræver, at reklame og kommercielle links tydeligt fremgår. Derfor mærker vi affiliate-links med «Reklamelink» eller en tilsvarende forklaring, så du altid ved, at vi kan modtage provision.",
+          "Links uden provision er mærket som «Direkte link». De fører til butikkens egen hjemmeside uden sporingskode og uden betaling til os.",
+        ],
+      },
+      {
+        heading: "Påvirker det vores anbefalinger?",
+        paragraphs: [
+          "Vi bestræber os på at vise butikker og tilbud, uanset om der er en partneraftale. En butik kan være med i vores oversigt som direkte link, selv om vi ikke har en aftale med den.",
+          "Hvis vi en dag viser betalte placeringer eller sponsorerede kampagner, vil de blive markeret særskilt. Vores mål er, at du kan se forskel på redaktionelt indhold og betalt indhold.",
+        ],
+      },
+      {
+        heading: "Hvordan kan du støtte os?",
+        paragraphs: [
+          "Den nemmeste måde at støtte TilbudJagt på er at bruge vores links, når du alligevel skal handle. Det koster ikke ekstra, og det hjælper os med at holde siden gratis.",
+          "Hvis du opdager et link, der ikke fungerer, eller en pris der er forkert, så skriv til os. Det hjælper både dig og andre brugere.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "tilbudsaviser-uden-overforbrug",
+    kicker: "Hverdagen",
+    title: "Brug tilbudsaviser uden at købe for meget",
+    description:
+      "Tilbudsaviser kan spare dig penge, men de kan også lokke dig til overforbrug. Fem vaner holder indkøbene på sporet.",
+    lead:
+      "Tilbudsaviser er lavet for at få dig til at købe mere. Med fem enkle vaner kan du få besparelserne uden at fylde skabet med ting, du ikke bruger.",
+    updated: "19. november 2026",
+    sections: [
+      {
+        heading: "Læs avisen med en liste i hånden",
+        paragraphs: [
+          "Tag udgangspunkt i det, du faktisk mangler. Skriv listen ned, før du åbner tilbudsaviserne, og brug kun tilbuddene til at supplere. Så bliver avisen et værktøj i stedet for en indkøbsseddel.",
+        ],
+      },
+      {
+        heading: "Sæt et loft for tilbudskøb",
+        paragraphs: [
+          "Beslut på forhånd, hvor mange ekstra varer du må købe ud over listen. Et fast loft gør det lettere at sige nej til det tredje eller fjerde gode tilbud, som du ikke havde planlagt.",
+        ],
+      },
+      {
+        heading: "Tjek holdbarhed og opbevaring",
+        paragraphs: [
+          "Et godt tilbud er kun godt, hvis varen kan bruges inden for holdbarheden. Tjek datoen, og overvej, om du har plads i fryser eller skab. Store mængder af friske varer ender ofte med at blive smidt ud.",
+        ],
+      },
+      {
+        heading: "Sammenlign med din egen erfaring",
+        paragraphs: [
+          "Du kender dine egne indkøbsvaner bedre end nogen app. Hvis du ved, at en bestemt vare sjældent bliver spist, så spring tilbuddet over – uanset hvor stor rabatten ser ud.",
+        ],
+      },
+      {
+        heading: "Brug tilbud som inspiration, ikke som krav",
+        paragraphs: [
+          "Det er helt i orden at gå glip af et tilbud. Der kommer nye næste uge. At købe noget, du ikke havde brug for, er dyrere end at vente på det næste reelle behov.",
+        ],
+      },
+    ],
+  },
+];
+
+export function getGuide(slug: string): Guide | undefined {
+  return GUIDES.find((guide) => guide.slug === slug);
+}
