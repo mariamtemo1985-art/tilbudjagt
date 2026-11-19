@@ -1,4 +1,6 @@
+import { createHash, timingSafeEqual } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
+import { clientIp, rateLimit, tooManyRequests } from "@/lib/rate-limit";
 
 const OWNER = "mariamtemo1985-art";
 const REPO = "tilbudjagt";
@@ -52,11 +54,22 @@ function httpsUrl(value: string): string | null {
   }
 }
 
+function safeEqual(a: string, b: string): boolean {
+  const left = createHash("sha256").update(a).digest();
+  const right = createHash("sha256").update(b).digest();
+  return timingSafeEqual(left, right);
+}
+
 export async function POST(request: NextRequest) {
+  const limited = rateLimit(`admin:${clientIp(request)}`, 10, 10 * 60 * 1000);
+  if (!limited.ok) return tooManyRequests(limited.retryAfter);
+  if (Number(request.headers.get("content-length") || 0) > 10_000) {
+    return NextResponse.json({ error: "Forespørgslen er for stor." }, { status: 413 });
+  }
   const expectedPassword = process.env.ADMIN_PASSWORD ?? "";
   const token = process.env.GITHUB_ADMIN_TOKEN ?? "";
   const suppliedPassword = request.headers.get("x-admin-password") ?? "";
-  if (!expectedPassword || suppliedPassword !== expectedPassword) {
+  if (!expectedPassword || !safeEqual(suppliedPassword, expectedPassword)) {
     return NextResponse.json({ error: "Forkert adgangskode." }, { status: 401 });
   }
   if (!token) {
