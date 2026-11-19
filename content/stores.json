@@ -549,5 +549,151 @@
       "ar": "متجر دنماركي للكمبيوتر والإلكترونيات والملحقات."
     },
     "checkedAt": "2026-11-19T07:44:26.804548+00:00"
+  },
+  {
+    "slug": "flicks",
+    "name": "Flicks",
+    "category": "elektronik",
+    "status": "partner",
+    "website": "https://flicks.dk/",
+    "description": {
+      "da": "Dansk mærke af skærmløse digitale retro-kameraer til fest, rejse og hverdag.",
+      "en": "Danish brand of screenless digital retro cameras for parties, travel and everyday use.",
+      "ar": "علامة دنماركية لكاميرات رقمية ريترو بدون شاشة للمناسبات والسفر والاستخدام اليومي."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116308"
+  },
+  {
+    "slug": "offi",
+    "name": "Offi",
+    "category": "elektronik",
+    "status": "partner",
+    "website": "https://offi.dk",
+    "description": {
+      "da": "Dansk webshop med kontorartikler, printerblæk og tonere.",
+      "en": "Danish webshop with office supplies, printer ink and toner.",
+      "ar": "متجر دنماركي للمستلزمات المكتبية وحبر الطابعات وأحبار التونر."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116981"
+  },
+  {
+    "slug": "batteribyen",
+    "name": "Batteribyen.dk",
+    "category": "elektronik",
+    "status": "partner",
+    "website": "https://www.batteribyen.dk",
+    "description": {
+      "da": "Dansk webshop med batterier, ladere, elværktøj og havemaskiner.",
+      "en": "Danish webshop with batteries, chargers, power tools and garden machines.",
+      "ar": "متجر دنماركي للبطاريات والشواحن وأدوات الكهرباء وآلات الحديقة."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=3252"
+  },
+  {
+    "slug": "din-printer",
+    "name": "Din printer",
+    "category": "elektronik",
+    "status": "partner",
+    "website": "https://dinprinter.dk",
+    "description": {
+      "da": "Dansk webshop med originale og kompatible printerpatroner samt kontorartikler.",
+      "en": "Danish webshop with original and compatible printer cartridges and office supplies.",
+      "ar": "متجر دنماركي لخراطيش الطابعات الأصلية والمتوافقة والمستلزمات المكتبية."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=114779"
+  },
+  {
+    "slug": "brusefilteret",
+    "name": "Brusefilteret.dk",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://brusefilteret.dk/",
+    "description": {
+      "da": "Dansk webshop med brusehoveder og filtre til badet.",
+      "en": "Danish webshop with shower heads and filters for the bathroom.",
+      "ar": "متجر دنماركي لرؤوس الدش والفلاتر الخاصة بالحمام."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=101315"
+  },
+  {
+    "slug": "care-copenhagen",
+    "name": "Care Copenhagen",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://www.carecopenhagen.dk/",
+    "description": {
+      "da": "Skandinavisk hårstylingbrand med produkter til hårpleje og styling.",
+      "en": "Scandinavian hair styling brand with hair care and styling products.",
+      "ar": "علامة إسكندنافية لتصفيف الشعر مع منتجات العناية والتصفيف."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117113"
+  },
+  {
+    "slug": "hugcare",
+    "name": "Hugcare",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://hugcare.dk/",
+    "description": {
+      "da": "Dansk brand med velvære- og restitutionsprodukter til hjemmet.",
+      "en": "Danish brand with wellness and recovery products for the home.",
+      "ar": "علامة دنماركية لمنتجات العافية والاستشفاء المنزلية."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117156"
+  },
+  {
+    "slug": "beauty4me",
+    "name": "Beauty4Me",
+    "category": "skoenhed",
+    "status": "partner",
+    "website": "https://beauty4me.dk",
+    "description": {
+      "da": "Dansk webshop med skønhedsprodukter til kvinder.",
+      "en": "Danish webshop with beauty products for women.",
+      "ar": "متجر دنماركي لمنتجات التجميل للنساء."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=111618"
+  },
+  {
+    "slug": "billige-teste",
+    "name": "Billige-Teste.dk",
+    "category": "pleje",
+    "status": "directory",
+    "website": "https://www.billige-teste.dk/",
+    "description": {
+      "da": "Dansk webshop med graviditetstest, ægløsningstest og fertilitetstest.",
+      "en": "Danish webshop with pregnancy tests, ovulation tests and fertility tests.",
+      "ar": "متجر دنماركي لاختبارات الحمل والتبويض والخصوبة."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00"
+  },
+  {
+    "slug": "fit-fun",
+    "name": "Fit & Fun",
+    "category": "pleje",
+    "status": "directory",
+    "website": "https://www.fit-fun.dk/",
+    "description": {
+      "da": "Dansk webshop med saunatæpper, wellness- og restitutionsudstyr.",
+      "en": "Danish webshop with sauna blankets, wellness and recovery equipment.",
+      "ar": "متجر دنماركي لأغطية الساونا ومعدات العافية والاستشفاء."
+    },
+    "checkedAt": "2026-11-19T13:23:50.943767+00:00"
   }
 ]
