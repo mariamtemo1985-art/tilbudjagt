@@ -145,5 +145,17 @@
       "en": "Normal in the TilbudJagt store directory.",
       "ar": "Normal في دليل متاجر TilbudJagt."
     }
+  },
+  {
+    "slug": "meny",
+    "name": "Meny",
+    "category": "dagligvarer",
+    "status": "directory",
+    "website": "https://meny.dk/",
+    "description": {
+      "da": "Dansk supermarkedskæde med dagligvarer, friskvarer og online indkøb.",
+      "en": "Meny in the TilbudJagt store directory.",
+      "ar": "Meny في دليل متاجر TilbudJagt."
+    }
   }
 ]
