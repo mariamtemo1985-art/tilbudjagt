@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookOpen, Tag } from "lucide-react";
 import { getGuide, getPublishedGuides } from "@/lib/guides";
+import AdSlot from "@/components/AdSlot";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -85,6 +86,8 @@ export default async function GuidePage({ params }: PageProps) {
           </section>
         ))}
 
+        <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_GUIDES} />
+
         <p className="guide-disclaimer">
           Guiden er generel forbrugerinformation og ikke personlig rådgivning.
           Kontroller altid pris, lager og vilkår hos butikken, før du køber.
@@ -109,7 +112,8 @@ export default async function GuidePage({ params }: PageProps) {
           <p>Guiderne er generel forbrugerinformation, ikke personlig rådgivning.</p>
           <nav aria-label="Footer links">
             <a href="/butikker">Butikker</a> · <a href="/about.html">Om os</a> ·{" "}
-            <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a>
+            <a href="/annoncering">Annoncering</a> · <a href="/contact.html">Kontakt</a> ·{" "}
+            <a href="/privacy.html">Privatlivspolitik</a>
           </nav>
         </div>
       </footer>
