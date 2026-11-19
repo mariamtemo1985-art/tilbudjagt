@@ -215,7 +215,7 @@ export default function HomePage() {
                 className="store-card-main"
                 href={store.status === "partner" ? store.affiliateUrl! : store.website}
                 target="_blank"
-                rel={store.status === "partner" ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+                rel={store.status === "partner" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
                 aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
               >
                 <span className="store-avatar" aria-hidden="true">{store.name.slice(0, 1)}</span>
@@ -266,7 +266,7 @@ export default function HomePage() {
             className="partner-cta"
             href={bazta.affiliateUrl}
             target="_blank"
-            rel="sponsored noopener noreferrer"
+            rel="sponsored nofollow noopener noreferrer"
           >
             {t.partnerCta} <ArrowRight size={16} />
           </a>
