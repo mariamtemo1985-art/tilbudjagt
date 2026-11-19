@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Store as StoreIcon, Tag } from "lucide-react";
+import ShareStoreButton from "@/components/ShareStoreButton";
 import { STORE_CATEGORIES, STORES, getStore, isAffiliateLink } from "@/lib/stores";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -89,6 +90,10 @@ export default async function StorePage({ params }: PageProps) {
           >
             Besøg {store.name} <ArrowRight size={16} />
           </a>
+          <ShareStoreButton
+            name={store.name}
+            url={`https://www.tilbudjagt.dk/butikker/${store.slug}`}
+          />
           {partner ? (
             <p className="partner-disclosure">
               Reklamelink: TilbudJagt kan modtage provision, hvis du klikker på
