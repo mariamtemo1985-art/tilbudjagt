@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Tag } from "lucide-react";
 import { STORES } from "@/lib/stores";
 import StoreBrowser from "./store-browser";
+import AdSlot from "@/components/AdSlot";
+import SponsoredBanner from "@/components/SponsoredBanner";
 
 export const metadata: Metadata = {
   title: "Butikker – find danske butikker",
@@ -32,6 +34,10 @@ export default function StoresPage() {
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>
       </header>
+      <SponsoredBanner />
+      <div className="wrap">
+        <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_STORES} />
+      </div>
       <StoreBrowser stores={STORES} />
       <footer className="footer">
         <div className="wrap footer-inner">
@@ -49,7 +55,8 @@ export default function StoresPage() {
             Kontroller altid pris og vilkår hos butikken.
           </p>
           <nav aria-label="Footer links">
-            <a href="/about.html">Om os</a> · <a href="/contact.html">Kontakt</a> ·{" "}
+            <a href="/about.html">Om os</a> · <a href="/annoncering">Annoncering</a> ·{" "}
+            <a href="/contact.html">Kontakt</a> ·{" "}
             <a href="/privacy.html">Privatlivspolitik</a>
           </nav>
         </div>
@@ -57,4 +64,3 @@ export default function StoresPage() {
     </main>
   );
 }
-
