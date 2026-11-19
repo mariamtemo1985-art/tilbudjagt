@@ -394,12 +394,13 @@
     "name": "Løvbjerg",
     "category": "dagligvarer",
     "status": "directory",
-    "website": "https://www.loevbjerg.dk",
+    "website": "https://www.lovbjerg.dk",
     "description": {
       "da": "Dansk supermarkedskæde med dagligvarer og tilbudsaviser.",
       "en": "Løvbjerg in the TilbudJagt store directory.",
       "ar": "Løvbjerg في دليل متاجر TilbudJagt."
-    }
+    },
+    "checkedAt": "2026-11-19T18:41:48Z"
   },
   {
     "slug": "okologisk-supermarked",
@@ -449,13 +450,13 @@
     "name": "Holdit",
     "category": "elektronik",
     "status": "directory",
-    "website": "https://holdit.dk",
+    "website": "https://holdit.com/dk",
     "description": {
       "da": "Dansk elektronikbutik med mobiler, tilbehør og smartudstyr.",
       "en": "Danish electronics shop with phones, accessories and smart devices.",
       "ar": "متجر إلكترونيات دنماركي للهواتف والإكسسوارات والأجهزة الذكية."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-19T18:41:48Z"
   },
   {
     "slug": "vivara",
@@ -514,13 +515,13 @@
     "name": "Lounge by Zalando",
     "category": "mode",
     "status": "directory",
-    "website": "https://www.loungebyzalando.dk",
+    "website": "https://www.zalando-lounge.dk/",
     "description": {
       "da": "Outlet med mærkevarer til reducerede priser.",
       "en": "Outlet with branded fashion at reduced prices.",
       "ar": "أوتلت أزياء بماركات عالمية بأسعار مخفضة."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-19T18:41:48Z"
   },
   {
     "slug": "samsung",
