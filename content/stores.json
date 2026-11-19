@@ -133,5 +133,17 @@
       "en": "Sports store with clothing, shoes and equipment.",
       "ar": "متجر رياضي للملابس والأحذية والمعدات."
     }
+  },
+  {
+    "slug": "normal",
+    "name": "Normal",
+    "category": "pleje",
+    "status": "directory",
+    "website": "https://www.normal.dk/",
+    "description": {
+      "da": "Normal er en dansk butikskæde med fast lavpris på rengøringsmidler, kosmetik og personlig pleje.",
+      "en": "Normal in the TilbudJagt store directory.",
+      "ar": "Normal في دليل متاجر TilbudJagt."
+    }
   }
 ]
