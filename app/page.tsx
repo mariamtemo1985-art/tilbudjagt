@@ -139,15 +139,18 @@ const featuredStores = STORES.slice(0, 8);
 export default function HomePage() {
   const router = useRouter();
   const [lang, setLang] = useState<Language>("da");
+  const [langReady, setLangReady] = useState(false);
   useEffect(() => {
     const saved = window.localStorage.getItem(LANG_KEY);
     if (saved === "da" || saved === "en" || saved === "ar") setLang(saved);
+    setLangReady(true);
   }, []);
   useEffect(() => {
+    if (!langReady) return;
     window.localStorage.setItem(LANG_KEY, lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang]);
+  }, [lang, langReady]);
   const [query, setQuery] = useState("");
   const [vipOpen, setVipOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
