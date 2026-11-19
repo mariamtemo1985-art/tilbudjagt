@@ -500,6 +500,47 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+  {
+    slug: "black-friday-2026-danmark",
+    kicker: "Black Friday",
+    title: "Black Friday 2026 i Danmark: find de reelle tilbud",
+    description:
+      "En praktisk tjekliste til Black Friday 2026 i Danmark: planlæg købene, sammenlign priser og undgå falske førpriser.",
+    lead:
+      "Black Friday er tæt på. Brug en kort plan, så du kan se forskel på et reelt tilbud og et skilt, der bare skaber travlhed.",
+    updated: "20. november 2026",
+    publishAt: "2026-11-20",
+    sections: [
+      {
+        heading: "1. Skriv listen, før du åbner tilbudsaviserne",
+        paragraphs: [
+          "Start med at beslutte, hvad du faktisk mangler. Skriv en liste opdelt i nødvendige køb, ønsker og ting, du godt kan vente med. På den måde bliver det lettere at ignorere et godt tilbud på en vare, som du ikke havde brug for.",
+          "Tjek også, hvad du allerede har derhjemme. Det gælder især husholdningsartikler, elektroniktilbehør og julegaver, hvor et ekstra køb hurtigt bliver en udgift i stedet for en besparelse.",
+        ],
+      },
+      {
+        heading: "2. Sammenlign førpris og enhedspris",
+        paragraphs: [
+          "Et nedsat prisskilt er kun nyttigt, hvis du kan sammenligne det med en pris, der faktisk har været gældende. Se efter varens normale pris, og tjek om rabatten gælder hele sortimentet eller kun udvalgte modeller.",
+          "Sammenlign også enhedsprisen pr. kilo, liter eller styk. En stor pakke kan se billig ud, men være dyrere pr. enhed end en mindre pakke – eller blive for stor til dit forbrug.",
+        ],
+      },
+      {
+        heading: "3. Tjek lager, levering og retur",
+        paragraphs: [
+          "Før du køber, så tjek om varen er på lager, hvor lang leveringstiden er, og hvordan retur- og fortrydelsesreglerne virker. Det er særligt vigtigt ved elektronik, møbler og gaver, hvor en forkert model kan være besværlig at returnere.",
+          "Hvis tilbuddet kræver et medlemskab, en app eller et særligt betalingskort, så læs betingelserne først. Et krav om ekstra tilmelding kan gøre besparelsen mindre, end den ser ud.",
+        ],
+      },
+      {
+        heading: "4. Brug TilbudJagt som et roligt overblik",
+        paragraphs: [
+          "På TilbudJagt kan du finde butikker og produkter samlet ét sted. Vi viser kun priser, når de kommer fra butikken selv, og vi markerer tydeligt, når et link er et reklamelink eller et direkte link til butikken.",
+          "Brug overblikket til at sammenligne i dit eget tempo. Hvis et tilbud skaber tidspres, så tag en kort pause og tjek prisen igen, før du beslutter dig.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function isGuidePublished(guide: Guide, now = new Date()): boolean {
