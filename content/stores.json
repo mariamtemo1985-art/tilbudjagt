@@ -412,5 +412,20 @@
       "ar": "سوبرماركت إلكتروني يبيع مواد غذائية عضوية ومستدامة."
     },
     "checkedAt": "2026-11-19T02:21:37.000Z"
+  },
+  {
+    "slug": "soundliving",
+    "name": "Soundliving",
+    "category": "elektronik",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://soundliving.dk",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=103033",
+    "description": {
+      "da": "Dansk lydbrand med designhøjttalere og høretelefoner.",
+      "en": "Danish audio brand with design speakers and headphones.",
+      "ar": "علامة صوتيات دنماركية تقدم مكبرات صوت وسماعات بتصميم عصري."
+    },
+    "checkedAt": "2026-11-19T02:35:02.000Z"
   }
 ]
