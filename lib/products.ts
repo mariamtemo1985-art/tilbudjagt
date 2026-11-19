@@ -1,4 +1,5 @@
 import raw from "@/content/products.json";
+import meta from "@/content/products-meta.json";
 
 export type Product = {
   id: string;
@@ -9,6 +10,7 @@ export type Product = {
   image: string;
   url: string;
   store: string;
+  description?: string;
 };
 
 export const PRODUCTS: Product[] = raw as Product[];
@@ -17,4 +19,8 @@ export const PRODUCT_CATEGORIES: string[] = Array.from(
   new Set(PRODUCTS.map((p) => p.category).filter(Boolean))
 ).sort((a, b) => a.localeCompare(b, "da"));
 
-export const PRODUCTS_UPDATED = "19. november 2026";
+export const PRODUCTS_UPDATED = new Date(meta.updatedAt).toLocaleDateString("da-DK", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
