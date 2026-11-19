@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Tag } from "lucide-react";
 import { PRODUCTS, PRODUCT_CATEGORIES, PRODUCTS_UPDATED } from "@/lib/products";
 import ProductBrowser from "./product-browser";
+import AdSlot from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Produkter og priser – aktuelle varer",
@@ -49,6 +50,10 @@ export default function ProductsPage() {
         </p>
       </section>
 
+      <div className="wrap">
+        <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_PRODUCTS} />
+      </div>
+
       <ProductBrowser products={PRODUCTS} categories={PRODUCT_CATEGORIES} />
 
       <footer className="footer">
@@ -64,7 +69,8 @@ export default function ProductsPage() {
           </a>
           <p className="footer-links">
             <a href="/produkter">Produkter</a> · <a href="/butikker">Butikker</a> ·{" "}
-            <a href="/guides">Guides</a> · <a href="/about.html">Om os</a> ·{" "}
+            <a href="/guides">Guides</a> · <a href="/annoncering">Annoncering</a> ·{" "}
+            <a href="/about.html">Om os</a> ·{" "}
             <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatliv</a> ·{" "}
             <a href="/vilkaar.html">Vilkår</a> · <a href="/cookies.html">Cookies</a>
           </p>
