@@ -87,33 +87,46 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
 
         <div className="store-grid">
           {visible.map((store) => (
-            <a className="store-card" href={`/butikker/${store.slug}`} key={store.slug}>
-              <span className="store-avatar" aria-hidden="true">
-                {store.name.slice(0, 1)}
-              </span>
-              <span className="store-card-body">
-                <strong>{store.name}</strong>
-                <small>{STORE_CATEGORIES[store.category].da}</small>
-                <span
-                  className={
-                    store.status === "partner"
-                      ? "status-badge partner"
-                      : "status-badge directory"
-                  }
-                >
-                  {store.status === "partner" ? (
-                    <>
-                      <Tag size={11} /> Godkendt partner
-                    </>
-                  ) : (
-                    <>
-                      <StoreIcon size={11} /> Direkte link
-                    </>
-                  )}
+            <div className="store-card" key={store.slug}>
+              <a
+                className="store-card-main"
+                href={store.status === "partner" ? store.affiliateUrl! : store.website}
+                target="_blank"
+                rel={store.status === "partner" ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+                aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
+              >
+                <span className="store-avatar" aria-hidden="true">
+                  {store.name.slice(0, 1)}
                 </span>
-              </span>
-              <ArrowRight size={16} />
-            </a>
+                <span className="store-card-body">
+                  <strong>{store.name}</strong>
+                  <small>{STORE_CATEGORIES[store.category].da}</small>
+                  <span
+                    className={
+                      store.status === "partner"
+                        ? "status-badge partner"
+                        : "status-badge directory"
+                    }
+                  >
+                    {store.status === "partner" ? (
+                      <>
+                        <Tag size={11} /> Godkendt partner
+                      </>
+                    ) : (
+                      <>
+                        <StoreIcon size={11} /> Direkte link
+                      </>
+                    )}
+                  </span>
+                  <span className="store-visit">
+                    Besøg {store.name} <ArrowRight size={12} />
+                  </span>
+                </span>
+              </a>
+              <a className="store-card-info" href={`/butikker/${store.slug}`}>
+                Butiksinfo
+              </a>
+            </div>
           ))}
         </div>
 
