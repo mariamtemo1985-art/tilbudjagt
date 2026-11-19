@@ -31,7 +31,7 @@ export default function SponsoredBanner({ className = "" }: SponsoredBannerProps
         className="tj-sponsored__cta"
         href={url}
         target="_blank"
-        rel="sponsored noopener noreferrer"
+        rel="sponsored nofollow noopener noreferrer"
       >
         Besøg {name} <ArrowRight size={15} />
       </a>
