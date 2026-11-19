@@ -174,3 +174,9 @@
 .product-store{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#2563eb}
 .product-more{margin:22px auto 0;display:block;padding:10px 22px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;font:inherit;cursor:pointer}
 @media(max-width:520px){.product-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* Share store */
+.share-store{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:9px 16px;border:1px solid #d1d5db;border-radius:999px;background:#fff;color:inherit;font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.share-store:hover{background:#f3f4f6;border-color:#9ca3af}
+.share-store.copied{border-color:#16a34a;color:#15803d;background:#f0fdf4}
+@media(max-width:520px){.share-store{width:100%;justify-content:center}}
