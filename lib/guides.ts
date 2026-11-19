@@ -466,6 +466,40 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+  {
+    slug: "julebudget-og-julemad",
+    kicker: "Jul",
+    title: "Julebudget og julemad: sådan handler du uden overforbrug",
+    description:
+      "Lav en juleplan, sammenlign enhedspriser og undgå impulskøb, så både julemaden og gaverne holder budgettet.",
+    lead:
+      "Julen er højsæson for tilbud, men også for impulskøb. En enkel plan gør det lettere at købe det, du faktisk skal bruge.",
+    updated: "19. november 2026",
+    publishAt: "2026-11-19",
+    sections: [
+      {
+        heading: "Start med julemenuen, ikke tilbudsavisen",
+        paragraphs: [
+          "Beslut først, hvilke retter du vil lave, hvor mange gæster der kommer, og hvor meget du realistisk skal bruge. Skriv en indkøbsliste, og tjek hvad du allerede har i skab, køleskab og fryser. Først derefter giver det mening at se på tilbudsaviserne.",
+          "På den måde undgår du at købe ekstra varer, bare fordi de er sat ned. Et godt tilbud på en vare, du ikke skal bruge, er stadig en udgift.",
+        ],
+      },
+      {
+        heading: "Sammenlign enhedspris og holdbarhed",
+        paragraphs: [
+          "Sammenlign prisen pr. kilo, liter eller styk i stedet for kun at se på pakkens pris. Store pakker kan være billigere pr. enhed, men kun hvis du får brugt indholdet, før det bliver dårligt.",
+          "Tjek holdbarhedsdatoer og opbevaringsplads, især på ferskvarer og frysevarer. Hvis fryseren er fuld, er en ekstra stor pakke ikke en besparelse.",
+        ],
+      },
+      {
+        heading: "Sæt et julebudget og hold en kort pause",
+        paragraphs: [
+          "Del budgettet op i julemad, gaver og andre udgifter, så du kan se, hvor pengene går. Tag listen med i butikken, og undgå at handle, når du er sulten eller har travlt.",
+          "For ting, der ikke er strengt nødvendige, kan en pause på et døgn hjælpe. Tidsbegrænsede tilbud skaber ofte et pres, men de fleste beslutninger bliver bedre, når den første begejstring har lagt sig.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function isGuidePublished(guide: Guide, now = new Date()): boolean {
