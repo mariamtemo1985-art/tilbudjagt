@@ -34,6 +34,21 @@ const copy = {
     footer: "TilbudJagt gør det lettere at finde butikker og tilbud. Tjek altid pris og vilkår hos butikken.",
     partnerLabel: "Godkendt partner", directoryLabel: "Direkte link",
     noOffers: "Ingen verificerede tilbud endnu – vi viser dem, når butikken deler sine data.",
+    eyebrow: "DANMARKS BUTIKSOVERSIGT",
+    storesEyebrow: "BUTIKKER", partnerEyebrow: "PARTNER",
+    visit: "Besøg", storeInfo: "Butiksinfo", newTab: "åbner butikkens hjemmeside i ny fane",
+    navProducts: "Produkter", navGuides: "Guides", navAbout: "Om os", navContact: "Kontakt",
+    menu: "Menu", language: "Sprog", footerAria: "Footerlinks",
+    vipWaitlistTitle: "VIP-interesseliste",
+    vipWaitlistText: "Gratis tilmelding uden betaling. Få en velkomstmail og besked, når medlemskabet er klar.",
+    emailLabel: "E-mail", emailPlaceholder: "Din e-mailadresse",
+    consent: "Jeg accepterer at modtage information om TilbudJagt VIP.",
+    submit: "Tilmeld", sending: "Sender…", success: "Tak! Tjek din indbakke.", error: "Kunne ikke sende endnu. Prøv igen senere.",
+    vipEyebrow: "TILBUDJAGT VIP", vipCta: "Bliv VIP", vipPrice: "40 kr.", perMonth: "/ md.",
+    vipModalNote: "Betaling er midlertidigt deaktiveret. Dette er kun en gratis interesseliste.",
+    footerProducts: "Produkter", footerStores: "Butikker", footerGuides: "Guides", footerAbout: "Om os",
+    footerAds: "Annoncering", footerContact: "Kontakt", footerPrivacy: "Privatlivspolitik",
+    footerTerms: "Vilkår", footerCookies: "Cookies",
   },
   en: {
     tagline: "The hunt for great deals starts here",
@@ -54,6 +69,21 @@ const copy = {
     footer: "TilbudJagt makes it easier to find stores and deals. Always check prices and terms with the retailer.",
     partnerLabel: "Approved partner", directoryLabel: "Direct link",
     noOffers: "No verified offers yet – we show them when the store shares its data.",
+    eyebrow: "DENMARK'S STORE DIRECTORY",
+    storesEyebrow: "STORES", partnerEyebrow: "PARTNER",
+    visit: "Visit", storeInfo: "Store info", newTab: "opens the store website in a new tab",
+    navProducts: "Products", navGuides: "Guides", navAbout: "About us", navContact: "Contact",
+    menu: "Menu", language: "Language", footerAria: "Footer links",
+    vipWaitlistTitle: "VIP waitlist",
+    vipWaitlistText: "Free signup without payment. Get a welcome email and a message when membership is ready.",
+    emailLabel: "Email", emailPlaceholder: "Your email address",
+    consent: "I agree to receive information about TilbudJagt VIP.",
+    submit: "Sign up", sending: "Sending…", success: "Thanks! Check your inbox.", error: "Could not send yet. Please try again later.",
+    vipEyebrow: "TILBUDJAGT VIP", vipCta: "Become VIP", vipPrice: "DKK 40", perMonth: "/ month",
+    vipModalNote: "Payment is temporarily disabled. This is only a free interest list.",
+    footerProducts: "Products", footerStores: "Stores", footerGuides: "Guides", footerAbout: "About us",
+    footerAds: "Advertising", footerContact: "Contact", footerPrivacy: "Privacy policy",
+    footerTerms: "Terms", footerCookies: "Cookies",
   },
   ar: {
     tagline: "صيد أفضل العروض يبدأ من هون",
@@ -74,6 +104,21 @@ const copy = {
     footer: "TilbudJagt تساعدك تكتشف المتاجر والعروض. تحقق دائماً من السعر والشروط عند المتجر.",
     partnerLabel: "شريك معتمد", directoryLabel: "رابط مباشر",
     noOffers: "لا توجد عروض مؤكدة بعد – نعرضها عندما يشارك المتجر بياناته.",
+    eyebrow: "دليل المتاجر في الدنمارك",
+    storesEyebrow: "المتاجر", partnerEyebrow: "شريك",
+    visit: "زيارة", storeInfo: "تفاصيل المتجر", newTab: "يفتح موقع المتجر في تبويب جديد",
+    navProducts: "المنتجات", navGuides: "الأدلة", navAbout: "من نحن", navContact: "اتصل بنا",
+    menu: "القائمة", language: "اللغة", footerAria: "روابط الفوتر",
+    vipWaitlistTitle: "قائمة VIP",
+    vipWaitlistText: "تسجيل مجاني دون دفع. ستصلك رسالة ترحيب وإشعار عندما تصبح العضوية جاهزة.",
+    emailLabel: "البريد الإلكتروني", emailPlaceholder: "بريدك الإلكتروني",
+    consent: "أوافق على تلقي معلومات عن عضوية TilbudJagt VIP.",
+    submit: "تسجيل", sending: "جارٍ الإرسال…", success: "شكرًا! تحقق من بريدك.", error: "لم نتمكن من الإرسال بعد. حاولي لاحقًا.",
+    vipEyebrow: "TILBUDJAGT VIP", vipCta: "انضم إلى VIP", vipPrice: "40 كرونة", perMonth: "/ شهريًا",
+    vipModalNote: "الدفع متوقف مؤقتًا. هذه قائمة اهتمام مجانية فقط.",
+    footerProducts: "المنتجات", footerStores: "المتاجر", footerGuides: "الأدلة", footerAbout: "من نحن",
+    footerAds: "الإعلان", footerContact: "اتصل بنا", footerPrivacy: "سياسة الخصوصية",
+    footerTerms: "الشروط", footerCookies: "الكوكيز",
   },
 } as const;
 
@@ -120,14 +165,14 @@ export default function HomePage() {
 
   const joinVipWaitlist = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setNewsletterStatus("Sender…");
+    setNewsletterStatus(copy[lang].sending);
     const response = await fetch("/api/newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: newsletterEmail, consent: newsletterConsent }),
     });
     setNewsletterStatus(
-      response.ok ? "Tak! Tjek din indbakke." : "Kunne ikke sende endnu. Prøv igen senere.",
+      response.ok ? copy[lang].success : copy[lang].error,
     );
     if (response.ok) setNewsletterEmail("");
   };
@@ -144,15 +189,15 @@ export default function HomePage() {
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
         <nav className={mobileMenu ? "nav nav-open" : "nav"}>
-          <a href="/produkter">Produkter</a>
+          <a href="/produkter">{t.navProducts}</a>
           <a href="/butikker">{t.explore}</a>
-          <a href="/guides">Guides</a>
-          <a href="/about.html">Om os</a>
-          <a href="/contact.html">Kontakt</a>
+          <a href="/guides">{t.navGuides}</a>
+          <a href="/about.html">{t.navAbout}</a>
+          <a href="/contact.html">{t.navContact}</a>
         </nav>
         <div className="header-actions">
           <select
-            aria-label="Language"
+            aria-label={t.language}
             className="language"
             value={lang}
             onChange={(event) => setLang(event.target.value as Language)}
@@ -166,7 +211,7 @@ export default function HomePage() {
           <button className="vip-btn" onClick={() => setVipOpen(true)}>
             <Sparkles size={15} /> VIP
           </button>
-          <button className="menu-btn" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Menu">
+          <button className="menu-btn" onClick={() => setMobileMenu(!mobileMenu)} aria-label={t.menu}>
             {mobileMenu ? <X /> : <Menu />}
           </button>
         </div>
@@ -175,7 +220,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="wrap hero-inner">
           <div className="hero-copy">
-            <div className="eyebrow"><Flame size={15} /> DANMARKS BUTIKSOVERSIGT</div>
+            <div className="eyebrow"><Flame size={15} /> {t.eyebrow}</div>
             <h1>{t.hero}</h1>
             <p>{t.heroText}</p>
             <form className="hero-search" onSubmit={goSearch}>
@@ -186,7 +231,7 @@ export default function HomePage() {
                 placeholder={t.search}
                 aria-label={t.search}
               />
-              <button type="submit" aria-label="Søg"><ArrowRight size={18} /></button>
+              <button type="submit" aria-label={t.search}><ArrowRight size={18} /></button>
             </form>
             <div className="hero-quick">
               <span><ShieldCheck size={15} /> {t.safe}</span>
@@ -213,7 +258,7 @@ export default function HomePage() {
       <section className="wrap store-section" id="stores">
         <div className="section-title">
           <div>
-            <span className="eyebrow muted">BUTIKKER</span>
+            <span className="eyebrow muted">{t.storesEyebrow}</span>
             <h2>{t.storesTitle}</h2>
           </div>
           <StoreIcon size={25} />
@@ -226,16 +271,16 @@ export default function HomePage() {
                 href={store.status === "partner" ? store.affiliateUrl! : store.website}
                 target="_blank"
                 rel={store.status === "partner" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
-                aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
+                aria-label={`${t.visit} ${store.name} – ${t.newTab}`}
               >
                 <span className="store-avatar" aria-hidden="true">{store.name.slice(0, 1)}</span>
                 <span className="store-card-body">
                   <strong>{store.name}</strong>
-                  <small>{STORE_CATEGORIES[store.category].da}</small>
-                  <span className="store-visit">Besøg {store.name} <ArrowRight size={12} /></span>
+                  <small>{STORE_CATEGORIES[store.category][lang]}</small>
+                  <span className="store-visit">{t.visit} {store.name} <ArrowRight size={12} /></span>
                 </span>
               </a>
-              <a className="store-card-info" href={`/butikker/${store.slug}`}>Butiksinfo</a>
+              <a className="store-card-info" href={`/butikker/${store.slug}`}>{t.storeInfo}</a>
             </div>
           ))}
         </div>
@@ -258,7 +303,7 @@ export default function HomePage() {
               href={`/butikker?kategori=${tile.key}`}
             >
               <span className={"category-icon cat-" + (index + 1)}>{tile.icon}</span>
-              <span>{STORE_CATEGORIES[tile.key].da}</span>
+              <span>{STORE_CATEGORIES[tile.key][lang]}</span>
             </a>
           ))}
         </div>
@@ -267,7 +312,7 @@ export default function HomePage() {
       <section className="wrap partner-section" aria-labelledby="partner-title">
         <div className="partner-card">
           <div className="partner-copy">
-            <span className="eyebrow muted">PARTNER</span>
+            <span className="eyebrow muted">{t.partnerEyebrow}</span>
             <h2 id="partner-title">{t.partnerTitle}</h2>
             <p>{t.partnerText}</p>
             <p className="partner-disclosure">{t.partnerDisclosure}</p>
@@ -301,15 +346,15 @@ export default function HomePage() {
         <div className="feature-card">
           <Bell />
           <div>
-            <h3>VIP-interesseliste</h3>
-            <p>Gratis tilmelding uden betaling. Få en velkomstmail og besked, når medlemskabet er klar.</p>
+            <h3>{t.vipWaitlistTitle}</h3>
+            <p>{t.vipWaitlistText}</p>
             <form onSubmit={joinVipWaitlist}>
               <input
-                aria-label="E-mail"
+                aria-label={t.emailLabel}
                 type="email"
                 value={newsletterEmail}
                 onChange={(event) => setNewsletterEmail(event.target.value)}
-                placeholder="Din e-mailadresse"
+                placeholder={t.emailPlaceholder}
                 required
               />
               <label>
@@ -319,9 +364,9 @@ export default function HomePage() {
                   onChange={(event) => setNewsletterConsent(event.target.checked)}
                   required
                 />{" "}
-                Jeg accepterer at modtage information om TilbudJagt VIP.
+                {t.consent}
               </label>
-              <button type="submit">Tilmeld</button>
+              <button type="submit">{t.submit}</button>
               <small>{newsletterStatus}</small>
             </form>
           </div>
@@ -331,11 +376,11 @@ export default function HomePage() {
       <section className="vip-banner">
         <div className="wrap vip-inner">
           <div>
-            <span className="eyebrow">TILBUDJAGT VIP</span>
+            <span className="eyebrow">{t.vipEyebrow}</span>
             <h2>{t.vipTitle}</h2>
             <p>{t.vipText}</p>
           </div>
-          <button onClick={() => setVipOpen(true)}>Bliv VIP <ArrowRight size={17} /></button>
+          <button onClick={() => setVipOpen(true)}>{t.vipCta} <ArrowRight size={17} /></button>
         </div>
       </section>
 
@@ -346,9 +391,9 @@ export default function HomePage() {
             <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
           </a>
           <p>{t.footer}</p>
-          <nav aria-label="Footer links">
-            <a href="/produkter">Produkter</a> · <a href="/butikker">Butikker</a> · <a href="/guides">Guides</a> · <a href="/about.html">Om os</a> ·{" "}
-            <a href="/annoncering">Annoncering</a> · <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a> · <a href="/vilkaar.html">Vilkår</a> · <a href="/cookies.html">Cookies</a>
+          <nav aria-label={t.footerAria}>
+            <a href="/produkter">{t.footerProducts}</a> · <a href="/butikker">{t.footerStores}</a> · <a href="/guides">{t.footerGuides}</a> · <a href="/about.html">{t.footerAbout}</a> ·{" "}
+            <a href="/annoncering">{t.footerAds}</a> · <a href="/contact.html">{t.footerContact}</a> · <a href="/privacy.html">{t.footerPrivacy}</a> · <a href="/vilkaar.html">{t.footerTerms}</a> · <a href="/cookies.html">{t.footerCookies}</a>
           </nav>
           <span>© {new Date().getFullYear()} TilbudJagt.dk</span>
         </div>
@@ -367,8 +412,8 @@ export default function HomePage() {
             <h2>{t.vipTitle}</h2>
             <p>{t.vipText}</p>
             <ul>{t.vipList.map((item) => <li key={item}><Check size={17} />{item}</li>)}</ul>
-            <strong className="vip-price">40 kr. <small>/ md.</small></strong>
-            <p className="modal-footnote">Betaling er midlertidigt deaktiveret. Dette er kun en gratis interesseliste.</p>
+            <strong className="vip-price">{t.vipPrice} <small>{t.perMonth}</small></strong>
+            <p className="modal-footnote">{t.vipModalNote}</p>
             <button className="modal-primary" onClick={() => setVipOpen(false)}>{t.close}</button>
           </section>
         </div>
