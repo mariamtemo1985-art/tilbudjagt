@@ -7,6 +7,8 @@ export type Guide = {
   description: string;
   lead: string;
   updated: string;
+  /** ISO-dato (YYYY-MM-DD). Artiklen vises først fra denne dato. */
+  publishAt?: string;
   sections: GuideSection[];
 };
 
@@ -328,8 +330,154 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+  {
+    slug: "netto-tilbudsavis",
+    kicker: "Dagligvarer",
+    title: "Netto tilbudsavis: Se ugens tilbud og katalog",
+    description:
+      "Sådan finder du Nettos nyeste tilbudsavis, forstår gyldighedsperioden og bruger ugens tilbud uden at købe mere, end du har brug for.",
+    lead:
+      "Nettos tilbudsavis skifter typisk hver uge. Her er, hvordan du finder den nyeste avis, læser vilkårene og bruger tilbuddene i din madplan.",
+    updated: "24. november 2026",
+    publishAt: "2026-11-24",
+    sections: [
+      {
+        heading: "Hvor finder du den nyeste tilbudsavis?",
+        paragraphs: [
+          "Den nyeste avis ligger normalt på Nettos egen hjemmeside og i Nettos app. Du kan også tage et fysisk eksemplar i butikken. Avisen gælder som regel en uge ad gangen, men datoerne kan variere i forbindelse med helligdage og kampagner.",
+          "Tjek altid gyldighedsperioden øverst i avisen, før du planlægger dit indkøb. Et tilbud, der er udløbet, kan stadig hænge i butikken, men prisen ved kassen er den gældende.",
+        ],
+      },
+      {
+        heading: "Sådan læser du ugens tilbud",
+        paragraphs: [
+          "Se på førprisen, enhedsprisen og eventuelle betingelser. En vare kan være sat ned fra en pris, der kun har været gældende i kort tid, og en stor pakke er ikke altid billigere pr. kilo end en mindre.",
+          "Nogle tilbud kræver app, medlemskab eller køb af flere varer. Læs de små linjer, og tjek lagerstatus, hvis du kører efter en bestemt vare.",
+        ],
+      },
+      {
+        heading: "Brug avisen som grundlag for madplanen",
+        paragraphs: [
+          "Vælg tre eller fire måltider ud fra de varer, du faktisk spiser, og skriv en kort indkøbsliste. På den måde undgår du at købe tilbudsvarer, der ender i skabet.",
+          "Sammenlign gerne med de andre butikkers aviser, hvis du alligevel skal handle ind flere steder. Den største besparelse kommer ofte fra at planlægge ugens måltider frem for at købe enkelte nedsatte varer.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "foetex-tilbudsavis",
+    kicker: "Dagligvarer",
+    title: "Føtex tilbudsavis: Ugens tilbud og katalog",
+    description:
+      "Find Føtex' tilbudsavis, se hvornår den skifter, og lær at vurdere ugens tilbud på dagligvarer og nonfood, før du handler.",
+    lead:
+      "Føtex' tilbudsavis kombinerer dagligvarer og nonfood. Her er en enkel måde at finde den nyeste avis og bruge den uden at miste overblikket.",
+    updated: "1. december 2026",
+    publishAt: "2026-12-01",
+    sections: [
+      {
+        heading: "Find den gældende avis",
+        paragraphs: [
+          "Du finder Føtex' tilbudsavis på føtex.dk og i Føtex-appen. Avisen opdateres normalt hver uge, men kampagner kan have forskellige start- og slutdatoer. Kontrollér derfor altid datoen på det enkelte tilbud.",
+          "Hvis du handler online, kan priser og lagerbeholdning variere fra din lokale butik. Tjek den endelige pris i kurven, før du betaler.",
+        ],
+      },
+      {
+        heading: "Dagligvarer og nonfood i samme avis",
+        paragraphs: [
+          "Føtex' avis blander ofte madvarer med køkkenudstyr, boligting og tøj. Det kan friste til at købe mere, end du havde planlagt. Skriv ned, hvad du reelt mangler, inden du åbner avisen.",
+          "For dagligvarer er enhedsprisen det mest retvisende sammenligningsgrundlag. For nonfood bør du også se på garanti, returvilkår og om varen fås billigere hos en anden forhandler.",
+        ],
+      },
+      {
+        heading: "Planlæg efter tilbuddene",
+        paragraphs: [
+          "Brug avisen til at vælge ugens aftensmåltider og til at fylde fryseren med holdbare varer, hvis prisen er god. Undgå at hamstre letfordærvelige varer, som du ikke kan nå at spise.",
+          "Hvis et tilbud ikke er klart bedre end den pris, du normalt ser, så vent. Der kommer nye tilbud næste uge.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "rema-1000-tilbudsavis",
+    kicker: "Dagligvarer",
+    title: "REMA 1000 tilbudsavis: Ugens tilbud og spotvarer",
+    description:
+      "Sådan finder du REMA 1000s tilbudsavis, forstår forskellen på ugens tilbud og spotvarer og handler ind efter en plan.",
+    lead:
+      "REMA 1000 har både faste ugentlige tilbud og spotvarer med begrænset lager. Her er, hvordan du holder styr på begge dele.",
+    updated: "8. december 2026",
+    publishAt: "2026-12-08",
+    sections: [
+      {
+        heading: "Ugens tilbud og spotvarer",
+        paragraphs: [
+          "REMA 1000s tilbudsavis findes på rema1000.dk og i appen. 'Ugens tilbud' gælder typisk en uge, mens spotvarer kan være tilgængelige i kortere tid eller så længe lager haves.",
+          "Spotvarer er ofte indkøbt i begrænsede mængder. Hvis du kører efter en bestemt vare, så tjek lagerstatus eller kontakt din lokale butik, før du tager afsted.",
+        ],
+      },
+      {
+        heading: "Vurder tilbuddet før du køber",
+        paragraphs: [
+          "Sammenlign førpris, enhedspris og mængde. Et spotkøb kan være en god pris, men kun hvis du faktisk bruger varen. Se også på holdbarhed og opbevaringsplads.",
+          "Nogle varer sælges i store pakker, som kræver plads i fryseren eller skabet. Regn ud, hvor meget du realistisk får brugt, før du køber ind til flere måneder.",
+        ],
+      },
+      {
+        heading: "Brug tilbuddene i en fast madplan",
+        paragraphs: [
+          "Start med de måltider, du allerede ved, du skal lave, og find derefter de tilbud, der passer. På den måde bliver tilbudsavisen et værktøj frem for en liste over ting, du ikke mangler.",
+          "Hvis du handler ind i flere butikker, så saml indkøbet, så du ikke bruger tid og benzin på at jage en lille besparelse.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "lidl-tilbudsavis",
+    kicker: "Dagligvarer",
+    title: "Lidl tilbudsavis: Ugens tilbud og weekendtilbud",
+    description:
+      "Find Lidls tilbudsavis, se forskellen på ugens tilbud og weekendtilbud, og brug avisen til at planlægge et billigere indkøb.",
+    lead:
+      "Lidl har ugentlige tilbud og særlige weekendtilbud. Her er, hvordan du finder den nyeste avis og vurderer tilbuddene, før du handler.",
+    updated: "15. december 2026",
+    publishAt: "2026-12-15",
+    sections: [
+      {
+        heading: "Hvor er den nyeste avis?",
+        paragraphs: [
+          "Lidls tilbudsavis ligger på lidl.dk og i Lidl Plus-appen. Avisen opdateres løbende, og weekendtilbud kan have en kortere gyldighedsperiode end de almindelige ugentlige tilbud.",
+          "Tjek datoerne på det enkelte tilbud, især i ferieperioder og omkring helligdage, hvor butikkernes åbningstider kan ændre sig.",
+        ],
+      },
+      {
+        heading: "Sammenlign med dine normale indkøb",
+        paragraphs: [
+          "Lav en liste over de varer, du køber hver uge, og sammenlign priserne med de butikker, du normalt bruger. En lav pris på en enkelt vare er ikke en besparelse, hvis resten af indkøbet bliver dyrere.",
+          "Se på enhedsprisen og på, om varen er et alternativ til noget, du allerede har. Undgå at købe store mængder af varer, du sjældent spiser.",
+        ],
+      },
+      {
+        heading: "Brug weekendtilbud med omtanke",
+        paragraphs: [
+          "Weekendtilbud er ofte tidsbegrænsede og kan skabe travlhed i butikken. Planlæg dit besøg uden for de travleste timer, og tag kun de varer med, du havde skrevet på listen.",
+          "Hvis du ikke kan nå tilbuddet, så lad det gå. Der kommer nye tilbud, og et impulskøb er sjældent en god forretning.",
+        ],
+      },
+    ],
+  },
 ];
 
-export function getGuide(slug: string): Guide | undefined {
-  return GUIDES.find((guide) => guide.slug === slug);
+export function isGuidePublished(guide: Guide, now = new Date()): boolean {
+  if (!guide.publishAt) return true;
+  return new Date(`${guide.publishAt}T00:00:00+01:00`).getTime() <= now.getTime();
+}
+
+export function getPublishedGuides(now = new Date()): Guide[] {
+  return GUIDES.filter((guide) => isGuidePublished(guide, now));
+}
+
+export function getGuide(slug: string, now = new Date()): Guide | undefined {
+  const guide = GUIDES.find((item) => item.slug === slug);
+  return guide && isGuidePublished(guide, now) ? guide : undefined;
 }
