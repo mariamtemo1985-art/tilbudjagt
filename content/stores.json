@@ -342,13 +342,16 @@
     "slug": "proshop",
     "name": "Proshop",
     "category": "elektronik",
-    "status": "directory",
+    "status": "partner",
     "website": "https://www.proshop.dk",
     "description": {
-      "da": "Onlinebutik med elektronik, computere og hvidevarer.",
-      "en": "Proshop in the TilbudJagt store directory.",
-      "ar": "Proshop في دليل متاجر TilbudJagt."
-    }
+      "da": "Dansk onlinebutik med computere, elektronik, hvidevarer og tilbehør.",
+      "en": "Danish online store with computers, electronics, appliances and accessories.",
+      "ar": "متجر دنماركي لبيع الكمبيوترات والإلكترونيات والأجهزة المنزلية والملحقات."
+    },
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=67785",
+    "checkedAt": "2026-11-19T12:53:01.659797+00:00"
   },
   {
     "slug": "komplett",
