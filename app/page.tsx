@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import {
   ArrowRight, Bell, Check, Heart, Menu, Search, ShieldCheck, Sparkles,
@@ -12,6 +12,7 @@ import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 
 type Language = "da" | "en" | "ar";
+const LANG_KEY = "tilbudjagt_lang";
 
 const copy = {
   da: {
@@ -93,6 +94,15 @@ const featuredStores = STORES.slice(0, 8);
 export default function HomePage() {
   const router = useRouter();
   const [lang, setLang] = useState<Language>("da");
+  useEffect(() => {
+    const saved = window.localStorage.getItem(LANG_KEY);
+    if (saved === "da" || saved === "en" || saved === "ar") setLang(saved);
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem(LANG_KEY, lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  }, [lang]);
   const [query, setQuery] = useState("");
   const [vipOpen, setVipOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
