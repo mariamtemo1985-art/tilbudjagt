@@ -54,7 +54,11 @@ export default function ProductsPage() {
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_PRODUCTS} />
       </div>
 
-      <ProductBrowser products={PRODUCTS} categories={PRODUCT_CATEGORIES} />
+      <ProductBrowser
+        initialProducts={PRODUCTS.slice(0, 48)}
+        initialTotal={PRODUCTS.length}
+        categories={PRODUCT_CATEGORIES}
+      />
 
       <footer className="footer">
         <div className="wrap footer-inner">
