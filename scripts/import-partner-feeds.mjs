@@ -5,7 +5,7 @@
  * The feed URLs are affiliate feed URLs supplied by Partner-ads. They are
  * fetched server-side only; product images stay on the advertiser's CDN.
  */
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -263,6 +263,31 @@ async function main() {
   }
 
   const products = interleave(groups);
+  // Awin feeds are imported separately because their URLs contain private API keys.
+  // Preserve those products when the weekly Partner-ads refresh runs.
+  try {
+    const previous = JSON.parse(
+      await readFile(resolve(root, "content/products.json"), "utf8"),
+    );
+    const preserved = previous.filter(
+      (product) =>
+        product?.id?.startsWith("dyson-") || product?.id?.startsWith("bazta-"),
+    );
+    if (preserved.length) {
+      const existingIds = new Set(products.map((product) => product.id));
+      for (const product of preserved) {
+        if (!existingIds.has(product.id)) {
+          products.push(product);
+          existingIds.add(product.id);
+        }
+      }
+      counts.dyson = preserved.filter((product) => product.id.startsWith("dyson-")).length;
+      counts["bazta-dk"] = preserved.filter((product) => product.id.startsWith("bazta-")).length;
+      console.log(`Preserved ${preserved.length} Awin products`);
+    }
+  } catch {
+    // No previous catalog yet; nothing to preserve.
+  }
   if (products.length < 100) {
     throw new Error(`Only ${products.length} products imported; refusing to overwrite data.`);
   }
