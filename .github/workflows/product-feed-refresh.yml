@@ -1,0 +1,68 @@
+name: Product Feed Refresh
+
+on:
+  schedule:
+    # Every Monday at 04:00 UTC, before the link monitor and weekly report.
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: product-feed-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    name: Refresh approved partner feeds
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout deployment branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/full-platform-foundation
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Import approved partner feeds
+        run: npm run import:feeds
+
+      - name: Commit updated products
+        shell: bash
+        run: |
+          git config user.name "TilbudJagt Bot"
+          git config user.email "support@tilbudjagt.dk"
+          git add content/products.json content/products-meta.json
+          if git diff --cached --quiet; then
+            echo "No product changes today."
+          else
+            git commit -m "Refresh partner product feeds"
+            git push origin HEAD:feature/full-platform-foundation
+          fi
+
+      - name: Add summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Product feed refresh"
+            echo ""
+            if [ -f content/products-meta.json ]; then
+              echo '```json'
+              cat content/products-meta.json
+              echo '```'
+            else
+              echo "No metadata file was produced."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
