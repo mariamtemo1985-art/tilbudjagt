@@ -220,10 +220,8 @@ export async function GET(request: Request) {
   <p style="font-size:12px;color:#6b7280;text-align:center;margin:16px 0">تقرير تلقائي كل يوم إثنين من TilbudJagt.dk. لا تشارك هذا البريد علنًا.</p>
 </div></body></html>`;
 
-  const to = (process.env.REPORT_EMAILS || "support@tilbudjagt.dk")
-    .split(",")
-    .map((x) => x.trim())
-    .filter(Boolean);
+  // Reports go only to the official site inbox; never to a personal address.
+  const to = ["support@tilbudjagt.dk"];
 
   const resendRes = await fetch("https://api.resend.com/emails", {
     method: "POST",
