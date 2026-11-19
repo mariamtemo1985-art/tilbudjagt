@@ -73,7 +73,7 @@ function validateAffiliateUrl(store, url) {
     }
     if (!bannerid) errors.push("Mangler bannerid");
     else if (!/^\d+$/.test(bannerid)) errors.push("bannerid er ikke numerisk");
-  } else {
+  } else if (store.status === "partner") {
     warnings.push(`Ukendt netværk: ${store.network || "ikke angivet"}`);
   }
 
@@ -133,8 +133,9 @@ function classify(store, url, result) {
     notes.push(...warnings);
   }
   if (!status) {
-    level = "FAIL";
-    notes.push(result.error || "Ingen HTTP-status");
+    // En timeout/forbindelsesfejl beviser ikke, at linket er dødt.
+    level = "WARN";
+    notes.push(`Ikke verificeret: ${result.error || "ingen HTTP-status"}`);
   } else if (status >= 400) {
     // 403/429/503 er ofte bot-beskyttelse, ikke et dødt link.
     if ([403, 429, 503].includes(status) && level !== "FAIL") level = "WARN";
