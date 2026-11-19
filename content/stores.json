@@ -169,5 +169,17 @@
       "en": "SPAR in the TilbudJagt store directory.",
       "ar": "SPAR في دليل متاجر TilbudJagt."
     }
+  },
+  {
+    "slug": "superbrugsen",
+    "name": "SuperBrugsen",
+    "category": "dagligvarer",
+    "status": "directory",
+    "website": "https://superbrugsen.dk/",
+    "description": {
+      "da": "Coop-supermarked med dagligvarer og lokale specialiteter.",
+      "en": "SuperBrugsen in the TilbudJagt store directory.",
+      "ar": "SuperBrugsen في دليل متاجر TilbudJagt."
+    }
   }
 ]
