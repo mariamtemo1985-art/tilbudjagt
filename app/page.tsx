@@ -291,7 +291,7 @@ export default function HomePage() {
         <div className="section-title">
           <div>
             <span className="eyebrow muted">{t.categories}</span>
-            <h2>{t.hot}</h2>
+            <h2>{t.categories}</h2>
           </div>
           <a className="text-link" href="/butikker">{t.allStores} <ArrowRight size={16} /></a>
         </div>
