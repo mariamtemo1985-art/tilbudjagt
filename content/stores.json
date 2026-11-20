@@ -677,14 +677,16 @@
     "slug": "billige-teste",
     "name": "Billige-Teste.dk",
     "category": "pleje",
-    "status": "directory",
+    "status": "partner",
+    "network": "Partner-ads",
     "website": "https://www.billige-teste.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=61636",
     "description": {
-      "da": "Dansk webshop med graviditetstest, ægløsningstest og fertilitetstest.",
-      "en": "Danish webshop with pregnancy tests, ovulation tests and fertility tests.",
-      "ar": "متجر دنماركي لاختبارات الحمل والتبويض والخصوبة."
+      "da": "Dansk webshop med graviditetstest, ægløsningstest, fertilitetsprodukter og udstyr til gravide og nybagte forældre.",
+      "en": "Danish webshop with pregnancy tests, ovulation tests, fertility products and essentials for pregnancy and new parents.",
+      "ar": "متجر دنماركي لاختبارات الحمل والتبويض ومنتجات الخصوبة ومستلزمات الحمل والأمهات الجدد."
     },
-    "checkedAt": "2026-11-19T13:23:50.943767+00:00"
+    "checkedAt": "2026-11-20T14:25:00.000Z"
   },
   {
     "slug": "fit-fun",
