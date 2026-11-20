@@ -3,6 +3,8 @@ import productsMeta from "@/content/products-meta.json";
 import { getPublishedGuides } from "@/lib/guides";
 import { STORES } from "@/lib/stores";
 
+export const revalidate = 3600;
+
 const SITE = "https://www.tilbudjagt.dk";
 const FALLBACK_DATE = new Date("2026-11-19T00:00:00+01:00");
 
