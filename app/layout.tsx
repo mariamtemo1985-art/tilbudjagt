@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     "Find, gem og del gode tilbud fra danske butikker. Sammenlign kampagner og opdag nye besparelser på TilbudJagt.dk.",
   applicationName: "TilbudJagt",
   alternates: {
+    canonical: "/",
     types: {
       "application/rss+xml": "/feed.xml",
     },
