@@ -8,6 +8,7 @@ type Props = {
   initialProducts: Product[];
   initialTotal: number;
   categories: string[];
+  initialQuery?: string;
 };
 
 const PAGE_SIZE = 48;
@@ -17,8 +18,13 @@ type SearchResponse = {
   total: number;
 };
 
-export default function ProductBrowser({ initialProducts, initialTotal, categories }: Props) {
-  const [query, setQuery] = useState("");
+export default function ProductBrowser({
+  initialProducts,
+  initialTotal,
+  categories,
+  initialQuery = "",
+}: Props) {
+  const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [total, setTotal] = useState(initialTotal);

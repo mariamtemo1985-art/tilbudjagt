@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Guides – sådan vurderer du et tilbud",
   description:
     "Praktiske guides fra TilbudJagt: gennemskue falske tilbud, sammenligne dagligvarepriser, vurdere elektronik og forstå affiliate-links.",
-  alternates: { canonical: "https://tilbudjagt.dk/guides" },
+  alternates: { canonical: "https://www.tilbudjagt.dk/guides" },
 };
 
 export default function GuidesPage() {

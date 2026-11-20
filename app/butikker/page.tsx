@@ -9,12 +9,29 @@ export const metadata: Metadata = {
   title: "Butikker – find danske butikker",
   description:
     "Søg blandt danske butikker på navn eller kategori. Se hvilke butikker der er godkendte partnere, og hvilke der kun er direkte links.",
-  alternates: { canonical: "https://tilbudjagt.dk/butikker" },
+  alternates: { canonical: "https://www.tilbudjagt.dk/butikker" },
 };
 
 export default function StoresPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Butikker i Danmark",
+    numberOfItems: STORES.length,
+    itemListElement: STORES.map((store, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: store.name,
+      url: `https://www.tilbudjagt.dk/butikker/${store.slug}`,
+    })),
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="header wrap">
         <a className="brand" href="/">
           <span className="brand-mark">

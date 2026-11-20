@@ -8,10 +8,18 @@ export const metadata: Metadata = {
   title: "Produkter og priser – aktuelle varer",
   description:
     "Se aktuelle produkter og priser fra godkendte partnerbutikker. Søg efter vare, brand eller kategori og se prisen direkte hos butikken.",
-  alternates: { canonical: "https://tilbudjagt.dk/produkter" },
+  alternates: { canonical: "https://www.tilbudjagt.dk/produkter" },
 };
 
-export default function ProductsPage() {
+type PageProps = {
+  searchParams: Promise<{ q?: string | string[] }>;
+};
+
+export default async function ProductsPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const rawQuery = Array.isArray(params.q) ? params.q[0] : params.q;
+  const initialQuery = typeof rawQuery === "string" ? rawQuery.slice(0, 120) : "";
+
   return (
     <main>
       <header className="header wrap">
@@ -58,6 +66,7 @@ export default function ProductsPage() {
         initialProducts={PRODUCTS.slice(0, 48)}
         initialTotal={PRODUCTS.length}
         categories={PRODUCT_CATEGORIES}
+        initialQuery={initialQuery}
       />
 
       <footer className="footer">

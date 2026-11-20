@@ -6,15 +6,24 @@ import { Check, Share2 } from "lucide-react";
 type ShareStoreButtonProps = {
   name: string;
   url: string;
+  label?: string;
+  text?: string;
+  ariaLabel?: string;
 };
 
-export default function ShareStoreButton({ name, url }: ShareStoreButtonProps) {
+export default function ShareStoreButton({
+  name,
+  url,
+  label = "Del butik",
+  text,
+  ariaLabel,
+}: ShareStoreButtonProps) {
   const [copied, setCopied] = useState(false);
 
   async function handleShare() {
     const shareData = {
       title: `${name} – TilbudJagt.dk`,
-      text: `Se ${name} på TilbudJagt.dk`,
+      text: text ?? `Se ${name} på TilbudJagt.dk`,
       url,
     };
 
@@ -43,10 +52,10 @@ export default function ShareStoreButton({ name, url }: ShareStoreButtonProps) {
       type="button"
       className={copied ? "share-store copied" : "share-store"}
       onClick={handleShare}
-      aria-label={`Del ${name}`}
+      aria-label={ariaLabel ?? `Del ${name}`}
     >
       {copied ? <Check size={16} /> : <Share2 size={16} />}
-      <span>{copied ? "Link kopieret" : "Del butik"}</span>
+      <span>{copied ? "Link kopieret" : label}</span>
     </button>
   );
 }

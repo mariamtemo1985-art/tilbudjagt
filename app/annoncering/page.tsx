@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Annoncering og sponsorsamarbejde",
   description:
     "Få synlighed hos TilbudJagts besøgende gennem tydeligt mærkede sponsorplaceringer, displayannoncer eller et performancebaseret samarbejde.",
-  alternates: { canonical: "https://tilbudjagt.dk/annoncering" },
+  alternates: { canonical: "https://www.tilbudjagt.dk/annoncering" },
 };
 
 export default function AdvertisePage() {

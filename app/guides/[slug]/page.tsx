@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookOpen, Tag } from "lucide-react";
 import { getGuide, getPublishedGuides } from "@/lib/guides";
 import AdSlot from "@/components/AdSlot";
+import ShareStoreButton from "@/components/ShareStoreButton";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -17,15 +18,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return { title: "Guide ikke fundet" };
+  const url = `https://www.tilbudjagt.dk/guides/${guide.slug}`;
+  const published = guide.publishAt || "2026-11-19";
   return {
     title: guide.title,
     description: guide.description,
-    alternates: { canonical: `https://tilbudjagt.dk/guides/${guide.slug}` },
+    alternates: { canonical: url },
     openGraph: {
       type: "article",
       title: guide.title,
       description: guide.description,
-      url: `https://tilbudjagt.dk/guides/${guide.slug}`,
+      url,
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: guide.title,
+        },
+      ],
+      publishedTime: published,
+      modifiedTime: published,
     },
   };
 }
@@ -34,17 +47,63 @@ export default async function GuidePage({ params }: PageProps) {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) notFound();
+  const url = `https://www.tilbudjagt.dk/guides/${guide.slug}`;
+  const published = guide.publishAt || "2026-11-19";
+  const related = getPublishedGuides()
+    .filter((item) => item.slug !== guide.slug)
+    .slice(0, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: guide.title,
-    description: guide.description,
-    dateModified: guide.publishAt || "2026-11-19",
-    inLanguage: "da-DK",
-    author: { "@type": "Organization", name: "TilbudJagt.dk" },
-    publisher: { "@type": "Organization", name: "TilbudJagt.dk" },
-    mainEntityOfPage: `https://tilbudjagt.dk/guides/${guide.slug}`,
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: guide.title,
+        description: guide.description,
+        datePublished: published,
+        dateModified: published,
+        inLanguage: "da-DK",
+        image: "https://www.tilbudjagt.dk/og-image.png",
+        author: {
+          "@type": "Organization",
+          name: "TilbudJagt.dk",
+          url: "https://www.tilbudjagt.dk/",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "TilbudJagt.dk",
+          url: "https://www.tilbudjagt.dk/",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://www.tilbudjagt.dk/og-image.png",
+          },
+        },
+        mainEntityOfPage: url,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Forside",
+            item: "https://www.tilbudjagt.dk/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Guides",
+            item: "https://www.tilbudjagt.dk/guides",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: guide.title,
+            item: url,
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -76,6 +135,15 @@ export default async function GuidePage({ params }: PageProps) {
         <h1>{guide.title}</h1>
         <p className="guide-article-lead">{guide.lead}</p>
         <p className="guide-updated">Opdateret {guide.updated} · TilbudJagt.dk</p>
+        <div className="guide-share">
+          <ShareStoreButton
+            name={guide.title}
+            url={url}
+            label="Del guide"
+            text={`Læs ${guide.title} på TilbudJagt.dk`}
+            ariaLabel={`Del guiden ${guide.title}`}
+          />
+        </div>
 
         {guide.sections.map((section) => (
           <section key={section.heading}>
@@ -102,6 +170,25 @@ export default async function GuidePage({ params }: PageProps) {
           </a>
         </div>
       </article>
+      {related.length > 0 && (
+        <section className="wrap related-guides">
+          <h2>Læs også</h2>
+          <div className="guides-list">
+            {related.map((item) => (
+              <article className="guide-card" key={item.slug}>
+                <span className="eyebrow">{item.kicker}</span>
+                <h2>
+                  <a href={`/guides/${item.slug}`}>{item.title}</a>
+                </h2>
+                <p className="guide-lead">{item.lead}</p>
+                <a className="text-link" href={`/guides/${item.slug}`}>
+                  Læs guiden <ArrowRight size={15} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <footer className="footer">
         <div className="wrap footer-inner">
