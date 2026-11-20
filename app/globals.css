@@ -312,3 +312,103 @@
 .guide-share { margin: 10px 0 18px; }
 .related-guides { margin-top: 36px; margin-bottom: 28px; }
 .related-guides > h2 { font: 800 22px Manrope, sans-serif; letter-spacing: -.6px; margin: 0 0 12px; color: var(--ink); }
+
+/* Automatic dark mode: follows the visitor's phone/system setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ink: #e8f0e9;
+    --muted: #a7b6ac;
+    --green: #7fd4a6;
+    --green2: #0b2a1d;
+    --lime: #d8f36a;
+    --paper: #0f1712;
+    --line: #2a3a30;
+    --white: #17211b;
+    --red: #ff7b7b;
+  }
+  html, body { background: var(--paper); color: var(--ink); }
+  body { color-scheme: dark; }
+  .top-strip { background: #0a2418; color: #cfe0d4; }
+  .header { color: var(--ink); }
+  .brand small { color: var(--muted); }
+  .nav { color: var(--muted); }
+  .nav-open { background: var(--white); box-shadow: 0 12px 30px #0008; }
+  .language { background: var(--white); color: var(--ink); border-color: var(--line); }
+  .login-btn, .vip-btn, .menu-btn { color: var(--ink); }
+  .vip-btn { background: var(--green); color: #0f1712; }
+  .hero { background: linear-gradient(112deg,#10261b 0%,#132b1e 56%,#0d2117 100%); border-color: var(--line); }
+  .hero-copy>p, .hero-quick, .eyebrow { color: var(--muted); }
+  .hero h1 { color: var(--ink); }
+  .hero-search { background: var(--white); border-color: var(--line); color: var(--muted); }
+  .hero-search input { color: var(--ink); }
+  .hero-feature { background: #0b2a1d; color: var(--ink); }
+  .hero-feature p { color: #cfe0d4; }
+  .store-pills button, .category-tile, .language, .sort-control, .filter-chip, .save-btn, .product-more, .product-search, .product-toolbar select { background: var(--white); color: var(--ink); border-color: var(--line); }
+  .store-pills button:hover, .category-tile:hover, .category-tile.active { background: #1d2d24; border-color: #3f6b52; }
+  .category-tile { color: var(--muted); }
+  .category-icon { background: #223329; color: var(--green); }
+  .deals-section { background: var(--paper); border-color: var(--line); }
+  .deal-row { background: var(--white); border-color: var(--line); }
+  .deal-row:hover { border-color: #3f6b52; box-shadow: 0 8px 22px #0006; }
+  .deal-info h3 { color: var(--ink); }
+  .deal-info>p, .deal-meta, .comments, .result-count, .demo-note { color: var(--muted); }
+  .deal-visual { background: linear-gradient(135deg,#1b2c22,#242a1d); }
+  .deal-visual b { background: var(--white); color: var(--green); }
+  .deal-tag { background: #223329; color: var(--muted); }
+  .save-btn { color: var(--muted); }
+  .save-btn.saved { background: #3a1f26; color: #ff9caf; }
+  .empty-state { background: #17211b; color: var(--muted); }
+  .partner-card, .feature-card { background: var(--white); border-color: var(--line); }
+  .partner-copy p, .feature-card p { color: var(--muted); }
+  .feature-card h3 { color: var(--ink); }
+  .vip-banner { background: #0b2a1d; }
+  .vip-inner p { color: #cfe0d4; }
+  .footer { background: #081c13; }
+  .vip-modal { background: var(--white); color: var(--ink); }
+  .vip-modal>p, .vip-modal li, .vip-price small { color: var(--muted); }
+  .modal-close { background: #223329; color: var(--ink); }
+  .vip-modal .modal-footnote { background: #223329; }
+  .store-card, .store-detail-card, .admin-card, .guide-card, .product-card { background: var(--white); border-color: var(--line); color: var(--ink); }
+  .store-card-body small, .home-store-note, .stores-hero p, .store-detail-card p, .admin-intro, .admin-field, .guide-lead, .guide-card ul, .guide-article p, .product-count, .product-brand, .product-store, .guide-updated, .guide-disclaimer { color: var(--muted); }
+  .store-avatar { background: #223329; color: var(--green); }
+  .status-badge.partner { background: #1f3a2b; color: #9fe0bd; }
+  .status-badge.directory { background: #223329; color: var(--muted); }
+  .store-logo { background: #fff; border-color: #3a4a40; }
+  .admin-field input, .admin-field select, .admin-field textarea { background: #0f1712; color: var(--ink); border-color: var(--line); }
+  .admin-token-row button { background: var(--white); color: var(--green); border-color: var(--line); }
+  .admin-list li { background: var(--white); border-color: var(--line); }
+  .guide-tip { background: #1d2d24; border-color: #3f6b52; color: #cfe0d4; }
+  .guides-cta { background: #0b2a1d; }
+  .product-search, .product-toolbar select { background: var(--white); border-color: var(--line); }
+  .product-img { background: #fff; }
+  .product-card:hover { box-shadow: 0 6px 20px #0008; }
+  .product-more { background: var(--white); border-color: var(--line); color: var(--ink); }
+  .tj-app-banner { background: var(--white); border-color: var(--line); box-shadow: 0 10px 30px #0008; }
+  .tj-app-banner__close { color: var(--muted); }
+  .tj-app-banner__close:hover { background: #223329; }
+  .tj-app-banner__icon { background: #223329; color: var(--green); }
+  .tj-app-banner__content strong { color: var(--ink); }
+  .tj-app-banner__content p { color: var(--muted); }
+  .tj-app-banner__secondary { background: #223329; color: var(--ink); }
+  .tj-app-banner__secondary:hover { background: #2c4134; }
+  .guide-article-lead { color: #cfe0d4; }
+  .guide-disclaimer { border-color: var(--line); }
+  .text-link, .store-card-info, .store-visit, .deal-price, .admin-list li a { color: var(--green); }
+  .store-direct-cta, .admin-submit, .deal-link, .tj-app-banner__primary { background: var(--green); color: #0f1712; border-color: var(--green); }
+  .partner-cta { background: #ed6a35; color: #fff; }
+  .demo-note { background: #2e2616; border-color: #5a4a28; color: #f0c36a; }
+  .sort-control select { color: var(--ink); }
+  .filter-chip.selected { background: #1f3a2b; border-color: #3f6b52; color: var(--green); }
+  .language { color: var(--ink); }
+  .brand-mark { background: var(--lime); color: #0f1712; }
+  .brand-accent { color: var(--green); }
+  .header-actions .language { color: var(--ink); }
+  .store-card-main>svg { color: var(--muted); }
+  .modal-backdrop { background: #000b; }
+  .vip-price, .vip-modal li svg { color: var(--green); }
+  .guide-card h2 a:hover { color: var(--green); }
+  .footer-brand { color: #fff; }
+  .footer-inner p { color: #b5c8ba; }
+  .footer-inner>span { color: #9bb3a2; }
+}
