@@ -75,7 +75,7 @@ export default async function GuidePage({ params }: PageProps) {
           url: "https://www.tilbudjagt.dk/",
           logo: {
             "@type": "ImageObject",
-            url: "https://www.tilbudjagt.dk/og-image.png",
+            url: "https://www.tilbudjagt.dk/icon.png",
           },
         },
         mainEntityOfPage: url,

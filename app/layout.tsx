@@ -82,7 +82,7 @@ const siteJsonLd = {
       url: `${SITE}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE}${OG_IMAGE}`,
+        url: `${SITE}/icon.png`,
       },
       email: "support@tilbudjagt.dk",
     },
