@@ -97,6 +97,14 @@ const FEEDS = [
     max: 300,
     url: "https://www.partner-ads.com/dk/feed_udlaes.php?partnerid=58143&bannerid=116302&feedid=4256",
   },
+  {
+    slug: "gucca",
+    store: "Gucca.dk",
+    fallbackCategory: "Stormagasin",
+    max: 1500,
+    category: guccaCategory,
+    url: "https://www.partner-ads.com/dk/feed_udlaes.php?partnerid=58143&bannerid=94931&feedid=2573",
+  },
 ];
 
 const ENTITIES = {
@@ -126,12 +134,40 @@ function text(block, tagName) {
     .trim();
 }
 
+function urlText(block, tagName) {
+  const re = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)</${tagName}>`, "i");
+  const match = block.match(re);
+  if (!match) return "";
+  return decodeEntities(decodeEntities(match[1])).replace(/\s+/g, "").trim();
+}
+
 function firstCategory(value, fallback) {
   const clean = value.replace(/\s+/g, " ").trim();
   if (!clean) return fallback;
   const first = clean.split(">")[0].trim();
   if (!first || first.length > 42) return fallback;
   return first;
+}
+
+function guccaCategory(value) {
+  const parts = value
+    .toLowerCase()
+    .split(/[|>]/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const joined = parts.join(" ");
+  if (/(film|tv-serie|dvd|blu-ray)/.test(joined)) return "Film & TV";
+  if (/(musik|cd|vinyl)/.test(joined)) return "Musik";
+  if (/(bog|bøger|lydbog)/.test(joined)) return "Bøger";
+  if (/(spil|gaming|playstation|xbox|nintendo)/.test(joined)) return "Spil";
+  if (/(elektronik|computer|mobil|lyd|højttaler|headset)/.test(joined)) return "Elektronik";
+  if (/(hjem|bolig|møbel|køkken|have)/.test(joined)) return "Hjem & bolig";
+  if (/(gave|gaveartikel|gavekort)/.test(joined)) return "Gaver";
+  if (/(sport|fitness|outdoor)/.test(joined)) return "Sport";
+  if (/(legetøj|leg)/.test(joined)) return "Legetøj";
+  if (/(pleje|skønhed|kosmetik|parfume)/.test(joined)) return "Skønhed & pleje";
+  if (/(tøj|mode|sko|accessor)/.test(joined)) return "Mode";
+  return parts.length > 1 ? parts[1].charAt(0).toUpperCase() + parts[1].slice(1) : "Stormagasin";
 }
 
 function price(value) {
@@ -150,21 +186,23 @@ function cleanId(value) {
 
 function parseBlock(block, feed, seen) {
   const name = text(block, "produktnavn");
-  const url = text(block, "vareurl");
-  const image = text(block, "billedurl");
+  const url = urlText(block, "vareurl");
+  const image = urlText(block, "billedurl");
   const currentPrice = price(text(block, "nypris"));
   const rawId = text(block, "produktid") || name;
   const stock = text(block, "lagerantal").toLowerCase();
 
   if (!name || !url || !image || currentPrice <= 0) return null;
-  if (stock.includes("out of stock") || stock.includes("udsolgt")) return null;
+  if (stock === "0" || stock.includes("out of stock") || stock.includes("udsolgt")) return null;
 
   const id = `${feed.slug}-${cleanId(rawId)}`;
   const key = `${id}|${url}`;
   if (seen.has(key)) return null;
   seen.add(key);
 
-  const category = firstCategory(text(block, "kategorinavn"), feed.fallbackCategory);
+  const category = feed.category
+    ? feed.category(text(block, "kategorinavn"))
+    : firstCategory(text(block, "kategorinavn"), feed.fallbackCategory);
   const brand = text(block, "brand") || feed.store;
   const description = text(block, "beskrivelse").slice(0, 220);
 
@@ -271,7 +309,9 @@ async function main() {
     );
     const preserved = previous.filter(
       (product) =>
-        product?.id?.startsWith("dyson-") || product?.id?.startsWith("bazta-"),
+        product?.id?.startsWith("dyson-") ||
+        product?.id?.startsWith("bazta-") ||
+        product?.id?.startsWith("gucca-"),
     );
     if (preserved.length) {
       const existingIds = new Set(products.map((product) => product.id));
@@ -283,7 +323,10 @@ async function main() {
       }
       counts.dyson = preserved.filter((product) => product.id.startsWith("dyson-")).length;
       counts["bazta-dk"] = preserved.filter((product) => product.id.startsWith("bazta-")).length;
-      console.log(`Preserved ${preserved.length} Awin products`);
+      if (!counts.gucca) {
+        counts.gucca = preserved.filter((product) => product.id.startsWith("gucca-")).length;
+      }
+      console.log(`Preserved ${preserved.length} external feed products`);
     }
   } catch {
     // No previous catalog yet; nothing to preserve.
