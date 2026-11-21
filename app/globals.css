@@ -190,11 +190,9 @@
 .supermarket-card .store-card-info{padding-top:1px}
 .store-group-andre .store-card{background:#fcfcfa}
 .specialty-groups{display:flex;flex-direction:column;gap:20px}
-.specialty-group{border-top:1px dashed #dfe8de;padding-top:14px}
-.specialty-group:first-child{border-top:0;padding-top:0}
+.specialty-group{padding-top:0}
 .specialty-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
 .specialty-head h3{font:800 14px Manrope;letter-spacing:-.2px;margin:0;color:#405246}
-.specialty-head span{font-size:10px;font-weight:800;color:#6b7d70;background:#eef4ec;border-radius:20px;padding:4px 9px}
 @media(max-width:900px){.supermarket-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.supermarket-grid{grid-template-columns:repeat(2,1fr)}.store-group{margin-top:27px}.store-group-head{align-items:flex-start;gap:9px}.store-group-head h2{font-size:20px}.store-group-head p{font-size:10px}.store-group-count{min-width:29px;height:29px;font-size:11px}.supermarket-card .store-card-main{padding:9px;gap:8px}.supermarket-card .store-card-body strong{font-size:11px}.specialty-groups{gap:16px}.specialty-group{padding-top:12px}.specialty-head h3{font-size:13px}}
 

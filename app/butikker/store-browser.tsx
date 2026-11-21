@@ -261,7 +261,6 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
                 <div className="specialty-group" key={key}>
                   <div className="specialty-head">
                     <h3>{STORE_SPECIALTIES[key].da}</h3>
-                    <span>{specialtyStores.length}</span>
                   </div>
                   <div className="store-grid">
                     {specialtyStores.map((store) => (
