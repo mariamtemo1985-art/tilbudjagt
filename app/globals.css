@@ -442,10 +442,10 @@
 /* Store logo cards and partner strip */
 .store-avatar-logo{background:#fff;border:1px solid #e1ebe0;padding:5px}
 .store-avatar-logo img{width:100%;height:100%;object-fit:contain;display:block}
-.partner-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:8px;margin-top:14px}
+.partner-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-top:14px}
 .partner-chip{display:flex;align-items:center;gap:8px;min-width:0;padding:6px 9px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);font-size:10px;font-weight:800;transition:.18s}
 .partner-chip:hover{border-color:#a9c9ad;transform:translateY(-1px)}
-.partner-chip .store-avatar{width:48px;height:34px;border-radius:8px;padding:4px}.partner-chip>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.partner-chip .store-avatar img{width:100%;height:100%;object-fit:contain;display:block}
+.partner-chip .store-avatar{width:68px;height:54px;border-radius:8px;padding:4px;display:flex;align-items:center;justify-content:center}.partner-chip>span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.15}
+.partner-chip .store-avatar img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;display:block}
 .store-avatar.store-avatar-logo{background:#fff;border-color:#e1ebe0}
-@media(max-width:650px){.partner-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-chip{font-size:9px;padding:5px 7px}.partner-chip .store-avatar{width:52px;height:36px}.store-avatar-logo{padding:4px}}
+@media(max-width:650px){.partner-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-chip{font-size:10px;padding:5px 7px}.partner-chip .store-avatar{width:72px;height:56px}.store-avatar-logo{padding:4px}}
