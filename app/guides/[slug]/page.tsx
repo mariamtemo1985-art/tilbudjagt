@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Tag } from "lucide-react";
 import { getGuide, getPublishedGuides } from "@/lib/guides";
 import AdSlot from "@/components/AdSlot";
 import ShareStoreButton from "@/components/ShareStoreButton";
+import SiteNav from "@/components/site-nav";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -117,11 +118,11 @@ export default async function GuidePage({ params }: PageProps) {
           <span className="brand-mark"><Tag size={22} /></span>
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
-        <nav className="nav nav-open" aria-label="Hovedmenu">
+        <SiteNav ariaLabel="Hovedmenu">
           <a href="/butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/contact.html">Kontakt</a>
-        </nav>
+        </SiteNav>
         <div className="header-actions">
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>

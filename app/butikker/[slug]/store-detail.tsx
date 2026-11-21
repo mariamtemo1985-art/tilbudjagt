@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Store as StoreIcon, Tag } from "lucide-react";
 import ShareStoreButton from "@/components/ShareStoreButton";
 import StoreLogo from "@/components/store-logo";
 import AdSlot from "@/components/AdSlot";
+import SiteNav from "@/components/site-nav";
 import {
   getStoreCategoryLabel,
   type Store,
@@ -115,11 +116,11 @@ export default function StoreDetail({ store }: { store: Store }) {
             <small>.dk</small>
           </span>
         </a>
-        <nav className="nav nav-open" aria-label={t.stores}>
+        <SiteNav ariaLabel={t.stores}>
           <a href="/butikker">{t.stores}</a>
           <a href="/about.html">{t.about}</a>
           <a href="/contact.html">{t.contact}</a>
-        </nav>
+        </SiteNav>
         <div className="header-actions">
           <select
             aria-label={t.language}

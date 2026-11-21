@@ -3,6 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowRight, Check, KeyRound, Store as StoreIcon, Tag } from "lucide-react";
 import { STORES, STORE_CATEGORIES, type StoreCategory } from "@/lib/stores";
+import SiteNav from "@/components/site-nav";
 
 const CATEGORY_KEYS = Object.keys(STORE_CATEGORIES) as StoreCategory[];
 
@@ -82,10 +83,10 @@ export default function AdminPage() {
           <span className="brand-mark"><Tag size={22} /></span>
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
-        <nav className="nav nav-open" aria-label="القائمة">
+        <SiteNav ariaLabel="القائمة">
           <a href="/butikker">المتاجر</a>
           <a href="/">الرئيسية</a>
-        </nav>
+        </SiteNav>
       </header>
 
       <section className="wrap admin-section">

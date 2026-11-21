@@ -4,6 +4,7 @@ import { STORES } from "@/lib/stores";
 import StoreBrowser from "./store-browser";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
+import SiteNav from "@/components/site-nav";
 
 export const metadata: Metadata = {
   title: "Butikker – find danske butikker",
@@ -42,11 +43,11 @@ export default function StoresPage() {
             <small>.dk</small>
           </span>
         </a>
-        <nav className="nav nav-open" aria-label="Hovedmenu">
+        <SiteNav ariaLabel="Hovedmenu">
           <a href="/butikker">Butikker</a>
           <a href="/about.html">Om os</a>
           <a href="/contact.html">Kontakt</a>
-        </nav>
+        </SiteNav>
         <div className="header-actions">
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>

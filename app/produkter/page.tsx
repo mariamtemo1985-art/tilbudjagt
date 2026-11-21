@@ -3,6 +3,7 @@ import { Tag } from "lucide-react";
 import { PRODUCTS, PRODUCT_CATEGORIES, PRODUCTS_UPDATED } from "@/lib/products";
 import ProductBrowser from "./product-browser";
 import AdSlot from "@/components/AdSlot";
+import SiteNav from "@/components/site-nav";
 
 export const metadata: Metadata = {
   title: "Produkter og priser – aktuelle varer",
@@ -32,12 +33,12 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             <small>.dk</small>
           </span>
         </a>
-        <nav className="nav nav-open" aria-label="Hovedmenu">
+        <SiteNav ariaLabel="Hovedmenu">
           <a href="/produkter">Produkter</a>
           <a href="/butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/about.html">Om os</a>
-        </nav>
+        </SiteNav>
         <div className="header-actions">
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>

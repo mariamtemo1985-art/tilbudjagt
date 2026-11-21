@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, BookOpen, Tag } from "lucide-react";
 import { getPublishedGuides } from "@/lib/guides";
+import SiteNav from "@/components/site-nav";
 
 export const revalidate = 3600;
 
@@ -20,11 +21,11 @@ export default function GuidesPage() {
           <span className="brand-mark"><Tag size={22} /></span>
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
-        <nav className="nav nav-open" aria-label="Hovedmenu">
+        <SiteNav ariaLabel="Hovedmenu">
           <a href="/butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/contact.html">Kontakt</a>
-        </nav>
+        </SiteNav>
         <div className="header-actions">
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>

@@ -201,35 +201,11 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
     return allGroups.filter((group) => group.stores.length > 0);
   }, [visible]);
 
-  const supermarketCount = stores.filter(
-    (store) => store.category === "dagligvarer",
-  ).length;
-  const electronicsCount = stores.filter(
-    (store) => store.category === "elektronik",
-  ).length;
-  const otherPartnerCount = stores.filter(
-    (store) =>
-      store.category !== "dagligvarer" &&
-      store.category !== "elektronik" &&
-      store.status === "partner",
-  ).length;
-  const otherCount =
-    stores.length - supermarketCount - electronicsCount - otherPartnerCount;
-  const totalPartnerCount = stores.filter(
-    (store) => store.status === "partner",
-  ).length;
-
   return (
     <>
       <section className="wrap stores-hero">
         <span className="eyebrow muted">BUTIKKER</span>
         <h1>Find butikker i Danmark</h1>
-        <p>
-          {stores.length} butikker i oversigten: {supermarketCount} supermarkeder,{" "}
-          {electronicsCount} elektronikbutikker, {otherPartnerCount} øvrige partnere
-          og {otherCount} andre butikker. I alt {totalPartnerCount} butikker har en
-          godkendt partneraftale.
-        </p>
         <div className="hero-search store-search">
           <Search size={19} />
           <input

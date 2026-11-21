@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteNav from "@/components/site-nav";
 import {
   ArrowRight,
   BarChart3,
@@ -33,12 +34,12 @@ export default function AdvertisePage() {
             <small>.dk</small>
           </span>
         </a>
-        <nav className="nav nav-open" aria-label="Hovedmenu">
+        <SiteNav ariaLabel="Hovedmenu">
           <a href="/produkter">Produkter</a>
           <a href="/butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/annoncering" aria-current="page">Annoncering</a>
-        </nav>
+        </SiteNav>
         <div className="header-actions">
           <a className="vip-btn" href="/#vip">Bliv VIP</a>
         </div>
