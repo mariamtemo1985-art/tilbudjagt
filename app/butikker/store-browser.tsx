@@ -100,7 +100,6 @@ function StoreGroupSection({ group }: { group: StoreGroup }) {
           <h2>{group.title}</h2>
           <p>{group.description}</p>
         </div>
-        <span className="store-group-count">{group.stores.length}</span>
       </div>
       <div
         className={
@@ -262,10 +261,6 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
             </button>
           ))}
         </div>
-        <p className="result-count">
-          {visible.length} {visible.length === 1 ? "butik" : "butikker"}
-        </p>
-
         {groups
           .filter((group) => group.key === "supermarkeder")
           .map((group) => (
@@ -284,9 +279,6 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
                   den rigtige type butik.
                 </p>
               </div>
-              <span className="store-group-count">
-                {visibleElectronicsCount}
-              </span>
             </div>
             <div className="specialty-groups">
               {electronicsBySpecialty.map(({ key, stores: specialtyStores }) => (
