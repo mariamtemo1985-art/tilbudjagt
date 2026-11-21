@@ -10,6 +10,14 @@ export type StoreCategory =
   | "stormagasin"
   | "pleje";
 
+export type StoreSpecialty =
+  | "tv-lyd"
+  | "computer"
+  | "mobil"
+  | "printer"
+  | "batterier"
+  | "kamera";
+
 export type StoreNetwork = "Awin" | "Adtraction" | "Partner-ads" | "Adservice";
 
 /**
@@ -23,6 +31,7 @@ export type Store = {
   slug: string;
   name: string;
   category: StoreCategory;
+  specialty?: StoreSpecialty;
   status: StoreStatus;
   website: string;
   network?: StoreNetwork;
@@ -45,10 +54,38 @@ export const STORE_CATEGORIES: Record<
   pleje: { da: "Personlig pleje", en: "Personal care", ar: "العناية الشخصية" },
 };
 
+export const STORE_SPECIALTIES: Record<
+  StoreSpecialty,
+  { da: string; en: string; ar: string }
+> = {
+  "tv-lyd": { da: "TV & lyd", en: "TV & audio", ar: "تلفزيونات وصوتيات" },
+  computer: {
+    da: "Computere & tilbehør",
+    en: "Computers & accessories",
+    ar: "كمبيوترات وملحقات",
+  },
+  mobil: { da: "Mobil & tablet", en: "Mobile & tablets", ar: "موبايلات وأجهزة لوحية" },
+  printer: { da: "Printer & blæk", en: "Printers & ink", ar: "طابعات وأحبار" },
+  batterier: {
+    da: "Batterier & ladere",
+    en: "Batteries & chargers",
+    ar: "بطاريات وشواحن",
+  },
+  kamera: { da: "Kamera & foto", en: "Cameras & photo", ar: "كاميرات وتصوير" },
+};
+
 export const STORES: Store[] = rawStores as Store[];
 
 export function getStore(slug: string): Store | undefined {
   return STORES.find((store) => store.slug === slug);
+}
+
+export function getStoreCategoryLabel(
+  store: Store,
+  lang: "da" | "en" | "ar",
+): string {
+  if (store.specialty) return STORE_SPECIALTIES[store.specialty][lang];
+  return STORE_CATEGORIES[store.category][lang];
 }
 
 export function isAffiliateLink(store: Store): boolean {

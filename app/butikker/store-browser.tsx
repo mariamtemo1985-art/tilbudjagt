@@ -2,7 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Search, Store as StoreIcon, Tag } from "lucide-react";
-import { STORE_CATEGORIES, type Store, type StoreCategory } from "@/lib/stores";
+import {
+  STORE_CATEGORIES,
+  STORE_SPECIALTIES,
+  getStoreCategoryLabel,
+  type Store,
+  type StoreCategory,
+  type StoreSpecialty,
+} from "@/lib/stores";
 import StoreLogo from "@/components/store-logo";
 
 type CategoryKey = "alle" | StoreCategory;
@@ -19,7 +26,14 @@ const CATEGORY_ORDER: CategoryKey[] = [
   "pleje",
 ];
 
-
+const SPECIALTY_ORDER: StoreSpecialty[] = [
+  "tv-lyd",
+  "computer",
+  "mobil",
+  "printer",
+  "batterier",
+  "kamera",
+];
 
 type StoreGroup = {
   key: "supermarkeder" | "partnere" | "andre";
@@ -28,6 +42,80 @@ type StoreGroup = {
   description: string;
   stores: Store[];
 };
+
+function StoreCard({ store }: { store: Store }) {
+  const isSupermarket = store.category === "dagligvarer";
+  return (
+    <div className={isSupermarket ? "store-card supermarket-card" : "store-card"}>
+      <a
+        className="store-card-main"
+        href={store.status === "partner" ? store.affiliateUrl! : store.website}
+        target="_blank"
+        rel={
+          store.status === "partner"
+            ? "sponsored nofollow noopener noreferrer"
+            : "noopener noreferrer"
+        }
+        aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
+      >
+        <StoreLogo slug={store.slug} name={store.name} large={isSupermarket} />
+        <span className="store-card-body">
+          <strong>{store.name}</strong>
+          <small>{getStoreCategoryLabel(store, "da")}</small>
+          <span
+            className={
+              store.status === "partner"
+                ? "status-badge partner"
+                : "status-badge directory"
+            }
+          >
+            {store.status === "partner" ? (
+              <>
+                <Tag size={11} /> Godkendt partner
+              </>
+            ) : (
+              <>
+                <StoreIcon size={11} /> Direkte link
+              </>
+            )}
+          </span>
+          <span className="store-visit">
+            Besøg {store.name} <ArrowRight size={12} />
+          </span>
+        </span>
+      </a>
+      <a className="store-card-info" href={`/butikker/${store.slug}`}>
+        Butiksinfo
+      </a>
+    </div>
+  );
+}
+
+function StoreGroupSection({ group }: { group: StoreGroup }) {
+  return (
+    <section className={`store-group store-group-${group.key}`}>
+      <div className="store-group-head">
+        <div>
+          <span className="eyebrow muted">{group.kicker}</span>
+          <h2>{group.title}</h2>
+          <p>{group.description}</p>
+        </div>
+        <span className="store-group-count">{group.stores.length}</span>
+      </div>
+      <div
+        className={
+          group.key === "supermarkeder"
+            ? "store-grid supermarket-grid"
+            : "store-grid"
+        }
+      >
+        {group.stores.map((store) => (
+          <StoreCard key={store.slug} store={store} />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export default function StoreBrowser({ stores }: { stores: Store[] }) {
   const [query, setQuery] = useState("");
@@ -47,18 +135,41 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
       const matchesCategory = category === "alle" || store.category === category;
       if (!matchesCategory) return false;
       if (!needle) return true;
-      const haystack = `${store.name} ${store.description.da} ${STORE_CATEGORIES[store.category].da}`.toLowerCase();
+      const specialty = store.specialty ? STORE_SPECIALTIES[store.specialty].da : "";
+      const haystack =
+        `${store.name} ${store.description.da} ${STORE_CATEGORIES[store.category].da} ${specialty}`.toLowerCase();
       return haystack.includes(needle);
     });
   }, [stores, query, category]);
 
+  const electronicsBySpecialty = useMemo(
+    () =>
+      SPECIALTY_ORDER.map((key) => ({
+        key,
+        stores: visible.filter(
+          (store) => store.category === "elektronik" && store.specialty === key,
+        ),
+      })).filter((group) => group.stores.length > 0),
+    [visible],
+  );
+  const visibleElectronicsCount = electronicsBySpecialty.reduce(
+    (total, group) => total + group.stores.length,
+    0,
+  );
+
   const groups = useMemo<StoreGroup[]>(() => {
     const supermarkets = visible.filter((store) => store.category === "dagligvarer");
     const partners = visible.filter(
-      (store) => store.category !== "dagligvarer" && store.status === "partner",
+      (store) =>
+        store.category !== "dagligvarer" &&
+        store.category !== "elektronik" &&
+        store.status === "partner",
     );
     const others = visible.filter(
-      (store) => store.category !== "dagligvarer" && store.status !== "partner",
+      (store) =>
+        store.category !== "dagligvarer" &&
+        store.category !== "elektronik" &&
+        store.status !== "partner",
     );
 
     const allGroups: StoreGroup[] = [
@@ -73,9 +184,9 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
       {
         key: "partnere",
         kicker: "PARTNERE",
-        title: "Godkendte partnere",
+        title: "Øvrige godkendte partnere",
         description:
-          "Butikker hvor vi har en godkendt partneraftale. Links er reklame og kan give os provision.",
+          "Butikker uden for dagligvarer og elektronik, hvor vi har en godkendt partneraftale. Links er reklame og kan give os provision.",
         stores: partners,
       },
       {
@@ -83,7 +194,7 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
         kicker: "ØVRIGE",
         title: "Andre butikker",
         description:
-          "Butikker uden en godkendt partneraftale. Linket går direkte til butikken uden provision.",
+          "Øvrige butikker uden en godkendt partneraftale. Linket går direkte til butikken uden provision.",
         stores: others,
       },
     ];
@@ -91,11 +202,23 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
     return allGroups.filter((group) => group.stores.length > 0);
   }, [visible]);
 
-  const supermarketCount = stores.filter((store) => store.category === "dagligvarer").length;
-  const partnerCount = stores.filter(
-    (store) => store.category !== "dagligvarer" && store.status === "partner",
+  const supermarketCount = stores.filter(
+    (store) => store.category === "dagligvarer",
   ).length;
-  const otherCount = stores.length - supermarketCount - partnerCount;
+  const electronicsCount = stores.filter(
+    (store) => store.category === "elektronik",
+  ).length;
+  const otherPartnerCount = stores.filter(
+    (store) =>
+      store.category !== "dagligvarer" &&
+      store.category !== "elektronik" &&
+      store.status === "partner",
+  ).length;
+  const otherCount =
+    stores.length - supermarketCount - electronicsCount - otherPartnerCount;
+  const totalPartnerCount = stores.filter(
+    (store) => store.status === "partner",
+  ).length;
 
   return (
     <>
@@ -104,8 +227,9 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
         <h1>Find butikker i Danmark</h1>
         <p>
           {stores.length} butikker i oversigten: {supermarketCount} supermarkeder,{" "}
-          {partnerCount} godkendte partnere og {otherCount} andre butikker. Supermarkeder
-          og partnere er samlet i hver sin gruppe, så det er nemt at finde rundt.
+          {electronicsCount} elektronikbutikker, {otherPartnerCount} øvrige partnere
+          og {otherCount} andre butikker. I alt {totalPartnerCount} butikker har en
+          godkendt partneraftale.
         </p>
         <div className="hero-search store-search">
           <Search size={19} />
@@ -142,86 +266,51 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
           {visible.length} {visible.length === 1 ? "butik" : "butikker"}
         </p>
 
-        {groups.map((group) => (
-          <section className={`store-group store-group-${group.key}`} key={group.key}>
+        {groups
+          .filter((group) => group.key === "supermarkeder")
+          .map((group) => (
+            <StoreGroupSection key={group.key} group={group} />
+          ))}
+
+        {electronicsBySpecialty.length > 0 && (
+          <section className="store-group store-group-elektronik">
             <div className="store-group-head">
               <div>
-                <span className="eyebrow muted">{group.kicker}</span>
-                <h2>{group.title}</h2>
-                <p>{group.description}</p>
+                <span className="eyebrow muted">ELEKTRONIK</span>
+                <h2>Elektronik efter speciale</h2>
+                <p>
+                  {visibleElectronicsCount} butikker opdelt i{" "}
+                  {electronicsBySpecialty.length} specialer, så det er nemt at finde
+                  den rigtige type butik.
+                </p>
               </div>
-              <span className="store-group-count">{group.stores.length}</span>
+              <span className="store-group-count">
+                {visibleElectronicsCount}
+              </span>
             </div>
-            <div
-              className={
-                group.key === "supermarkeder"
-                  ? "store-grid supermarket-grid"
-                  : "store-grid"
-              }
-            >
-              {group.stores.map((store) => {
-                const isSupermarket = store.category === "dagligvarer";
-                return (
-                  <div
-                    className={
-                      isSupermarket ? "store-card supermarket-card" : "store-card"
-                    }
-                    key={store.slug}
-                  >
-                    <a
-                      className="store-card-main"
-                      href={store.status === "partner" ? store.affiliateUrl! : store.website}
-                      target="_blank"
-                      rel={
-                        store.status === "partner"
-                          ? "sponsored nofollow noopener noreferrer"
-                          : "noopener noreferrer"
-                      }
-                      aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
-                    >
-                      <StoreLogo
-                        slug={store.slug}
-                        name={store.name}
-                        large={isSupermarket}
-                      />
-                      <span className="store-card-body">
-                        <strong>{store.name}</strong>
-                        <small>
-                          {store.category === "dagligvarer"
-                            ? "Supermarked"
-                            : STORE_CATEGORIES[store.category].da}
-                        </small>
-                        <span
-                          className={
-                            store.status === "partner"
-                              ? "status-badge partner"
-                              : "status-badge directory"
-                          }
-                        >
-                          {store.status === "partner" ? (
-                            <>
-                              <Tag size={11} /> Godkendt partner
-                            </>
-                          ) : (
-                            <>
-                              <StoreIcon size={11} /> Direkte link
-                            </>
-                          )}
-                        </span>
-                        <span className="store-visit">
-                          Besøg {store.name} <ArrowRight size={12} />
-                        </span>
-                      </span>
-                    </a>
-                    <a className="store-card-info" href={`/butikker/${store.slug}`}>
-                      Butiksinfo
-                    </a>
+            <div className="specialty-groups">
+              {electronicsBySpecialty.map(({ key, stores: specialtyStores }) => (
+                <div className="specialty-group" key={key}>
+                  <div className="specialty-head">
+                    <h3>{STORE_SPECIALTIES[key].da}</h3>
+                    <span>{specialtyStores.length}</span>
                   </div>
-                );
-              })}
+                  <div className="store-grid">
+                    {specialtyStores.map((store) => (
+                      <StoreCard key={store.slug} store={store} />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
-        ))}
+        )}
+
+        {groups
+          .filter((group) => group.key !== "supermarkeder")
+          .map((group) => (
+            <StoreGroupSection key={group.key} group={group} />
+          ))}
 
         {visible.length === 0 && (
           <div className="empty-state">

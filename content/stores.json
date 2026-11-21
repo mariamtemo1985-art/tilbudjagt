@@ -78,6 +78,7 @@
     "slug": "elgiganten",
     "name": "Elgiganten",
     "category": "elektronik",
+    "specialty": "tv-lyd",
     "status": "directory",
     "website": "https://www.elgiganten.dk",
     "description": {
@@ -90,6 +91,7 @@
     "slug": "power",
     "name": "POWER",
     "category": "elektronik",
+    "specialty": "tv-lyd",
     "status": "directory",
     "website": "https://www.power.dk",
     "description": {
@@ -342,6 +344,7 @@
     "slug": "proshop",
     "name": "Proshop",
     "category": "elektronik",
+    "specialty": "computer",
     "status": "partner",
     "website": "https://www.proshop.dk",
     "description": {
@@ -357,6 +360,7 @@
     "slug": "komplett",
     "name": "Komplett",
     "category": "elektronik",
+    "specialty": "computer",
     "status": "directory",
     "website": "https://www.komplett.dk",
     "description": {
@@ -421,6 +425,7 @@
     "slug": "soundliving",
     "name": "Soundliving",
     "category": "elektronik",
+    "specialty": "tv-lyd",
     "status": "partner",
     "network": "Partner-ads",
     "website": "https://soundliving.dk",
@@ -449,6 +454,7 @@
     "slug": "holdit",
     "name": "Holdit",
     "category": "elektronik",
+    "specialty": "mobil",
     "status": "directory",
     "website": "https://holdit.com/dk",
     "description": {
@@ -529,6 +535,7 @@
     "slug": "samsung",
     "name": "Samsung",
     "category": "elektronik",
+    "specialty": "mobil",
     "status": "directory",
     "website": "https://www.samsung.com/dk/",
     "description": {
@@ -542,6 +549,7 @@
     "slug": "bymoller",
     "name": "ByMøller",
     "category": "elektronik",
+    "specialty": "computer",
     "status": "partner",
     "network": "Partner-ads",
     "website": "https://bymoller.com/",
@@ -557,6 +565,7 @@
     "slug": "flicks",
     "name": "Flicks",
     "category": "elektronik",
+    "specialty": "kamera",
     "status": "partner",
     "website": "https://flicks.dk/",
     "description": {
@@ -572,6 +581,7 @@
     "slug": "offi",
     "name": "Offi",
     "category": "elektronik",
+    "specialty": "printer",
     "status": "partner",
     "website": "https://offi.dk",
     "description": {
@@ -587,6 +597,7 @@
     "slug": "batteribyen",
     "name": "Batteribyen.dk",
     "category": "elektronik",
+    "specialty": "batterier",
     "status": "partner",
     "website": "https://www.batteribyen.dk",
     "description": {
@@ -602,6 +613,7 @@
     "slug": "din-printer",
     "name": "Din printer",
     "category": "elektronik",
+    "specialty": "printer",
     "status": "partner",
     "website": "https://dinprinter.dk",
     "description": {

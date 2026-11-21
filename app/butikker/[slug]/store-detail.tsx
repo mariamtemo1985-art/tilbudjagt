@@ -5,7 +5,11 @@ import { ArrowLeft, ArrowRight, Store as StoreIcon, Tag } from "lucide-react";
 import ShareStoreButton from "@/components/ShareStoreButton";
 import StoreLogo from "@/components/store-logo";
 import AdSlot from "@/components/AdSlot";
-import { STORE_CATEGORIES, type Store, isAffiliateLink } from "@/lib/stores";
+import {
+  getStoreCategoryLabel,
+  type Store,
+  isAffiliateLink,
+} from "@/lib/stores";
 
 type Language = "da" | "en" | "ar";
 
@@ -140,7 +144,7 @@ export default function StoreDetail({ store }: { store: Store }) {
           <StoreLogo slug={store.slug} name={store.name} large />
           <div>
             <span className="eyebrow muted">
-              {STORE_CATEGORIES[store.category][lang]}
+              {getStoreCategoryLabel(store, lang)}
             </span>
             <h1>{store.name}</h1>
             <p>{store.description[lang]}</p>

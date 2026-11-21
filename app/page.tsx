@@ -7,7 +7,12 @@ import {
   Tag, TrendingUp, X, Zap, Flame, Store as StoreIcon, ShoppingBasket,
   Laptop, Shirt, Sofa, Scissors, Dumbbell, Building2,
 } from "lucide-react";
-import { STORE_CATEGORIES, STORES, type StoreCategory } from "@/lib/stores";
+import {
+  STORE_CATEGORIES,
+  STORES,
+  getStoreCategoryLabel,
+  type StoreCategory,
+} from "@/lib/stores";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import StoreLogo from "@/components/store-logo";
@@ -284,7 +289,7 @@ export default function HomePage() {
                 <StoreLogo slug={store.slug} name={store.name} />
                 <span className="store-card-body">
                   <strong>{store.name}</strong>
-                  <small>{STORE_CATEGORIES[store.category][lang]}</small>
+                  <small>{getStoreCategoryLabel(store, lang)}</small>
                   {store.status === "partner" && (
                     <span className="status-badge partner">
                       <Tag size={11} /> {t.partnerLabel}
