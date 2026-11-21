@@ -1,21 +1,15 @@
 "use client";
 
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState, type FormEvent } from "react";
 import {
-  ArrowRight, Bell, Check, Heart, Search, ShieldCheck, Sparkles,
-  Tag, TrendingUp, X, Zap, Flame, Store as StoreIcon, ShoppingBasket,
-  Laptop, Shirt, Sofa, Scissors, Dumbbell, Building2,
+  ArrowRight, Bell, Check, Heart, ShieldCheck, Sparkles,
+  Tag, X, Zap,
 } from "lucide-react";
-import {
-  STORE_CATEGORIES,
-  STORES,
-  getStoreCategoryLabel,
-  type StoreCategory,
-} from "@/lib/stores";
+import { STORES } from "@/lib/stores";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import StoreLogo from "@/components/store-logo";
+import StoreBrowser from "./butikker/store-browser";
 
 type Language = "da" | "en" | "ar";
 const LANG_KEY = "tilbudjagt_lang";
@@ -128,26 +122,10 @@ const copy = {
   },
 } as const;
 
-const CATEGORY_TILES: { key: StoreCategory; icon: ReactNode }[] = [
-  { key: "dagligvarer", icon: <ShoppingBasket /> },
-  { key: "elektronik", icon: <Laptop /> },
-  { key: "hjem", icon: <Sofa /> },
-  { key: "mode", icon: <Shirt /> },
-  { key: "skoenhed", icon: <Scissors /> },
-  { key: "sport", icon: <Dumbbell /> },
-  { key: "stormagasin", icon: <Building2 /> },
-  { key: "pleje", icon: <Sparkles /> },
-];
-
 const bazta = STORES.find((store) => store.slug === "bazta-dk")!;
 const partners = STORES.filter((store) => store.status === "partner");
-const featuredStores = [
-  ...STORES.filter((store) => store.category === "dagligvarer").slice(0, 4),
-  ...partners.slice(0, 4),
-];
 
 export default function HomePage() {
-  const router = useRouter();
   const [lang, setLang] = useState<Language>("da");
   const [langReady, setLangReady] = useState(false);
   useEffect(() => {
@@ -161,19 +139,12 @@ export default function HomePage() {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang, langReady]);
-  const [query, setQuery] = useState("");
   const [vipOpen, setVipOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [newsletterStatus, setNewsletterStatus] = useState("");
   const t = copy[lang];
   const rtl = lang === "ar";
-
-  const goSearch = (event?: FormEvent) => {
-    event?.preventDefault();
-    const value = query.trim();
-    router.push(value ? `/butikker?q=${encodeURIComponent(value)}` : "/butikker");
-  };
 
   const joinVipWaitlist = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -202,7 +173,7 @@ export default function HomePage() {
         </a>
         <nav className="nav">
           <a href="/produkter">{t.navProducts}</a>
-          <a href="/butikker">{t.explore}</a>
+          <a href="/#butikker">{t.explore}</a>
           <a href="/guides">{t.navGuides}</a>
           <a href="/about.html">{t.navAbout}</a>
           <a href="/contact.html">{t.navContact}</a>
@@ -226,102 +197,14 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="hero">
-        <div className="wrap hero-inner">
-          <div className="hero-copy">
-            <div className="eyebrow"><Flame size={15} /> {t.eyebrow}</div>
-            <h1>{t.hero}</h1>
-            <p>{t.heroText}</p>
-            <form className="hero-search" onSubmit={goSearch}>
-              <Search size={19} />
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder={t.search}
-                aria-label={t.search}
-              />
-              <button type="submit" aria-label={t.search}><ArrowRight size={18} /></button>
-            </form>
-            <div className="hero-quick">
-              <span><ShieldCheck size={15} /> {t.safe}</span>
-              <span><TrendingUp size={15} /> {t.hot}</span>
-            </div>
-          </div>
-          <div className="hero-feature">
-            <div className="feature-kicker"><Flame size={15} /> {t.hot}</div>
-            <div className="feature-emoji">🛍️</div>
-            <strong>{t.howTitle}</strong>
-            <p>{t.howText}</p>
-            <button onClick={() => router.push("/butikker")}>
-              {t.explore} <ArrowRight size={16} />
-            </button>
-          </div>
-        </div>
-      </section>
+      <div id="butikker">
+        <StoreBrowser stores={STORES} />
+      </div>
 
       <SponsoredBanner />
       <div className="wrap">
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME} />
       </div>
-
-      <section className="wrap store-section" id="stores">
-        <div className="section-title">
-          <div>
-            <span className="eyebrow muted">{t.storesEyebrow}</span>
-            <h2>{t.storesTitle}</h2>
-          </div>
-          <StoreIcon size={25} />
-        </div>
-        <div className="store-grid home-store-grid">
-          {featuredStores.map((store) => (
-            <div className="store-card" key={store.slug}>
-              <a
-                className="store-card-main"
-                href={store.status === "partner" ? store.affiliateUrl! : store.website}
-                target="_blank"
-                rel={store.status === "partner" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
-                aria-label={`${t.visit} ${store.name} – ${t.newTab}`}
-              >
-                <StoreLogo slug={store.slug} name={store.name} />
-                <span className="store-card-body">
-                  <strong>{store.name}</strong>
-                  <small>{getStoreCategoryLabel(store, lang)}</small>
-                  {store.status === "partner" && (
-                    <span className="status-badge partner">
-                      <Tag size={11} /> {t.partnerLabel}
-                    </span>
-                  )}
-                  <span className="store-visit">{t.visit} {store.name} <ArrowRight size={12} /></span>
-                </span>
-              </a>
-              <a className="store-card-info" href={`/butikker/${store.slug}`}>{t.storeInfo}</a>
-            </div>
-          ))}
-        </div>
-        <p className="home-store-note">{t.noOffers}</p>
-      </section>
-
-      <section className="wrap category-section" id="categories">
-        <div className="section-title">
-          <div>
-            <span className="eyebrow muted">{t.categories}</span>
-            <h2>{t.categories}</h2>
-          </div>
-          <a className="text-link" href="/butikker">{t.allStores} <ArrowRight size={16} /></a>
-        </div>
-        <div className="category-grid">
-          {CATEGORY_TILES.map((tile, index) => (
-            <a
-              className="category-tile"
-              key={tile.key}
-              href={`/butikker?kategori=${tile.key}`}
-            >
-              <span className={"category-icon cat-" + (index + 1)}>{tile.icon}</span>
-              <span>{STORE_CATEGORIES[tile.key][lang]}</span>
-            </a>
-          ))}
-        </div>
-      </section>
 
       <section className="wrap partner-section" aria-labelledby="partner-title">
         <div className="partner-card">
@@ -420,7 +303,7 @@ export default function HomePage() {
           </a>
           <p>{t.footer}</p>
           <nav aria-label={t.footerAria}>
-            <a href="/produkter">{t.footerProducts}</a> · <a href="/butikker">{t.footerStores}</a> · <a href="/guides">{t.footerGuides}</a> · <a href="/about.html">{t.footerAbout}</a> ·{" "}
+            <a href="/produkter">{t.footerProducts}</a> · <a href="/#butikker">{t.footerStores}</a> · <a href="/guides">{t.footerGuides}</a> · <a href="/about.html">{t.footerAbout}</a> ·{" "}
             <a href="/annoncering">{t.footerAds}</a> · <a href="/contact.html">{t.footerContact}</a> · <a href="/privacy.html">{t.footerPrivacy}</a> · <a href="/vilkaar.html">{t.footerTerms}</a> · <a href="/cookies.html">{t.footerCookies}</a>
           </nav>
           <span>© {new Date().getFullYear()} TilbudJagt.dk</span>

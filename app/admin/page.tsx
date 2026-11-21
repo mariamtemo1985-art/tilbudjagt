@@ -84,7 +84,7 @@ export default function AdminPage() {
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
         <SiteNav ariaLabel="القائمة">
-          <a href="/butikker">المتاجر</a>
+          <a href="/#butikker">المتاجر</a>
           <a href="/">الرئيسية</a>
         </SiteNav>
       </header>

@@ -117,7 +117,7 @@ export default function StoreDetail({ store }: { store: Store }) {
           </span>
         </a>
         <SiteNav ariaLabel={t.stores}>
-          <a href="/butikker">{t.stores}</a>
+          <a href="/#butikker">{t.stores}</a>
           <a href="/about.html">{t.about}</a>
           <a href="/contact.html">{t.contact}</a>
         </SiteNav>
@@ -138,7 +138,7 @@ export default function StoreDetail({ store }: { store: Store }) {
         </div>
       </header>
       <section className="wrap store-detail">
-        <a className="text-link" href="/butikker">
+        <a className="text-link" href="/#butikker">
           <ArrowLeft size={16} /> {t.allStores}
         </a>
         <div className="store-detail-card">

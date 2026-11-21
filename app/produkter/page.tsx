@@ -35,7 +35,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
         </a>
         <SiteNav ariaLabel="Hovedmenu">
           <a href="/produkter">Produkter</a>
-          <a href="/butikker">Butikker</a>
+          <a href="/#butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/about.html">Om os</a>
         </SiteNav>
@@ -82,7 +82,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             </span>
           </a>
           <p className="footer-links">
-            <a href="/produkter">Produkter</a> · <a href="/butikker">Butikker</a> ·{" "}
+            <a href="/produkter">Produkter</a> · <a href="/#butikker">Butikker</a> ·{" "}
             <a href="/guides">Guides</a> · <a href="/annoncering">Annoncering</a> ·{" "}
             <a href="/about.html">Om os</a> ·{" "}
             <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatliv</a> ·{" "}

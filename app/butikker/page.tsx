@@ -44,7 +44,7 @@ export default function StoresPage() {
           </span>
         </a>
         <SiteNav ariaLabel="Hovedmenu">
-          <a href="/butikker">Butikker</a>
+          <a href="/#butikker">Butikker</a>
           <a href="/about.html">Om os</a>
           <a href="/contact.html">Kontakt</a>
         </SiteNav>

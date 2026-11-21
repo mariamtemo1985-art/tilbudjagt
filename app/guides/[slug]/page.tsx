@@ -119,7 +119,7 @@ export default async function GuidePage({ params }: PageProps) {
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
         <SiteNav ariaLabel="Hovedmenu">
-          <a href="/butikker">Butikker</a>
+          <a href="/#butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/contact.html">Kontakt</a>
         </SiteNav>
@@ -163,7 +163,7 @@ export default async function GuidePage({ params }: PageProps) {
         </p>
 
         <div className="guide-article-cta">
-          <a className="partner-cta" href="/butikker">
+          <a className="partner-cta" href="/#butikker">
             Se butikker <ArrowRight size={16} />
           </a>
           <a className="store-card-info" href="/guides">
@@ -199,7 +199,7 @@ export default async function GuidePage({ params }: PageProps) {
           </a>
           <p>Guiderne er generel forbrugerinformation, ikke personlig rådgivning.</p>
           <nav aria-label="Footer links">
-            <a href="/butikker">Butikker</a> · <a href="/about.html">Om os</a> ·{" "}
+            <a href="/#butikker">Butikker</a> · <a href="/about.html">Om os</a> ·{" "}
             <a href="/annoncering">Annoncering</a> · <a href="/contact.html">Kontakt</a> ·{" "}
             <a href="/privacy.html">Privatlivspolitik</a>
           </nav>

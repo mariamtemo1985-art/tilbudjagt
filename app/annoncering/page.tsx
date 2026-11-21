@@ -36,7 +36,7 @@ export default function AdvertisePage() {
         </a>
         <SiteNav ariaLabel="Hovedmenu">
           <a href="/produkter">Produkter</a>
-          <a href="/butikker">Butikker</a>
+          <a href="/#butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/annoncering" aria-current="page">Annoncering</a>
         </SiteNav>
@@ -168,7 +168,7 @@ export default function AdvertisePage() {
           </a>
           <p>Annoncering og sponsorering mærkes altid tydeligt. Kontakt support@tilbudjagt.dk.</p>
           <nav aria-label="Footer links">
-            <a href="/butikker">Butikker</a> · <a href="/annoncering">Annoncering</a> ·{" "}
+            <a href="/#butikker">Butikker</a> · <a href="/annoncering">Annoncering</a> ·{" "}
             <a href="/privacy.html">Privatliv</a> · <a href="/cookies.html">Cookies</a> ·{" "}
             <a href="/contact.html">Kontakt</a>
           </nav>

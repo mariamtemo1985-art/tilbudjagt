@@ -22,7 +22,7 @@ export default function GuidesPage() {
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
         <SiteNav ariaLabel="Hovedmenu">
-          <a href="/butikker">Butikker</a>
+          <a href="/#butikker">Butikker</a>
           <a href="/guides">Guides</a>
           <a href="/contact.html">Kontakt</a>
         </SiteNav>
@@ -57,7 +57,7 @@ export default function GuidesPage() {
           <h2>Find butikkerne bag tilbuddene</h2>
           <p>Søg på navn eller kategori og se, hvilke butikker der er godkendte partnere.</p>
         </div>
-        <a className="partner-cta" href="/butikker">Se butikker <ArrowRight size={16} /></a>
+        <a className="partner-cta" href="/#butikker">Se butikker <ArrowRight size={16} /></a>
       </section>
       <footer className="footer">
         <div className="wrap footer-inner">
@@ -67,7 +67,7 @@ export default function GuidesPage() {
           </a>
           <p>Guiderne er generel forbrugerinformation, ikke personlig rådgivning.</p>
           <nav aria-label="Footer links">
-            <a href="/butikker">Butikker</a> · <a href="/about.html">Om os</a> ·{" "}
+            <a href="/#butikker">Butikker</a> · <a href="/about.html">Om os</a> ·{" "}
             <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a>
           </nav>
         </div>
