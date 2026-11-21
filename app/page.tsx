@@ -10,6 +10,7 @@ import {
 import { STORE_CATEGORIES, STORES, type StoreCategory } from "@/lib/stores";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
+import StoreLogo from "@/components/store-logo";
 
 type Language = "da" | "en" | "ar";
 const LANG_KEY = "tilbudjagt_lang";
@@ -25,9 +26,9 @@ const copy = {
     explore: "Se butikker", hot: "Sådan virker det",
     howTitle: "Sådan virker TilbudJagt",
     howText: "Vi samler butikker og godkendte partnere. Når en butik deler sine priser med os, viser vi dem – ellers linker vi direkte uden at gætte.",
-    partnerTitle: "Udvalgt partner", partnerText: "Se udvalgte produkter hos Bazta DK.",
+    partnerTitle: "Udvalgt partner", partnerText: "Bazta DK er vores udvalgte partner. Se alle godkendte partnere nedenfor.",
     partnerCta: "Besøg Bazta",
-    partnerDisclosure: "Reklamelink: TilbudJagt kan modtage provision, hvis du klikker på linket og handler hos Bazta. Din pris ændres ikke.",
+    partnerDisclosure: "Reklamelinks: TilbudJagt kan modtage provision, hvis du klikker på et partnerlink og handler hos partneren. Din pris ændres ikke.",
     vipTitle: "TilbudJagt VIP", vipText: "En mere personlig tilbudsoplevelse for 40 kr./md.",
     vipList: ["Personlige tilbud baseret på dine interesser", "Gemte favoritter og tilbudsoverblik", "Ingen skjulte gebyrer – opsig når du vil"],
     close: "Luk", login: "Log ind", account: "Opret konto",
@@ -60,9 +61,9 @@ const copy = {
     explore: "Browse stores", hot: "How it works",
     howTitle: "How TilbudJagt works",
     howText: "We collect stores and approved partners. When a store shares its prices, we show them – otherwise we link directly without guessing.",
-    partnerTitle: "Featured partner", partnerText: "Browse selected products at Bazta DK.",
+    partnerTitle: "Featured partner", partnerText: "Bazta DK is our featured partner. See all approved partners below.",
     partnerCta: "Visit Bazta",
-    partnerDisclosure: "Affiliate link: TilbudJagt may receive a commission if you click and buy at Bazta. Your price does not change.",
+    partnerDisclosure: "Affiliate links: TilbudJagt may receive a commission if you click a partner link and buy from that partner. Your price does not change.",
     vipTitle: "TilbudJagt VIP", vipText: "A more personal deal experience for DKK 40/month.",
     vipList: ["Personalised deals based on your interests", "Saved favourites and deal overview", "No hidden fees – cancel anytime"],
     close: "Close", login: "Log in", account: "Create account",
@@ -95,9 +96,9 @@ const copy = {
     explore: "استعرض المتاجر", hot: "كيف يعمل",
     howTitle: "كيف تعمل TilbudJagt",
     howText: "نجمع المتاجر والشركاء المعتمدين. عندما يشارك المتجر أسعاره نعرضها، وإلا نضع رابطًا مباشرًا دون تخمين.",
-    partnerTitle: "شريك مختار", partnerText: "تصفّح منتجات مختارة لدى Bazta DK.",
+    partnerTitle: "شريك مختار", partnerText: "Bazta DK هو شريكنا المختار. شاهد جميع الشركاء المعتمدين أدناه.",
     partnerCta: "زيارة Bazta",
-    partnerDisclosure: "رابط تسويق بالعمولة: قد تحصل TilbudJagt على عمولة إذا ضغطت على الرابط وأتممت شراءً لدى Bazta. السعر عليك لا يتغير.",
+    partnerDisclosure: "روابط تسويق بالعمولة: قد تحصل TilbudJagt على عمولة إذا ضغطت على رابط شريك وأتممت شراءً لديه. السعر عليك لا يتغير.",
     vipTitle: "عضوية TilbudJagt VIP", vipText: "تجربة عروض شخصية مقابل 40 كرونة دنماركية شهرياً.",
     vipList: ["عروض حسب اهتماماتك", "حفظ المفضلة ومتابعة العروض", "بدون رسوم مخفية – ألغِ متى شئت"],
     close: "إغلاق", login: "تسجيل الدخول", account: "إنشاء حساب",
@@ -134,7 +135,11 @@ const CATEGORY_TILES: { key: StoreCategory; icon: ReactNode }[] = [
 ];
 
 const bazta = STORES.find((store) => store.slug === "bazta-dk")!;
-const featuredStores = STORES.slice(0, 8);
+const partners = STORES.filter((store) => store.status === "partner");
+const featuredStores = [
+  ...STORES.filter((store) => store.category === "dagligvarer").slice(0, 4),
+  ...partners.slice(0, 4),
+];
 
 export default function HomePage() {
   const router = useRouter();
@@ -276,10 +281,15 @@ export default function HomePage() {
                 rel={store.status === "partner" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
                 aria-label={`${t.visit} ${store.name} – ${t.newTab}`}
               >
-                <span className="store-avatar" aria-hidden="true">{store.name.slice(0, 1)}</span>
+                <StoreLogo slug={store.slug} name={store.name} />
                 <span className="store-card-body">
                   <strong>{store.name}</strong>
                   <small>{STORE_CATEGORIES[store.category][lang]}</small>
+                  {store.status === "partner" && (
+                    <span className="status-badge partner">
+                      <Tag size={11} /> {t.partnerLabel}
+                    </span>
+                  )}
                   <span className="store-visit">{t.visit} {store.name} <ArrowRight size={12} /></span>
                 </span>
               </a>
@@ -328,6 +338,20 @@ export default function HomePage() {
           >
             {t.partnerCta} <ArrowRight size={16} />
           </a>
+        </div>
+        <div className="partner-strip" aria-label={t.partnerLabel}>
+          {partners.map((store) => (
+            <a
+              className="partner-chip"
+              key={store.slug}
+              href={store.affiliateUrl!}
+              target="_blank"
+              rel="sponsored nofollow noopener noreferrer"
+            >
+              <StoreLogo slug={store.slug} name={store.name} />
+              <span>{store.name}</span>
+            </a>
+          ))}
         </div>
       </section>
 

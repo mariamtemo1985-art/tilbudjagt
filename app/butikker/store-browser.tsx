@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Search, Store as StoreIcon, Tag } from "lucide-react";
 import { STORE_CATEGORIES, type Store, type StoreCategory } from "@/lib/stores";
+import StoreLogo from "@/components/store-logo";
 
 type CategoryKey = "alle" | StoreCategory;
 
@@ -18,23 +19,7 @@ const CATEGORY_ORDER: CategoryKey[] = [
   "pleje",
 ];
 
-const SUPERMARKET_LOGOS: Record<string, string> = {
-  netto: "/logos/netto.png",
-  foetex: "/logos/foetex.png",
-  "rema-1000": "/logos/rema-1000.png",
-  lidl: "/logos/lidl.png",
-  bilka: "/logos/bilka.png",
-  meny: "/logos/meny.png",
-  spar: "/logos/spar.png",
-  superbrugsen: "/logos/superbrugsen.png",
-  kvickly: "/logos/kvickly.png",
-  "365discount": "/logos/365discount.png",
-  aldi: "/logos/aldi.png",
-  nemlig: "/logos/nemlig.png",
-  motatos: "/logos/motatos.png",
-  loevbjerg: "/logos/loevbjerg.jpg",
-  "okologisk-supermarked": "/logos/okologisk-supermarked.png",
-};
+
 
 type StoreGroup = {
   key: "supermarkeder" | "partnere" | "andre";
@@ -175,11 +160,11 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
               }
             >
               {group.stores.map((store) => {
-                const logoSrc = SUPERMARKET_LOGOS[store.slug];
+                const isSupermarket = store.category === "dagligvarer";
                 return (
                   <div
                     className={
-                      logoSrc ? "store-card supermarket-card" : "store-card"
+                      isSupermarket ? "store-card supermarket-card" : "store-card"
                     }
                     key={store.slug}
                   >
@@ -194,16 +179,11 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
                       }
                       aria-label={`Besøg ${store.name} – åbner butikkens hjemmeside i ny fane`}
                     >
-                      <span
-                        className={logoSrc ? "store-avatar store-logo" : "store-avatar"}
-                        aria-hidden="true"
-                      >
-                        {logoSrc ? (
-                          <img src={logoSrc} alt="" loading="lazy" />
-                        ) : (
-                          store.name.slice(0, 1)
-                        )}
-                      </span>
+                      <StoreLogo
+                        slug={store.slug}
+                        name={store.name}
+                        large={isSupermarket}
+                      />
                       <span className="store-card-body">
                         <strong>{store.name}</strong>
                         <small>

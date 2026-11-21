@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Store as StoreIcon, Tag } from "lucide-react";
 import ShareStoreButton from "@/components/ShareStoreButton";
+import StoreLogo from "@/components/store-logo";
 import AdSlot from "@/components/AdSlot";
 import { STORE_CATEGORIES, type Store, isAffiliateLink } from "@/lib/stores";
 
@@ -136,9 +137,7 @@ export default function StoreDetail({ store }: { store: Store }) {
           <ArrowLeft size={16} /> {t.allStores}
         </a>
         <div className="store-detail-card">
-          <span className="store-avatar large" aria-hidden="true">
-            {store.name.slice(0, 1)}
-          </span>
+          <StoreLogo slug={store.slug} name={store.name} large />
           <div>
             <span className="eyebrow muted">
               {STORE_CATEGORIES[store.category][lang]}

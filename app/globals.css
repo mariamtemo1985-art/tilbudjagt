@@ -21,8 +21,8 @@
 .store-card-body{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
 .store-card-body strong{font:800 13px Manrope;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .store-card-body small{font-size:9px;color:#8a958d}
-.store-avatar{width:38px;height:38px;border-radius:10px;background:#eaf3e7;color:var(--green);display:grid;place-items:center;font:800 16px Manrope;flex-shrink:0}
-.store-avatar.large{width:58px;height:58px;border-radius:14px;font-size:24px}
+.store-avatar{width:52px;height:40px;border-radius:9px;background:#eaf3e7;color:var(--green);display:grid;place-items:center;font:800 16px Manrope;flex-shrink:0;overflow:hidden}.store-avatar-logo{background:#fff;border:1px solid #e1ebe0;padding:5px}.store-avatar-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.store-avatar.large{width:76px;height:58px;border-radius:12px;font-size:24px}
 .status-badge{display:inline-flex;align-items:center;gap:4px;font-size:8px;font-weight:800;border-radius:20px;padding:3px 7px;width:fit-content;margin-top:4px}
 .status-badge.partner{background:#e6f2e2;color:#176b45}
 .status-badge.directory{background:#f1f2f0;color:#77847c}
@@ -39,7 +39,7 @@
 .store-direct-cta{display:inline-flex;align-items:center;gap:7px;width:fit-content;background:var(--green);border:1px solid var(--green);color:#fff;border-radius:8px;padding:11px 14px;font-size:11px;font-weight:800}
 .store-detail-note{margin:0}
 @media(max-width:900px){.store-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:650px){.store-grid{grid-template-columns:repeat(2,1fr);gap:7px}.store-card{padding:0}.store-card-main{padding:10px;gap:8px}.store-card-body strong{font-size:11px}.store-avatar{width:32px;height:32px;font-size:14px}.stores-hero{padding-top:22px}.store-detail-card{padding:16px;gap:12px}.store-detail-card h1{font-size:22px}}
+@media(max-width:650px){.store-grid{grid-template-columns:repeat(2,1fr);gap:7px}.store-card{padding:0}.store-card-main{padding:10px;gap:8px}.store-card-body strong{font-size:11px}.store-avatar{width:48px;height:36px;font-size:14px}.store-avatar.large{width:64px;height:48px}.stores-hero{padding-top:22px}.store-detail-card{padding:16px;gap:12px}.store-detail-card h1{font-size:22px}}
 
 /* Admin */
 .admin-section{padding:30px 0 60px;max-width:900px}.admin-section h1{font:800 30px Manrope;letter-spacing:-1px;margin:8px 0}
@@ -184,15 +184,13 @@
 .supermarket-grid{grid-template-columns:repeat(5,1fr)}
 .supermarket-card{border-color:#d8e6d9;background:linear-gradient(180deg,#fbfdf9,#fff)}
 .supermarket-card .store-card-main{align-items:flex-start}
-.store-logo{width:62px;height:62px;border-radius:12px;background:#fff;border:1px solid #e1ebe0;padding:6px;overflow:hidden}
-.store-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .supermarket-card .store-card-body{padding-top:2px}
 .supermarket-card .store-card-body strong{font-size:12px}
 .supermarket-card .status-badge{margin-top:5px}
 .supermarket-card .store-card-info{padding-top:1px}
 .store-group-andre .store-card{background:#fcfcfa}
 @media(max-width:900px){.supermarket-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:650px){.supermarket-grid{grid-template-columns:repeat(2,1fr)}.store-group{margin-top:27px}.store-group-head{align-items:flex-start;gap:9px}.store-group-head h2{font-size:20px}.store-group-head p{font-size:10px}.store-group-count{min-width:29px;height:29px;font-size:11px}.store-logo{width:50px;height:50px;padding:4px;border-radius:10px}.supermarket-card .store-card-main{padding:9px;gap:8px}.supermarket-card .store-card-body strong{font-size:11px}}
+@media(max-width:650px){.supermarket-grid{grid-template-columns:repeat(2,1fr)}.store-group{margin-top:27px}.store-group-head{align-items:flex-start;gap:9px}.store-group-head h2{font-size:20px}.store-group-head p{font-size:10px}.store-group-count{min-width:29px;height:29px;font-size:11px}.supermarket-card .store-card-main{padding:9px;gap:8px}.supermarket-card .store-card-body strong{font-size:11px}}
 
 /* Monetisation: labelled ad and sponsor slots */
 .tj-ad {
@@ -439,3 +437,15 @@
   font-weight: 800;
 }
 .feature-card form small { color: var(--muted); font-size: 10px; line-height: 1.5; }
+
+
+/* Store logo cards and partner strip */
+.store-avatar-logo{background:#fff;border:1px solid #e1ebe0;padding:5px}
+.store-avatar-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.partner-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:8px;margin-top:14px}
+.partner-chip{display:flex;align-items:center;gap:8px;min-width:0;padding:6px 9px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);font-size:10px;font-weight:800;transition:.18s}
+.partner-chip:hover{border-color:#a9c9ad;transform:translateY(-1px)}
+.partner-chip .store-avatar{width:48px;height:34px;border-radius:8px;padding:4px}.partner-chip>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.partner-chip .store-avatar img{width:100%;height:100%;object-fit:contain;display:block}
+.store-avatar.store-avatar-logo{background:#fff;border-color:#e1ebe0}
+@media(max-width:650px){.partner-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-chip{font-size:9px;padding:5px 7px}.partner-chip .store-avatar{width:52px;height:36px}.store-avatar-logo{padding:4px}}
