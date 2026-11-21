@@ -729,5 +729,61 @@
       "ar": "غوكا Gucca.dk متجر شامل دنماركي عبر الإنترنت يضم أكثر من 150,000 منتج في الأفلام والألعاب والإلكترونيات والكتب والهدايا، وتُحدَّث تشكيلته باستمرار."
     },
     "checkedAt": "2026-11-21T00:03:44.000Z"
+  },
+  {
+    "slug": "nordicnest",
+    "name": "Nordic Nest",
+    "category": "hjem",
+    "status": "directory",
+    "network": "Adtraction",
+    "website": "https://www.nordicnest.dk",
+    "description": {
+      "da": "Nordisk interiørdesign med mere end 30.000 produkter fra over 200 skandinaviske brands – møbler, belysning og boligtilbehør.",
+      "en": "Nordic interior design with more than 30,000 products from over 200 Scandinavian brands – furniture, lighting and home accessories.",
+      "ar": "تصميم داخلي اسكندنافي بأكثر من 30,000 منتج من أكثر من 200 علامة تجارية – أثاث وإضاءة ومستلزمات منزلية."
+    },
+    "checkedAt": "2026-11-21"
+  },
+  {
+    "slug": "sinnerup",
+    "name": "Sinnerup",
+    "category": "hjem",
+    "status": "directory",
+    "network": "Adtraction",
+    "website": "https://sinnerup.dk",
+    "description": {
+      "da": "Dansk familieejet bolig- og livsstilsbutik siden 1971 med møbler, belysning, tekstiler og boligtilbehør fra over 100 brands.",
+      "en": "Danish family-owned home and lifestyle store since 1971, with furniture, lighting, textiles and home accessories from more than 100 brands.",
+      "ar": "متجر دنماركي عائلي للمنزل وأسلوب الحياة منذ 1971، يضم أثاثًا وإضاءة ومنسوجات ومستلزمات منزلية من أكثر من 100 علامة تجارية."
+    },
+    "checkedAt": "2026-11-21"
+  },
+  {
+    "slug": "boligcenter",
+    "name": "Boligcenter.dk",
+    "category": "hjem",
+    "status": "directory",
+    "network": "Adtraction",
+    "website": "https://www.boligcenter.dk",
+    "description": {
+      "da": "Boligcenter.dk samler møbler, belysning, haveartikler, værktøj og udstyr til hjem, have og fritid.",
+      "en": "Boligcenter.dk brings together furniture, lighting, garden items, tools and equipment for home, garden and leisure.",
+      "ar": "بوليج سنتر يجمع الأثاث والإضاءة ومستلزمات الحديقة والأدوات والمعدات للمنزل والحديقة والوقت الحر."
+    },
+    "checkedAt": "2026-11-21"
+  },
+  {
+    "slug": "jotex",
+    "name": "Jotex",
+    "category": "hjem",
+    "status": "directory",
+    "network": "Impact",
+    "website": "https://www.jotex.dk",
+    "description": {
+      "da": "Svensk interiørbrand med møbler, tekstiler, tæpper, belysning og boligtilbehør til hele hjemmet.",
+      "en": "Swedish interior brand with furniture, textiles, rugs, lighting and home accessories for the whole home.",
+      "ar": "علامة تصميم داخلي سويدية تضم أثاثًا ومنسوجات وسجادًا وإضاءة ومستلزمات منزلية لكل أرجاء المنزل."
+    },
+    "checkedAt": "2026-11-21"
   }
 ]

@@ -18,7 +18,12 @@ export type StoreSpecialty =
   | "batterier"
   | "kamera";
 
-export type StoreNetwork = "Awin" | "Adtraction" | "Partner-ads" | "Adservice";
+export type StoreNetwork =
+  | "Awin"
+  | "Adtraction"
+  | "Partner-ads"
+  | "Adservice"
+  | "Impact";
 
 /**
  * partner   = godkendt partneraftale; linket er et tracking-link og skal mærkes som reklame.
