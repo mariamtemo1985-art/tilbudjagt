@@ -702,5 +702,20 @@
     "checkedAt": "2026-11-19T14:49:02.807974+00:00",
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116738"
+  },
+  {
+    "slug": "gucca",
+    "name": "Gucca.dk",
+    "category": "stormagasin",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://www.gucca.dk",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=9399",
+    "description": {
+      "da": "Gucca.dk er et dansk online stormagasin med over 150.000 produkter inden for film, spil, elektronik, bøger og gaver. Sortimentet opdateres løbende.",
+      "en": "Gucca.dk is a Danish online department store with more than 150,000 products across films, games, electronics, books and gifts. The assortment is updated regularly.",
+      "ar": "غوكا Gucca.dk متجر شامل دنماركي عبر الإنترنت يضم أكثر من 150,000 منتج في الأفلام والألعاب والإلكترونيات والكتب والهدايا، وتُحدَّث تشكيلته باستمرار."
+    },
+    "checkedAt": "2026-11-21T00:03:44.000Z"
   }
 ]
