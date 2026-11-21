@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import {
-  ArrowRight, Bell, Check, Heart, Menu, Search, ShieldCheck, Sparkles,
+  ArrowRight, Bell, Check, Heart, Search, ShieldCheck, Sparkles,
   Tag, TrendingUp, X, Zap, Flame, Store as StoreIcon, ShoppingBasket,
   Laptop, Shirt, Sofa, Scissors, Dumbbell, Building2,
 } from "lucide-react";
@@ -166,7 +166,6 @@ export default function HomePage() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [newsletterStatus, setNewsletterStatus] = useState("");
-  const [mobileMenu, setMobileMenu] = useState(false);
   const t = copy[lang];
   const rtl = lang === "ar";
 
@@ -201,7 +200,7 @@ export default function HomePage() {
           <span className="brand-mark"><Tag size={22} /></span>
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
-        <nav className={mobileMenu ? "nav nav-open" : "nav"}>
+        <nav className="nav">
           <a href="/produkter">{t.navProducts}</a>
           <a href="/butikker">{t.explore}</a>
           <a href="/guides">{t.navGuides}</a>
@@ -223,9 +222,6 @@ export default function HomePage() {
           <a className="login-btn" href="/register">{t.account}</a>
           <button className="vip-btn" onClick={() => setVipOpen(true)}>
             <Sparkles size={15} /> VIP
-          </button>
-          <button className="menu-btn" onClick={() => setMobileMenu(!mobileMenu)} aria-label={t.menu}>
-            {mobileMenu ? <X /> : <Menu />}
           </button>
         </div>
       </header>
