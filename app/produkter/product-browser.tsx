@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Search, ExternalLink } from "lucide-react";
 import type { Product } from "@/lib/products";
+import { useSiteLang } from "@/components/site-translator";
 
 type Props = {
   initialProducts: Product[];
@@ -18,18 +19,87 @@ type SearchResponse = {
   total: number;
 };
 
+const COPY = {
+  da: {
+    searchPlaceholder: "Søg efter vare, brand eller kategori…",
+    searchAria: "Søg produkter",
+    categoryAria: "Vælg kategori",
+    allCategories: "Alle kategorier",
+    searching: "Søger…",
+    found: (n: number) => `${n} varer fundet`,
+    noResults: "Ingen varer matcher din søgning. Prøv et andet ord.",
+    loadMore: "Vis flere varer",
+    searchError: "Søgningen kunne ikke hentes lige nu. Prøv igen om et øjeblik.",
+    moreError: "Kunne ikke hente flere varer. Prøv igen.",
+  },
+  en: {
+    searchPlaceholder: "Search for a product, brand or category…",
+    searchAria: "Search products",
+    categoryAria: "Choose category",
+    allCategories: "All categories",
+    searching: "Searching…",
+    found: (n: number) => `${n} products found`,
+    noResults: "No products match your search. Try another word.",
+    loadMore: "Show more products",
+    searchError: "Search could not be loaded right now. Please try again shortly.",
+    moreError: "Could not load more products. Please try again.",
+  },
+  ar: {
+    searchPlaceholder: "ابحث عن منتج أو علامة تجارية أو فئة…",
+    searchAria: "ابحث عن المنتجات",
+    categoryAria: "اختر الفئة",
+    allCategories: "كل الفئات",
+    searching: "جارٍ البحث…",
+    found: (n: number) => `${n} منتجًا تم العثور عليها`,
+    noResults: "لا توجد منتجات تطابق بحثك. جرّب كلمة أخرى.",
+    loadMore: "عرض المزيد من المنتجات",
+    searchError: "تعذّر تحميل البحث الآن. حاول مرة أخرى بعد قليل.",
+    moreError: "تعذّر تحميل المزيد من المنتجات. حاول مرة أخرى.",
+  },
+} as const;
+
+const CATEGORY_AR: Record<string, string> = {
+  Spil: "ألعاب",
+  Legetøj: "ألعاب",
+  Elektronik: "إلكترونيات",
+  Mobil: "هواتف",
+  Computer: "كمبيوتر",
+  Printer: "طابعات",
+  Høretelefoner: "سماعات",
+  Speakers: "مكبرات صوت",
+  TV: "تلفزيونات",
+  Køkken: "مطبخ",
+  Hjem: "منزل",
+  Møbler: "أثاث",
+  Sport: "رياضة",
+  Skønhed: "جمال",
+  Pleje: "عناية",
+  Tøj: "ملابس",
+  Sko: "أحذية",
+  Baby: "مستلزمات أطفال",
+  Have: "حديقة",
+  Værktøj: "أدوات",
+};
+
+function categoryLabel(value: string, lang: "da" | "en" | "ar") {
+  if (lang !== "ar") return value;
+  return CATEGORY_AR[value] || value;
+}
+
 export default function ProductBrowser({
   initialProducts,
   initialTotal,
   categories,
   initialQuery = "",
 }: Props) {
+  const lang = useSiteLang();
+  const t = COPY[lang];
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [total, setTotal] = useState(initialTotal);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<"" | "search" | "more">("");
   const requestId = useRef(0);
 
   useEffect(() => {
@@ -64,7 +134,7 @@ export default function ProductBrowser({
         if (requestId.current === id) {
           setProducts([]);
           setTotal(0);
-          setError("Søgningen kunne ikke hentes lige nu. Prøv igen om et øjeblik.");
+          setError("search");
         }
       } finally {
         if (requestId.current === id) setLoading(false);
@@ -96,47 +166,47 @@ export default function ProductBrowser({
       setProducts((current) => [...current, ...data.products]);
       setTotal(data.total);
     } catch {
-      if (requestId.current === id) setError("Kunne ikke hente flere varer. Prøv igen.");
+      if (requestId.current === id) setError("more");
     } finally {
       if (requestId.current === id) setLoading(false);
     }
   }
 
   return (
-    <section className="wrap section product-section">
+    <section className="wrap section product-section" data-no-translate>
       <div className="product-toolbar">
         <label className="product-search">
           <Search size={18} />
           <input
             type="search"
             value={query}
-            placeholder="Søg efter vare, brand eller kategori…"
+            placeholder={t.searchPlaceholder}
             onChange={(e) => setQuery(e.target.value)}
-            aria-label="Søg produkter"
+            aria-label={t.searchAria}
           />
         </label>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          aria-label="Vælg kategori"
+          aria-label={t.categoryAria}
         >
-          <option value="">Alle kategorier</option>
+          <option value="">{t.allCategories}</option>
           {categories.map((c) => (
             <option key={c} value={c}>
-              {c}
+              {categoryLabel(c, lang)}
             </option>
           ))}
         </select>
       </div>
 
       <p className="product-count" aria-live="polite">
-        {loading ? "Søger…" : `${total} varer fundet`}
+        {loading ? t.searching : t.found(total)}
       </p>
 
-      {error && <p className="notice">{error}</p>}
+      {error && <p className="notice">{t[error === "search" ? "searchError" : "moreError"]}</p>}
 
       {!loading && products.length === 0 ? (
-        <p className="notice">Ingen varer matcher din søgning. Prøv et andet ord.</p>
+        <p className="notice">{t.noResults}</p>
       ) : (
         <div className="product-grid">
           {products.map((p) => (
@@ -166,7 +236,7 @@ export default function ProductBrowser({
 
       {!loading && products.length < total && (
         <button className="product-more" onClick={loadMore}>
-          Vis flere varer
+          {t.loadMore}
         </button>
       )}
     </section>

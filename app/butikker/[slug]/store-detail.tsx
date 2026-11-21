@@ -100,8 +100,10 @@ export default function StoreDetail({ store }: { store: Store }) {
 
   useEffect(() => {
     window.localStorage.setItem(LANG_KEY, lang);
+    document.cookie = `${LANG_KEY}=${lang}; path=/; max-age=31536000; SameSite=Lax`;
     document.documentElement.lang = lang;
     document.documentElement.dir = rtl ? "rtl" : "ltr";
+    window.dispatchEvent(new CustomEvent("tilbudjagt:langchange", { detail: lang }));
   }, [lang, rtl]);
 
   return (

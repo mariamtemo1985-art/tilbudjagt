@@ -136,8 +136,10 @@ export default function HomePage() {
   useEffect(() => {
     if (!langReady) return;
     window.localStorage.setItem(LANG_KEY, lang);
+    document.cookie = `${LANG_KEY}=${lang}; path=/; max-age=31536000; SameSite=Lax`;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    window.dispatchEvent(new CustomEvent("tilbudjagt:langchange", { detail: lang }));
   }, [lang, langReady]);
   const [vipOpen, setVipOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -161,7 +163,7 @@ export default function HomePage() {
   };
 
   return (
-    <main dir={rtl ? "rtl" : "ltr"}>
+    <main dir={rtl ? "rtl" : "ltr"} data-no-translate>
       <div className="top-strip">
         <span><Zap size={14} /> {t.tagline}</span>
         <span><ShieldCheck size={14} /> {t.safe}</span>

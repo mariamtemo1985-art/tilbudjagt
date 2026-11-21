@@ -4,6 +4,7 @@ import "./auth.css";
 import "./submit.css";
 import { Analytics } from "@vercel/analytics/next";
 import AppInstallBanner from "@/components/AppInstallBanner";
+import SiteTranslator from "@/components/site-translator";
 
 const SITE = "https://www.tilbudjagt.dk";
 const OG_IMAGE = "/og-image.png";
@@ -92,15 +93,21 @@ const siteJsonLd = {
   ],
 };
 
+const languageBootstrap = `(function(){try{var l=localStorage.getItem('tilbudjagt_lang')||(document.cookie.match(/(?:^|; )tilbudjagt_lang=([^;]+)/)||[])[1]||'da';if(l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="da">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: languageBootstrap }} />
+      </head>
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         {children}
+        <SiteTranslator />
         <AppInstallBanner />
         <Analytics />
       </body>
