@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-19T22:08:17.074312Z",
-  "total": 5326,
+  "updatedAt": "2026-11-21T00:13:32.696Z",
+  "total": 6826,
   "stores": {
     "proshop": 1500,
     "okologisk-supermarked": 694,
@@ -15,7 +15,8 @@
     "fit-fun": 42,
     "flicks": 13,
     "dyson": 109,
-    "bazta-dk": 1200
+    "bazta-dk": 1200,
+    "gucca": 1500
   },
   "errors": []
 }
