@@ -21,8 +21,8 @@ const emailFromToken = (token: string) => {
     return email;
   } catch { return null; }
 };
-const welcomeIdempotencyKey = (email: string) =>
-  `welcome-${createHash("sha256").update(email).digest("hex")}`;
+const welcomeIdempotencyKey = (email: string, consentAt: string) =>
+  `welcome-${createHash("sha256").update(`${email}|${consentAt}`).digest("hex")}`;
 
 async function subscriberExists(url: string, key: string, email: string): Promise<boolean | null> {
   try {
@@ -69,6 +69,7 @@ export async function POST(request: NextRequest) {
     if (!emailPattern.test(email) || body?.consent !== true) {
       return NextResponse.json({ error: "Valid email and consent are required." }, { status: 400 });
     }
+    const consentAt = new Date().toISOString();
 
     const resend = process.env.RESEND_API_KEY;
     const from = process.env.RESEND_FROM_EMAIL;
@@ -95,7 +96,7 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           email,
-          consent_at: new Date().toISOString(),
+          consent_at: consentAt,
           source: "vip_waitlist",
         }),
       });
@@ -118,7 +119,7 @@ export async function POST(request: NextRequest) {
       headers: {
         Authorization: `Bearer ${resend}`,
         "Content-Type": "application/json",
-        "Idempotency-Key": welcomeIdempotencyKey(email),
+        "Idempotency-Key": welcomeIdempotencyKey(email, consentAt),
       },
       body: JSON.stringify({
         from,
