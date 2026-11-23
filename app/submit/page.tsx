@@ -14,7 +14,7 @@ export default async function SubmitOfferPage({ searchParams }: Props) {
     return <main className="auth-page" dir="rtl"><section className="auth-card"><h1>إضافة عرض</h1><p>إرسال العروض سيتاح بعد ربط قاعدة البيانات.</p><Link href="/">العودة للرئيسية</Link></section></main>;
   }
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) redirect("/login?error=سجّل الدخول قبل إضافة عرض.");
+  if (!user) redirect(`/login?error=${encodeURIComponent("سجّل الدخول قبل إضافة عرض.")}`);
 
   return (
     <main className="auth-page" dir="rtl">

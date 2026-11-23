@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
   const safeNext = next.startsWith("/") && !next.startsWith("//") ? next : "/account";
 
   if (!url || !key || !code) {
-    return NextResponse.redirect(new URL("/login?error=تعذر تأكيد البريد الإلكتروني.", request.url));
+    return NextResponse.redirect(new URL(`/login?error=${encodeURIComponent("تعذر تأكيد البريد الإلكتروني.")}`, request.url));
   }
 
   const response = NextResponse.redirect(new URL(safeNext, request.url));
@@ -26,6 +26,6 @@ export async function GET(request: NextRequest) {
     },
   });
   const { error } = await supabase.auth.exchangeCodeForSession(code);
-  if (error) return NextResponse.redirect(new URL("/login?error=انتهت صلاحية رابط التأكيد أو أنه غير صحيح.", request.url));
+  if (error) return NextResponse.redirect(new URL(`/login?error=${encodeURIComponent("انتهت صلاحية رابط التأكيد أو أنه غير صحيح.")}`, request.url));
   return response;
 }
