@@ -133,3 +133,43 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 }
+
+export async function DELETE(request: NextRequest) {
+  const expected = process.env.CRON_SECRET ?? "";
+  const supplied = request.headers.get("x-cron-secret") ?? "";
+  if (
+    !expected ||
+    supplied.length !== expected.length ||
+    !timingSafeEqual(Buffer.from(supplied), Buffer.from(expected))
+  ) {
+    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  }
+
+  const email = String(request.nextUrl.searchParams.get("email") || "").trim().toLowerCase().slice(0, 254);
+  if (!emailPattern.test(email)) {
+    return NextResponse.json({ error: "Valid email is required." }, { status: 400 });
+  }
+
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) {
+    return NextResponse.json({ error: "Subscription store is not configured." }, { status: 503 });
+  }
+
+  const deleted = await fetch(
+    `${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}`,
+    {
+      method: "DELETE",
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        Prefer: "return=representation",
+      },
+    },
+  );
+  if (!deleted.ok) {
+    return NextResponse.json({ error: "Could not remove subscriber." }, { status: 502 });
+  }
+  const rows = await deleted.json().catch(() => []);
+  return NextResponse.json({ ok: true, deleted: Array.isArray(rows) ? rows.length : 0 });
+}
