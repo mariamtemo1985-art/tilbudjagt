@@ -24,10 +24,14 @@ const emailFromToken = (token: string) => {
 const welcomeIdempotencyKey = (email: string, consentAt: string) =>
   `welcome-${createHash("sha256").update(`${email}|${consentAt}`).digest("hex")}`;
 
-async function subscriberExists(url: string, key: string, email: string): Promise<boolean | null> {
+async function subscriberState(
+  url: string,
+  key: string,
+  email: string,
+): Promise<{ exists: boolean; consentAt: string | null } | null> {
   try {
     const response = await fetch(
-      `${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}&select=email&limit=1`,
+      `${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}&select=email,consent_at&limit=1`,
       {
         headers: { apikey: key, Authorization: `Bearer ${key}` },
         cache: "no-store",
@@ -35,7 +39,11 @@ async function subscriberExists(url: string, key: string, email: string): Promis
     );
     if (!response.ok) return null;
     const rows = await response.json().catch(() => null);
-    return Array.isArray(rows) && rows.length > 0;
+    if (!Array.isArray(rows)) return null;
+    return {
+      exists: rows.length > 0,
+      consentAt: rows[0]?.consent_at ?? null,
+    };
   } catch {
     return null;
   }
@@ -80,37 +88,68 @@ export async function POST(request: NextRequest) {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
     let inserted = false;
+    let reactivated = false;
+    let previousConsentAt: string | null = null;
     if (url && key) {
-      const existing = await subscriberExists(url, key, email);
-      if (existing === true) {
-        return NextResponse.json({ ok: true, alreadySubscribed: true });
-      }
+      const existing = await subscriberState(url, key, email);
+      if (existing?.exists) {
+        const lastConsent = existing.consentAt ? Date.parse(existing.consentAt) : Number.NaN;
+        if (Number.isFinite(lastConsent) && Date.now() - lastConsent < 10 * 60 * 1000) {
+          return NextResponse.json({ ok: true, alreadySubscribed: true });
+        }
+        previousConsentAt = existing.consentAt;
+        const consentFilter = existing.consentAt
+          ? `&consent_at=eq.${encodeURIComponent(existing.consentAt)}`
+          : "&consent_at=is.null";
+        const updated = await fetch(
+          `${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}${consentFilter}`,
+          {
+            method: "PATCH",
+            headers: {
+              apikey: key,
+              Authorization: `Bearer ${key}`,
+              "Content-Type": "application/json",
+              Prefer: "return=representation",
+            },
+            body: JSON.stringify({ consent_at: consentAt, source: "vip_waitlist" }),
+          },
+        );
+        if (!updated.ok) {
+          return NextResponse.json({ error: "Could not save subscription." }, { status: 502 });
+        }
+        const updatedRows = await updated.json().catch(() => null);
+        if (Array.isArray(updatedRows) && updatedRows.length === 0) {
+          return NextResponse.json({ ok: true, alreadySubscribed: true });
+        }
+        reactivated = true;
+      } else {
 
-      const saved = await fetch(`${url}/rest/v1/newsletter_subscribers?on_conflict=email`, {
-        method: "POST",
-        headers: {
-          apikey: key,
-          Authorization: `Bearer ${key}`,
-          "Content-Type": "application/json",
-          Prefer: "resolution=ignore-duplicates,return=representation",
-        },
-        body: JSON.stringify({
-          email,
-          consent_at: consentAt,
-          source: "vip_waitlist",
-        }),
-      });
-      if (saved.status === 409) {
-        return NextResponse.json({ ok: true, alreadySubscribed: true });
+        const saved = await fetch(`${url}/rest/v1/newsletter_subscribers?on_conflict=email`, {
+          method: "POST",
+          headers: {
+            apikey: key,
+            Authorization: `Bearer ${key}`,
+            "Content-Type": "application/json",
+            Prefer: "resolution=ignore-duplicates,return=representation",
+          },
+          body: JSON.stringify({
+            email,
+            consent_at: consentAt,
+            source: "vip_waitlist",
+          }),
+        });
+        if (saved.status === 409) {
+          return NextResponse.json({ ok: true, alreadySubscribed: true });
+        }
+        if (!saved.ok) {
+          return NextResponse.json({ error: "Could not save subscription." }, { status: 502 });
+        }
+        const savedRows = await saved.json().catch(() => null);
+        if (Array.isArray(savedRows) && savedRows.length === 0) {
+          return NextResponse.json({ ok: true, alreadySubscribed: true });
+        }
+        inserted = Array.isArray(savedRows) ? savedRows.length > 0 : true;
       }
-      if (!saved.ok) {
-        return NextResponse.json({ error: "Could not save subscription." }, { status: 502 });
-      }
-      const savedRows = await saved.json().catch(() => null);
-      if (Array.isArray(savedRows) && savedRows.length === 0) {
-        return NextResponse.json({ ok: true, alreadySubscribed: true });
-      }
-      inserted = Array.isArray(savedRows) ? savedRows.length > 0 : true;
     }
 
     const unsubscribe = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.tilbudjagt.dk"}/api/newsletter?token=${tokenFor(email)}`;
@@ -133,6 +172,16 @@ export async function POST(request: NextRequest) {
         await fetch(`${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}`, {
           method: "DELETE",
           headers: { apikey: key, Authorization: `Bearer ${key}` },
+        }).catch(() => undefined);
+      } else if (reactivated && url && key) {
+        await fetch(`${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}`, {
+          method: "PATCH",
+          headers: {
+            apikey: key,
+            Authorization: `Bearer ${key}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ consent_at: previousConsentAt || "1970-01-01T00:00:00.000Z" }),
         }).catch(() => undefined);
       }
       return NextResponse.json({ error: "The welcome email could not be sent." }, { status: 502 });
