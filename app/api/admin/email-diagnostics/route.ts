@@ -33,6 +33,8 @@ export async function GET(request: NextRequest) {
   if (!key) return NextResponse.json({ error: "Resend is not configured." }, { status: 503 });
 
   const email = String(request.nextUrl.searchParams.get("email") || "").trim().toLowerCase();
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const [domains, emails, suppressions] = await Promise.all([
     resendGet("/domains", key),
     resendGet("/emails?limit=100", key),
@@ -66,9 +68,43 @@ export async function GET(request: NextRequest) {
     };
   }
 
+  let subscriber: unknown = null;
+  let recentSubscribers: unknown[] = [];
+  if (supabaseUrl && supabaseKey) {
+    const headers = { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` };
+    if (email) {
+      const response = await fetch(
+        `${supabaseUrl}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}&select=email,consent_at,source&limit=1`,
+        { headers, cache: "no-store" },
+      );
+      const rows = await response.json().catch(() => []);
+      const row = Array.isArray(rows) ? rows[0] : null;
+      subscriber = row
+        ? { email: mask(String(row.email || "")), consent_at: row.consent_at, source: row.source }
+        : { email: mask(email), exists: false };
+    }
+    const recent = await fetch(
+      `${supabaseUrl}/rest/v1/newsletter_subscribers?select=email,consent_at,source&order=consent_at.desc&limit=20`,
+      { headers, cache: "no-store" },
+    );
+    const rows = await recent.json().catch(() => []);
+    recentSubscribers = Array.isArray(rows)
+      ? rows.map((row: { email?: string; consent_at?: string; source?: string }) => ({
+          email: row.email ? mask(row.email) : "***",
+          consent_at: row.consent_at,
+          source: row.source,
+        }))
+      : [];
+  }
+
   return NextResponse.json({
     ok: domains.ok && emails.ok && suppressions.ok,
     statuses: { domains: domains.status, emails: emails.status, suppressions: suppressions.status },
+    errors: {
+      domains: domains.ok ? null : domains.body?.message || domains.body?.error?.message || null,
+      emails: emails.ok ? null : emails.body?.message || emails.body?.error?.message || null,
+      suppressions: suppressions.ok ? null : suppressions.body?.message || suppressions.body?.error?.message || null,
+    },
     domains: domainRows.map((item: { name?: string; status?: string; region?: string }) => ({
       name: item.name,
       status: item.status,
@@ -82,5 +118,7 @@ export async function GET(request: NextRequest) {
       created_at: item.created_at,
     })),
     target,
+    subscriber,
+    recent_subscribers: recentSubscribers,
   });
 }
