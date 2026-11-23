@@ -800,5 +800,275 @@
       "ar": "صابون يدين دنماركي على شكل أقراص مع موزّع زجاجي قابل لإعادة التعبئة. اختاري زجاجة، أذيبي قرصًا في ماء دافئ واحصلي على رغوة صابون دون زجاجة بلاستيكية جديدة. خمس روائح، منها بلا عطر، مع إمكانية الاشتراك بخصم 10%."
     },
     "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "nordgreen",
+    "name": "Nordgreen",
+    "category": "mode",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://nordgreen.com/da-dk",
+    "affiliateUrl": "https://dot.nordgreen.com/t/t?a=2102440229&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Skandinaviske ure designet i København. Minimalistiske ure og tilbehør til mænd og kvinder.",
+      "en": "Scandinavian watches designed in Copenhagen. Minimalist watches and accessories for men and women.",
+      "ar": "ساعات إسكندنافية مصممة في كوبنهاغن. ساعات وإكسسوارات بسيطة التصميم للرجال والنساء."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "jorgsholm",
+    "name": "Jørgsholm",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://jorgsholm.dk",
+    "affiliateUrl": "https://pin.jorgsholm.dk/t/t?a=2048668932&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Non-stick hybridpander og gryder fra Jacob Jørgsholm. Køkkenudstyr i god kvalitet til fair priser.",
+      "en": "Non-stick hybrid pans and pots from Jacob Jørgsholm. Quality kitchenware at fair prices.",
+      "ar": "مقالي وقدور هايبرد غير لاصقة من Jacob Jørgsholm. أدوات مطبخ بجودة جيدة وأسعار عادلة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "qookware",
+    "name": "Qookware",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://qookware.dk",
+    "affiliateUrl": "https://go.qookware.dk/t/t?a=2020334545&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Køkkenknive, pander, gryder og tilbehør til madlavning i hjemmet.",
+      "en": "Kitchen knives, pans, pots and accessories for home cooking.",
+      "ar": "سكاكين ومقالي وقدور وأدوات مطبخ للطهي المنزلي."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "rennoa",
+    "name": "Rennoa",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://rennoa.dk",
+    "affiliateUrl": "https://go.rennoa.dk/t/t?a=2001931235&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Damprenser til hjemmet, der rengør overflader uden brug af kemikalier.",
+      "en": "Home steam cleaner that cleans surfaces without chemicals.",
+      "ar": "منظّف بخار منزلي ينظّف الأسطح دون استخدام مواد كيميائية."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "the-nap",
+    "name": "The Nap",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://thenap.dk",
+    "affiliateUrl": "https://ion.thenap.dk/t/t?a=1982903621&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Puder, dyner og søvnprodukter designet til bedre støtte og roligere nætter.",
+      "en": "Pillows, duvets and sleep products designed for better support and calmer nights.",
+      "ar": "وسائد وألحفة ومنتجات نوم مصممة لدعم أفضل ونوم أهدأ."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "musclepain",
+    "name": "Musclepain",
+    "category": "sport",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://musclepain.dk",
+    "affiliateUrl": "https://to.musclepain.dk/t/t?a=1982905113&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Massagepistoler og recovery-udstyr til ømme muskler og led.",
+      "en": "Massage guns and recovery equipment for sore muscles and joints.",
+      "ar": "مسدسات مساج وأدوات تعافٍ للعضلات والمفاصل المتعبة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "ihero",
+    "name": "iHero",
+    "category": "elektronik",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://shop.ihero.dk",
+    "affiliateUrl": "https://do.ihero.dk/t/t?a=1980284369&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Gadgets, elektronik og sjove hverdagsprodukter til hele familien.",
+      "en": "Gadgets, electronics and fun everyday products for the whole family.",
+      "ar": "أدوات ذكية وإلكترونيات ومنتجات يومية ممتعة لكل العائلة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "gr88",
+    "name": "GR88",
+    "category": "mode",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.gr88.dk",
+    "affiliateUrl": "https://pin.gr88.dk/t/t?a=1968431902&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Dansk design tøj i bæredygtig kvalitet og gode materialer.",
+      "en": "Danish-designed clothing in sustainable quality and good materials.",
+      "ar": "ملابس بتصميم دنماركي بجودة مستدامة ومواد جيدة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "sportgymbutikken",
+    "name": "Sportgymbutikken",
+    "category": "sport",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.sportgymbutikken.dk",
+    "affiliateUrl": "https://in.sportgymbutikken.dk/t/t?a=1954033534&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Træningsudstyr, fitnessmaskiner, træningstøj og kosttilskud til hjemmetræning.",
+      "en": "Training equipment, fitness machines, sportswear and supplements for home workouts.",
+      "ar": "معدات تدريب وآلات لياقة وملابس رياضية ومكمّلات غذائية للتدريب المنزلي."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "healthwell",
+    "name": "Healthwell",
+    "category": "pleje",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.healthwell.dk",
+    "affiliateUrl": "https://in.healthwell.dk/t/t?a=1951492874&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Helsekost og kosttilskud online fra kendte mærker.",
+      "en": "Health food and supplements online from well-known brands.",
+      "ar": "أغذية صحية ومكمّلات غذائية عبر الإنترنت من علامات معروفة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "core-nutrition",
+    "name": "Core Nutrition",
+    "category": "sport",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.corenutrition.dk",
+    "affiliateUrl": "https://pin.corenutrition.dk/t/t?a=1951492630&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Kosttilskud og træningsudstyr fra mærker som BodyLab, Barebells og Better Bodies.",
+      "en": "Supplements and training equipment from brands such as BodyLab, Barebells and Better Bodies.",
+      "ar": "مكمّلات غذائية ومعدات تدريب من علامات مثل BodyLab وBarebells وBetter Bodies."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "sisi-copenhagen",
+    "name": "Sisi Copenhagen",
+    "category": "mode",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://sisicph.dk",
+    "affiliateUrl": "https://go.adt242.com/t/t?a=1899728926&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Smykker i sterlingsølv og 9 kt. guld til hverdagen og særlige øjeblikke.",
+      "en": "Jewellery in sterling silver and 9k gold for everyday and special moments.",
+      "ar": "مجوهرات من الفضة الإسترليني والذهب عيار 9 للاستخدام اليومي والمناسبات الخاصة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "factor",
+    "name": "Factor",
+    "category": "dagligvarer",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.factormeals.dk",
+    "affiliateUrl": "https://go.adt242.com/t/t?a=1876059507&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Måltidskasser med færdige retter, så hverdagen bliver nemmere.",
+      "en": "Meal kits with ready-made meals to make everyday life easier.",
+      "ar": "صناديق وجبات جاهزة لتسهيل الحياة اليومية."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "lystfisk",
+    "name": "Lystfisk",
+    "category": "sport",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.lystfisk.dk",
+    "affiliateUrl": "https://go.lystfisk.dk/t/t?a=1867697095&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Fiskegrej, stænger, hjul, agn og udstyr til lystfiskeri.",
+      "en": "Fishing gear, rods, reels, bait and equipment for recreational fishing.",
+      "ar": "معدات صيد، قضبان، بكرات، طُعم وأدوات لصيد الأسماك الترفيهي."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "hellofresh",
+    "name": "HelloFresh",
+    "category": "dagligvarer",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.hellofresh.dk",
+    "affiliateUrl": "https://go.adt231.net/t/t?a=1498475325&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Måltidskasser med opskrifter og afmålte friske råvarer til aftensmad derhjemme.",
+      "en": "Meal kits with recipes and pre-portioned fresh ingredients for home cooking.",
+      "ar": "صناديق وجبات مع وصفات ومكوّنات طازجة مقدّرة مسبقًا لطهي العشاء في المنزل."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "cs-megastore",
+    "name": "CS MEGASTORE",
+    "category": "elektronik",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://csmegastore.dk",
+    "affiliateUrl": "https://go.csmegastore.dk/t/t?a=1319510587&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Elektronik, computere, tilbehør og forbrugsvarer til hjem og kontor.",
+      "en": "Electronics, computers, accessories and supplies for home and office.",
+      "ar": "إلكترونيات وحواسيب وإكسسوارات ومستلزمات للمنزل والمكتب."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "beautycos",
+    "name": "Beautycos",
+    "category": "skoenhed",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.beautycos.dk",
+    "affiliateUrl": "https://do.beautycos.dk/t/t?a=1129957219&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Hårpleje, hudpleje, makeup og parfume fra kendte mærker.",
+      "en": "Hair care, skincare, makeup and perfume from well-known brands.",
+      "ar": "عناية بالشعر والبشرة ومكياج وعطور من علامات معروفة."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "coolstuff",
+    "name": "Coolstuff",
+    "category": "stormagasin",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.coolstuff.dk",
+    "affiliateUrl": "https://dot.coolstuff.dk/t/t?a=1099568768&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Personlige gaver, gadgets og sjove produkter til enhver anledning.",
+      "en": "Personal gifts, gadgets and fun products for every occasion.",
+      "ar": "هدايا شخصية وأدوات ممتعة ومنتجات طريفة لكل مناسبة."
+    },
+    "checkedAt": "2026-11-23"
   }
 ]
