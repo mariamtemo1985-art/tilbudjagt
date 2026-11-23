@@ -33,6 +33,7 @@ export async function GET(request: NextRequest) {
   if (!key) return NextResponse.json({ error: "Resend is not configured." }, { status: 503 });
 
   const email = String(request.nextUrl.searchParams.get("email") || "").trim().toLowerCase();
+  const reveal = request.nextUrl.searchParams.get("reveal") === "1";
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const [domains, emails, suppressions] = await Promise.all([
@@ -80,8 +81,8 @@ export async function GET(request: NextRequest) {
       const rows = await response.json().catch(() => []);
       const row = Array.isArray(rows) ? rows[0] : null;
       subscriber = row
-        ? { email: mask(String(row.email || "")), consent_at: row.consent_at, source: row.source }
-        : { email: mask(email), exists: false };
+        ? { email: reveal ? String(row.email || "") : mask(String(row.email || "")), consent_at: row.consent_at, source: row.source }
+        : { email: reveal ? email : mask(email), exists: false };
     }
     const recent = await fetch(
       `${supabaseUrl}/rest/v1/newsletter_subscribers?select=email,consent_at,source&order=consent_at.desc&limit=20`,
@@ -90,7 +91,7 @@ export async function GET(request: NextRequest) {
     const rows = await recent.json().catch(() => []);
     recentSubscribers = Array.isArray(rows)
       ? rows.map((row: { email?: string; consent_at?: string; source?: string }) => ({
-          email: row.email ? mask(row.email) : "***",
+          email: row.email ? (reveal ? row.email : mask(row.email)) : "***",
           consent_at: row.consent_at,
           source: row.source,
         }))
