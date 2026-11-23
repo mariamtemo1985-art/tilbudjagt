@@ -59,6 +59,7 @@ export const STORE_LOGOS: Record<string, string> = {
   "sinnerup": "/logos/sinnerup.png",
   "boligcenter": "/logos/boligcenter.png",
   "jotex": "/logos/jotex.png",
+  "northswan": "/logos/northswan.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {

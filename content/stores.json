@@ -785,5 +785,20 @@
       "ar": "علامة تصميم داخلي سويدية تضم أثاثًا ومنسوجات وسجادًا وإضاءة ومستلزمات منزلية لكل أرجاء المنزل."
     },
     "checkedAt": "2026-11-21"
+  },
+  {
+    "slug": "northswan",
+    "name": "Northswan",
+    "category": "pleje",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://northswan.dk",
+    "affiliateUrl": "https://dot.northswan.dk/t/t?a=2129289218&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Dansk håndsæbe i tabletform med genopfyldelig glasflaske. Vælg en flaske, opløs en tablet i varmt vand og få skummende håndsæbe uden en ny plastflaske. Fem dufte, også parfumefri, og mulighed for abonnement med 10% rabat.",
+      "en": "Danish hand soap in tablet form with a refillable glass dispenser. Choose a bottle, dissolve a tablet in warm water and get foaming hand soap without a new plastic bottle. Five scents, including fragrance-free, with an optional subscription at 10% off.",
+      "ar": "صابون يدين دنماركي على شكل أقراص مع موزّع زجاجي قابل لإعادة التعبئة. اختاري زجاجة، أذيبي قرصًا في ماء دافئ واحصلي على رغوة صابون دون زجاجة بلاستيكية جديدة. خمس روائح، منها بلا عطر، مع إمكانية الاشتراك بخصم 10%."
+    },
+    "checkedAt": "2026-11-23"
   }
 ]
