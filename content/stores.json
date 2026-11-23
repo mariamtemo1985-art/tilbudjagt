@@ -1070,5 +1070,80 @@
       "ar": "هدايا شخصية وأدوات ممتعة ومنتجات طريفة لكل مناسبة."
     },
     "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "estore",
+    "name": "eStore",
+    "category": "stormagasin",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://estore.nu/da",
+    "affiliateUrl": "https://do.estore.nu/t/t?a=1960533601&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Dansk stormagasin med elektronik, sport, mode og ting til hjemmet.",
+      "en": "Danish department store with electronics, sport, fashion and home essentials.",
+      "ar": "متجر شامل دنماركي يضم الإلكترونيات والرياضة والأزياء ومستلزمات المنزل."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "myrangecooker",
+    "name": "Myrangecooker",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.myrangecooker.dk",
+    "affiliateUrl": "https://at.myrangecooker.dk/t/t?a=1954033259&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Specialbutik i italienske komfurer, range cookers og hvidevarer.",
+      "en": "Specialist shop for Italian range cookers, stoves and home appliances.",
+      "ar": "متجر متخصص في أفران الطبخ الإيطالية والمواقد والأجهزة المنزلية."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "myoutdoorkitchen",
+    "name": "Myoutdoorkitchen",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.myoutdoorkitchen.dk",
+    "affiliateUrl": "https://at.myoutdoorkitchen.dk/t/t?a=1954033229&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Specialbutik i udekøkkener, grills og udstyr til madlavning udendørs.",
+      "en": "Specialist shop for outdoor kitchens, grills and outdoor cooking equipment.",
+      "ar": "متجر متخصص في مطابخ الهواء الطلق والشوايات ومعدات الطبخ الخارجي."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "vinkoleskabet",
+    "name": "Vinkøleskabet",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.vinkøleskabet.dk",
+    "affiliateUrl": "https://at.vinkoleskabet.dk/t/t?a=1954033180&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Specialbutik i vinkøleskaber og opbevaring af vin.",
+      "en": "Specialist shop for wine fridges and wine storage.",
+      "ar": "متجر متخصص في ثلاجات النبيذ وتخزينه."
+    },
+    "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "kitchentime",
+    "name": "KitchenTime",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Adtraction",
+    "website": "https://www.kitchentime.dk",
+    "affiliateUrl": "https://go.kitchentime.dk/t/t?a=1871524371&as=2131462209&t=2&tk=1",
+    "description": {
+      "da": "Dansk netbutik med køkkenudstyr, service, bestik og køkkentilbehør.",
+      "en": "Danish online store for kitchenware, tableware, cutlery and kitchen accessories.",
+      "ar": "متجر دنماركي عبر الإنترنت لأدوات المطبخ وأطقم السفرة وأدوات المائدة ومستلزمات المطبخ."
+    },
+    "checkedAt": "2026-11-23"
   }
 ]

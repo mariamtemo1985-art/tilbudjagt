@@ -78,6 +78,11 @@ export const STORE_LOGOS: Record<string, string> = {
   "cs-megastore": "/logos/cs-megastore.png",
   "beautycos": "/logos/beautycos.png",
   "coolstuff": "/logos/coolstuff.png",
+  "estore": "/logos/estore.png",
+  "myrangecooker": "/logos/myrangecooker.png",
+  "myoutdoorkitchen": "/logos/myoutdoorkitchen.png",
+  "vinkoleskabet": "/logos/vinkoleskabet.png",
+  "kitchentime": "/logos/kitchentime.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {
