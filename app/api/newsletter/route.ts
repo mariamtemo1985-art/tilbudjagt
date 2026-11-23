@@ -78,6 +78,7 @@ export async function POST(request: NextRequest) {
 
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    let inserted = false;
     if (url && key) {
       const existing = await subscriberExists(url, key, email);
       if (existing === true) {
@@ -108,6 +109,7 @@ export async function POST(request: NextRequest) {
       if (Array.isArray(savedRows) && savedRows.length === 0) {
         return NextResponse.json({ ok: true, alreadySubscribed: true });
       }
+      inserted = Array.isArray(savedRows) ? savedRows.length > 0 : true;
     }
 
     const unsubscribe = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.tilbudjagt.dk"}/api/newsletter?token=${tokenFor(email)}`;
@@ -126,6 +128,12 @@ export async function POST(request: NextRequest) {
       }),
     });
     if (!sent.ok) {
+      if (inserted && url && key) {
+        await fetch(`${url}/rest/v1/newsletter_subscribers?email=eq.${encodeURIComponent(email)}`, {
+          method: "DELETE",
+          headers: { apikey: key, Authorization: `Bearer ${key}` },
+        }).catch(() => undefined);
+      }
       return NextResponse.json({ error: "The welcome email could not be sent." }, { status: 502 });
     }
     return NextResponse.json({ ok: true });
