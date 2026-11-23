@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowRight, Bell, Check, Heart, ShieldCheck, Sparkles,
   Tag, X, Zap,
@@ -43,7 +43,7 @@ const copy = {
     vipWaitlistText: "Gratis tilmelding uden betaling. Få en velkomstmail og besked, når medlemskabet er klar.",
     emailLabel: "E-mail", emailPlaceholder: "Din e-mailadresse",
     consent: "Jeg accepterer at modtage information om TilbudJagt VIP.",
-    submit: "Tilmeld", sending: "Sender…", success: "Tak! Tjek din indbakke.", error: "Kunne ikke sende endnu. Prøv igen senere.",
+    submit: "Tilmeld", sending: "Sender…", success: "Tak! Tjek din indbakke.", already: "Du er allerede på VIP-listen.", error: "Kunne ikke sende endnu. Prøv igen senere.",
     vipEyebrow: "TILBUDJAGT VIP", vipCta: "Bliv VIP", vipPrice: "40 kr.", perMonth: "/ md.",
     vipModalNote: "Betaling er midlertidigt deaktiveret. Dette er kun en gratis interesseliste.",
     footerProducts: "Produkter", footerStores: "Butikker", footerGuides: "Guides", footerAbout: "Om os",
@@ -78,7 +78,7 @@ const copy = {
     vipWaitlistText: "Free signup without payment. Get a welcome email and a message when membership is ready.",
     emailLabel: "Email", emailPlaceholder: "Your email address",
     consent: "I agree to receive information about TilbudJagt VIP.",
-    submit: "Sign up", sending: "Sending…", success: "Thanks! Check your inbox.", error: "Could not send yet. Please try again later.",
+    submit: "Sign up", sending: "Sending…", success: "Thanks! Check your inbox.", already: "You're already on the VIP list.", error: "Could not send yet. Please try again later.",
     vipEyebrow: "TILBUDJAGT VIP", vipCta: "Become VIP", vipPrice: "DKK 40", perMonth: "/ month",
     vipModalNote: "Payment is temporarily disabled. This is only a free interest list.",
     footerProducts: "Products", footerStores: "Stores", footerGuides: "Guides", footerAbout: "About us",
@@ -113,7 +113,7 @@ const copy = {
     vipWaitlistText: "تسجيل مجاني دون دفع. ستصلك رسالة ترحيب وإشعار عندما تصبح العضوية جاهزة.",
     emailLabel: "البريد الإلكتروني", emailPlaceholder: "بريدك الإلكتروني",
     consent: "أوافق على تلقي معلومات عن عضوية TilbudJagt VIP.",
-    submit: "تسجيل", sending: "جارٍ الإرسال…", success: "شكرًا! تحقق من بريدك.", error: "لم نتمكن من الإرسال بعد. حاولي لاحقًا.",
+    submit: "تسجيل", sending: "جارٍ الإرسال…", success: "شكرًا! تحقق من بريدك.", already: "أنت مشترك بالفعل في قائمة VIP.", error: "لم نتمكن من الإرسال بعد. حاولي لاحقًا.",
     vipEyebrow: "TILBUDJAGT VIP", vipCta: "انضم إلى VIP", vipPrice: "40 كرونة", perMonth: "/ شهريًا",
     vipModalNote: "الدفع متوقف مؤقتًا. هذه قائمة اهتمام مجانية فقط.",
     footerProducts: "المنتجات", footerStores: "المتاجر", footerGuides: "الأدلة", footerAbout: "من نحن",
@@ -145,21 +145,38 @@ export default function HomePage() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [newsletterStatus, setNewsletterStatus] = useState("");
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const newsletterSubmittingRef = useRef(false);
   const t = copy[lang];
   const rtl = lang === "ar";
 
   const joinVipWaitlist = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (newsletterSubmittingRef.current) return;
+    newsletterSubmittingRef.current = true;
+    setNewsletterSubmitting(true);
     setNewsletterStatus(copy[lang].sending);
-    const response = await fetch("/api/newsletter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: newsletterEmail, consent: newsletterConsent }),
-    });
-    setNewsletterStatus(
-      response.ok ? copy[lang].success : copy[lang].error,
-    );
-    if (response.ok) setNewsletterEmail("");
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail, consent: newsletterConsent }),
+      });
+      const data = await response.json().catch(() => null);
+      setNewsletterStatus(
+        response.ok
+          ? data?.alreadySubscribed
+            ? copy[lang].already
+            : copy[lang].success
+          : copy[lang].error,
+      );
+      if (response.ok) setNewsletterEmail("");
+    } catch {
+      setNewsletterStatus(copy[lang].error);
+    } finally {
+      newsletterSubmittingRef.current = false;
+      setNewsletterSubmitting(false);
+    }
   };
 
   return (
@@ -269,6 +286,7 @@ export default function HomePage() {
                 onChange={(event) => setNewsletterEmail(event.target.value)}
                 placeholder={t.emailPlaceholder}
                 required
+                disabled={newsletterSubmitting}
               />
               <label>
                 <input
@@ -276,10 +294,13 @@ export default function HomePage() {
                   checked={newsletterConsent}
                   onChange={(event) => setNewsletterConsent(event.target.checked)}
                   required
+                  disabled={newsletterSubmitting}
                 />{" "}
                 {t.consent}
               </label>
-              <button type="submit">{t.submit}</button>
+              <button type="submit" disabled={newsletterSubmitting}>
+                {newsletterSubmitting ? t.sending : t.submit}
+              </button>
               <small>{newsletterStatus}</small>
             </form>
           </div>
