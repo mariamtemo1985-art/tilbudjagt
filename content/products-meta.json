@@ -1,22 +1,22 @@
 {
-  "updatedAt": "2026-11-21T00:13:32.696Z",
-  "total": 6826,
+  "updatedAt": "2026-11-23T05:00:27.362Z",
+  "total": 6844,
   "stores": {
     "proshop": 1500,
-    "okologisk-supermarked": 694,
+    "okologisk-supermarked": 679,
     "offi": 800,
     "din-printer": 800,
-    "bymoller": 44,
-    "soundliving": 67,
+    "bymoller": 45,
+    "soundliving": 70,
     "beauty4me": 7,
     "care-copenhagen": 8,
     "hugcare": 18,
-    "brusefilteret": 24,
-    "fit-fun": 42,
+    "brusefilteret": 52,
+    "fit-fun": 43,
     "flicks": 13,
+    "gucca": 1500,
     "dyson": 109,
-    "bazta-dk": 1200,
-    "gucca": 1500
+    "bazta-dk": 1200
   },
   "errors": []
 }
