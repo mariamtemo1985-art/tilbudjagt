@@ -1210,5 +1210,95 @@
       "ar": "متجر دنماركي للتصميم يضم مصابيح وأثاثًا وإضاءة منزلية."
     },
     "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "copenhagenpure",
+    "name": "CopenhagenPure",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://copenhagenpure.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118616",
+    "description": {
+      "da": "Dansk butik med luftrensere i høj kvalitet og HEPA-filtre til hjemmet.",
+      "en": "Danish shop for high-quality air purifiers and HEPA filters for the home.",
+      "ar": "متجر دنماركي لأجهزة تنقية الهواء عالية الجودة وفلاتر HEPA للمنزل."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "skeen-piskeriset",
+    "name": "Skeen & Piskeriset",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://skeen-piskeriset.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=99638",
+    "description": {
+      "da": "Bæredygtige træredskaber til køkkenet – grydeskeer, skærebrætter og mere.",
+      "en": "Sustainable wooden kitchen tools – cooking spoons, cutting boards and more.",
+      "ar": "أدوات مطبخ خشبية مستدامة مثل ملاعق الطهي وألواح التقطيع."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "topsko",
+    "name": "Topsko.dk",
+    "category": "mode",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://www.topsko.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=108229",
+    "description": {
+      "da": "Billige sko online til kvinder, mænd og børn – sneakers, støvler og mere.",
+      "en": "Affordable shoes online for women, men and children – sneakers, boots and more.",
+      "ar": "أحذية بأسعار مناسبة للنساء والرجال والأطفال، مثل الأحذية الرياضية والأحذية الطويلة."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "hydrolife",
+    "name": "Hydrolife",
+    "category": "pleje",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://hydrolife.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=113664",
+    "description": {
+      "da": "Dansk brand bag hydrogenvandflasken HydroBottle Pro og produkter til sundhed og energi.",
+      "en": "Danish brand behind the HydroBottle Pro hydrogen water bottle and products for health and energy.",
+      "ar": "علامة دنماركية تقدم زجاجة الهيدروجين HydroBottle Pro ومنتجات للصحة والطاقة."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "deepbalance",
+    "name": "DeepBalance",
+    "category": "pleje",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://deepbalance.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117524",
+    "description": {
+      "da": "Dansk velværebrand med infrarødt saunatæppe, sovemasker og produkter til restitution.",
+      "en": "Danish wellness brand with an infrared sauna blanket, sleep masks and recovery products.",
+      "ar": "علامة دنماركية للاسترخاء تقدم بطانية ساونا بالأشعة تحت الحمراء وأقنعة نوم ومنتجات للتعافي."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "retrotrojer",
+    "name": "Retrotrøjer.dk",
+    "category": "sport",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://www.xn--retrotrjer-6cb.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118053",
+    "description": {
+      "da": "Originale vintage fodboldtrøjer fra klubber og landshold verden over.",
+      "en": "Original vintage football shirts from clubs and national teams worldwide.",
+      "ar": "قمصان كرة قدم أصلية قديمة من أندية ومنتخبات حول العالم."
+    },
+    "checkedAt": "2026-11-25"
   }
 ]

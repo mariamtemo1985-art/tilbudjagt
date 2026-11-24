@@ -88,6 +88,12 @@ export const STORE_LOGOS: Record<string, string> = {
   "friluftsland": "/logos/friluftsland.png",
   "foeniks-computer": "/logos/foeniks-computer.png",
   "andlight": "/logos/andlight.png",
+  "copenhagenpure": "/logos/copenhagenpure.png",
+  "skeen-piskeriset": "/logos/skeen-piskeriset.png",
+  "topsko": "/logos/topsko.png",
+  "hydrolife": "/logos/hydrolife.png",
+  "deepbalance": "/logos/deepbalance.png",
+  "retrotrojer": "/logos/retrotrojer.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {
