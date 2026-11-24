@@ -94,6 +94,12 @@ export const STORE_LOGOS: Record<string, string> = {
   "hydrolife": "/logos/hydrolife.png",
   "deepbalance": "/logos/deepbalance.png",
   "retrotrojer": "/logos/retrotrojer.png",
+  "mysports": "/logos/mysports.png",
+  "moebelsalg": "/logos/moebelsalg.png",
+  "kitchen-gadget": "/logos/kitchen-gadget.png",
+  "kispus": "/logos/kispus.png",
+  "kirlund": "/logos/kirlund.png",
+  "nobllife": "/logos/nobllife.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {

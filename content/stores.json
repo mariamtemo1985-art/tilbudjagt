@@ -1300,5 +1300,95 @@
       "ar": "قمصان كرة قدم أصلية قديمة من أندية ومنتخبات حول العالم."
     },
     "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "mysports",
+    "name": "MySports.dk",
+    "category": "sport",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://www.mysports.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=112546",
+    "description": {
+      "da": "Dansk webshop med løbeudstyr, hjemmetræning og udstyr til en aktiv livsstil.",
+      "en": "Danish webshop for running gear, home training and an active lifestyle.",
+      "ar": "متجر دنماركي لمستلزمات الجري والتدريب المنزلي وأسلوب الحياة النشط."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "moebelsalg",
+    "name": "Møbelsalg.dk",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://www.moebelsalg.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=107854",
+    "description": {
+      "da": "Dansk møbelbutik med mere end 7.000 varer til bolig, have og indretning.",
+      "en": "Danish furniture shop with more than 7,000 items for home, garden and interior.",
+      "ar": "متجر دنماركي للأثاث يضم أكثر من 7000 منتج للمنزل والحديقة والديكور."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "kitchen-gadget",
+    "name": "Kitchen Gadget Danmark",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://kitchengadget.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=107649",
+    "description": {
+      "da": "Dansk webshop med smarte køkkenredskaber og gadgets i høj kvalitet.",
+      "en": "Danish webshop for smart, high-quality kitchen tools and gadgets.",
+      "ar": "متجر دنماركي لأدوات المطبخ الذكية عالية الجودة."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "kispus",
+    "name": "KISPUS",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://kispus.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=81438",
+    "description": {
+      "da": "Dansk webshop med personlige stjernehimmelplakater til særlige minder og gaver.",
+      "en": "Danish webshop for personalised star map posters for special memories and gifts.",
+      "ar": "متجر دنماركي لملصقات خريطة النجوم المخصصة للذكريات والهدايا المميزة."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "kirlund",
+    "name": "Kirlund",
+    "category": "hjem",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://kirlund.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116916",
+    "description": {
+      "da": "Dansk brand med premium køkkenudstyr og pizzaudstyr til hverdagen.",
+      "en": "Danish brand for premium kitchen equipment and pizza tools for everyday cooking.",
+      "ar": "علامة دنماركية لأدوات المطبخ الفاخرة وأدوات البيتزا للاستخدام اليومي."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "nobllife",
+    "name": "Nobl Life",
+    "category": "pleje",
+    "status": "partner",
+    "network": "Partner-ads",
+    "website": "https://nobllife.dk/",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=115234",
+    "description": {
+      "da": "Dansk brand med flydende kosttilskud til 40+ – vitaminer, mineraler og mælkesyrebakterier.",
+      "en": "Danish brand with liquid supplements for 40+ – vitamins, minerals and probiotics.",
+      "ar": "علامة دنماركية للمكملات السائلة لمن هم فوق 40 عامًا، من الفيتامينات والمعادن والبروبيوتيك."
+    },
+    "checkedAt": "2026-11-25"
   }
 ]
