@@ -1145,5 +1145,70 @@
       "ar": "متجر دنماركي عبر الإنترنت لأدوات المطبخ وأطقم السفرة وأدوات المائدة ومستلزمات المطبخ."
     },
     "checkedAt": "2026-11-23"
+  },
+  {
+    "slug": "bodylab",
+    "name": "Bodylab",
+    "category": "sport",
+    "status": "directory",
+    "website": "https://www.bodylab.dk",
+    "description": {
+      "da": "Dansk netbutik med kosttilskud, proteinpulver, kreatin og træningsudstyr.",
+      "en": "Danish online store for supplements, protein powder, creatine and training gear.",
+      "ar": "متجر دنماركي للمكملات الغذائية ومسحوق البروتين والكرياتين ومستلزمات التدريب."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "cykelpartner",
+    "name": "Cykelpartner.dk",
+    "category": "sport",
+    "status": "directory",
+    "website": "https://www.cykelpartner.dk",
+    "description": {
+      "da": "Dansk cykelbutik med cykler, reservedele, tilbehør og udstyr til løb og hverdag.",
+      "en": "Danish bike shop for bicycles, spare parts, accessories and gear for racing and everyday riding.",
+      "ar": "متجر دنماركي للدراجات وقطع الغيار والملحقات ومستلزمات السباق والاستخدام اليومي."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "friluftsland",
+    "name": "Friluftsland.dk",
+    "category": "sport",
+    "status": "directory",
+    "website": "https://www.friluftsland.dk",
+    "description": {
+      "da": "Dansk friluftsbutik med outdoor-tøj, vandrestøvler, rygsække og campingudstyr.",
+      "en": "Danish outdoor store for outdoor clothing, hiking boots, backpacks and camping gear.",
+      "ar": "متجر دنماركي للأنشطة الخارجية يضم ملابس التخييم وأحذية المشي وحقائب الظهر ومعدات التخييم."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "foeniks-computer",
+    "name": "Føniks Computer",
+    "category": "elektronik",
+    "status": "directory",
+    "website": "https://www.fcomputer.dk",
+    "description": {
+      "da": "Dansk computerbutik med gaming-PC'er, hardware, skærme og tilbehør.",
+      "en": "Danish computer store for gaming PCs, hardware, monitors and accessories.",
+      "ar": "متجر دنماركي لأجهزة الكمبيوتر المخصصة للألعاب والعتاد والشاشات والملحقات."
+    },
+    "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "andlight",
+    "name": "AndLight DK",
+    "category": "hjem",
+    "status": "directory",
+    "website": "https://www.andlight.com/dk/",
+    "description": {
+      "da": "Dansk designbutik med lamper, møbler og belysning til hjemmet.",
+      "en": "Danish design store for lamps, furniture and home lighting.",
+      "ar": "متجر دنماركي للتصميم يضم مصابيح وأثاثًا وإضاءة منزلية."
+    },
+    "checkedAt": "2026-11-25"
   }
 ]

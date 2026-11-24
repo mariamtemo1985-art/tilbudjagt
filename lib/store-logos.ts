@@ -83,6 +83,11 @@ export const STORE_LOGOS: Record<string, string> = {
   "myoutdoorkitchen": "/logos/myoutdoorkitchen.png",
   "vinkoleskabet": "/logos/vinkoleskabet.png",
   "kitchentime": "/logos/kitchentime.png",
+  "bodylab": "/logos/bodylab.png",
+  "cykelpartner": "/logos/cykelpartner.png",
+  "friluftsland": "/logos/friluftsland.png",
+  "foeniks-computer": "/logos/foeniks-computer.png",
+  "andlight": "/logos/andlight.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {
