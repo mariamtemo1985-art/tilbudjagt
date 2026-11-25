@@ -109,6 +109,17 @@ export const STORE_LOGOS: Record<string, string> = {
   "my-little-nordic": "/logos/my-little-nordic.png",
   "maet-modig": "/logos/maet-modig.png",
   "greenvibe": "/logos/greenvibe.png",
+  "nordic-water": "/logos/nordic-water.png",
+  "hamam": "/logos/hamam.png",
+  "mammut-hair": "/logos/mammut-hair.png",
+  "restflow": "/logos/restflow.png",
+  "skns": "/logos/skns.png",
+  "nordic-wellness": "/logos/nordic-wellness.png",
+  "t-shirten": "/logos/t-shirten.png",
+  "trendysun": "/logos/trendysun.png",
+  "lauridsen-vine": "/logos/lauridsen-vine.png",
+  "aeloa": "/logos/aeloa.png",
+  "remsleep": "/logos/remsleep.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {

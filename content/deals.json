@@ -328,5 +328,195 @@
     "discount": 14,
     "image": "/deals/kidskitchen-new-2.webp",
     "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=109951&partnerid=58143&htmlurl=https://kidskitchen.dk/products/bornevenligt-knivsaet?variant=42697142337675"
+  },
+  {
+    "storeSlug": "nordic-water",
+    "store": "Nordic-Water",
+    "title": "NOVA Vandhanefilter",
+    "price": 229.0,
+    "oldPrice": 499.0,
+    "discount": 54,
+    "image": "/deals/nordic-water-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=113005&partnerid=58143&htmlurl=https://nordic-water.dk/products/nova-filter?variant=46291523797242"
+  },
+  {
+    "storeSlug": "nordic-water",
+    "store": "Nordic-Water",
+    "title": "AYA Filter (2 stk.)",
+    "price": 199.5,
+    "oldPrice": 369.0,
+    "discount": 46,
+    "image": "/deals/nordic-water-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=113005&partnerid=58143&htmlurl=https://nordic-water.dk/products/bruser-4-x-filtrer-tilkob?variant=56430184202624"
+  },
+  {
+    "storeSlug": "nordic-water",
+    "store": "Nordic-Water",
+    "title": "ORION Vandhanefilter Pro",
+    "price": 359.0,
+    "oldPrice": 669.0,
+    "discount": 46,
+    "image": "/deals/nordic-water-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=113005&partnerid=58143&htmlurl=https://nordic-water.dk/products/nova-pro-vandfilter?variant=56409886130560"
+  },
+  {
+    "storeSlug": "hamam",
+    "store": "Hamam.dk",
+    "title": "Skindpung med kæde sort",
+    "price": 100.0,
+    "oldPrice": 299.0,
+    "discount": 67,
+    "image": "/deals/hamam-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=96293&partnerid=58143&htmlurl=https://hamam.dk/products/skindpung-med-kaede?variant=46979423863124"
+  },
+  {
+    "storeSlug": "hamam",
+    "store": "Hamam.dk",
+    "title": "Skindpung med kæde brun",
+    "price": 100.0,
+    "oldPrice": 299.0,
+    "discount": 67,
+    "image": "/deals/hamam-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=96293&partnerid=58143&htmlurl=https://hamam.dk/products/skindpung-med-kaede-brun?variant=46979437330772"
+  },
+  {
+    "storeSlug": "hamam",
+    "store": "Hamam.dk",
+    "title": "Skindpung med kæde vintage",
+    "price": 100.0,
+    "oldPrice": 299.0,
+    "discount": 67,
+    "image": "/deals/hamam-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=96293&partnerid=58143&htmlurl=https://hamam.dk/products/skindpung-med-kaede-vintage?variant=46979440116052"
+  },
+  {
+    "storeSlug": "skns",
+    "store": "SKNS",
+    "title": "Hand Soap Refill",
+    "price": 96.75,
+    "oldPrice": 129.0,
+    "discount": 25,
+    "image": "/deals/skns-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=106680&partnerid=58143&htmlurl=https://skns.dk/products/hand-soap-refill?variant=56872069890380&amp;country=DK"
+  },
+  {
+    "storeSlug": "skns",
+    "store": "SKNS",
+    "title": "Dish Soap Refill",
+    "price": 96.75,
+    "oldPrice": 129.0,
+    "discount": 25,
+    "image": "/deals/skns-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=106680&partnerid=58143&htmlurl=https://skns.dk/products/dish-soap-refill?variant=56889527796044&amp;country=DK"
+  },
+  {
+    "storeSlug": "skns",
+    "store": "SKNS",
+    "title": "Deo Roll-On",
+    "price": 96.75,
+    "oldPrice": 129.0,
+    "discount": 25,
+    "image": "/deals/skns-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=106680&partnerid=58143&htmlurl=https://skns.dk/products/deo-roll-on?variant=56889575604556&amp;country=DK"
+  },
+  {
+    "storeSlug": "t-shirten",
+    "store": "T-Shirten.dk",
+    "title": "Komfortabel bomuldstrøje i navy med klassisk vhals til mænd - S",
+    "price": 129.0,
+    "oldPrice": 599.0,
+    "discount": 78,
+    "image": "/deals/t-shirten-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=113216&partnerid=58143&htmlurl=https://t-shirten.dk/vare/komfortabel-bomuldstroeje-i-navy-til-maend/"
+  },
+  {
+    "storeSlug": "t-shirten",
+    "store": "T-Shirten.dk",
+    "title": "Woodpecker - Lyse blå jeans, regular fit, 100% bomuld - 44",
+    "price": 99.0,
+    "oldPrice": 389.0,
+    "discount": 75,
+    "image": "/deals/t-shirten-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=113216&partnerid=58143&htmlurl=https://t-shirten.dk/vare/woodpecker-lyse-blaa-jeans-regular-fit-100-bomuld/"
+  },
+  {
+    "storeSlug": "t-shirten",
+    "store": "T-Shirten.dk",
+    "title": "Arizona - Stone washed washed jeans med slids i hælen, uden baglommer - 40",
+    "price": 99.0,
+    "oldPrice": 389.0,
+    "discount": 75,
+    "image": "/deals/t-shirten-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=113216&partnerid=58143&htmlurl=https://t-shirten.dk/vare/arizona-stone-washed-washed-jeans-med-slids-i-haelen/"
+  },
+  {
+    "storeSlug": "trendysun",
+    "store": "Trendysun",
+    "title": "PREGO - Coreca - Retro Solbriller",
+    "price": 999.0,
+    "oldPrice": 1199.0,
+    "discount": 17,
+    "image": "/deals/trendysun-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=100647&partnerid=58143&htmlurl=https://trendysun.dk/vare/prego-coreca-retro-solbriller-2/"
+  },
+  {
+    "storeSlug": "lauridsen-vine",
+    "store": "Lauridsen Vine",
+    "title": "Immortalis Priorat",
+    "price": 149.0,
+    "oldPrice": 199.0,
+    "discount": 25,
+    "image": "/deals/lauridsen-vine-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=116085&partnerid=58143&htmlurl=https://lauridsenvine.dk/products/immortalis-priorat?variant=44725200552256"
+  },
+  {
+    "storeSlug": "lauridsen-vine",
+    "store": "Lauridsen Vine",
+    "title": "Dominio de Pingus, PSI 2023",
+    "price": 339.0,
+    "oldPrice": 389.0,
+    "discount": 13,
+    "image": "/deals/lauridsen-vine-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=116085&partnerid=58143&htmlurl=https://lauridsenvine.dk/products/dominio-de-pingus-psi-2022?variant=55100560605533"
+  },
+  {
+    "storeSlug": "lauridsen-vine",
+    "store": "Lauridsen Vine",
+    "title": "Camparnaud Prestige Provence Rosé 2022",
+    "price": 175.0,
+    "oldPrice": 199.0,
+    "discount": 12,
+    "image": "/deals/lauridsen-vine-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=116085&partnerid=58143&htmlurl=https://lauridsenvine.dk/products/camparnaud-prestige-provence-rose-2022?variant=62743389962589"
+  },
+  {
+    "storeSlug": "aeloa",
+    "store": "ÆLOA",
+    "title": "Ansigtsrens Sæbe Bar med Aloe Vera til Normal Hud",
+    "price": 71.0,
+    "oldPrice": 89.0,
+    "discount": 20,
+    "image": "/deals/aeloa-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=118237&partnerid=58143&htmlurl=https://xn--loa-xla.dk/products/ansigtsrens-med-aloe-vera"
+  },
+  {
+    "storeSlug": "remsleep",
+    "store": "REMsleep.dk",
+    "title": "REM Ørepropper til søvn",
+    "price": 95.0,
+    "oldPrice": 195.0,
+    "discount": 51,
+    "image": "/deals/remsleep-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=108279&partnerid=58143&htmlurl=https://remsleep.dk/products/rem-orepropper-til-sovn"
+  },
+  {
+    "storeSlug": "remsleep",
+    "store": "REMsleep.dk",
+    "title": "REM Sovemaske - Tilbud",
+    "price": 249.0,
+    "oldPrice": 495.0,
+    "discount": 50,
+    "image": "/deals/remsleep-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=108279&partnerid=58143&htmlurl=https://remsleep.dk/products/rem-sovemaske-tilbud"
   }
 ]

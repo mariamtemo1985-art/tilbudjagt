@@ -3,6 +3,17 @@
 // Only stores with a verified rate are listed; unlisted partners rank after them.
 export const STORE_COMMISSIONS: Record<string, number> = {
   goldi: 30,
+  trendysun: 25,
+  "lauridsen-vine": 21,
+  remsleep: 21,
+  "nordic-water": 20,
+  hamam: 20,
+  "mammut-hair": 20,
+  restflow: 20,
+  skns: 20,
+  "nordic-wellness": 20,
+  "t-shirten": 20,
+  aeloa: 20,
   kidskitchen: 15,
   hjemmely: 15,
   kurvemageren: 15,

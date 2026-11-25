@@ -1525,5 +1525,170 @@
       "ar": "متجر دنماركي يضم علامات دنماركية مستدامة للأثاث والملابس والديكور والأطفال والجمال."
     },
     "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "nordic-water",
+    "name": "Nordic-Water",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://nordic-water.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=113139",
+    "description": {
+      "da": "Danske vandfiltre til vandhanen, der fjerner klor, rust og urenheder for rent og friskt vand.",
+      "en": "Danish tap water filters that remove chlorine, rust and impurities for clean, fresh water.",
+      "ar": "فلاتر مياه دنماركية للصنبور تزيل الكلور والصدأ والشوائب لمياه نظيفة ومنعشة."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "hamam",
+    "name": "Hamam.dk",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://hamam.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=96297",
+    "description": {
+      "da": "Hamamhåndklæder og smukke tekstiler til hjemmet i høj kvalitet.",
+      "en": "Hamam towels and beautiful high-quality home textiles.",
+      "ar": "مناشف حمّام ومنسوجات منزلية جميلة عالية الجودة."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "mammut-hair",
+    "name": "Mammut Hair",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://mammuthair.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=65087",
+    "description": {
+      "da": "Naturlige hårfibre af bomuld, der skjuler hårtab og tyndt hår.",
+      "en": "Natural cotton hair fibres that conceal hair loss and thinning hair.",
+      "ar": "ألياف شعر طبيعية من القطن تخفي تساقط الشعر وترقق الشعر."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "restflow",
+    "name": "restflow.dk",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://restflow.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116578",
+    "description": {
+      "da": "Fluffy dyner og justerbare hovedpuder til bedre søvn og mere komfort.",
+      "en": "Fluffy duvets and adjustable pillows for better sleep and comfort.",
+      "ar": "لحف منفوشة ووسائد قابلة للتعديل لنوم أفضل وراحة أكبر."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "skns",
+    "name": "SKNS",
+    "category": "skoenhed",
+    "status": "partner",
+    "website": "https://skns.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=106681",
+    "description": {
+      "da": "Hudplejeserie med aktive ingredienser, der plejer, beskytter og balancerer hudens mikrobiom.",
+      "en": "Skincare line with active ingredients that care for, protect and balance the skin microbiome.",
+      "ar": "سلسلة عناية بالبشرة بمكوّنات نشطة تعتني بالبشرة وتحميها وتوازن ميكروبيومها."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "nordic-wellness",
+    "name": "Nordic Wellness",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://nordic-wellness.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=86051",
+    "description": {
+      "da": "Massageudstyr og personlig pleje i høj kvalitet til en samlet velværeoplevelse.",
+      "en": "High-quality massage equipment and personal care for a complete wellness experience.",
+      "ar": "أجهزة مساج وعناية شخصية عالية الجودة لتجربة استرخاء متكاملة."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "t-shirten",
+    "name": "T-Shirten.dk",
+    "category": "mode",
+    "status": "partner",
+    "website": "https://t-shirten.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=113219",
+    "description": {
+      "da": "Basis tøj til garderoben til gode priser, bl.a. bambusstrømper, uldsokker og t-shirts.",
+      "en": "Everyday wardrobe basics at great prices, including bamboo socks, wool socks and T-shirts.",
+      "ar": "ملابس أساسية للخزانة بأسعار جيدة، تشمل جوارب البامبو والصوف والتيشيرتات."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "trendysun",
+    "name": "Trendysun",
+    "category": "mode",
+    "status": "partner",
+    "website": "https://trendysun.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=100699",
+    "description": {
+      "da": "Klassiske solbriller i metal og acetat samt smartsolbriller med Bluetooth og højtaler.",
+      "en": "Classic metal and acetate sunglasses, plus smart sunglasses with Bluetooth and speakers.",
+      "ar": "نظارات شمسية كلاسيكية من المعدن والأسيتات، ونظارات ذكية مع بلوتوث ومكبرات صوت."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "lauridsen-vine",
+    "name": "Lauridsen Vine",
+    "category": "dagligvarer",
+    "status": "partner",
+    "website": "https://lauridsenvine.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116086",
+    "description": {
+      "da": "Vin til skarpe priser helt ned til enkelte flasker, med god rådgivning.",
+      "en": "Wine at sharp prices down to single bottles, with helpful advice.",
+      "ar": "نبيذ بأسعار منافسة حتى للزجاجات الفردية، مع نصائح جيدة."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "aeloa",
+    "name": "ÆLOA",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://xn--loa-xla.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118239",
+    "description": {
+      "da": "Naturlige og plastikfri husholdningsprodukter uden unødige tilsætningsstoffer.",
+      "en": "Natural, plastic-free household products without unnecessary additives.",
+      "ar": "منتجات منزلية طبيعية وخالية من البلاستيك دون إضافات غير ضرورية."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "remsleep",
+    "name": "REMsleep.dk",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://remsleep.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=105178",
+    "description": {
+      "da": "Ergonomiske sovemasker, der blokerer 100 % af lyset og forbedrer søvnkvaliteten.",
+      "en": "Ergonomic sleep masks that block 100% of light and improve sleep quality.",
+      "ar": "أقنعة نوم مريحة تحجب 100% من الضوء وتحسّن جودة النوم."
+    },
+    "checkedAt": "2026-11-25T03:45:00.000Z"
   }
 ]
