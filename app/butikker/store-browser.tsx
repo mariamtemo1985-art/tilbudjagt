@@ -11,6 +11,7 @@ import {
   type StoreSpecialty,
 } from "@/lib/stores";
 import StoreLogo from "@/components/store-logo";
+import { sortStoresByCommission } from "@/lib/store-commissions";
 
 type CategoryKey = "alle" | StoreCategory;
 type Language = "da" | "en" | "ar";
@@ -41,6 +42,9 @@ const COPY: Record<
     othersKicker: string;
     othersTitle: string;
     othersDescription: string;
+    featuredKicker: string;
+    featuredTitle: string;
+    featuredDescription: string;
   }
 > = {
   da: {
@@ -70,6 +74,10 @@ const COPY: Record<
     othersTitle: "Andre butikker",
     othersDescription:
       "Øvrige butikker uden en godkendt partneraftale. Linket går direkte til butikken uden provision.",
+    featuredKicker: "UDVALGTE",
+    featuredTitle: "Fremhævede partnerbutikker",
+    featuredDescription:
+      "Et udvalg af vores godkendte partnere samlet øverst. Links er reklame, og vi kan få provision, hvis du køber.",
   },
   en: {
     all: "All",
@@ -98,6 +106,10 @@ const COPY: Record<
     othersTitle: "Other stores",
     othersDescription:
       "Other stores without an approved partner agreement. The link goes directly to the store without commission.",
+    featuredKicker: "FEATURED",
+    featuredTitle: "Featured partner stores",
+    featuredDescription:
+      "A selection of our approved partners at the top. Links are advertising and we may earn a commission if you buy.",
   },
   ar: {
     all: "الكل",
@@ -126,6 +138,10 @@ const COPY: Record<
     othersTitle: "متاجر أخرى",
     othersDescription:
       "متاجر أخرى دون اتفاقية شراكة معتمدة. يفتح الرابط المتجر مباشرة دون عمولة.",
+    featuredKicker: "مختارة",
+    featuredTitle: "متاجر شركاء مميزة",
+    featuredDescription:
+      "مجموعة مختارة من شركائنا المعتمدين في الأعلى. الروابط إعلانية وقد نحصل على عمولة إذا اشتريت.",
   },
 };
 
@@ -151,12 +167,14 @@ const SPECIALTY_ORDER: StoreSpecialty[] = [
 ];
 
 type StoreGroup = {
-  key: "supermarkeder" | "partnere" | "andre";
+  key: "fremhaevede" | "supermarkeder" | "partnere" | "andre";
   kicker: string;
   title: string;
   description: string;
   stores: Store[];
 };
+
+const FEATURED_COUNT = 8;
 
 function StoreCard({ store, lang }: { store: Store; lang: Language }) {
   const copy = COPY[lang];
@@ -283,15 +301,33 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
     });
   }, [stores, query, category, lang]);
 
+  // Highest verified sales commission first; shown as the first row on the page.
+  const featured = useMemo(
+    () =>
+      sortStoresByCommission(
+        visible.filter((store) => store.status === "partner"),
+      ).slice(0, FEATURED_COUNT),
+    [visible],
+  );
+  const featuredSlugs = useMemo(
+    () => new Set(featured.map((store) => store.slug)),
+    [featured],
+  );
+
   const electronicsBySpecialty = useMemo(
     () =>
       SPECIALTY_ORDER.map((key) => ({
         key,
-        stores: visible.filter(
-          (store) => store.category === "elektronik" && store.specialty === key,
+        stores: sortStoresByCommission(
+          visible.filter(
+            (store) =>
+              store.category === "elektronik" &&
+              store.specialty === key &&
+              !featuredSlugs.has(store.slug),
+          ),
         ),
       })).filter((group) => group.stores.length > 0),
-    [visible],
+    [visible, featuredSlugs],
   );
   const visibleElectronicsCount = electronicsBySpecialty.reduce(
     (total, group) => total + group.stores.length,
@@ -299,12 +335,15 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
   );
 
   const groups = useMemo<StoreGroup[]>(() => {
-    const supermarkets = visible.filter((store) => store.category === "dagligvarer");
-    const partners = visible.filter(
-      (store) =>
-        store.category !== "dagligvarer" &&
-        store.category !== "elektronik" &&
-        store.status === "partner",
+    const remaining = visible.filter((store) => !featuredSlugs.has(store.slug));
+    const supermarkets = remaining.filter((store) => store.category === "dagligvarer");
+    const partners = sortStoresByCommission(
+      remaining.filter(
+        (store) =>
+          store.category !== "dagligvarer" &&
+          store.category !== "elektronik" &&
+          store.status === "partner",
+      ),
     );
     const others = visible.filter(
       (store) =>
@@ -314,6 +353,13 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
     );
 
     const allGroups: StoreGroup[] = [
+      {
+        key: "fremhaevede",
+        kicker: copy.featuredKicker,
+        title: copy.featuredTitle,
+        description: copy.featuredDescription,
+        stores: featured,
+      },
       {
         key: "supermarkeder",
         kicker: copy.supermarketKicker,
@@ -338,7 +384,7 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
     ];
 
     return allGroups.filter((group) => group.stores.length > 0);
-  }, [visible, copy]);
+  }, [visible, featured, featuredSlugs, copy]);
 
   return (
     <>
@@ -385,7 +431,9 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
           ))}
         </div>
         {groups
-          .filter((group) => group.key === "supermarkeder")
+          .filter(
+            (group) => group.key === "fremhaevede" || group.key === "supermarkeder",
+          )
           .map((group) => (
             <StoreGroupSection key={group.key} group={group} lang={lang} />
           ))}
@@ -422,7 +470,10 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
         )}
 
         {groups
-          .filter((group) => group.key !== "supermarkeder")
+          .filter(
+            (group) =>
+              group.key !== "fremhaevede" && group.key !== "supermarkeder",
+          )
           .map((group) => (
             <StoreGroupSection key={group.key} group={group} lang={lang} />
           ))}

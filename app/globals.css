@@ -189,6 +189,8 @@
 .supermarket-card .status-badge{margin-top:5px}
 .supermarket-card .store-card-info{padding-top:1px}
 .store-group-andre .store-card{background:#fcfcfa}
+.store-group-fremhaevede{margin-top:24px;padding:18px 18px 4px;border:1px solid #d9e8cf;border-radius:14px;background:linear-gradient(180deg,#f7fbf2,#fff)}
+.store-group-fremhaevede .store-card{border-color:#d5e6c8}
 .specialty-groups{display:flex;flex-direction:column;gap:20px}
 .specialty-group{padding-top:0}
 .specialty-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}

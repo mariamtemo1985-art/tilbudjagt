@@ -6,6 +6,7 @@ import {
   Tag, X, Zap,
 } from "lucide-react";
 import { STORES } from "@/lib/stores";
+import { sortStoresByCommission } from "@/lib/store-commissions";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import StoreLogo from "@/components/store-logo";
@@ -123,7 +124,9 @@ const copy = {
 } as const;
 
 const bazta = STORES.find((store) => store.slug === "bazta-dk")!;
-const partners = STORES.filter((store) => store.status === "partner");
+const partners = sortStoresByCommission(
+  STORES.filter((store) => store.status === "partner"),
+);
 
 export default function HomePage() {
   const [lang, setLang] = useState<Language>("da");
