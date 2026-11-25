@@ -8,6 +8,7 @@ import SiteTranslator from "@/components/site-translator";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
 import ConsentBanner from "@/components/ConsentBanner";
 import AffiliateLinkGuard from "@/components/AffiliateLinkGuard";
+import { languageAlternates } from "@/lib/i18n";
 
 const SITE = "https://www.tilbudjagt.dk";
 const OG_IMAGE = "/og-image.png";
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
   applicationName: "TilbudJagt",
   alternates: {
     canonical: "/",
+    languages: languageAlternates("/"),
     types: {
       "application/rss+xml": "/feed.xml",
     },
@@ -99,7 +101,7 @@ const siteJsonLd = {
   ],
 };
 
-const languageBootstrap = `(function(){try{var l=localStorage.getItem('tilbudjagt_lang')||(document.cookie.match(/(?:^|; )tilbudjagt_lang=([^;]+)/)||[])[1]||'da';if(l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();`;
+const languageBootstrap = `(function(){try{var p=location.pathname;var l=p==='/en'||p.indexOf('/en/')===0?'en':p==='/ar'||p.indexOf('/ar/')===0?'ar':localStorage.getItem('tilbudjagt_lang')||(document.cookie.match(/(?:^|; )tilbudjagt_lang=([^;]+)/)||[])[1]||'da';if(l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();`;
 const consentDefaults = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

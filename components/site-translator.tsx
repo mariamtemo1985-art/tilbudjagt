@@ -9,6 +9,9 @@ export const SITE_LANG_KEY = "tilbudjagt_lang";
 function readLang(): SiteLanguage {
   if (typeof window === "undefined") return "da";
   try {
+    const path = window.location.pathname;
+    if (path === "/en" || path.startsWith("/en/")) return "en";
+    if (path === "/ar" || path.startsWith("/ar/")) return "ar";
     const stored = window.localStorage.getItem(SITE_LANG_KEY);
     if (stored === "ar" || stored === "en" || stored === "da") return stored;
     const match = document.cookie.match(/(?:^|; )tilbudjagt_lang=([^;]+)/);

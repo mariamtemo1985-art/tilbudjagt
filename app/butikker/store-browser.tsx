@@ -180,7 +180,15 @@ type StoreGroup = {
 
 const FEATURED_COUNT = 8;
 
-function StoreCard({ store, lang }: { store: Store; lang: Language }) {
+function StoreCard({
+  store,
+  lang,
+  prefix,
+}: {
+  store: Store;
+  lang: Language;
+  prefix: string;
+}) {
   const copy = COPY[lang];
   const isSupermarket = store.category === "dagligvarer";
   return (
@@ -222,14 +230,22 @@ function StoreCard({ store, lang }: { store: Store; lang: Language }) {
           </span>
         </span>
       </a>
-      <a className="store-card-info" href={`/butikker/${store.slug}`}>
+      <a className="store-card-info" href={`${prefix}/butikker/${store.slug}`}>
         {copy.storeInfo}
       </a>
     </div>
   );
 }
 
-function StoreGroupSection({ group, lang }: { group: StoreGroup; lang: Language }) {
+function StoreGroupSection({
+  group,
+  lang,
+  prefix,
+}: {
+  group: StoreGroup;
+  lang: Language;
+  prefix: string;
+}) {
   return (
     <section className={`store-group store-group-${group.key}`}>
       <div className="store-group-head">
@@ -247,20 +263,30 @@ function StoreGroupSection({ group, lang }: { group: StoreGroup; lang: Language 
         }
       >
         {group.stores.map((store) => (
-          <StoreCard key={store.slug} store={store} lang={lang} />
+          <StoreCard key={store.slug} store={store} lang={lang} prefix={prefix} />
         ))}
       </div>
     </section>
   );
 }
 
-export default function StoreBrowser({ stores }: { stores: Store[] }) {
+export default function StoreBrowser({
+  stores,
+  initialLang = "da",
+  forcedLang = false,
+}: {
+  stores: Store[];
+  initialLang?: Language;
+  forcedLang?: boolean;
+}) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<CategoryKey>("alle");
-  const [lang, setLang] = useState<Language>("da");
+  const [lang, setLang] = useState<Language>(initialLang);
   const copy = COPY[lang];
+  const prefix = forcedLang ? `/${initialLang}` : "";
 
   useEffect(() => {
+    if (forcedLang) return;
     const readLanguage = () => {
       const saved = window.localStorage.getItem(LANG_KEY);
       if (saved === "da" || saved === "en" || saved === "ar") setLang(saved);
@@ -277,12 +303,13 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
       window.removeEventListener("tilbudjagt:langchange", onLanguage);
       window.removeEventListener("storage", onLanguage);
     };
-  }, []);
+  }, [forcedLang]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang]);
+    if (!forcedLang) window.localStorage.setItem(LANG_KEY, lang);
+  }, [lang, forcedLang]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -451,7 +478,7 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
             (group) => group.key === "fremhaevede" || group.key === "supermarkeder",
           )
           .map((group) => (
-            <StoreGroupSection key={group.key} group={group} lang={lang} />
+            <StoreGroupSection key={group.key} group={group} lang={lang} prefix={prefix} />
           ))}
 
         {electronicsBySpecialty.length > 0 && (
@@ -480,7 +507,7 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
                   </div>
                   <div className="store-grid">
                     {specialtyStores.map((store) => (
-                      <StoreCard key={store.slug} store={store} lang={lang} />
+                      <StoreCard key={store.slug} store={store} lang={lang} prefix={prefix} />
                     ))}
                   </div>
                 </div>
@@ -495,7 +522,7 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
               group.key !== "fremhaevede" && group.key !== "supermarkeder",
           )
           .map((group) => (
-            <StoreGroupSection key={group.key} group={group} lang={lang} />
+            <StoreGroupSection key={group.key} group={group} lang={lang} prefix={prefix} />
           ))}
 
         {visible.length === 0 && (

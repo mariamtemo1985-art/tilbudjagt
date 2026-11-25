@@ -2,8 +2,15 @@
 
 import { useState } from "react";
 
-export default function CopyCode({ code }: { code: string }) {
+const LABELS = {
+  da: { copy: "Kopier", copied: "Kopieret", aria: (code: string) => `Kopier rabatkode ${code}` },
+  en: { copy: "Copy", copied: "Copied", aria: (code: string) => `Copy coupon code ${code}` },
+  ar: { copy: "نسخ", copied: "تم النسخ", aria: (code: string) => `نسخ كود الخصم ${code}` },
+} as const;
+
+export default function CopyCode({ code, lang = "da" }: { code: string; lang?: "da" | "en" | "ar" }) {
   const [copied, setCopied] = useState(false);
+  const labels = LABELS[lang];
 
   const copy = async () => {
     try {
@@ -20,10 +27,10 @@ export default function CopyCode({ code }: { code: string }) {
       type="button"
       className={`code-copy${copied ? " is-copied" : ""}`}
       onClick={copy}
-      aria-label={`Kopier rabatkode ${code}`}
+      aria-label={labels.aria(code)}
     >
       <code>{code}</code>
-      <span>{copied ? "Kopieret" : "Kopier"}</span>
+      <span>{copied ? labels.copied : labels.copy}</span>
     </button>
   );
 }

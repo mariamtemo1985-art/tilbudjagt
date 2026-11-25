@@ -86,30 +86,42 @@ function isLanguage(value: string | null): value is Language {
   return value === "da" || value === "en" || value === "ar";
 }
 
-export default function StoreDetail({ store }: { store: Store }) {
-  const [lang, setLang] = useState<Language>("da");
+export default function StoreDetail({
+  store,
+  initialLang = "da",
+  forcedLang = false,
+}: {
+  store: Store;
+  initialLang?: Language;
+  forcedLang?: boolean;
+}) {
+  const [lang, setLang] = useState<Language>(initialLang);
   const partner = isAffiliateLink(store);
   const href = partner ? store.affiliateUrl! : store.website;
   const t = copy[lang];
   const rtl = lang === "ar";
+  const prefix = forcedLang ? `/${initialLang}` : "";
 
   useEffect(() => {
+    if (forcedLang) return;
     const saved = window.localStorage.getItem(LANG_KEY);
     if (isLanguage(saved)) setLang(saved);
-  }, []);
+  }, [forcedLang]);
 
   useEffect(() => {
-    window.localStorage.setItem(LANG_KEY, lang);
-    document.cookie = `${LANG_KEY}=${lang}; path=/; max-age=31536000; SameSite=Lax`;
+    if (!forcedLang) {
+      window.localStorage.setItem(LANG_KEY, lang);
+      document.cookie = `${LANG_KEY}=${lang}; path=/; max-age=31536000; SameSite=Lax`;
+    }
     document.documentElement.lang = lang;
     document.documentElement.dir = rtl ? "rtl" : "ltr";
     window.dispatchEvent(new CustomEvent("tilbudjagt:langchange", { detail: lang }));
-  }, [lang, rtl]);
+  }, [lang, rtl, forcedLang]);
 
   return (
-    <main dir={rtl ? "rtl" : "ltr"}>
+    <main lang={lang} dir={rtl ? "rtl" : "ltr"}>
       <header className="header wrap">
-        <a className="brand" href="/">
+        <a className="brand" href={prefix || "/"}>
           <span className="brand-mark">
             <Tag size={22} />
           </span>
@@ -119,28 +131,30 @@ export default function StoreDetail({ store }: { store: Store }) {
           </span>
         </a>
         <SiteNav ariaLabel={t.stores}>
-          <a href="/#butikker">{t.stores}</a>
+          <a href={`${prefix}/#butikker`}>{t.stores}</a>
           <a href="/about.html">{t.about}</a>
           <a href="/contact.html">{t.contact}</a>
         </SiteNav>
         <div className="header-actions">
-          <select
-            aria-label={t.language}
-            className="language"
-            value={lang}
-            onChange={(event) => setLang(event.target.value as Language)}
-          >
-            <option value="da">DA</option>
-            <option value="en">EN</option>
-            <option value="ar">AR</option>
-          </select>
-          <a className="vip-btn" href="/#vip">
+          {!forcedLang && (
+            <select
+              aria-label={t.language}
+              className="language"
+              value={lang}
+              onChange={(event) => setLang(event.target.value as Language)}
+            >
+              <option value="da">DA</option>
+              <option value="en">EN</option>
+              <option value="ar">AR</option>
+            </select>
+          )}
+          <a className="vip-btn" href={`${prefix}/#vip`}>
             {t.vip}
           </a>
         </div>
       </header>
       <section className="wrap store-detail">
-        <a className="text-link" href="/#butikker">
+        <a className="text-link" href={`${prefix}/#butikker`}>
           <ArrowLeft size={16} /> {t.allStores}
         </a>
         <div className="store-detail-card">
@@ -184,7 +198,7 @@ export default function StoreDetail({ store }: { store: Store }) {
           </a>
           <ShareStoreButton
             name={store.name}
-            url={`https://www.tilbudjagt.dk/butikker/${store.slug}`}
+            url={`https://www.tilbudjagt.dk${prefix}/butikker/${store.slug}`}
           />
           <p className="partner-disclosure">
             {partner
@@ -204,7 +218,7 @@ export default function StoreDetail({ store }: { store: Store }) {
       </div>
       <footer className="footer">
         <div className="wrap footer-inner">
-          <a className="brand footer-brand" href="/">
+          <a className="brand footer-brand" href={prefix || "/"}>
             <span className="brand-mark">
               <Tag size={20} />
             </span>

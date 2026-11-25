@@ -10,6 +10,8 @@ type Props = {
   initialTotal: number;
   categories: string[];
   initialQuery?: string;
+  initialLang?: "da" | "en" | "ar";
+  forcedLang?: boolean;
 };
 
 const PAGE_SIZE = 48;
@@ -91,8 +93,11 @@ export default function ProductBrowser({
   initialTotal,
   categories,
   initialQuery = "",
+  initialLang = "da",
+  forcedLang = false,
 }: Props) {
-  const lang = useSiteLang();
+  const detectedLang = useSiteLang();
+  const lang = forcedLang ? initialLang : detectedLang;
   const t = COPY[lang];
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState("");

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { STORES, getStore } from "@/lib/stores";
 import StoreDetail from "./store-detail";
+import { languageAlternates } from "@/lib/i18n";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -17,7 +18,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${store.name} – butiksinfo`,
     description: store.description.da,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: languageAlternates(`/butikker/${store.slug}`),
+    },
     openGraph: {
       type: "website",
       title: `${store.name} – butiksinfo`,

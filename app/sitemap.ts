@@ -2,10 +2,15 @@ import type { MetadataRoute } from "next";
 import productsMeta from "@/content/products-meta.json";
 import { getPublishedGuides } from "@/lib/guides";
 import { STORES } from "@/lib/stores";
+import {
+  danishArabicAlternates,
+  languageAlternates,
+  localeUrl,
+  type Locale,
+} from "@/lib/i18n";
 
 export const revalidate = 3600;
 
-const SITE = "https://www.tilbudjagt.dk";
 const FALLBACK_DATE = new Date("2026-11-19T00:00:00+01:00");
 
 function safeDate(value?: string): Date {
@@ -14,89 +19,92 @@ function safeDate(value?: string): Date {
   return Number.isNaN(parsed.getTime()) ? FALLBACK_DATE : parsed;
 }
 
+type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+
+function translatedPages(
+  path: string,
+  lastModified: Date,
+  changeFrequency: ChangeFrequency,
+  priority: number,
+  languages: Record<string, string>,
+  locales: Locale[] = ["da", "en", "ar"],
+): MetadataRoute.Sitemap {
+  return locales.map((locale) => ({
+    url: localeUrl(locale, path),
+    lastModified,
+    changeFrequency,
+    priority: locale === "da" ? priority : Math.max(0.3, priority - 0.1),
+    alternates: { languages },
+  }));
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const guides = getPublishedGuides().map((guide) => ({
-    url: `${SITE}/guides/${guide.slug}`,
-    lastModified: safeDate(guide.publishAt),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
-  const stores = STORES.map((store) => ({
-    url: `${SITE}/butikker/${store.slug}`,
-    lastModified: safeDate(store.checkedAt),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
-  return [
+  const productDate = safeDate(productsMeta.updatedAt);
+  const guides = getPublishedGuides();
+  const basePages = [
+    ...translatedPages("/", FALLBACK_DATE, "daily", 1, languageAlternates("/")),
+    ...translatedPages("/butikker", FALLBACK_DATE, "weekly", 0.9, languageAlternates("/butikker")),
+    ...translatedPages("/produkter", productDate, "daily", 0.9, languageAlternates("/produkter")),
+    ...translatedPages("/rabatkoder", FALLBACK_DATE, "daily", 0.9, languageAlternates("/rabatkoder")),
+    ...translatedPages("/guides", FALLBACK_DATE, "weekly", 0.8, languageAlternates("/guides")),
+  ];
+  const guidePages = guides.flatMap((guide) =>
+    translatedPages(
+      `/guides/${guide.slug}`,
+      safeDate(guide.publishAt),
+      "monthly",
+      0.6,
+      danishArabicAlternates(`/guides/${guide.slug}`),
+      ["da", "ar"],
+    ),
+  );
+  const storePages = STORES.flatMap((store) =>
+    translatedPages(
+      `/butikker/${store.slug}`,
+      safeDate(store.checkedAt),
+      "monthly",
+      0.6,
+      languageAlternates(`/butikker/${store.slug}`),
+    ),
+  );
+  const danishOnly: MetadataRoute.Sitemap = [
     {
-      url: `${SITE}/`,
-      lastModified: FALLBACK_DATE,
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: `${SITE}/butikker`,
-      lastModified: FALLBACK_DATE,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE}/produkter`,
-      lastModified: safeDate(productsMeta.updatedAt),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE}/rabatkoder`,
-      lastModified: FALLBACK_DATE,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE}/guides`,
-      lastModified: FALLBACK_DATE,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE}/annoncering`,
+      url: "https://www.tilbudjagt.dk/annoncering",
       lastModified: FALLBACK_DATE,
       changeFrequency: "monthly",
       priority: 0.5,
     },
-    ...guides,
-    ...stores,
     {
-      url: `${SITE}/about.html`,
+      url: "https://www.tilbudjagt.dk/about.html",
       lastModified: FALLBACK_DATE,
       changeFrequency: "monthly",
       priority: 0.4,
     },
     {
-      url: `${SITE}/contact.html`,
+      url: "https://www.tilbudjagt.dk/contact.html",
       lastModified: FALLBACK_DATE,
       changeFrequency: "monthly",
       priority: 0.3,
     },
     {
-      url: `${SITE}/privacy.html`,
+      url: "https://www.tilbudjagt.dk/privacy.html",
       lastModified: FALLBACK_DATE,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${SITE}/vilkaar.html`,
+      url: "https://www.tilbudjagt.dk/vilkaar.html",
       lastModified: FALLBACK_DATE,
       changeFrequency: "yearly",
       priority: 0.4,
     },
     {
-      url: `${SITE}/cookies.html`,
+      url: "https://www.tilbudjagt.dk/cookies.html",
       lastModified: FALLBACK_DATE,
       changeFrequency: "yearly",
       priority: 0.4,
     },
   ];
+
+  return [...basePages, ...guidePages, ...storePages, ...danishOnly];
 }

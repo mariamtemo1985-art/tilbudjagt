@@ -6,12 +6,16 @@ import StoreBrowser from "./store-browser";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import SiteNav from "@/components/site-nav";
+import { languageAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Butikker – find danske butikker",
   description:
     "Søg blandt danske butikker på navn eller kategori. Se hvilke butikker der er godkendte partnere, og hvilke der kun er direkte links.",
-  alternates: { canonical: "https://www.tilbudjagt.dk/butikker" },
+  alternates: {
+    canonical: "https://www.tilbudjagt.dk/butikker",
+    languages: languageAlternates("/butikker"),
+  },
 };
 
 export default function StoresPage() {
