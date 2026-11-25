@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { CONSENT_EVENT, readConsent } from "@/lib/consent";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-JVQTBLSE68";
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || "ziyhrr1h8i";
 
 declare global {
   interface Window {
