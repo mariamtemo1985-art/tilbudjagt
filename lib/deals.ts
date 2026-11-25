@@ -14,7 +14,8 @@ export type Deal = {
 export const DEALS = rawDeals as Deal[];
 
 /**
- * Pick one strong current deal per partner store, then sort by discount.
+ * Pick one strong current deal per partner store, then put the verified
+ * coffee-machine deal first as the visual lead.
  * This keeps the strip varied instead of showing ten products from one shop.
  */
 export function getFeaturedDeals(limit = 12): Deal[] {
@@ -27,5 +28,13 @@ export function getFeaturedDeals(limit = 12): Deal[] {
     if (!byStore.has(deal.storeSlug)) byStore.set(deal.storeSlug, deal);
   }
 
-  return [...byStore.values()].slice(0, limit);
+  const unique = [...byStore.values()];
+  // Lead with the verified coffee-machine deal: it is the clearest visual example
+  // of the product-price strip and gives the section a strong first card.
+  const lead = unique.find((deal) => deal.storeSlug === "proshop");
+  const ordered = lead
+    ? [lead, ...unique.filter((deal) => deal.storeSlug !== "proshop")]
+    : unique;
+
+  return ordered.slice(0, limit);
 }
