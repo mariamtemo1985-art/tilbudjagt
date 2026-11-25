@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CookieSettingsLink from "@/components/cookie-settings-link";
 import { ArrowRight, RefreshCw, Tag, TicketPercent } from "lucide-react";
 import SiteNav from "@/components/site-nav";
 import StoreLogo from "@/components/store-logo";
@@ -167,7 +168,7 @@ export default function RabatkoderPage() {
           <nav aria-label="Footer links">
             <a href="/#butikker">Butikker</a> · <a href="/guides">Guides</a> ·{" "}
             <a href="/about.html">Om os</a> · <a href="/contact.html">Kontakt</a> ·{" "}
-            <a href="/privacy.html">Privatlivspolitik</a>
+            <a href="/privacy.html">Privatlivspolitik</a> · <CookieSettingsLink />
           </nav>
         </div>
       </footer>

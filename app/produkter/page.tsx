@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CookieSettingsLink from "@/components/cookie-settings-link";
 import { Tag } from "lucide-react";
 import { PRODUCTS, PRODUCT_CATEGORIES, PRODUCTS_UPDATED } from "@/lib/products";
 import ProductBrowser from "./product-browser";
@@ -86,7 +87,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             <a href="/guides">Guides</a> · <a href="/annoncering">Annoncering</a> ·{" "}
             <a href="/about.html">Om os</a> ·{" "}
             <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatliv</a> ·{" "}
-            <a href="/vilkaar.html">Vilkår</a> · <a href="/cookies.html">Cookies</a>
+            <a href="/vilkaar.html">Vilkår</a> · <a href="/cookies.html">Cookies</a> · <CookieSettingsLink />
           </p>
         </div>
       </footer>

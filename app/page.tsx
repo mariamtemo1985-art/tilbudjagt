@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import CookieSettingsLink from "@/components/cookie-settings-link";
 import {
   ArrowRight, Bell, Check, Heart, ShieldCheck, Sparkles,
   Tag, X, Zap,
@@ -331,7 +332,7 @@ export default function HomePage() {
           <p>{t.footer}</p>
           <nav aria-label={t.footerAria}>
             <a href="/produkter">{t.footerProducts}</a> · <a href="/#butikker">{t.footerStores}</a> · <a href="/guides">{t.footerGuides}</a> · <a href="/about.html">{t.footerAbout}</a> ·{" "}
-            <a href="/annoncering">{t.footerAds}</a> · <a href="/contact.html">{t.footerContact}</a> · <a href="/privacy.html">{t.footerPrivacy}</a> · <a href="/vilkaar.html">{t.footerTerms}</a> · <a href="/cookies.html">{t.footerCookies}</a>
+            <a href="/annoncering">{t.footerAds}</a> · <a href="/contact.html">{t.footerContact}</a> · <a href="/privacy.html">{t.footerPrivacy}</a> · <a href="/vilkaar.html">{t.footerTerms}</a> · <a href="/cookies.html">{t.footerCookies}</a> · <CookieSettingsLink />
           </nav>
           <span>© {new Date().getFullYear()} TilbudJagt.dk</span>
         </div>

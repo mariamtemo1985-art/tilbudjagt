@@ -36,12 +36,12 @@
 <table>
 <tr><th>Navn</th><th>Udbyder</th><th>Formål</th><th>Varighed</th><th>Kategori</th></tr>
 <tr><td><code>tj_consent</code></td><td>TilbudJagt.dk</td><td>Husker dit cookievalg (kun nødvendige, statistik og markedsføring), så banneret ikke vises igen.</td><td>12 måneder</td><td>Nødvendig funktion</td></tr>
-<tr><td><code>_ga</code>, <code>_ga_*</code></td><td>Google Analytics</td><td>Måler anonymiseret trafik og sidevisninger. Sættes kun efter samtykke til statistik.</td><td>Op til 24 måneder</td><td>Statistik</td></tr>
-<tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Clarity</td><td>Hjælper med at forstå, hvordan siden bruges (anonymiserede sessioner og varmekort). Sættes kun efter samtykke til statistik.</td><td>Op til 12 måneder</td><td>Statistik</td></tr>
+<tr><td><code>_ga</code>, <code>_ga_*</code></td><td>Google LLC (Google Analytics)</td><td>Måler anonymiseret trafik og sidevisninger. Sættes kun efter samtykke til statistik.</td><td>Op til 24 måneder</td><td>Statistik</td></tr>
+<tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Corporation (Clarity)</td><td>Hjælper med at forstå, hvordan siden bruges (anonymiserede sessioner og varmekort). Sættes kun efter samtykke til statistik.</td><td>Op til 12 måneder</td><td>Statistik</td></tr>
 <tr><td><code>tj_app_banner_dismissed_until</code></td><td>TilbudJagt.dk (lokal lagring)</td><td>Husker, at du har afvist at se app-installationsbanneret, så det ikke vises igen hele tiden.</td><td>14 dage</td><td>Nødvendig funktion</td></tr>
-<tr><td>Affiliate-cookies (navn kan variere, fx <code>awc</code>)</td><td>Awin eller Partner-ads / den pågældende butik</td><td>Sættes først, når du klikker på et affiliate-link, for at registrere et eventuelt køb og beregne provision.</td><td>Fastlægges af netværket, typisk 30–40 dage</td><td>Marketing (tredjepart)</td></tr>
-<tr><td>AdSense-cookies (navn kan variere)</td><td>Google</td><td>Hvis Google AdSense eller andre annoncenetværk aktiveres, kan de sætte cookies til annoncering, hyppighedsbegrænsning og måling.</td><td>Fastlægges af Google</td><td>Marketing (tredjepart)</td></tr>
-<tr><td>Samtykkevalg (Google CMP)</td><td>Google</td><td>Gemmer dine valg for annoncer, så vi og Google kan respektere dem. Vises kun, når en godkendt samtykkeløsning er aktiveret.</td><td>Fastlægges af Google</td><td>Nødvendig funktion / samtykke</td></tr>
+<tr><td>Affiliate-cookies (navn kan variere, fx <code>awc</code>)</td><td>Partner-ads ApS, Awin AG eller den pågældende butik</td><td>Åbnes først efter samtykke til markedsføring og bruges til at registrere et eventuelt køb og beregne provision.</td><td>Fastlægges af netværket, typisk 30–40 dage</td><td>Marketing (tredjepart)</td></tr>
+<tr><td>AdSense-cookies (navn kan variere)</td><td>Google LLC</td><td>Når Google AdSense aktiveres efter godkendelse, kan Google sætte cookies til annoncering, hyppighedsbegrænsning og måling.</td><td>Fastlægges af Google</td><td>Marketing (tredjepart)</td></tr>
+<tr><td>Samtykkevalg (Google CMP)</td><td>Google LLC</td><td>Gemmer dine valg for annoncer, så vi og Google kan respektere dem. Aktiveres sammen med Google AdSense.</td><td>Fastlægges af Google</td><td>Nødvendig funktion / samtykke</td></tr>
 </table>
 <p class="notice">Nødvendig lokal lagring kan ikke slås fra via et samtykkevindue, fordi den er nødvendig for den ønskede funktion. Du kan altid slette den i din browser. Vi sætter ikke statistik- eller marketingcookies uden dit samtykke.</p>
 </section>
@@ -79,7 +79,7 @@
 <p>Vi kan opdatere denne cookiepolitik, når vores brug af cookies ændrer sig, fx når annoncer eller statistik aktiveres. Den nyeste version vil altid være tilgængelig på denne side med dato for seneste opdatering.</p>
 </section>
 
-<footer><p><a href="/">TilbudJagt.dk</a> · <a href="/privacy.html">Privatlivspolitik</a> · <a href="/vilkaar.html">Vilkår</a> · <a href="/contact.html">Kontakt</a></p></footer>
+<footer><p><a href="/">TilbudJagt.dk</a> · <a href="/privacy.html">Privatlivspolitik</a> · <a href="/vilkaar.html">Vilkår</a> · <a href="/contact.html">Kontakt</a> · <a href="#" onclick="window.dispatchEvent(new Event('tilbudjagt:openconsent'));return false;">Cookieindstillinger</a></p></footer>
 </main>
 </body>
 </html>

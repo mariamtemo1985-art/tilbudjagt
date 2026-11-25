@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CookieSettingsLink from "@/components/cookie-settings-link";
 import { ArrowRight, BookOpen, Tag } from "lucide-react";
 import { getPublishedGuides } from "@/lib/guides";
 import SiteNav from "@/components/site-nav";
@@ -69,7 +70,7 @@ export default function GuidesPage() {
           <p>Guiderne er generel forbrugerinformation, ikke personlig rådgivning.</p>
           <nav aria-label="Footer links">
             <a href="/#butikker">Butikker</a> · <a href="/about.html">Om os</a> ·{" "}
-            <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a>
+            <a href="/contact.html">Kontakt</a> · <a href="/privacy.html">Privatlivspolitik</a> · <CookieSettingsLink />
           </nav>
         </div>
       </footer>
