@@ -7,6 +7,7 @@ import AppInstallBanner from "@/components/AppInstallBanner";
 import SiteTranslator from "@/components/site-translator";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
 import ConsentBanner from "@/components/ConsentBanner";
+import AffiliateLinkGuard from "@/components/AffiliateLinkGuard";
 
 const SITE = "https://www.tilbudjagt.dk";
 const OG_IMAGE = "/og-image.png";
@@ -119,6 +120,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Analytics />
         <AnalyticsScripts />
         <ConsentBanner />
+        <AffiliateLinkGuard />
       </body>
     </html>
   );
