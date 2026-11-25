@@ -40,6 +40,9 @@ export async function generateMetadata({
       title: meta.title,
       description: meta.description,
     },
+    other: {
+      google: "notranslate",
+    },
     twitter: {
       card: "summary_large_image",
       title: meta.title,

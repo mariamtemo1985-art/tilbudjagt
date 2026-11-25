@@ -71,7 +71,7 @@ const COPY: Record<
   },
 };
 
-function DealImage({ deal }: { deal: Deal }) {
+function DealImage({ deal, title }: { deal: Deal; title: string }) {
   const [failed, setFailed] = useState(false);
 
   if (failed) {
@@ -85,7 +85,7 @@ function DealImage({ deal }: { deal: Deal }) {
   return (
     <img
       src={deal.image}
-      alt={deal.title}
+      alt={title}
       width={320}
       height={320}
       loading="eager"
@@ -160,29 +160,36 @@ export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
           aria-label={copy.scrollLabel}
           tabIndex={0}
         >
-          {items.map((deal) => (
+          {items.map((deal) => {
+            const title =
+              lang === "ar"
+                ? deal.titleAr ?? deal.title
+                : lang === "en"
+                  ? deal.titleEn ?? deal.title
+                  : deal.title;
+            return (
             <article className="bf-card" key={`${deal.storeSlug}-${deal.title}`}>
               <a
                 className="bf-image"
                 href={deal.url}
                 target="_blank"
                 rel="sponsored nofollow noopener noreferrer"
-                aria-label={`${deal.title} – ${deal.store}`}
+                aria-label={`${title} – ${deal.store}`}
               >
-                <DealImage deal={deal} />
+                <DealImage deal={deal} title={title} />
                 <span className="bf-badge" dir="ltr">
                   -{deal.discount}%
                 </span>
               </a>
               <div className="bf-body">
-                <span className="bf-store">{deal.store}</span>
-                <h3 className="bf-name">
+                <span className="bf-store" translate="no">{deal.store}</span>
+                <h3 className="bf-name" translate="no">
                   <a
                     href={deal.url}
                     target="_blank"
                     rel="sponsored nofollow noopener noreferrer"
                   >
-                    {deal.title}
+                    {title}
                   </a>
                 </h3>
                 <div className="bf-prices">
@@ -199,7 +206,8 @@ export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
                 </a>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
         <button
           className="bf-nav bf-nav-next"

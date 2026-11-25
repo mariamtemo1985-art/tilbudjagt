@@ -4,6 +4,8 @@ export type Deal = {
   store: string;
   storeSlug: string;
   title: string;
+  titleEn?: string;
+  titleAr?: string;
   price: number;
   oldPrice: number;
   discount: number;

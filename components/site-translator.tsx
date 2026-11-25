@@ -267,6 +267,8 @@ export default function SiteTranslator() {
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.documentElement.setAttribute("translate", lang === "da" ? "yes" : "no");
+    document.documentElement.classList.toggle("notranslate", lang !== "da");
     applyTranslations(lang);
 
     let scheduled = false;

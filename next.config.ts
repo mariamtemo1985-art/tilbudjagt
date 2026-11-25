@@ -25,6 +25,22 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
+        source: "/ar",
+        headers: [{ key: "Content-Language", value: "ar" }],
+      },
+      {
+        source: "/ar/:path*",
+        headers: [{ key: "Content-Language", value: "ar" }],
+      },
+      {
+        source: "/en",
+        headers: [{ key: "Content-Language", value: "en" }],
+      },
+      {
+        source: "/en/:path*",
+        headers: [{ key: "Content-Language", value: "en" }],
+      },
+      {
         source: "/admin/:path*",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
       },
