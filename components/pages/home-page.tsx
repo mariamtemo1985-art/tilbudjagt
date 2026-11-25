@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import CookieSettingsLink from "@/components/cookie-settings-link";
 import {
   ArrowRight, Bell, Check, Heart, ShieldCheck, Sparkles,
-  Tag, X, Zap,
+  Menu, Tag, X, Zap,
 } from "lucide-react";
 import { STORES } from "@/lib/stores";
 import { sortStoresByCommission } from "@/lib/store-commissions";
@@ -12,6 +12,8 @@ import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import StoreLogo from "@/components/store-logo";
 import StoreBrowser from "@/app/butikker/store-browser";
+import BlackFridayStrip from "@/components/pages/black-friday-strip";
+import GuideHighlights from "@/components/pages/guide-highlights";
 
 type Language = "da" | "en" | "ar";
 const LANG_KEY = "tilbudjagt_lang";
@@ -154,6 +156,7 @@ export default function HomePage({ initialLang = "da", forcedLang = false }: Hom
     window.dispatchEvent(new CustomEvent("tilbudjagt:langchange", { detail: lang }));
   }, [lang, langReady, forcedLang]);
   const [vipOpen, setVipOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [newsletterStatus, setNewsletterStatus] = useState("");
@@ -216,13 +219,13 @@ export default function HomePage({ initialLang = "da", forcedLang = false }: Hom
           <span className="brand-mark"><Tag size={22} /></span>
           <span>Tilbud<span className="brand-accent">Jagt</span><small>.dk</small></span>
         </a>
-        <nav className="nav">
-          <a href={localHref("/produkter")}>{t.navProducts}</a>
-          <a href={localHref("/rabatkoder")}>Rabatkoder</a>
-          <a href={localHref("/#butikker")}>{t.explore}</a>
-          <a href={localHref("/guides")}>{t.navGuides}</a>
-          <a href="/about.html">{t.navAbout}</a>
-          <a href="/contact.html">{t.navContact}</a>
+        <nav className={`nav${menuOpen ? " nav-open" : ""}`}>
+          <a href={localHref("/produkter")} onClick={() => setMenuOpen(false)}>{t.navProducts}</a>
+          <a href={localHref("/rabatkoder")} onClick={() => setMenuOpen(false)}>Rabatkoder</a>
+          <a href={localHref("/#butikker")} onClick={() => setMenuOpen(false)}>{t.explore}</a>
+          <a href={localHref("/guides")} onClick={() => setMenuOpen(false)}>{t.navGuides}</a>
+          <a href="/about.html" onClick={() => setMenuOpen(false)}>{t.navAbout}</a>
+          <a href="/contact.html" onClick={() => setMenuOpen(false)}>{t.navContact}</a>
         </nav>
         <div className="header-actions">
           {!forcedLang && (
@@ -242,12 +245,23 @@ export default function HomePage({ initialLang = "da", forcedLang = false }: Hom
           <button className="vip-btn" onClick={() => setVipOpen(true)}>
             <Sparkles size={15} /> VIP
           </button>
+          <button
+            className="menu-btn"
+            type="button"
+            aria-label={t.menu}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </header>
 
+      <BlackFridayStrip lang={lang} />
       <div id="butikker">
         <StoreBrowser stores={STORES} initialLang={lang} forcedLang={forcedLang} />
       </div>
+      <GuideHighlights lang={lang} />
 
       <SponsoredBanner />
       <div className="wrap">

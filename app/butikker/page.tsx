@@ -3,6 +3,7 @@ import CookieSettingsLink from "@/components/cookie-settings-link";
 import { Tag } from "lucide-react";
 import { STORES } from "@/lib/stores";
 import StoreBrowser from "./store-browser";
+import BlackFridayStrip from "@/components/pages/black-friday-strip";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import SiteNav from "@/components/site-nav";
@@ -61,6 +62,7 @@ export default function StoresPage() {
       <div className="wrap">
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_STORES} />
       </div>
+      <BlackFridayStrip lang="da" />
       <StoreBrowser stores={STORES} />
       <footer className="footer">
         <div className="wrap footer-inner">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Tag } from "lucide-react";
 import StoreBrowser from "@/app/butikker/store-browser";
+import BlackFridayStrip from "@/components/pages/black-friday-strip";
 import AdSlot from "@/components/AdSlot";
 import SponsoredBanner from "@/components/SponsoredBanner";
 import SiteNav from "@/components/site-nav";
@@ -109,6 +110,7 @@ export default async function LocalizedStoresPage({ params }: PageProps) {
       <div className="wrap">
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_STORES} />
       </div>
+      <BlackFridayStrip lang={lang} />
       <StoreBrowser stores={STORES} initialLang={lang} forcedLang />
       <footer className="footer">
         <div className="wrap footer-inner">
