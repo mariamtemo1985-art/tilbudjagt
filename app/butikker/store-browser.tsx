@@ -226,7 +226,7 @@ function StoreCard({
             )}
           </span>
           <span className="store-visit">
-            {copy.visit} {store.name} <ArrowRight size={12} />
+            {copy.visit} <ArrowRight size={12} />
           </span>
         </span>
       </a>
