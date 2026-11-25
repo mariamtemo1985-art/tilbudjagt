@@ -134,9 +134,14 @@ const partners = sortStoresByCommission(
 type HomePageProps = {
   initialLang?: Language;
   forcedLang?: boolean;
+  categoryLinks?: { slug: string; h1: string; count: number }[];
 };
 
-export default function HomePage({ initialLang = "da", forcedLang = false }: HomePageProps) {
+export default function HomePage({
+  initialLang = "da",
+  forcedLang = false,
+  categoryLinks = [],
+}: HomePageProps) {
   const [lang, setLang] = useState<Language>(initialLang);
   const [langReady, setLangReady] = useState(forcedLang);
   useEffect(() => {
@@ -262,6 +267,28 @@ export default function HomePage({ initialLang = "da", forcedLang = false }: Hom
         <StoreBrowser stores={STORES} initialLang={lang} forcedLang={forcedLang} />
       </div>
       <GuideHighlights lang={lang} />
+
+      {lang === "da" && categoryLinks.length > 0 && (
+        <section className="wrap category-pills-section" aria-labelledby="home-categories">
+          <div className="section-title">
+            <div>
+              <p className="eyebrow">Sammenlign efter behov</p>
+              <h2 id="home-categories">Populære kategorier</h2>
+            </div>
+            <a className="text-link" href="/tilbud">
+              Se alle kategorier
+            </a>
+          </div>
+          <div className="category-pills">
+            {categoryLinks.map((category) => (
+              <a className="category-pill" href={`/tilbud/${category.slug}`} key={category.slug}>
+                <strong>{category.h1}</strong>
+                <span>{category.count} varer</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <SponsoredBanner />
       <div className="wrap">

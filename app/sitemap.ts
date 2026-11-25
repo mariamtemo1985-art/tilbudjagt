@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import productsMeta from "@/content/products-meta.json";
+import { DEAL_CATEGORIES } from "@/lib/deal-categories";
 import { getPublishedGuides } from "@/lib/guides";
 import { STORES } from "@/lib/stores";
 import {
@@ -67,6 +68,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       languageAlternates(`/butikker/${store.slug}`),
     ),
   );
+  const categoryPages: MetadataRoute.Sitemap = [
+    {
+      url: "https://www.tilbudjagt.dk/tilbud",
+      lastModified: productDate,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    ...DEAL_CATEGORIES.map((category) => ({
+      url: `https://www.tilbudjagt.dk/tilbud/${category.slug}`,
+      lastModified: productDate,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.8,
+    })),
+  ];
   const danishOnly: MetadataRoute.Sitemap = [
     {
       url: "https://www.tilbudjagt.dk/annoncering",
@@ -106,5 +121,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...basePages, ...guidePages, ...storePages, ...danishOnly];
+  return [...basePages, ...guidePages, ...storePages, ...categoryPages, ...danishOnly];
 }

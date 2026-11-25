@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, Store as StoreIcon, Tag } from "lucide-react";
 import ShareStoreButton from "@/components/ShareStoreButton";
 import StoreLogo from "@/components/store-logo";
@@ -90,10 +90,12 @@ export default function StoreDetail({
   store,
   initialLang = "da",
   forcedLang = false,
+  children,
 }: {
   store: Store;
   initialLang?: Language;
   forcedLang?: boolean;
+  children?: ReactNode;
 }) {
   const [lang, setLang] = useState<Language>(initialLang);
   const partner = isAffiliateLink(store);
@@ -212,6 +214,7 @@ export default function StoreDetail({
             <b>{t.noOffersTitle}</b> {t.noOffersText}
           </span>
         </div>
+        {children}
       </section>
       <div className="wrap">
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_STORE} />

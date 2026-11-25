@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { STORES, getStore } from "@/lib/stores";
 import StoreDetail from "./store-detail";
+import StoreSeoContent from "@/components/store-seo-content";
+import { getStoreSeoContent } from "@/lib/store-seo-content";
 import { languageAlternates } from "@/lib/i18n";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -15,17 +17,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const store = getStore(slug);
   if (!store) return { title: "Butik ikke fundet" };
   const url = `https://www.tilbudjagt.dk/butikker/${store.slug}`;
+  const seo = getStoreSeoContent(store.slug);
+  const title = seo?.title ?? `${store.name} – butiksinfo`;
+  const description = seo?.description ?? store.description.da;
   return {
-    title: `${store.name} – butiksinfo`,
-    description: store.description.da,
+    title: seo ? { absolute: seo.title } : title,
+    description,
     alternates: {
       canonical: url,
       languages: languageAlternates(`/butikker/${store.slug}`),
     },
     openGraph: {
       type: "website",
-      title: `${store.name} – butiksinfo`,
-      description: store.description.da,
+      title,
+      description,
       url,
       images: [
         {
@@ -44,11 +49,12 @@ export default async function StorePage({ params }: PageProps) {
   const store = getStore(slug);
   if (!store) notFound();
   const url = `https://www.tilbudjagt.dk/butikker/${store.slug}`;
+  const seo = getStoreSeoContent(store.slug);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `${store.name} – butiksinfo`,
-    description: store.description.da,
+    name: seo?.title ?? `${store.name} – butiksinfo`,
+    description: seo?.description ?? store.description.da,
     url,
     inLanguage: "da-DK",
     breadcrumb: {
@@ -75,6 +81,20 @@ export default async function StorePage({ params }: PageProps) {
       ],
     },
   };
+  const faqJsonLd = seo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: seo.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
@@ -82,7 +102,21 @@ export default async function StorePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <StoreDetail store={store} />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+      <StoreDetail store={store}>
+        {seo && (
+          <StoreSeoContent
+            storeName={store.name}
+            slug={store.slug}
+            content={seo}
+          />
+        )}
+      </StoreDetail>
     </>
   );
 }

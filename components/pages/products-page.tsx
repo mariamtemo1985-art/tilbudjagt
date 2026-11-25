@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CookieSettingsLink from "@/components/cookie-settings-link";
 import { Tag } from "lucide-react";
 import { PRODUCTS, PRODUCT_CATEGORIES, PRODUCTS_UPDATED } from "@/lib/products";
+import { DEAL_CATEGORIES, getCategoryTotal } from "@/lib/deal-categories";
 import ProductBrowser from "@/app/produkter/product-browser";
 import AdSlot from "@/components/AdSlot";
 import SiteNav from "@/components/site-nav";
@@ -154,6 +155,27 @@ export default async function ProductsPage({ searchParams, lang = "da" }: PagePr
           <strong>{t.noticeLabel}</strong> {t.notice}
         </p>
       </section>
+      {lang === "da" && (
+        <section className="wrap category-pills-section" aria-labelledby="popular-categories">
+          <div className="section-title">
+            <div>
+              <p className="eyebrow">Sammenlign efter behov</p>
+              <h2 id="popular-categories">Populære kategorier</h2>
+            </div>
+            <a className="text-link" href="/tilbud">
+              Se alle kategorier
+            </a>
+          </div>
+          <div className="category-pills">
+            {DEAL_CATEGORIES.map((category) => (
+              <a className="category-pill" href={`/tilbud/${category.slug}`} key={category.slug}>
+                <strong>{category.h1}</strong>
+                <span>{getCategoryTotal(category)} varer</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
       <div className="wrap">
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_PRODUCTS} />
       </div>
