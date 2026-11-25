@@ -45,6 +45,7 @@ const COPY: Record<
     featuredKicker: string;
     featuredTitle: string;
     featuredDescription: string;
+    otherElectronics: string;
   }
 > = {
   da: {
@@ -78,6 +79,7 @@ const COPY: Record<
     featuredTitle: "Fremhævede partnerbutikker",
     featuredDescription:
       "Et udvalg af vores godkendte partnere samlet øverst. Links er reklame, og vi kan få provision, hvis du køber.",
+    otherElectronics: "Andet elektronik",
   },
   en: {
     all: "All",
@@ -110,6 +112,7 @@ const COPY: Record<
     featuredTitle: "Featured partner stores",
     featuredDescription:
       "A selection of our approved partners at the top. Links are advertising and we may earn a commission if you buy.",
+    otherElectronics: "Other electronics",
   },
   ar: {
     all: "الكل",
@@ -142,6 +145,7 @@ const COPY: Record<
     featuredTitle: "متاجر شركاء مميزة",
     featuredDescription:
       "مجموعة مختارة من شركائنا المعتمدين في الأعلى. الروابط إعلانية وقد نحصل على عمولة إذا اشتريت.",
+    otherElectronics: "إلكترونيات أخرى",
   },
 };
 
@@ -314,9 +318,10 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
     [featured],
   );
 
-  const electronicsBySpecialty = useMemo(
-    () =>
-      SPECIALTY_ORDER.map((key) => ({
+  type SpecialtyKey = StoreSpecialty | "andet";
+  const electronicsBySpecialty = useMemo<{ key: SpecialtyKey; stores: Store[] }[]>(
+    () => {
+      const groups: { key: SpecialtyKey; stores: Store[] }[] = SPECIALTY_ORDER.map((key) => ({
         key,
         stores: sortStoresByCommission(
           visible.filter(
@@ -326,7 +331,18 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
               !featuredSlugs.has(store.slug),
           ),
         ),
-      })).filter((group) => group.stores.length > 0),
+      }));
+      const other = sortStoresByCommission(
+        visible.filter(
+          (store) =>
+            store.category === "elektronik" &&
+            !store.specialty &&
+            !featuredSlugs.has(store.slug),
+        ),
+      );
+      if (other.length > 0) groups.push({ key: "andet", stores: other });
+      return groups.filter((group) => group.stores.length > 0);
+    },
     [visible, featuredSlugs],
   );
   const visibleElectronicsCount = electronicsBySpecialty.reduce(
@@ -456,7 +472,11 @@ export default function StoreBrowser({ stores }: { stores: Store[] }) {
               {electronicsBySpecialty.map(({ key, stores: specialtyStores }) => (
                 <div className="specialty-group" key={key}>
                   <div className="specialty-head">
-                    <h3>{STORE_SPECIALTIES[key][lang]}</h3>
+                    <h3>
+                      {key === "andet"
+                        ? copy.otherElectronics
+                        : STORE_SPECIALTIES[key][lang]}
+                    </h3>
                   </div>
                   <div className="store-grid">
                     {specialtyStores.map((store) => (
