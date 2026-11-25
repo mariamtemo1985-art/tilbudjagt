@@ -455,3 +455,24 @@
 .partner-chip .store-avatar img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;display:block}
 .store-avatar.store-avatar-logo{background:#fff;border-color:#e1ebe0}
 @media(max-width:650px){.partner-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-chip{font-size:10px;padding:5px 7px}.partner-chip .store-avatar{width:72px;height:56px}.store-avatar-logo{padding:4px}}
+
+/* Cookie consent (CMP) */
+.tj-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:680px;margin:0 auto;background:#fff;color:#15251b;border:1px solid #dfe8de;border-radius:16px;box-shadow:0 18px 50px #10241a2e;padding:18px 18px 14px;font-size:13px;line-height:1.55}
+.tj-consent-title{font:800 18px/1.2 Manrope,sans-serif;margin:0 0 6px;letter-spacing:-.3px}
+.tj-consent-body{margin:0 0 10px;color:#41534a}
+.tj-consent-link{color:#176b45;font-weight:700;text-decoration:underline}
+.tj-consent-options{display:flex;flex-direction:column;gap:8px;margin:10px 0 12px;border-top:1px solid #e7eee6;padding-top:10px}
+.tj-consent-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.tj-consent-row strong{font-size:12px}
+.tj-consent-row p{margin:1px 0 0;font-size:11px;color:#68786e}
+.tj-consent-row input{width:18px;height:18px;accent-color:#176b45;margin-top:2px;flex-shrink:0}
+.tj-consent-actions{display:flex;flex-wrap:wrap;gap:8px}
+.tj-consent-btn{border:1px solid #cfdccd;background:#f4f8f2;color:#176b45;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:800;cursor:pointer}
+.tj-consent-btn:hover{border-color:#9fc29f}
+.tj-consent-btn-primary{background:#176b45;border-color:#176b45;color:#fff}
+.tj-consent-btn-primary:hover{background:#125538}
+.tj-consent-btn-ghost{background:transparent;border-color:transparent;text-decoration:underline;padding-left:4px;padding-right:4px}
+.tj-consent-fab{position:fixed;left:12px;bottom:12px;z-index:999;width:38px;height:38px;border-radius:50%;border:1px solid #dfe8de;background:#fff;box-shadow:0 4px 14px #10241a1f;font-size:17px;line-height:1;display:grid;place-items:center;cursor:pointer;opacity:.85}
+.tj-consent-fab:hover{opacity:1}
+@media (max-width:520px){.tj-consent{left:10px;right:10px;bottom:10px;padding:15px 14px 12px;font-size:12px}.tj-consent-btn{flex:1 1 auto;padding:10px 8px}}
+html[dir="rtl"] .tj-consent-row input{margin-left:0}

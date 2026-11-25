@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { CONSENT_EVENT, hasMarketingConsent } from "@/lib/consent";
 
 declare global {
   interface Window {
@@ -37,7 +38,14 @@ export default function AdSlot({
   const adRef = useRef<HTMLModElement | null>(null);
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
   const cmpReady = process.env.NEXT_PUBLIC_ADSENSE_CMP_READY === "true";
-  const enabled = Boolean(client && slot && cmpReady);
+  const [consented, setConsented] = useState(false);
+  useEffect(() => {
+    const sync = () => setConsented(hasMarketingConsent());
+    sync();
+    window.addEventListener(CONSENT_EVENT, sync);
+    return () => window.removeEventListener(CONSENT_EVENT, sync);
+  }, []);
+  const enabled = Boolean(client && slot && cmpReady && consented);
 
   useEffect(() => {
     if (!enabled || !client || !adRef.current) return;

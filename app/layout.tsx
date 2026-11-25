@@ -5,6 +5,8 @@ import "./submit.css";
 import { Analytics } from "@vercel/analytics/next";
 import AppInstallBanner from "@/components/AppInstallBanner";
 import SiteTranslator from "@/components/site-translator";
+import AnalyticsScripts from "@/components/AnalyticsScripts";
+import ConsentBanner from "@/components/ConsentBanner";
 
 const SITE = "https://www.tilbudjagt.dk";
 const OG_IMAGE = "/og-image.png";
@@ -47,6 +49,9 @@ export const metadata: Metadata = {
     images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
@@ -94,12 +99,14 @@ const siteJsonLd = {
 };
 
 const languageBootstrap = `(function(){try{var l=localStorage.getItem('tilbudjagt_lang')||(document.cookie.match(/(?:^|; )tilbudjagt_lang=([^;]+)/)||[])[1]||'da';if(l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();`;
+const consentDefaults = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="da">
       <head>
         <script dangerouslySetInnerHTML={{ __html: languageBootstrap }} />
+        <script dangerouslySetInnerHTML={{ __html: consentDefaults }} />
       </head>
       <body>
         <script
@@ -110,6 +117,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteTranslator />
         <AppInstallBanner />
         <Analytics />
+        <AnalyticsScripts />
+        <ConsentBanner />
       </body>
     </html>
   );
