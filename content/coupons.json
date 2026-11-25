@@ -79,5 +79,23 @@
     "description": "Officiel partnerkode fra Cleanstream. Kan bruges én gang pr. kunde oveni Black Month-tilbuddet på 200 kr. (250 kr. i alt).",
     "expires": "30. november 2026",
     "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117569"
+  },
+  {
+    "store": "House Lab",
+    "slug": "house-lab",
+    "title": "10% på hele ordren",
+    "code": "10RABAT",
+    "description": "Officiel partnerkode fra House Lab. Gælder på houselab.dk.",
+    "expires": "Ingen udløbsdato oplyst",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118177"
+  },
+  {
+    "store": "AMPMshop.dk",
+    "slug": "ampmshop",
+    "title": "10% på alle produkter",
+    "code": "POWDER10",
+    "description": "Officiel partnerkode fra AMPMshop.dk. Gælder på alle produkter.",
+    "expires": "Ingen udløbsdato oplyst",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=110719"
   }
 ]

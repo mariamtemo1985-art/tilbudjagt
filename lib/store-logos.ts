@@ -120,6 +120,8 @@ export const STORE_LOGOS: Record<string, string> = {
   "lauridsen-vine": "/logos/lauridsen-vine.png",
   "aeloa": "/logos/aeloa.png",
   "remsleep": "/logos/remsleep.png",
+  "house-lab": "/logos/house-lab.png",
+  "ampmshop": "/logos/ampmshop.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {

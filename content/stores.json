@@ -1705,5 +1705,35 @@
       "ar": "جهاز إلكتروني لإذابة الكلس في المنازل المستقلة، يُركّب دون سباك لتقليل الترسبات وتسهيل التنظيف وتخفيف تآكل الأجهزة المنزلية."
     },
     "checkedAt": "2026-11-25T06:26:00.000Z"
+  },
+  {
+    "slug": "house-lab",
+    "name": "House Lab",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://houselab.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118177",
+    "description": {
+      "da": "Møbler, belysning, tekstiler og boligtilbehør med unikt design, der giver hjemmet et personligt præg.",
+      "en": "Furniture, lighting, textiles and home accessories with distinctive design that gives your home a personal touch.",
+      "ar": "أثاث وإضاءة ومنسوجات وإكسسوارات منزلية بتصميم مميز يمنح منزلك لمسة شخصية."
+    },
+    "checkedAt": "2026-11-25T15:03:00.000Z"
+  },
+  {
+    "slug": "ampmshop",
+    "name": "AMPMshop.dk",
+    "category": "pleje",
+    "status": "partner",
+    "website": "https://www.ampmshop.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=110719",
+    "description": {
+      "da": "Plantebaseret all-in-one pulver med ærte- og risprotein, vitaminer, mineraler og greens til hverdagen.",
+      "en": "Plant-based all-in-one powder with pea and rice protein, vitamins, minerals and greens for everyday nutrition.",
+      "ar": "مسحوق نباتي شامل يحتوي على بروتين البازلاء والأرز والفيتامينات والمعادن والخضروات الورقية لتغذية يومية."
+    },
+    "checkedAt": "2026-11-25T15:03:00.000Z"
   }
 ]
