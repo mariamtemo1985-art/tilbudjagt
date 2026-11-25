@@ -151,6 +151,12 @@
 .guide-updated{font-size:11px;color:#8a958d;margin:8px 0 26px}
 .guide-article h2{font:800 20px Manrope;margin:26px 0 8px}
 .guide-article p{font-size:14px;line-height:1.75;color:#33453a;margin:0 0 12px}
+.guide-related-stores{margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
+.guide-related-stores h2{margin-top:0}
+.guide-related-stores .store-grid{grid-template-columns:repeat(3,1fr);margin-top:10px}
+.guide-related-stores .store-avatar{width:64px;height:48px}
+.guide-related-stores .store-card-body strong{font-size:12px}
+@media(max-width:650px){.guide-related-stores .store-grid{grid-template-columns:repeat(2,1fr)}.guide-related-stores .store-avatar{width:52px;height:40px}}
 .guide-disclaimer{margin-top:30px;font-size:11px;line-height:1.6;color:#7b8a80;border-top:1px solid var(--line);padding-top:14px}
 .guide-article-cta{display:flex;gap:14px;align-items:center;margin-top:18px;flex-wrap:wrap}
 .guide-card h2 a:hover{color:var(--green)}

@@ -10,6 +10,8 @@ export type Guide = {
   /** ISO-dato (YYYY-MM-DD). Artiklen vises først fra denne dato. */
   publishAt?: string;
   sections: GuideSection[];
+  /** Slugs for relevant stores shown at the end of the guide. */
+  relatedStores?: string[];
 };
 
 export const GUIDES: Guide[] = [
@@ -555,6 +557,155 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+{
+    "slug": "indret-hjemmet-uden-overforbrug",
+    "kicker": "Bolig",
+    "title": "Indret hjemmet uden overforbrug: mål, materialer og samlet pris",
+    "description": "Sådan vælger du møbler, tekstiler og belysning, der passer til hjemmet – og undgår at betale for meget for levering, montering og retur.",
+    "lead": "Et flot hjem handler mere om mål, materialer og brug end om at købe flest ting. Her er en enkel tjekliste, før du bestiller møbler og interiør online.",
+    "updated": "25. november 2026",
+    "publishAt": "2026-11-25",
+    "sections": [
+      {
+        "heading": "1. Mål rummet, før du forelsker dig i et møbel",
+        "paragraphs": [
+          "Mål gulvplads, vægge, døråbninger, trapper og elevator, før du bestiller. Marker møblets fodaftryk med malertape på gulvet, så du kan se, om der stadig er plads til at gå rundt og åbne skabe og døre.",
+          "Tjek også højden på sofabord, spisebord og stole, hvis de skal bruges sammen. Et møbel, der passer på billedet, kan føles for stort eller for lavt, når det står i rummet."
+        ]
+      },
+      {
+        "heading": "2. Se på materialer og vedligehold",
+        "paragraphs": [
+          "Forskellen mellem massivt træ, finér og laminat er ikke kun prisen. Spørg, hvordan overfladen skal rengøres, og om der kan skaffes reservedele, hvis noget går i stykker. Til familiehjem er det ofte værd at vælge materialer, der kan tåle daglig brug.",
+          "For tekstiler bør du tjekke vaskemærkning, slidstyrke og om farven kan smitte af. Et billigt tæppe eller en pude, der mister formen efter få vaske, er sjældent en god besparelse."
+        ]
+      },
+      {
+        "heading": "3. Brug lys og tekstiler til at samle rummet",
+        "paragraphs": [
+          "Kombinér gerne loftlys, gulvlampe og en mindre bordlampe, så rummet kan skifte mellem arbejdslys og hyggeligt lys. Tjek om lamperne kan dæmpes, og om pærerne har den farvetone, du ønsker.",
+          "Gardiner, tæpper og puder kan ændre oplevelsen af et rum uden at du skal købe nye møbler. Mål vinduet, før du bestiller gardiner, og vælg tekstiler, der kan vaskes eller rengøres efter behov."
+        ]
+      },
+      {
+        "heading": "4. Luft og indeklima: tjek driftsomkostningerne",
+        "paragraphs": [
+          "Luft ud flere gange om dagen, og hold støv nede med regelmæssig rengøring. Hvis du overvejer en luftrenser, så se på rumstørrelse, filtertype, lydniveau og prisen på nye filtre – ikke kun på købsprisen.",
+          "Ingen luftrenser erstatter udluftning og rengøring. Læs producentens officielle specifikationer, og kontroller retur- og garantivilkår, før du køber."
+        ]
+      },
+      {
+        "heading": "5. Regn den samlede pris – ikke kun møblet",
+        "paragraphs": [
+          "Læg levering, montering, afhentning af gammelt møbel og eventuel returfragt oveni prisen. Tjek også lagerstatus og leveringstid, så du ikke står uden møbel til en bestemt dato.",
+          "Brug kun officielle rabatkoder, og sammenlign den endelige pris i kurven. Gem ordrebekræftelse og kvittering, indtil varen er modtaget og kontrolleret."
+        ]
+      }
+    ],
+    "relatedStores": [
+      "house-lab",
+      "copenhagenpure",
+      "kispus",
+      "hamam",
+      "jotex"
+    ],
+
+  },
+  {
+    "slug": "proteinpulver-og-greens-guide",
+    "kicker": "مكملات غذائية",
+    "title": "Proteinpulver og greens: sådan vælger du uden at betale for meget",
+    "description": "Lær at læse næringsdeklarationen, sammenligne pris pr. portion og vurdere ingredienser, før du køber proteinpulver eller greens.",
+    "lead": "Proteinpulver og greens fås i mange blandinger og priser. Fokusér på indhold, portioner og dit faktiske forbrug – ikke på fronten af posen.",
+    "updated": "25. november 2026",
+    "publishAt": "2026-11-25",
+    "sections": [
+      {
+        "heading": "1. Start med dit formål",
+        "paragraphs": [
+          "Beslut, om produktet skal bruges som et lille supplement i hverdagen, efter træning eller som en del af et større måltid. Dit behov bør styre valget mere end markedsføringen på posen.",
+          "Hvis du har en sygdom, er gravid eller ammer, eller tager medicin, så spørg din læge eller en diætist, før du begynder på et nyt tilskud."
+        ]
+      },
+      {
+        "heading": "2. Læs næringsdeklarationen",
+        "paragraphs": [
+          "Sammenlign proteinindholdet pr. 100 gram og pr. portion – ikke kun tallet på forsiden. Se også på portionsstørrelse, sukker, fibre, vitaminer og mineraler, så du ved, hvad du faktisk får pr. servering.",
+          "Et produkt med højt proteinindhold kan stadig indeholde mange kalorier eller tilsat sukker. Læs hele varedeklarationen, før du sammenligner to poser."
+        ]
+      },
+      {
+        "heading": "3. Sammenlign pris pr. portion",
+        "paragraphs": [
+          "Divider prisen med antallet af portioner i posen, og læg eventuel fragt til. En stor pose er ikke nødvendigvis billigst pr. portion, hvis den indeholder en lille scoop eller kræver mange gram pr. servering.",
+          "Hvis du prøver et nyt mærke eller en ny smag, så start med en mindre pose. Det er bedre at teste, om du kan lide produktet, end at købe et stort lager, du ikke får brugt."
+        ]
+      },
+      {
+        "heading": "4. Tjek ingredienser, allergener og opbevaring",
+        "paragraphs": [
+          "Se på proteinkilden – for eksempel ærteprotein, risprotein eller valle – og på sødestoffer, aromaer og andre ingredienser. Tjek allergener, hvis du er følsom over for mælk, soja eller andre stoffer.",
+          "Opbevar posen tørt og lukket, og følg holdbarhedsdatoen. Start med én portion og justér efter behov, i stedet for at erstatte hele måltider uden en plan."
+        ]
+      }
+    ],
+    "relatedStores": [
+      "ampmshop",
+      "core-nutrition",
+      "healthwell",
+      "bodylab"
+    ],
+
+  },
+  {
+    "slug": "koekken-og-husholdning-spar-penge",
+    "kicker": "Køkken",
+    "title": "Køkken og husholdning: sådan sparer du penge i hverdagen",
+    "description": "Færre gadgets, bedre materialer og styr på filtre og rengøring kan gøre køkkenet både billigere og lettere at holde.",
+    "lead": "Det er ikke antallet af køkkenting, der gør hverdagen nemmere. Her er, hvordan du vælger redskaber og husholdningsprodukter, der holder.",
+    "updated": "25. november 2026",
+    "publishAt": "2026-11-25",
+    "sections": [
+      {
+        "heading": "1. Køb efter det, du bruger hver uge",
+        "paragraphs": [
+          "Skriv en liste over de redskaber, du faktisk bruger hver uge. Køb kun nye ting, hvis de løser en opgave, du allerede har – ikke fordi de ser smarte ud i en video.",
+          "Lån eller prøv et redskab, før du køber et dyrt specialprodukt. Mange køkkengadgets bruges kun få gange og optager plads i skabet."
+        ]
+      },
+      {
+        "heading": "2. Vælg materialer, der kan holde",
+        "paragraphs": [
+          "Rustfrit stål, træ og visse plasttyper kan holde i mange år, hvis de vedligeholdes rigtigt. Tjek, om redskabet tåler opvaskemaskine, og om der findes reservedele eller nye pakninger.",
+          "Undgå at bruge skarpe redskaber på belagte overflader, og følg producentens rengøringsråd. En slidt nonstick-pande er ikke nødvendigvis en besparelse, hvis den skal skiftes hurtigt."
+        ]
+      },
+      {
+        "heading": "3. Hold styr på vand, kalk og filtre",
+        "paragraphs": [
+          "Kontroller, hvor ofte filtre og kalkfjerner skal vedligeholdes, og hvad reservedelene koster. Den samlede udgift over et år kan være vigtigere end købsprisen.",
+          "Afkalk kaffemaskine, kedel og andre apparater efter producentens anvisning. Hvis du installerer et filter, så følg manualen og skift filteret til tiden."
+        ]
+      },
+      {
+        "heading": "4. Rengør med færre produkter – og regn den samlede pris",
+        "paragraphs": [
+          "Ofte er mikrofiberklude, sæbe og et par rengøringsmidler nok til hverdagen. Læs doseringen, og undgå at blande rengøringskemikalier, som ikke er beregnet til det.",
+          "Læg fragt, ekstra filtre og tilbehør oveni prisen, før du sammenligner. Brug officielle rabatkoder, og gem kvitteringen, så du kan reklamere, hvis varen ikke holder."
+        ]
+      }
+    ],
+    "relatedStores": [
+      "kitchen-gadget",
+      "kirlund",
+      "cleanstream",
+      "nordic-water",
+      "brusefilteret",
+      "aeloa"
+    ],
+
+  },
+
 ];
 
 export function isGuidePublished(guide: Guide, now = new Date()): boolean {

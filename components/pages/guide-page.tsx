@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookOpen, Tag } from "lucide-react";
 import { getGuide, getPublishedGuides } from "@/lib/guides";
 import { localizeGuide } from "@/lib/guides-i18n";
+import { getStore, getStoreCategoryLabel } from "@/lib/stores";
+import { getStoreLogo } from "@/lib/store-logos";
 import AdSlot from "@/components/AdSlot";
 import ShareStoreButton from "@/components/ShareStoreButton";
 import SiteNav from "@/components/site-nav";
@@ -35,6 +37,8 @@ const COPY: Record<Locale, {
   seeStores: string;
   seeCoupons: string;
   readMore: string;
+  relatedStoresTitle: string;
+  visitStore: string;
   disclaimer: string;
   footer: string;
   footerLinks: string;
@@ -51,6 +55,8 @@ const COPY: Record<Locale, {
     seeStores: "Se butikker",
     seeCoupons: "Se rabatkoder",
     readMore: "Læs flere guides",
+    relatedStoresTitle: "Butikker du kan sammenligne",
+    visitStore: "Se butik",
     disclaimer:
       "Guiden er generel forbrugerinformation og ikke personlig rådgivning. Kontroller altid pris, lager og vilkår hos butikken, før du køber.",
     footer: "Guiderne er generel forbrugerinformation, ikke personlig rådgivning.",
@@ -68,6 +74,8 @@ const COPY: Record<Locale, {
     seeStores: "See stores",
     seeCoupons: "See coupon codes",
     readMore: "Read more guides",
+    relatedStoresTitle: "Stores to compare",
+    visitStore: "View store",
     disclaimer:
       "This guide is general consumer information, not personal advice. Always check price, stock and terms with the store before buying.",
     footer: "The guides are general consumer information, not personal advice.",
@@ -85,6 +93,8 @@ const COPY: Record<Locale, {
     seeStores: "شاهد المتاجر",
     seeCoupons: "شاهد أكواد الخصم",
     readMore: "اقرأ المزيد من الأدلة",
+    relatedStoresTitle: "متاجر يمكنك مقارنتها",
+    visitStore: "شاهد المتجر",
     disclaimer:
       "هذا الدليل معلومات عامة للمستهلك وليس نصيحة شخصية. تحقق دائمًا من السعر والتوفر والشروط عند المتجر قبل الشراء.",
     footer: "الأدلة معلومات عامة للمستهلك وليست نصيحة شخصية.",
@@ -229,6 +239,40 @@ export default async function GuidePage({ slug, lang = "da" }: GuidePageProps) {
             ))}
           </section>
         ))}
+        {guide.relatedStores && guide.relatedStores.length > 0 && (
+          <section className="guide-related-stores">
+            <h2>{t.relatedStoresTitle}</h2>
+            <div className="store-grid">
+              {guide.relatedStores.map((storeSlug) => {
+                const store = getStore(storeSlug);
+                if (!store) return null;
+                const logo = getStoreLogo(storeSlug);
+                return (
+                  <a
+                    className="store-card"
+                    href={localePath(lang, `/butikker/${store.slug}`)}
+                    key={storeSlug}
+                  >
+                    <span className="store-card-main">
+                      <span className={logo ? "store-avatar store-avatar-logo" : "store-avatar"}>
+                        {logo ? (
+                          <img src={logo} alt="" />
+                        ) : (
+                          store.name.slice(0, 2).toUpperCase()
+                        )}
+                      </span>
+                      <span className="store-card-body">
+                        <strong>{store.name}</strong>
+                        <small>{getStoreCategoryLabel(store, lang)}</small>
+                      </span>
+                    </span>
+                    <span className="store-card-info">{t.visitStore}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_GUIDES} />
         <p className="guide-disclaimer">{t.disclaimer}</p>
         <div className="guide-article-cta">
