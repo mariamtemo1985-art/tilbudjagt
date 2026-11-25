@@ -80,6 +80,19 @@ const COPY: Record<
 };
 
 function readLang(): Lang {
+  if (typeof window === "undefined") return "da";
+
+  // Localized routes are authoritative: a visitor opening /ar directly should
+  // never see a Danish cookie banner just because another language is cached.
+  const path = window.location.pathname;
+  if (path === "/ar" || path.startsWith("/ar/")) return "ar";
+  if (path === "/en" || path.startsWith("/en/")) return "en";
+
+  const documentLang = document.documentElement.lang.slice(0, 2).toLowerCase();
+  if (documentLang === "ar" || documentLang === "en" || documentLang === "da") {
+    return documentLang;
+  }
+
   try {
     const stored = window.localStorage.getItem("tilbudjagt_lang");
     if (stored === "ar" || stored === "en" || stored === "da") return stored;
