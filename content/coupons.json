@@ -70,5 +70,14 @@
     "description": "Officiel partnerkode fra ÆLOA. Gælder på æloa.dk.",
     "expires": "31. december 2026",
     "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118239"
+  },
+  {
+    "store": "Cleanstream",
+    "slug": "cleanstream",
+    "title": "50 kr. på dit køb",
+    "code": "VELKOMST50",
+    "description": "Officiel partnerkode fra Cleanstream. Kan bruges én gang pr. kunde oveni Black Month-tilbuddet på 200 kr. (250 kr. i alt).",
+    "expires": "30. november 2026",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117569"
   }
 ]

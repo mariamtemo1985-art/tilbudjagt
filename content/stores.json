@@ -1690,5 +1690,20 @@
       "ar": "أقنعة نوم مريحة تحجب 100% من الضوء وتحسّن جودة النوم."
     },
     "checkedAt": "2026-11-25T03:45:00.000Z"
+  },
+  {
+    "slug": "cleanstream",
+    "name": "Cleanstream",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://cleanstream.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117569",
+    "description": {
+      "da": "Elektronisk kalkopløser til enkelthuse, som monteres uden VVS-hjælp og giver mindre kalk, lettere rengøring og mindre slid på husholdningsapparater.",
+      "en": "Electronic limescale dissolver for single-family homes, installed without a plumber to reduce limescale, simplify cleaning and reduce wear on household appliances.",
+      "ar": "جهاز إلكتروني لإذابة الكلس في المنازل المستقلة، يُركّب دون سباك لتقليل الترسبات وتسهيل التنظيف وتخفيف تآكل الأجهزة المنزلية."
+    },
+    "checkedAt": "2026-11-25T06:26:00.000Z"
   }
 ]

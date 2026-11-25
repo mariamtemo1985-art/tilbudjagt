@@ -14,6 +14,7 @@ export const STORE_COMMISSIONS: Record<string, number> = {
   "nordic-wellness": 20,
   "t-shirten": 20,
   aeloa: 20,
+  cleanstream: 20,
   kidskitchen: 15,
   hjemmely: 15,
   kurvemageren: 15,
