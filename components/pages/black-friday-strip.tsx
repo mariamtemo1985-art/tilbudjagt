@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   ChevronLeft,
@@ -8,7 +8,7 @@ import {
   Flame,
   ShieldCheck,
 } from "lucide-react";
-import { getFeaturedDeals } from "@/lib/deals";
+import { getFeaturedDeals, type Deal } from "@/lib/deals";
 
 type Language = "da" | "en" | "ar";
 
@@ -71,10 +71,34 @@ const COPY: Record<
   },
 };
 
+function DealImage({ deal }: { deal: Deal }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <span className="bf-image-fallback" aria-hidden="true">
+        {deal.store}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={deal.image}
+      alt={deal.title}
+      width={320}
+      height={320}
+      loading="eager"
+      decoding="async"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const copy = COPY[lang];
-  const items = useMemo(() => getFeaturedDeals(12), []);
+  const items = useMemo(() => getFeaturedDeals(20), []);
   const rtl = lang === "ar";
   const formatter = new Intl.NumberFormat(
     lang === "da" ? "da-DK" : lang === "ar" ? "ar-DK" : "en-DK",
@@ -136,7 +160,7 @@ export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
           aria-label={copy.scrollLabel}
           tabIndex={0}
         >
-          {items.map((deal, index) => (
+          {items.map((deal) => (
             <article className="bf-card" key={`${deal.storeSlug}-${deal.title}`}>
               <a
                 className="bf-image"
@@ -145,15 +169,10 @@ export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
                 rel="sponsored nofollow noopener noreferrer"
                 aria-label={`${deal.title} – ${deal.store}`}
               >
-                <img
-                  src={deal.image}
-                  alt={deal.title}
-                  width={320}
-                  height={320}
-                  loading={index < 4 ? "eager" : "lazy"}
-                  decoding="async"
-                />
-                <span className="bf-badge">-{deal.discount}%</span>
+                <DealImage deal={deal} />
+                <span className="bf-badge" dir="ltr">
+                  -{deal.discount}%
+                </span>
               </a>
               <div className="bf-body">
                 <span className="bf-store">{deal.store}</span>
