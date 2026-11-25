@@ -238,5 +238,95 @@
     "discount": 71,
     "image": "/deals/topsko-23.webp",
     "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=108195&partnerid=58143&htmlurl=https://www.topsko.dk/vare/dame-kilehæl-jw106-black/38"
+  },
+  {
+    "store": "Kurvemageren.dk",
+    "storeSlug": "kurvemageren",
+    "title": "Urtekurv Ø20xH15 i Grå Rattan",
+    "price": 55.0,
+    "oldPrice": 154.0,
+    "discount": 64,
+    "image": "/deals/kurvemageren-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=73739&partnerid=58143&htmlurl=https://kurvemageren.dk/products/urtekurv-i-gra-rattan-20x15cm?variant=50393738412370"
+  },
+  {
+    "store": "Kurvemageren.dk",
+    "storeSlug": "kurvemageren",
+    "title": "Urtekurv Ø25xH18 i Grå Rattan",
+    "price": 75.0,
+    "oldPrice": 190.0,
+    "discount": 61,
+    "image": "/deals/kurvemageren-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=73739&partnerid=58143&htmlurl=https://kurvemageren.dk/products/urtekurv-i-gra-rattan-25x18cm?variant=50393738379602"
+  },
+  {
+    "store": "Kurvemageren.dk",
+    "storeSlug": "kurvemageren",
+    "title": "Picnic kurv med låg",
+    "price": 300.0,
+    "oldPrice": 698.0,
+    "discount": 57,
+    "image": "/deals/kurvemageren-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=73739&partnerid=58143&htmlurl=https://kurvemageren.dk/products/picnic-kurv-med-lag?variant=51077329092946"
+  },
+  {
+    "store": "Goldi",
+    "storeSlug": "goldi",
+    "title": "Ørestikker Zirconia",
+    "price": 247.5,
+    "oldPrice": 495.0,
+    "discount": 50,
+    "image": "/deals/goldi-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=112732&partnerid=58143&htmlurl=https://goldi.dk/products/f10262010?variant=56080611213657"
+  },
+  {
+    "store": "Goldi",
+    "storeSlug": "goldi",
+    "title": "Sølv ørehænger",
+    "price": 297.5,
+    "oldPrice": 595.0,
+    "discount": 50,
+    "image": "/deals/goldi-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=112732&partnerid=58143&htmlurl=https://goldi.dk/products/23165117?variant=48324914282841"
+  },
+  {
+    "store": "Goldi",
+    "storeSlug": "goldi",
+    "title": "Sølv ørestikker",
+    "price": 397.5,
+    "oldPrice": 795.0,
+    "discount": 50,
+    "image": "/deals/goldi-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=112732&partnerid=58143&htmlurl=https://goldi.dk/products/10249852?variant=48324965826905"
+  },
+  {
+    "store": "Kidskitchen.dk",
+    "storeSlug": "kidskitchen",
+    "title": "Silikoneform - Hjerte",
+    "price": 79.95,
+    "oldPrice": 149.0,
+    "discount": 46,
+    "image": "/deals/kidskitchen-new-0.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=109951&partnerid=58143&htmlurl=https://kidskitchen.dk/products/kidskitchen-silikoneform?variant=42807522721931"
+  },
+  {
+    "store": "Kidskitchen.dk",
+    "storeSlug": "kidskitchen",
+    "title": "Ovnhandske til Børn - Lilla",
+    "price": 79.95,
+    "oldPrice": 99.95,
+    "discount": 20,
+    "image": "/deals/kidskitchen-new-1.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=109951&partnerid=58143&htmlurl=https://kidskitchen.dk/products/ovnhandske-til-born?variant=42697140568203"
+  },
+  {
+    "store": "Kidskitchen.dk",
+    "storeSlug": "kidskitchen",
+    "title": "MiniChef - Børnevenligt Køkkensæt - Blå",
+    "price": 299.95,
+    "oldPrice": 349.95,
+    "discount": 14,
+    "image": "/deals/kidskitchen-new-2.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=109951&partnerid=58143&htmlurl=https://kidskitchen.dk/products/bornevenligt-knivsaet?variant=42697142337675"
   }
 ]
