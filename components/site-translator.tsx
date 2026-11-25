@@ -40,6 +40,7 @@ const DA_AR: Record<string, string> = {
   "Hovedmenu": "القائمة الرئيسية",
   "Footer links": "روابط التذييل",
   "Produkter": "المنتجات",
+  "Rabatkoder": "أكواد الخصم",
   "Butikker": "المتاجر",
   "Guides": "الأدلة",
   "Om os": "من نحن",

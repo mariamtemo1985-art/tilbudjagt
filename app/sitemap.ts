@@ -49,6 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE}/rabatkoder`,
+      lastModified: FALLBACK_DATE,
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
       url: `${SITE}/guides`,
       lastModified: FALLBACK_DATE,
       changeFrequency: "weekly",

@@ -195,6 +195,7 @@ export default function HomePage() {
         </a>
         <nav className="nav">
           <a href="/produkter">{t.navProducts}</a>
+          <a href="/rabatkoder">Rabatkoder</a>
           <a href="/#butikker">{t.explore}</a>
           <a href="/guides">{t.navGuides}</a>
           <a href="/about.html">{t.navAbout}</a>

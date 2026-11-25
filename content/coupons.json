@@ -1,0 +1,29 @@
+[
+  {
+    "store": "Hydrolife",
+    "slug": "hydrolife",
+    "title": "5% på hele ordren",
+    "code": "Sundhed5",
+    "description": "Officiel partnerkode fra Hydrolife. Indtast koden i kurven på hydrolife.dk.",
+    "expires": "Ingen udløbsdato oplyst",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=113664"
+  },
+  {
+    "store": "DeepBalance",
+    "slug": "deepbalance",
+    "title": "10% på hele ordren",
+    "code": "Deepbalance10",
+    "description": "Officiel rabatkode fra DeepBalance. Gælder på deepbalance.dk.",
+    "expires": "Ingen udløbsdato oplyst",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117524"
+  },
+  {
+    "store": "Retrotrøjer.dk",
+    "slug": "retrotrojer",
+    "title": "10% på alle retrotrøjer",
+    "code": "BLACK",
+    "description": "Black Friday-kode fra Retrotrøjer.dk. Gælder hele sortimentet.",
+    "expires": "30. november 2026",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118053"
+  }
+]
