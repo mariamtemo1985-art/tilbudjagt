@@ -21,7 +21,21 @@ export default function StoreLogo({
       }${className ? ` ${className}` : ""}`}
       aria-hidden="true"
     >
-      {src ? <img src={src} alt="" loading="lazy" /> : name.slice(0, 1)}
+      {src ? (
+        <picture>
+          <source srcSet={src.replace(/\.png$/i, ".webp")} type="image/webp" />
+          <img
+            src={src}
+            alt=""
+            width={128}
+            height={128}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      ) : (
+        name.slice(0, 1)
+      )}
     </span>
   );
 }

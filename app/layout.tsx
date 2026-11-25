@@ -108,6 +108,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="da">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script dangerouslySetInnerHTML={{ __html: languageBootstrap }} />
         <script dangerouslySetInnerHTML={{ __html: consentDefaults }} />
       </head>

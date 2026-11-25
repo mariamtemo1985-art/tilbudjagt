@@ -71,7 +71,15 @@ const COPY: Record<
   },
 };
 
-function DealImage({ deal, title }: { deal: Deal; title: string }) {
+function DealImage({
+  deal,
+  title,
+  priority = false,
+}: {
+  deal: Deal;
+  title: string;
+  priority?: boolean;
+}) {
   const [failed, setFailed] = useState(false);
 
   if (failed) {
@@ -88,7 +96,8 @@ function DealImage({ deal, title }: { deal: Deal; title: string }) {
       alt={title}
       width={320}
       height={320}
-      loading="eager"
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : "auto"}
       decoding="async"
       onError={() => setFailed(true)}
     />
@@ -160,7 +169,7 @@ export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
           aria-label={copy.scrollLabel}
           tabIndex={0}
         >
-          {items.map((deal) => {
+          {items.map((deal, index) => {
             const title =
               lang === "ar"
                 ? deal.titleAr ?? deal.title
@@ -176,7 +185,7 @@ export default function BlackFridayStrip({ lang = "da" }: { lang?: Language }) {
                 rel="sponsored nofollow noopener noreferrer"
                 aria-label={`${title} – ${deal.store}`}
               >
-                <DealImage deal={deal} title={title} />
+                <DealImage deal={deal} title={title} priority={index < 4} />
                 <span className="bf-badge" dir="ltr">
                   -{deal.discount}%
                 </span>

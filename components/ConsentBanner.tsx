@@ -31,7 +31,7 @@ const COPY: Record<
 > = {
   da: {
     title: "Vi bruger cookies",
-    body: "Nødvendige cookies får siden til at virke. Med din tilladelse bruger vi også statistik og markedsføring, så vi kan forbedre TilbudJagt og måle vores partnerlinks.",
+    body: "Nødvendige cookies får siden til at virke. Med din tilladelse bruger vi også statistik og markedsføring.",
     accept: "Acceptér alle",
     necessary: "Kun nødvendige",
     customize: "Tilpas",
@@ -47,7 +47,7 @@ const COPY: Record<
   },
   en: {
     title: "We use cookies",
-    body: "Necessary cookies keep the site working. With your permission we also use analytics and marketing cookies to improve TilbudJagt and measure our partner links.",
+    body: "Necessary cookies keep the site working. With your permission we also use analytics and marketing cookies.",
     accept: "Accept all",
     necessary: "Necessary only",
     customize: "Customise",
@@ -63,7 +63,7 @@ const COPY: Record<
   },
   ar: {
     title: "نستخدم ملفات تعريف الارتباط",
-    body: "الملفات الضرورية تُبقي الموقع يعمل. بموافقتك نستخدم أيضًا ملفات الإحصاء والتسويق لتحسين TilbudJagt وقياس روابط الشركاء.",
+    body: "الملفات الضرورية تُبقي الموقع يعمل. بموافقتك نستخدم أيضًا ملفات الإحصاء والتسويق.",
     accept: "قبول الكل",
     necessary: "الضروري فقط",
     customize: "تخصيص",
@@ -115,11 +115,13 @@ export default function ConsentBanner() {
     const stored = readConsent();
     setChoice(stored);
     if (stored) setOpen(false);
-    setReady(true);
     if (stored) {
       setAnalytics(stored.analytics);
       setMarketing(stored.marketing);
     }
+    // Let the hero paint first. The banner remains accessible immediately
+    // afterwards, but no longer becomes the largest late-painted element.
+    const readyTimer = window.setTimeout(() => setReady(true), stored ? 0 : 700);
     const syncLang = () => setLang(readLang());
     syncLang();
     const openSettings = () => {
@@ -134,6 +136,7 @@ export default function ConsentBanner() {
     window.addEventListener("storage", syncLang);
     window.addEventListener(OPEN_CONSENT_EVENT, openSettings);
     return () => {
+      window.clearTimeout(readyTimer);
       window.removeEventListener("tilbudjagt:langchange", syncLang);
       window.removeEventListener("storage", syncLang);
       window.removeEventListener(OPEN_CONSENT_EVENT, openSettings);
