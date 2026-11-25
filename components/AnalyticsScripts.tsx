@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { CONSENT_EVENT, readConsent } from "@/lib/consent";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-JVQTBLSE68";
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
 
 declare global {
