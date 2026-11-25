@@ -94,8 +94,8 @@ export default function ConsentBanner() {
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(true);
   const [expanded, setExpanded] = useState(false);
-  const [analytics, setAnalytics] = useState(true);
-  const [marketing, setMarketing] = useState(true);
+  const [analytics, setAnalytics] = useState(false);
+  const [marketing, setMarketing] = useState(false);
   const [lang, setLang] = useState<Lang>("da");
 
   useEffect(() => {
@@ -112,8 +112,8 @@ export default function ConsentBanner() {
     const openSettings = () => {
       const current = readConsent();
       setChoice(current);
-      setAnalytics(current?.analytics ?? true);
-      setMarketing(current?.marketing ?? true);
+      setAnalytics(current?.analytics ?? false);
+      setMarketing(current?.marketing ?? false);
       setExpanded(true);
       setOpen(true);
     };
