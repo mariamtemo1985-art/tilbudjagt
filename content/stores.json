@@ -8,11 +8,11 @@
     "website": "https://dk.bazta.com",
     "affiliateUrl": "https://www.awin1.com/cread.php?awinmid=128395&awinaffid=3155813&ued=https%3A%2F%2Fdk.bazta.com",
     "description": {
-      "da": "Dansk online stormagasin med bolig, elektronik, sport, have og meget mere.",
-      "en": "Danish online department store with home, electronics, sports and garden products.",
-      "ar": "متجر دنماركي شامل يضم مستلزمات المنزل والإلكترونيات والرياضة والحديقة."
+      "da": "Bazta DK er et dansk online stormagasin med bolig, elektronik, sport, have og mange andre produkter.",
+      "en": "Bazta DK is a Danish online department store with home, electronics, sports, garden and many other products.",
+      "ar": "Bazta DK متجر شامل دنماركي عبر الإنترنت يضم مستلزمات المنزل والإلكترونيات والرياضة والحديقة ومنتجات أخرى كثيرة."
     },
-    "checkedAt": "2026-11-18T00:27:38.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "netto",
@@ -82,10 +82,11 @@
     "status": "directory",
     "website": "https://www.elgiganten.dk",
     "description": {
-      "da": "Elektronikkæde med computere, telefoner og husholdningsapparater.",
-      "en": "Electronics retailer with computers, phones and home appliances.",
-      "ar": "متجر إلكترونيات للحواسيب والهواتف والأجهزة المنزلية."
-    }
+      "da": "Elgiganten er en dansk elektronikkæde med fysiske varehuse og webshop. Sortimentet omfatter TV, computere, mobiltelefoner, hvidevarer og anden elektronik.",
+      "en": "Elgiganten is a Danish electronics chain with physical stores and an online shop. Its range includes TVs, computers, mobile phones, home appliances and other electronics.",
+      "ar": "إلجيغانتِن سلسلة إلكترونيات دنماركية تضم متاجر فعلية ومتجرًا إلكترونيًا. تشمل تشكيلتها التلفزيونات والحواسيب والهواتف المحمولة والأجهزة المنزلية وإلكترونيات أخرى."
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "power",
@@ -95,10 +96,11 @@
     "status": "directory",
     "website": "https://www.power.dk",
     "description": {
-      "da": "Elektronikkæde med hvidevarer og forbrugerelektronik.",
-      "en": "Electronics chain with appliances and consumer electronics.",
-      "ar": "سلسلة إلكترونيات للأجهزة المنزلية والإلكترونيات الاستهلاكية."
-    }
+      "da": "POWER er en dansk elektronikkæde med fysiske butikker og webshop. Sortimentet omfatter TV, hvidevarer, computere, mobiltelefoner og forbrugerelektronik.",
+      "en": "POWER is a Danish electronics chain with physical stores and an online shop. Its range includes TVs, home appliances, computers, mobile phones and consumer electronics.",
+      "ar": "POWER سلسلة إلكترونيات دنماركية تضم متاجر فعلية ومتجرًا إلكترونيًا. تشمل تشكيلتها التلفزيونات والأجهزة المنزلية والحواسيب والهواتف المحمولة والإلكترونيات الاستهلاكية."
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "jysk",
@@ -107,10 +109,11 @@
     "status": "directory",
     "website": "https://jysk.dk",
     "description": {
-      "da": "Boligkæde med møbler, sengelinned og haveudstyr.",
-      "en": "Home chain with furniture, bedding and garden items.",
-      "ar": "سلسلة مستلزمات منزلية تشمل الأثاث والمفروشات والحديقة."
-    }
+      "da": "JYSK er en international boligkæde med møbler, sengelinned, tekstiler og udstyr til hjem og have. Sortimentet findes både i butikker og online.",
+      "en": "JYSK is an international home chain with furniture, bedding, textiles and equipment for home and garden. Its range is available in stores and online.",
+      "ar": "JYSK سلسلة دولية للمنزل تضم الأثاث ومستلزمات السرير والمنسوجات ومعدات المنزل والحديقة. تتوفر تشكيلتها في المتاجر وعبر الإنترنت."
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "matas",
@@ -119,10 +122,11 @@
     "status": "directory",
     "website": "https://www.matas.dk",
     "description": {
-      "da": "Kæde med skønhedspleje, kosmetik og helseprodukter.",
-      "en": "Retailer for skincare, cosmetics and health products.",
-      "ar": "متجر للعناية بالبشرة ومستحضرات التجميل ومنتجات الصحة."
-    }
+      "da": "Matas er en dansk skønhedskæde med kosmetik, hudpleje, parfume, hårpleje og helseprodukter. Sortimentet findes i butikker og på matas.dk.",
+      "en": "Matas is a Danish beauty chain with cosmetics, skincare, perfume, haircare and health products. Its range is available in stores and at matas.dk.",
+      "ar": "ماتاس سلسلة جمال دنماركية تضم مستحضرات التجميل والعناية بالبشرة والعطور والعناية بالشعر ومنتجات الصحة. تتوفر تشكيلتها في المتاجر وعلى matas.dk."
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "sport24",
@@ -131,22 +135,24 @@
     "status": "directory",
     "website": "https://www.sport24.dk",
     "description": {
-      "da": "Sportsbutik med tøj, sko og udstyr til træning og fritid.",
-      "en": "Sports store with clothing, shoes and equipment.",
-      "ar": "متجر رياضي للملابس والأحذية والمعدات."
-    }
+      "da": "Sport 24 er en dansk sportsbutik med tøj, sko og udstyr til træning, løb og fritid. Sortimentet findes på sport24.dk.",
+      "en": "Sport 24 is a Danish sports retailer with clothing, shoes and equipment for training, running and leisure. Its range is available at sport24.dk.",
+      "ar": "Sport 24 متجر رياضي دنماركي يضم الملابس والأحذية والمعدات للتدريب والجري ووقت الفراغ. تتوفر تشكيلته على sport24.dk."
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "normal",
     "name": "Normal",
     "category": "pleje",
     "status": "directory",
-    "website": "https://www.normal.dk/",
+    "website": "https://www.normalstores.com/dk/",
     "description": {
       "da": "Normal er en dansk butikskæde med fast lavpris på rengøringsmidler, kosmetik, personlig pleje og hverdagsvarer. Sortimentet skifter løbende, og butikkerne findes i flere byer.",
       "en": "Normal is a Danish retail chain offering everyday low prices on cleaning products, cosmetics, personal care and household items. The assortment changes regularly, with stores in several cities.",
       "ar": "نورمال سلسلة متاجر دنماركية تقدم أسعارًا منخفضة على منظفات التنظيف ومستحضرات التجميل والعناية الشخصية ومستلزمات المنزل. تتغير التشكيلة باستمرار ولها فروع في عدة مدن."
-    }
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "meny",
@@ -177,36 +183,39 @@
     "name": "SuperBrugsen",
     "category": "dagligvarer",
     "status": "directory",
-    "website": "https://superbrugsen.dk/",
+    "website": "https://superbrugsen.coop.dk/",
     "description": {
       "da": "SuperBrugsen er en Coop-supermarkedskæde med lokale butikker i hele Danmark. Sortimentet omfatter dagligvarer, friske varer og et udvalg af nonfood.",
       "en": "SuperBrugsen is a Coop supermarket chain with local stores across Denmark. Its assortment includes groceries, fresh food and a selection of non-food items.",
       "ar": "سوبر بروغسن سلسلة سوبرماركت تابعة لـ Coop ولها فروع محلية في أنحاء الدنمارك. تشمل تشكيلتها المواد الغذائية والمنتجات الطازجة ومجموعة من المنتجات غير الغذائية."
-    }
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "kvickly",
     "name": "Kvickly",
     "category": "dagligvarer",
     "status": "directory",
-    "website": "https://kvickly.dk/",
+    "website": "https://kvickly.coop.dk/",
     "description": {
       "da": "Kvickly er et Coop-varehus med dagligvarer, elektronik, boligartikler og sæsonvarer. Butikkerne er større og samler flere varekategorier under ét tag.",
       "en": "Kvickly is a Coop hypermarket with groceries, electronics, home items and seasonal goods. Its larger stores bring several product categories together under one roof.",
       "ar": "كفيكلي هايبرماركت تابع لـ Coop يضم المواد الغذائية والإلكترونيات ومستلزمات المنزل والمنتجات الموسمية. تجمع فروعه الأكبر عدة فئات من المنتجات تحت سقف واحد."
-    }
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "365discount",
     "name": "365discount",
     "category": "dagligvarer",
     "status": "directory",
-    "website": "https://365discount.dk/",
+    "website": "https://365discount.coop.dk/",
     "description": {
       "da": "365discount er Coops discountkæde med dagligvarer til lave priser. Sortimentet er enkelt og fokuseret på hverdagens basisvarer, med løbende tilbud.",
       "en": "365discount is Coop's discount chain with groceries at low prices. Its assortment is simple and focused on everyday essentials, with recurring offers.",
       "ar": "365discount سلسلة الخصومات التابعة لـ Coop وتقدم مواد غذائية بأسعار منخفضة. تشكيلتها بسيطة وتركز على أساسيات اليوم، مع عروض متجددة."
-    }
+    },
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "aldi",
@@ -431,11 +440,11 @@
     "website": "https://soundliving.dk",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=103033",
     "description": {
-      "da": "Dansk lydbrand med designhøjttalere og høretelefoner.",
-      "en": "Danish audio brand with design speakers and headphones.",
-      "ar": "علامة صوتيات دنماركية تقدم مكبرات صوت وسماعات بتصميم عصري."
+      "da": "Soundliving er et dansk lydbrand med designhøjttalere og høretelefoner til hjemmet.",
+      "en": "Soundliving is a Danish audio brand with designer speakers and headphones for the home.",
+      "ar": "Soundliving علامة صوتية دنماركية تقدم مكبرات صوت وسماعات بتصميم عصري للمنزل."
     },
-    "checkedAt": "2026-11-19T02:35:02.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "myprotein",
@@ -444,11 +453,11 @@
     "status": "directory",
     "website": "https://www.myprotein.dk",
     "description": {
-      "da": "Sport og fitness: protein, kosttilskud og træningstøj.",
-      "en": "Sports and fitness: protein, supplements and training gear.",
-      "ar": "رياضة ولياقة: بروتين ومكملات غذائية وملابس تدريب."
+      "da": "Myprotein er en international webshop med proteinpulver, kosttilskud, træningstøj og tilbehør til fitness.",
+      "en": "Myprotein is an international online shop for protein powder, supplements, training clothing and fitness accessories.",
+      "ar": "Myprotein متجر إلكتروني دولي يضم مسحوق البروتين والمكملات الغذائية وملابس التدريب ومستلزمات اللياقة."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "holdit",
@@ -458,11 +467,11 @@
     "status": "directory",
     "website": "https://holdit.com/dk",
     "description": {
-      "da": "Dansk elektronikbutik med mobiler, tilbehør og smartudstyr.",
-      "en": "Danish electronics shop with phones, accessories and smart devices.",
-      "ar": "متجر إلكترونيات دنماركي للهواتف والإكسسوارات والأجهزة الذكية."
+      "da": "Holdit er en dansk elektronikbutik med mobiltelefoner, tablets, tilbehør og smartudstyr. Sortimentet findes på holdit.com/dk.",
+      "en": "Holdit is a Danish electronics store with mobile phones, tablets, accessories and smart devices. Its range is available at holdit.com/dk.",
+      "ar": "Holdit متجر إلكترونيات دنماركي يضم الهواتف المحمولة والأجهزة اللوحية والملحقات والأجهزة الذكية. تتوفر تشكيلته على holdit.com/dk."
     },
-    "checkedAt": "2026-11-19T18:41:48Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "vivara",
@@ -471,11 +480,11 @@
     "status": "directory",
     "website": "https://www.vivara.dk",
     "description": {
-      "da": "Have, fugle og dyr: foder, huse og haveudstyr.",
-      "en": "Garden, birds and pets: feed, houses and garden gear.",
-      "ar": "حديقة وطيور وحيوانات: أعلاف وبيوت ومستلزمات حديقة."
+      "da": "Vivara er en dansk butik med produkter til have, fugle og dyr, herunder foder, fuglehuse og haveudstyr.",
+      "en": "Vivara is a Danish store for garden, bird and animal products, including feed, birdhouses and garden equipment.",
+      "ar": "Vivara متجر دنماركي لمنتجات الحدائق والطيور والحيوانات، بما في ذلك الأعلاف وبيوت الطيور ومعدات الحدائق."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "sharkninja",
@@ -484,11 +493,11 @@
     "status": "directory",
     "website": "https://www.sharkninja.dk",
     "description": {
-      "da": "Køkkenmaskiner og rengøring: Shark støvsugere og Ninja køkkenudstyr.",
-      "en": "Kitchen and cleaning: Shark vacuums and Ninja kitchen appliances.",
-      "ar": "أجهزة مطبخ وتنظيف: مكانس Shark وأجهزة Ninja."
+      "da": "SharkNinja er et internationalt brand med køkkenmaskiner fra Ninja og rengøringsprodukter fra Shark, herunder støvsugere og airfryers.",
+      "en": "SharkNinja is an international brand with Ninja kitchen appliances and Shark cleaning products, including vacuum cleaners and air fryers.",
+      "ar": "SharkNinja علامة دولية تضم أجهزة المطبخ من Ninja ومنتجات التنظيف من Shark، بما في ذلك المكانس الكهربائية والمقليات الهوائية."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "dyson",
@@ -497,11 +506,11 @@
     "status": "partner",
     "website": "https://www.dyson.dk",
     "description": {
-      "da": "Støvsugere, luftrensere og hårpleje fra Dyson.",
-      "en": "Vacuum cleaners, air purifiers and hair care from Dyson.",
-      "ar": "مكانس ومنقيات هواء وأدوات شعر من Dyson."
+      "da": "Dyson er et internationalt teknologibrand med støvsugere, luftrensere, hårplejeprodukter og andre hjemmeapparater. Sortimentet vises på dyson.dk.",
+      "en": "Dyson is an international technology brand with vacuum cleaners, air purifiers, haircare products and other home appliances. Its range is shown at dyson.dk.",
+      "ar": "Dyson علامة تقنية دولية تضم المكانس الكهربائية وأجهزة تنقية الهواء ومنتجات العناية بالشعر وأجهزة منزلية أخرى. تُعرض تشكيلتها على dyson.dk."
     },
-    "checkedAt": "2026-11-19T21:32:39.047100+00:00",
+    "checkedAt": "2026-11-25T18:39:00.000Z",
     "network": "Awin",
     "affiliateUrl": "https://www.awin1.com/cread.php?awinmid=25185&awinaffid=3155813&ued=https%3A%2F%2Fwww.dyson.dk%2F"
   },
@@ -510,13 +519,13 @@
     "name": "EMP",
     "category": "mode",
     "status": "directory",
-    "website": "https://www.emp.dk",
+    "website": "https://www.emp-shop.dk/",
     "description": {
-      "da": "Band- og rocktøj, merchandise og accessories.",
-      "en": "Band and rock clothing, merchandise and accessories.",
-      "ar": "ملابس وإكسسوارات فرق الروك والموسيقى."
+      "da": "EMP er en webshop med band- og rocktøj, merchandise, accessories og gaveartikler til musikfans.",
+      "en": "EMP is an online shop for band and rock clothing, merchandise, accessories and gifts for music fans.",
+      "ar": "EMP متجر إلكتروني يضم ملابس الفرق الموسيقية والروك والمنتجات التذكارية والإكسسوارات والهدايا لعشاق الموسيقى."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "lounge-by-zalando",
@@ -525,11 +534,11 @@
     "status": "directory",
     "website": "https://www.zalando-lounge.dk/",
     "description": {
-      "da": "Outlet med mærkevarer til reducerede priser.",
-      "en": "Outlet with branded fashion at reduced prices.",
-      "ar": "أوتلت أزياء بماركات عالمية بأسعار مخفضة."
+      "da": "Lounge by Zalando er Zalandos outlet med mærkevarer inden for mode, sko og accessories til reducerede priser.",
+      "en": "Lounge by Zalando is Zalando's outlet for branded fashion, shoes and accessories at reduced prices.",
+      "ar": "Lounge by Zalando هو متجر Zalando للمخزون الفائض، ويضم أزياء وأحذية وإكسسوارات من علامات تجارية بأسعار مخفضة."
     },
-    "checkedAt": "2026-11-19T18:41:48Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "samsung",
@@ -539,11 +548,11 @@
     "status": "directory",
     "website": "https://www.samsung.com/dk/",
     "description": {
-      "da": "Mobiler, TV, hvidevarer og andet elektronik fra Samsung.",
-      "en": "Phones, TVs, home appliances and more electronics from Samsung.",
-      "ar": "هواتف وتلفزيونات وأجهزة منزلية وإلكترونيات من سامسونج."
+      "da": "Samsung er en international teknologivirksomhed med mobiltelefoner, TV, hvidevarer, computere og anden elektronik. Sortimentet vises på samsung.com/dk.",
+      "en": "Samsung is an international technology company with mobile phones, TVs, home appliances, computers and other electronics. Its range is shown at samsung.com/dk.",
+      "ar": "سامسونج شركة تقنية دولية تضم الهواتف المحمولة والتلفزيونات والأجهزة المنزلية والحواسيب وإلكترونيات أخرى. تُعرض تشكيلتها على samsung.com/dk."
     },
-    "checkedAt": "2026-11-19T02:44:07.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "bymoller",
@@ -601,11 +610,11 @@
     "status": "partner",
     "website": "https://www.batteribyen.dk",
     "description": {
-      "da": "Dansk webshop med batterier, ladere, elværktøj og havemaskiner.",
-      "en": "Danish webshop with batteries, chargers, power tools and garden machines.",
-      "ar": "متجر دنماركي للبطاريات والشواحن وأدوات الكهرباء وآلات الحديقة."
+      "da": "Batteribyen.dk er en dansk webshop med batterier, ladere, elværktøj og havemaskiner.",
+      "en": "Batteribyen.dk is a Danish online shop for batteries, chargers, power tools and garden machinery.",
+      "ar": "Batteribyen.dk متجر دنماركي عبر الإنترنت للبطاريات والشواحن وأدوات الكهرباء وآلات الحدائق."
     },
-    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "checkedAt": "2026-11-25T18:39:00.000Z",
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=3252"
   },
@@ -617,11 +626,11 @@
     "status": "partner",
     "website": "https://dinprinter.dk",
     "description": {
-      "da": "Dansk webshop med originale og kompatible printerpatroner samt kontorartikler.",
-      "en": "Danish webshop with original and compatible printer cartridges and office supplies.",
-      "ar": "متجر دنماركي لخراطيش الطابعات الأصلية والمتوافقة والمستلزمات المكتبية."
+      "da": "Din printer er en dansk webshop med originale og kompatible printerpatroner samt kontorartikler.",
+      "en": "Din printer is a Danish online shop for original and compatible printer cartridges and office supplies.",
+      "ar": "Din printer متجر دنماركي عبر الإنترنت لخراطيش الطابعات الأصلية والمتوافقة والمستلزمات المكتبية."
     },
-    "checkedAt": "2026-11-19T13:23:50.943767+00:00",
+    "checkedAt": "2026-11-25T18:39:00.000Z",
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=114779"
   },
@@ -735,7 +744,6 @@
     "name": "Nordic Nest",
     "category": "hjem",
     "status": "directory",
-    "network": "Adtraction",
     "website": "https://www.nordicnest.dk",
     "description": {
       "da": "Nordisk interiørdesign med mere end 30.000 produkter fra over 200 skandinaviske brands – møbler, belysning og boligtilbehør.",
@@ -749,7 +757,6 @@
     "name": "Sinnerup",
     "category": "hjem",
     "status": "directory",
-    "network": "Adtraction",
     "website": "https://sinnerup.dk",
     "description": {
       "da": "Dansk familieejet bolig- og livsstilsbutik siden 1971 med møbler, belysning, tekstiler og boligtilbehør fra over 100 brands.",
@@ -763,7 +770,6 @@
     "name": "Boligcenter.dk",
     "category": "hjem",
     "status": "directory",
-    "network": "Adtraction",
     "website": "https://www.boligcenter.dk",
     "description": {
       "da": "Boligcenter.dk samler møbler, belysning, haveartikler, værktøj og udstyr til hjem, have og fritid.",
@@ -777,7 +783,6 @@
     "name": "Jotex",
     "category": "hjem",
     "status": "directory",
-    "network": "Impact",
     "website": "https://www.jotex.dk",
     "description": {
       "da": "Svensk interiørbrand med møbler, tekstiler, tæpper, belysning og boligtilbehør til hele hjemmet.",
@@ -1035,11 +1040,11 @@
     "website": "https://csmegastore.dk",
     "affiliateUrl": "https://go.csmegastore.dk/t/t?a=1319510587&as=2131462209&t=2&tk=1",
     "description": {
-      "da": "Elektronik, computere, tilbehør og forbrugsvarer til hjem og kontor.",
-      "en": "Electronics, computers, accessories and supplies for home and office.",
-      "ar": "إلكترونيات وحواسيب وإكسسوارات ومستلزمات للمنزل والمكتب."
+      "da": "CS MEGASTORE er en dansk elektronikbutik med computere, elektronik, tilbehør og forbrugsvarer til hjem og kontor.",
+      "en": "CS MEGASTORE is a Danish electronics store with computers, electronics, accessories and supplies for home and office.",
+      "ar": "CS MEGASTORE متجر إلكترونيات دنماركي يضم الحواسيب والإلكترونيات والملحقات والمستلزمات للمنزل والمكتب."
     },
-    "checkedAt": "2026-11-23"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "beautycos",
@@ -1080,11 +1085,11 @@
     "website": "https://estore.nu/da",
     "affiliateUrl": "https://do.estore.nu/t/t?a=1960533601&as=2131462209&t=2&tk=1",
     "description": {
-      "da": "Dansk stormagasin med elektronik, sport, mode og ting til hjemmet.",
-      "en": "Danish department store with electronics, sport, fashion and home essentials.",
-      "ar": "متجر شامل دنماركي يضم الإلكترونيات والرياضة والأزياء ومستلزمات المنزل."
+      "da": "eStore er et dansk stormagasin med elektronik, sport, mode og produkter til hjemmet.",
+      "en": "eStore is a Danish department store with electronics, sports, fashion and home products.",
+      "ar": "eStore متجر شامل دنماركي يضم الإلكترونيات والرياضة والأزياء ومنتجات المنزل."
     },
-    "checkedAt": "2026-11-23"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "myrangecooker",
@@ -1122,14 +1127,14 @@
     "category": "hjem",
     "status": "partner",
     "network": "Adtraction",
-    "website": "https://www.vinkøleskabet.dk",
+    "website": "https://www.xn--vinkleskabet-yjb.dk/",
     "affiliateUrl": "https://at.vinkoleskabet.dk/t/t?a=1954033180&as=2131462209&t=2&tk=1",
     "description": {
       "da": "Specialbutik i vinkøleskaber og opbevaring af vin.",
       "en": "Specialist shop for wine fridges and wine storage.",
       "ar": "متجر متخصص في ثلاجات النبيذ وتخزينه."
     },
-    "checkedAt": "2026-11-23"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "kitchentime",
@@ -1250,11 +1255,11 @@
     "website": "https://www.topsko.dk/",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=108229",
     "description": {
-      "da": "Billige sko online til kvinder, mænd og børn – sneakers, støvler og mere.",
-      "en": "Affordable shoes online for women, men and children – sneakers, boots and more.",
-      "ar": "أحذية بأسعار مناسبة للنساء والرجال والأطفال، مثل الأحذية الرياضية والأحذية الطويلة."
+      "da": "Topsko.dk er en dansk webshop med sko til kvinder, mænd og børn, herunder sneakers, støvler og hverdagssko.",
+      "en": "Topsko.dk is a Danish online shop for shoes for women, men and children, including sneakers, boots and everyday shoes.",
+      "ar": "Topsko.dk متجر دنماركي عبر الإنترنت للأحذية النسائية والرجالية وأحذية الأطفال، بما في ذلك الأحذية الرياضية والطويلة واليومية."
     },
-    "checkedAt": "2026-11-25"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "hydrolife",
@@ -1340,11 +1345,11 @@
     "website": "https://kitchengadget.dk/",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=107649",
     "description": {
-      "da": "Dansk webshop med smarte køkkenredskaber og gadgets i høj kvalitet.",
-      "en": "Danish webshop for smart, high-quality kitchen tools and gadgets.",
-      "ar": "متجر دنماركي لأدوات المطبخ الذكية عالية الجودة."
+      "da": "Kitchen Gadget Danmark er en dansk webshop med smarte køkkenredskaber og gadgets til hverdagen.",
+      "en": "Kitchen Gadget Danmark is a Danish online shop for smart kitchen tools and gadgets for everyday use.",
+      "ar": "Kitchen Gadget Danmark متجر دنماركي عبر الإنترنت لأدوات المطبخ الذكية والأدوات المساعدة للحياة اليومية."
     },
-    "checkedAt": "2026-11-25"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "kispus",
@@ -1370,11 +1375,11 @@
     "website": "https://kirlund.dk/",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116916",
     "description": {
-      "da": "Dansk brand med premium køkkenudstyr og pizzaudstyr til hverdagen.",
-      "en": "Danish brand for premium kitchen equipment and pizza tools for everyday cooking.",
-      "ar": "علامة دنماركية لأدوات المطبخ الفاخرة وأدوات البيتزا للاستخدام اليومي."
+      "da": "Kirlund er et dansk brand med køkkenudstyr og pizzaudstyr til hverdagen.",
+      "en": "Kirlund is a Danish brand for kitchen equipment and pizza tools for everyday cooking.",
+      "ar": "Kirlund علامة دنماركية لأدوات المطبخ وأدوات البيتزا للاستخدام اليومي."
     },
-    "checkedAt": "2026-11-25"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "nobllife",
@@ -1415,11 +1420,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=114944",
     "description": {
-      "da": "Smarte rengøringsprodukter, der gør hverdagen lettere i hjemmet.",
-      "en": "Smart cleaning products that make everyday life at home easier.",
-      "ar": "منتجات تنظيف ذكية تجعل الحياة اليومية في المنزل أسهل."
+      "da": "Hjemmely er en dansk webshop med smarte rengøringsprodukter, der gør rengøring i hjemmet lettere.",
+      "en": "Hjemmely is a Danish online shop for smart cleaning products that make cleaning at home easier.",
+      "ar": "Hjemmely متجر دنماركي عبر الإنترنت لمنتجات تنظيف ذكية تجعل تنظيف المنزل أسهل."
     },
-    "checkedAt": "2026-11-25T02:47:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "kurvemageren",
@@ -1550,11 +1555,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=96297",
     "description": {
-      "da": "Hamamhåndklæder og smukke tekstiler til hjemmet i høj kvalitet.",
-      "en": "Hamam towels and beautiful high-quality home textiles.",
-      "ar": "مناشف حمّام ومنسوجات منزلية جميلة عالية الجودة."
+      "da": "Hamam.dk er en dansk webshop med hamamhåndklæder og tekstiler til hjemmet i høj kvalitet.",
+      "en": "Hamam.dk is a Danish online shop for high-quality hamam towels and home textiles.",
+      "ar": "Hamam.dk متجر دنماركي عبر الإنترنت للمناشف الحمامية والمنسوجات المنزلية عالية الجودة."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "mammut-hair",
@@ -1565,11 +1570,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=65087",
     "description": {
-      "da": "Naturlige hårfibre af bomuld, der skjuler hårtab og tyndt hår.",
-      "en": "Natural cotton hair fibres that conceal hair loss and thinning hair.",
-      "ar": "ألياف شعر طبيعية من القطن تخفي تساقط الشعر وترقق الشعر."
+      "da": "Mammut Hair er et dansk brand med naturlige hårfibre af bomuld, der hjælper med at skjule hårtab og tyndt hår.",
+      "en": "Mammut Hair is a Danish brand with natural cotton hair fibres that help conceal hair loss and thinning hair.",
+      "ar": "Mammut Hair علامة دنماركية تقدم ألياف شعر طبيعية من القطن تساعد على إخفاء تساقط الشعر وترققه."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "restflow",
@@ -1580,11 +1585,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116578",
     "description": {
-      "da": "Fluffy dyner og justerbare hovedpuder til bedre søvn og mere komfort.",
-      "en": "Fluffy duvets and adjustable pillows for better sleep and comfort.",
-      "ar": "لحف منفوشة ووسائد قابلة للتعديل لنوم أفضل وراحة أكبر."
+      "da": "restflow.dk er en dansk webshop med fluffy dyner og justerbare hovedpuder til bedre søvn og komfort.",
+      "en": "restflow.dk is a Danish online shop for fluffy duvets and adjustable pillows for better sleep and comfort.",
+      "ar": "restflow.dk متجر دنماركي عبر الإنترنت للحفف المنفوشة والوسائد القابلة للتعديل لنوم أفضل وراحة أكبر."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "skns",
@@ -1595,11 +1600,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=106681",
     "description": {
-      "da": "Hudplejeserie med aktive ingredienser, der plejer, beskytter og balancerer hudens mikrobiom.",
-      "en": "Skincare line with active ingredients that care for, protect and balance the skin microbiome.",
-      "ar": "سلسلة عناية بالبشرة بمكوّنات نشطة تعتني بالبشرة وتحميها وتوازن ميكروبيومها."
+      "da": "SKNS er en dansk hudplejeserie med aktive ingredienser, der plejer, beskytter og balancerer hudens mikrobiom.",
+      "en": "SKNS is a Danish skincare line with active ingredients that care for, protect and balance the skin microbiome.",
+      "ar": "SKNS سلسلة دنماركية للعناية بالبشرة بمكوّنات نشطة تعتني بالبشرة وتحميها وتوازن ميكروبيومها."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "nordic-wellness",
@@ -1610,11 +1615,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=86051",
     "description": {
-      "da": "Massageudstyr og personlig pleje i høj kvalitet til en samlet velværeoplevelse.",
-      "en": "High-quality massage equipment and personal care for a complete wellness experience.",
-      "ar": "أجهزة مساج وعناية شخصية عالية الجودة لتجربة استرخاء متكاملة."
+      "da": "Nordic Wellness er en dansk webshop med massageudstyr og produkter til personlig pleje og velvære.",
+      "en": "Nordic Wellness is a Danish online shop for massage equipment and personal care and wellness products.",
+      "ar": "Nordic Wellness متجر دنماركي عبر الإنترنت لأجهزة المساج ومنتجات العناية الشخصية والاسترخاء."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "t-shirten",
@@ -1655,11 +1660,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=116086",
     "description": {
-      "da": "Vin til skarpe priser helt ned til enkelte flasker, med god rådgivning.",
-      "en": "Wine at sharp prices down to single bottles, with helpful advice.",
-      "ar": "نبيذ بأسعار منافسة حتى للزجاجات الفردية، مع نصائح جيدة."
+      "da": "Lauridsen Vine er en dansk vinbutik med vin til konkurrencedygtige priser, også i løssalg, og personlig rådgivning.",
+      "en": "Lauridsen Vine is a Danish wine shop with competitively priced wine, including single bottles, and personal advice.",
+      "ar": "Lauridsen Vine متجر نبيذ دنماركي يقدم نبيذًا بأسعار تنافسية، بما في ذلك الزجاجات الفردية، مع نصائح شخصية."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "aeloa",
@@ -1670,11 +1675,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118239",
     "description": {
-      "da": "Naturlige og plastikfri husholdningsprodukter uden unødige tilsætningsstoffer.",
-      "en": "Natural, plastic-free household products without unnecessary additives.",
-      "ar": "منتجات منزلية طبيعية وخالية من البلاستيك دون إضافات غير ضرورية."
+      "da": "ÆLOA er et dansk brand med naturlige og plastikfri husholdningsprodukter uden unødige tilsætningsstoffer.",
+      "en": "ÆLOA is a Danish brand with natural, plastic-free household products without unnecessary additives.",
+      "ar": "ÆLOA علامة دنماركية تقدم منتجات منزلية طبيعية وخالية من البلاستيك دون إضافات غير ضرورية."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "remsleep",
@@ -1685,11 +1690,11 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=105178",
     "description": {
-      "da": "Ergonomiske sovemasker, der blokerer 100 % af lyset og forbedrer søvnkvaliteten.",
-      "en": "Ergonomic sleep masks that block 100% of light and improve sleep quality.",
-      "ar": "أقنعة نوم مريحة تحجب 100% من الضوء وتحسّن جودة النوم."
+      "da": "REMsleep.dk er en dansk webshop med ergonomiske sovemasker, der blokerer lys og skaber roligere søvn.",
+      "en": "REMsleep.dk is a Danish online shop for ergonomic sleep masks that block light and support calmer sleep.",
+      "ar": "REMsleep.dk متجر دنماركي عبر الإنترنت لأقنعة نوم مريحة تحجب الضوء وتساعد على نوم أهدأ."
     },
-    "checkedAt": "2026-11-25T03:45:00.000Z"
+    "checkedAt": "2026-11-25T18:39:00.000Z"
   },
   {
     "slug": "cleanstream",
@@ -1700,9 +1705,9 @@
     "network": "Partner-ads",
     "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117569",
     "description": {
-      "da": "Elektronisk kalkopløser til enkelthuse, som monteres uden VVS-hjælp og giver mindre kalk, lettere rengøring og mindre slid på husholdningsapparater.",
+      "da": "Elektronisk kalkopløser til enfamiliehuse, som monteres uden VVS-hjælp og giver mindre kalk, lettere rengøring og mindre slid på husholdningsapparater.",
       "en": "Electronic limescale dissolver for single-family homes, installed without a plumber to reduce limescale, simplify cleaning and reduce wear on household appliances.",
-      "ar": "جهاز إلكتروني لإذابة الكلس في المنازل المستقلة، يُركّب دون سباك لتقليل الترسبات وتسهيل التنظيف وتخفيف تآكل الأجهزة المنزلية."
+      "ar": "جهاز إلكتروني لإذابة الكلس في المنازل العائلية المستقلة، يُركّب دون سباك لتقليل الترسبات وتسهيل التنظيف وتخفيف تآكل الأجهزة المنزلية."
     },
     "checkedAt": "2026-11-25T06:26:00.000Z"
   },

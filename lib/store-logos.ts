@@ -2,6 +2,8 @@
 // Only stores with a verified local file are listed; others fall back to a monogram.
 export const STORE_LOGOS: Record<string, string> = {
   "bazta-dk": "/logos/bazta-dk.png",
+  "cleanstream": "/logos/cleanstream.webp",
+  "emp": "/logos/emp.webp",
   "netto": "/logos/netto.png",
   "foetex": "/logos/foetex.png",
   "rema-1000": "/logos/rema-1000.png",

@@ -72,7 +72,7 @@ const DA_AR: Record<string, string> = {
   "Søg efter vare, brand eller kategori…": "ابحث عن منتج أو علامة تجارية أو فئة…",
   "Søg produkter": "ابحث عن المنتجات",
   "Vælg kategori": "اختر الفئة",
-  "Alle kategorier": "كل الفئات",
+  "Alle kategorier": "كل التصنيفات",
   "Søger…": "جارٍ البحث…",
   "Ingen varer matcher din søgning. Prøv et andet ord.": "لا توجد منتجات تطابق بحثك. جرّب كلمة أخرى.",
   "Vis flere varer": "عرض المزيد من المنتجات",

@@ -50,7 +50,7 @@ const COPY = {
     searchPlaceholder: "ابحث عن منتج أو علامة تجارية أو فئة…",
     searchAria: "ابحث عن المنتجات",
     categoryAria: "اختر الفئة",
-    allCategories: "كل الفئات",
+    allCategories: "كل التصنيفات",
     searching: "جارٍ البحث…",
     found: (n: number) => `${n} منتجًا تم العثور عليها`,
     noResults: "لا توجد منتجات تطابق بحثك. جرّب كلمة أخرى.",
