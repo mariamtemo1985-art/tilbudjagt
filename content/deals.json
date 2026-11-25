@@ -518,5 +518,15 @@
     "discount": 50,
     "image": "/deals/remsleep-new-1.webp",
     "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=108279&partnerid=58143&htmlurl=https://remsleep.dk/products/rem-sovemaske-tilbud"
+  },
+  {
+    "title": "Anthony sort/messing, Sofabord",
+    "price": 1699.0,
+    "oldPrice": 2684.06,
+    "discount": 37,
+    "store": "House Lab",
+    "storeSlug": "house-lab",
+    "image": "/deals/house-lab-new-7.webp",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?bannerid=118172&partnerid=58143&htmlurl=https://houselab.dk/products/anthony-sort-messing?variant=59298340307275"
   }
 ]
