@@ -508,7 +508,7 @@ export const GUIDES: Guide[] = [
       "En praktisk tjekliste til Black Friday 2026 i Danmark: planlæg købene, sammenlign priser og undgå falske førpriser.",
     lead:
       "Black Friday er tæt på. Brug en kort plan, så du kan se forskel på et reelt tilbud og et skilt, der bare skaber travlhed.",
-    updated: "20. november 2026",
+    updated: "25. november 2026",
     publishAt: "2026-11-20",
     sections: [
       {
@@ -537,6 +537,20 @@ export const GUIDES: Guide[] = [
         paragraphs: [
           "På TilbudJagt kan du finde butikker og produkter samlet ét sted. Vi viser kun priser, når de kommer fra butikken selv, og vi markerer tydeligt, når et link er et reklamelink eller et direkte link til butikken.",
           "Brug overblikket til at sammenligne i dit eget tempo. Hvis et tilbud skaber tidspres, så tag en kort pause og tjek prisen igen, før du beslutter dig.",
+        ],
+      },
+      {
+        heading: "5. Hvornår er Black Friday og Cyber Monday i 2026?",
+        paragraphs: [
+          "Black Friday falder fredag den 27. november 2026, og Cyber Monday følger mandag den 30. november. Mange danske butikker starter kampagnerne flere dage før og fortsætter weekenden over, så det er værd at følge med i god tid.",
+          "Det betyder ikke, at det bedste tilbud altid kommer først. Nogle butikker gemmer de største nedsættelser til selve fredagen, mens andre kører samme pris hele ugen. Sammenlign derfor over flere dage i stedet for at slå til med det samme.",
+        ],
+      },
+      {
+        heading: "6. Brug officielle rabatkoder og gem kvitteringen",
+        paragraphs: [
+          "Brug kun rabatkoder, der kommer fra butikken selv eller en officiel partner. På TilbudJagt samler vi officielle koder og aktuelle produkttilbud fra vores partnerbutikker på siden Rabatkoder. Kopier koden, og indtast den hos butikken, før du betaler.",
+          "Efter købet bør du gemme ordrebekræftelse og kvittering, indtil varen er modtaget og testet. Så står du bedst, hvis du skal returnere eller gøre brug af garantien – også hvis du skifter mening efter Cyber Monday.",
         ],
       },
     ],

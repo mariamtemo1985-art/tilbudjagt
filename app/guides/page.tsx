@@ -24,6 +24,7 @@ export default function GuidesPage() {
         <SiteNav ariaLabel="Hovedmenu">
           <a href="/#butikker">Butikker</a>
           <a href="/guides">Guides</a>
+          <a href="/rabatkoder">Rabatkoder</a>
           <a href="/contact.html">Kontakt</a>
         </SiteNav>
         <div className="header-actions">

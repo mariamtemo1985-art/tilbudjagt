@@ -166,6 +166,9 @@ export default async function GuidePage({ params }: PageProps) {
           <a className="partner-cta" href="/#butikker">
             Se butikker <ArrowRight size={16} />
           </a>
+          <a className="store-card-info" href="/rabatkoder">
+            Se rabatkoder
+          </a>
           <a className="store-card-info" href="/guides">
             Læs flere guides
           </a>
