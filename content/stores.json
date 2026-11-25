@@ -1390,5 +1390,140 @@
       "ar": "علامة دنماركية للمكملات السائلة لمن هم فوق 40 عامًا، من الفيتامينات والمعادن والبروبيوتيك."
     },
     "checkedAt": "2026-11-25"
+  },
+  {
+    "slug": "goblend",
+    "name": "GoBlend",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://goblend.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=119325",
+    "description": {
+      "da": "Dansk webshop med den bærbare GoBlender 3.0 – en trådløs smoothieblender med 1000 W, USB-C og selvrensning.",
+      "en": "Danish webshop for the portable GoBlender 3.0 – a cordless 1000 W smoothie blender with USB-C and self-cleaning.",
+      "ar": "متجر دنماركي لخلاط GoBlender 3.0 المحمول اللاسلكي بقوة 1000 واط ومنفذ USB-C وتنظيف ذاتي."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "hjemmely",
+    "name": "Hjemmely",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://hjemmely.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=114944",
+    "description": {
+      "da": "Smarte rengøringsprodukter, der gør hverdagen lettere i hjemmet.",
+      "en": "Smart cleaning products that make everyday life at home easier.",
+      "ar": "منتجات تنظيف ذكية تجعل الحياة اليومية في المنزل أسهل."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "kurvemageren",
+    "name": "Kurvemageren.dk",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://kurvemageren.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=73740",
+    "description": {
+      "da": "Dansk familieforetagende med kurve, interiør og livsstilsprodukter i høj kvalitet.",
+      "en": "Danish family business with high-quality baskets, interior and lifestyle products.",
+      "ar": "شركة عائلية دنماركية تبيع السلال والديكور ومستلزمات المنزل بجودة عالية."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "matrivo",
+    "name": "Matrivo.dk",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://matrivo.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=104410",
+    "description": {
+      "da": "Krystalklokker og glas til fest og hverdag – elegance og luksus til bordet.",
+      "en": "Crystal glasses for celebrations and everyday use – elegance and luxury for the table.",
+      "ar": "كؤوس كريستال للمناسبات والاستخدام اليومي – أناقة وفخامة على المائدة."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "goldi",
+    "name": "Goldi",
+    "category": "mode",
+    "status": "partner",
+    "website": "https://goldi.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=112801",
+    "description": {
+      "da": "Dansk smykkewebshop med ægte smykker af ædelmetal til outletpriser.",
+      "en": "Danish jewellery webshop with genuine precious-metal jewellery at outlet prices.",
+      "ar": "متجر دنماركي للمجوهرات الحقيقية من المعادن الثمينة بأسعار الأوتلت."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "kidskitchen",
+    "name": "Kidskitchen.dk",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://kidskitchen.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=109952",
+    "description": {
+      "da": "Køkkensæt til børn, så de sikkert og sjovt kan være med i køkkenet.",
+      "en": "Kitchen sets for children so they can join in the kitchen safely and playfully.",
+      "ar": "أطقم مطبخ للأطفال ليشاركوا بأمان ومتعة في المطبخ."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "my-little-nordic",
+    "name": "My Little Nordic",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://mylittlenordic.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=97219",
+    "description": {
+      "da": "Personlige gaver til baby og børn – broderede bamser, graverede kopper, bestik og flag.",
+      "en": "Personalised gifts for babies and children – embroidered teddy bears, engraved cups, cutlery and flags.",
+      "ar": "هدايا مخصصة للرضع والأطفال – دببة مطرزة وأكواب وأدوات طعام وأعلام منقوشة."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "maet-modig",
+    "name": "Mæt & Modig",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://xn--mtogmodig-g3a.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=117232",
+    "description": {
+      "da": "Tematiserede madlavningskits til børn fra 4 til 12 år med redskaber og opskrifter.",
+      "en": "Themed cooking kits for children aged 4–12, with tools and recipes.",
+      "ar": "أطقم طبخ للأطفال من 4 إلى 12 عامًا مع أدوات ووصفات."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
+  },
+  {
+    "slug": "greenvibe",
+    "name": "Greenvibe.dk",
+    "category": "hjem",
+    "status": "partner",
+    "website": "https://greenvibe.dk/",
+    "network": "Partner-ads",
+    "affiliateUrl": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=106967",
+    "description": {
+      "da": "Dansk webshop med bæredygtige danske mærker inden for møbler, tøj, interiør, børn og skønhed.",
+      "en": "Danish webshop with sustainable Danish brands in furniture, clothing, interior, children and beauty.",
+      "ar": "متجر دنماركي يضم علامات دنماركية مستدامة للأثاث والملابس والديكور والأطفال والجمال."
+    },
+    "checkedAt": "2026-11-25T02:47:00.000Z"
   }
 ]

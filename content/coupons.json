@@ -25,5 +25,14 @@
     "description": "Black Friday-kode fra Retrotrøjer.dk. Gælder hele sortimentet.",
     "expires": "30. november 2026",
     "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=118053"
+  },
+  {
+    "store": "Matrivo.dk",
+    "slug": "matrivo",
+    "title": "5% på Matrivo-glas",
+    "code": "Matrivo25",
+    "description": "Officiel partnerkode fra Matrivo. Gælder på matrivo.dk.",
+    "expires": "Ingen udløbsdato oplyst",
+    "url": "https://www.partner-ads.com/dk/klikbanner.php?partnerid=58143&bannerid=104410"
   }
 ]

@@ -2,6 +2,15 @@
 // not per click). Source: affiliate network program pages, checked 2026-11-25.
 // Only stores with a verified rate are listed; unlisted partners rank after them.
 export const STORE_COMMISSIONS: Record<string, number> = {
+  goldi: 30,
+  kidskitchen: 15,
+  hjemmely: 15,
+  kurvemageren: 15,
+  "maet-modig": 15,
+  goblend: 12,
+  "my-little-nordic": 12,
+  matrivo: 12,
+  greenvibe: 10,
   copenhagenpure: 30,
   deepbalance: 25,
   kispus: 25,

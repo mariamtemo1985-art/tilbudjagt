@@ -100,6 +100,15 @@ export const STORE_LOGOS: Record<string, string> = {
   "kispus": "/logos/kispus.png",
   "kirlund": "/logos/kirlund.png",
   "nobllife": "/logos/nobllife.png",
+  "goblend": "/logos/goblend.png",
+  "hjemmely": "/logos/hjemmely.png",
+  "kurvemageren": "/logos/kurvemageren.png",
+  "matrivo": "/logos/matrivo.png",
+  "goldi": "/logos/goldi.png",
+  "kidskitchen": "/logos/kidskitchen.png",
+  "my-little-nordic": "/logos/my-little-nordic.png",
+  "maet-modig": "/logos/maet-modig.png",
+  "greenvibe": "/logos/greenvibe.png",
 };
 
 export function getStoreLogo(slug: string): string | undefined {
