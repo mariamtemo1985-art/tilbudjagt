@@ -36,6 +36,7 @@ export const STORE_COMMISSIONS: Record<string, number> = {
   beauty4me: 20,
   "din-printer": 18,
   bymoller: 15,
+  "global-urban-jewelry": 15,
   hugcare: 15,
   hydrolife: 15,
   nobllife: 15,
