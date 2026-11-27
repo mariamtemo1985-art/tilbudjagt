@@ -866,6 +866,224 @@ const CONTENT: Record<string, StoreSeoContent> = {
       { label: "Guides", href: "/guides" },
     ],
   },
+  soundliving: {
+    title: "Soundliving højttalere og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Soundliving, et dansk lydbrand med designhøjttalere og høretelefoner til hjemmet, og læs hvad du bør overveje før køb.",
+    intro:
+      "Soundliving er et dansk lydbrand med designhøjttalere og høretelefoner til hjemmet. Produkterne henvender sig til kunder, der vil kombinere lydoplevelse og indretning. Her samler vi den praktiske butiksinfo, du bør kende, før du vælger lydudstyr.",
+    sections: [
+      {
+        heading: "Hvad finder du hos Soundliving?",
+        body:
+          "Sortimentet omfatter designhøjttalere og høretelefoner til hjemmet. Det konkrete udvalg kan ændre sig, så tjek altid model, tilslutning og størrelse hos butikken.",
+        bullets: [
+          "Designhøjttalere til hjemmet",
+          "Høretelefoner",
+          "Lydudstyr til daglig brug",
+          "Produktinformation og tilslutningsmuligheder",
+        ],
+      },
+      {
+        heading: "Sådan vælger du lydudstyr",
+        body:
+          "Overvej, hvor udstyret skal bruges, og om det skal passe til en bestemt indretning. Sammenlign tilslutningsmuligheder, størrelse og betjening, og læs butikkens produktbeskrivelse. Lydoplevelse er personlig, så brug anmeldelser og specifikationer som støtte frem for at vælge alene efter design.",
+      },
+      {
+        heading: "Sådan bruger du siden",
+        body:
+          "TilbudJagt viser butiksinfo og et link videre til Soundliving. Vi opfinder ikke priser eller tekniske specifikationer. Kontroller altid den aktuelle pris, lagerstatus og leveringsvilkår direkte hos butikken.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvilke produkter sælger Soundliving?",
+        answer:
+          "Soundliving beskrives som et dansk lydbrand med designhøjttalere og høretelefoner til hjemmet. Se butikkens aktuelle sortiment for modeller og detaljer.",
+      },
+      {
+        question: "Hvordan sammenligner jeg lydudstyr?",
+        answer:
+          "Sammenlign tilslutningsmuligheder, størrelse, betjening og anmeldelser. Kontroller også, om produktet passer til dit rum og din øvrige udstyr.",
+      },
+      {
+        question: "Kan jeg se priser på Soundliving her?",
+        answer:
+          "Vi viser kun priser, når de kommer fra et godkendt partnerfeed. Ellers skal du kontrollere den aktuelle pris og lagerstatus direkte hos Soundliving.",
+      },
+    ],
+    related: [
+      { label: "Proshop", href: "/butikker/proshop" },
+      { label: "POWER", href: "/butikker/power" },
+      { label: "Høretelefoner og headsets", href: "/tilbud/hoereboen" },
+      { label: "Alle butikker", href: "/butikker" },
+    ],
+  },
+  dyson: {
+    title: "Dyson støvsugere og luftrensere 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Dyson, støvsugere, luftrensere, hårplejeprodukter og andre hjemmeapparater, og læs hvad du bør undersøge før køb.",
+    intro:
+      "Dyson er et internationalt teknologibrand med støvsugere, luftrensere, hårplejeprodukter og andre hjemmeapparater. Sortimentet vises på dyson.dk. Her samler vi den praktiske butiksinfo, du bør kende, før du vurderer et Dyson-produkt.",
+    sections: [
+      {
+        heading: "Hvad finder du hos Dyson?",
+        body:
+          "Dyson dækker flere kategorier af hjemmeapparater og teknologiprodukter. Udvalget og de konkrete modeller kan ændre sig, så tjek altid butikkens aktuelle sortiment.",
+        bullets: [
+          "Støvsugere og rengøringsudstyr",
+          "Luftrensere",
+          "Hårplejeprodukter",
+          "Andre hjemmeapparater",
+        ],
+      },
+      {
+        heading: "Sådan vurderer du et Dyson-produkt",
+        body:
+          "Sammenlign den konkrete model, garanti, levering og prisen på tilbehør eller filtre. Kontroller, om produktet passer til dit hjem og dit brug, og læs butikkens beskrivelse af funktioner og vedligeholdelse. En højere pris er ikke alene et bevis på bedre ydeevne.",
+      },
+      {
+        heading: "Sådan bruger du siden",
+        body:
+          "TilbudJagt viser butiksinfo og et link videre til Dyson. Vi lover ikke en bestemt effekt eller besparelse. Kontroller produktets dokumentation, pris og leveringsvilkår direkte hos butikken.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvilke produktkategorier har Dyson?",
+        answer:
+          "Dyson beskrives som et teknologibrand med støvsugere, luftrensere, hårplejeprodukter og andre hjemmeapparater. Se dyson.dk for det aktuelle sortiment.",
+      },
+      {
+        question: "Hvor køber jeg Dyson-produkter?",
+        answer:
+          "Brug linket på denne side for at gå videre til butikken. Selve købet, betalingen og leveringen foregår hos Dyson.",
+      },
+      {
+        question: "Får TilbudJagt provision på Dyson-links?",
+        answer:
+          "Dyson er en godkendt partner i vores oversigt. Hvis du klikker videre og køber, kan TilbudJagt modtage en provision uden ekstra omkostning for dig. Din pris ændres ikke.",
+      },
+    ],
+    related: [
+      { label: "CopenhagenPure", href: "/butikker/copenhagenpure" },
+      { label: "Cleanstream", href: "/butikker/cleanstream" },
+      { label: "Proshop", href: "/butikker/proshop" },
+      { label: "Alle butikker", href: "/butikker" },
+    ],
+  },
+  nordgreen: {
+    title: "Nordgreen ure og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Nordgreen, skandinaviske ure designet i København, minimalistiske ure og tilbehør til mænd og kvinder.",
+    intro:
+      "Nordgreen er et skandinavisk urmærke med ure designet i København. Sortimentet omfatter minimalistiske ure og tilbehør til mænd og kvinder. Her samler vi den praktiske butiksinfo, du bør kende, før du vælger et ur.",
+    sections: [
+      {
+        heading: "Hvad finder du hos Nordgreen?",
+        body:
+          "Nordgreen henvender sig til kunder, der ønsker et enkelt, skandinavisk design. Udvalget kan variere, så tjek altid model, størrelse, materiale og rem hos butikken.",
+        bullets: [
+          "Minimalistiske ure til mænd",
+          "Minimalistiske ure til kvinder",
+          "Forskellige remme og størrelser",
+          "Tilbehør til ure",
+        ],
+      },
+      {
+        heading: "Sådan vælger du et ur",
+        body:
+          "Overvej urkassens størrelse, remmens materiale og den stil, du vil bruge uret til. Kontroller målene mod dit håndled, og læs butikkens beskrivelse af vandtæthed, garanti og service. Et ur, der passer til hverdagen, er ofte mere anvendeligt end et meget specialiseret design.",
+      },
+      {
+        heading: "Sådan bruger du siden",
+        body:
+          "TilbudJagt viser butiksinfo og et link videre til Nordgreen. Vi opfinder ikke priser eller materialeoplysninger. Kontroller altid den aktuelle pris, levering og returvilkår direkte hos butikken.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvor er Nordgreen-urene designet?",
+        answer:
+          "Nordgreen beskriver sine ure som skandinaviske ure designet i København. Se butikkens produktbeskrivelse for oplysninger om det enkelte ur.",
+      },
+      {
+        question: "Hvordan vælger jeg den rigtige urstørrelse?",
+        answer:
+          "Sammenlign urkassens mål med dit håndled og med et ur, du allerede bruger. Læs butikkens størrelsesinformation, og kontakt butikken hvis du er i tvivl.",
+      },
+      {
+        question: "Kan jeg se priser på Nordgreen her?",
+        answer:
+          "Vi viser kun priser, når de kommer fra et godkendt partnerfeed. Ellers skal du kontrollere den aktuelle pris og lagerstatus direkte hos Nordgreen.",
+      },
+    ],
+    related: [
+      { label: "Global Urban Jewelry", href: "/butikker/global-urban-jewelry" },
+      { label: "Trendysun", href: "/butikker/trendysun" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
+  topsko: {
+    title: "Topsko.dk sko og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Topsko.dk, sko til kvinder, mænd og børn, herunder sneakers, støvler og hverdagssko, og læs hvad du bør overveje før køb.",
+    intro:
+      "Topsko.dk er en dansk webshop med sko til kvinder, mænd og børn, herunder sneakers, støvler og hverdagssko. Her samler vi den praktiske butiksinfo, du bør kende, før du køber sko online.",
+    sections: [
+      {
+        heading: "Hvad finder du hos Topsko.dk?",
+        body:
+          "Butikken henvender sig til hele familien og dækker flere typer sko til hverdag og fritid. Det konkrete udvalg kan ændre sig, så tjek altid størrelse, farve og lagerstatus hos butikken.",
+        bullets: [
+          "Sneakers og hverdagssko",
+          "Støvler",
+          "Sko til kvinder og mænd",
+          "Børnesko",
+        ],
+      },
+      {
+        heading: "Sådan vælger du sko online",
+        body:
+          "Mål din fod, og sammenlign med butikkens størrelsesguide. Overvej, om skoen skal bruges til hverdag, arbejde eller fritid, og læs beskrivelsen af pasform og materiale. Kontroller returvilkårene, hvis størrelsen ikke passer.",
+        bullets: [
+          "Mål foden og læs størrelsesguiden",
+          "Sammenlign pasform og materiale",
+          "Kontroller lager og leveringstid",
+          "Læs retur- og byttevilkår",
+        ],
+      },
+      {
+        heading: "Sådan bruger du siden",
+        body:
+          "TilbudJagt viser butiksinfo og et link videre til Topsko.dk. Vi viser ikke aktuelle priser fra butikken, medmindre de kommer fra et godkendt partnerfeed. Kontroller derfor altid pris og lager direkte hos Topsko.dk.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvilke typer sko sælger Topsko.dk?",
+        answer:
+          "Topsko.dk beskrives som en dansk webshop med sko til kvinder, mænd og børn, herunder sneakers, støvler og hverdagssko. Se butikkens aktuelle kategorier.",
+      },
+      {
+        question: "Hvordan finder jeg den rigtige størrelse?",
+        answer:
+          "Mål din fod og sammenlign med butikkens størrelsesguide. Kontakt butikken, hvis du er i tvivl mellem to størrelser.",
+      },
+      {
+        question: "Kan jeg returnere sko, hvis de ikke passer?",
+        answer:
+          "Det afhænger af butikkens returvilkår. Læs dem på Topsko.dk før køb, og gem emballage og dokumentation, hvis du vil returnere.",
+      },
+    ],
+    related: [
+      { label: "Boozt", href: "/butikker/boozt" },
+      { label: "Global Urban Jewelry", href: "/butikker/global-urban-jewelry" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
 };
 
 export function getStoreSeoContent(slug: string): StoreSeoContent | undefined {
