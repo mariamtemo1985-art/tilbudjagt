@@ -47,7 +47,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...translatedPages("/butikker", FALLBACK_DATE, "weekly", 0.9, languageAlternates("/butikker")),
     ...translatedPages("/produkter", productDate, "daily", 0.9, languageAlternates("/produkter")),
     ...translatedPages("/rabatkoder", FALLBACK_DATE, "daily", 0.9, languageAlternates("/rabatkoder")),
-    ...translatedPages("/guides", FALLBACK_DATE, "weekly", 0.8, languageAlternates("/guides")),
+    ...translatedPages(
+      "/guides",
+      FALLBACK_DATE,
+      "weekly",
+      0.8,
+      danishArabicAlternates("/guides"),
+      ["da", "ar"],
+    ),
   ];
   const guidePages = guides.flatMap((guide) =>
     translatedPages(

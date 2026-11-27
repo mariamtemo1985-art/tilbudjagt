@@ -57,6 +57,16 @@ export default async function StorePage({ params }: PageProps) {
     description: seo?.description ?? store.description.da,
     url,
     inLanguage: "da-DK",
+    dateModified: store.checkedAt,
+    publisher: {
+      "@type": "Organization",
+      name: "TilbudJagt.dk",
+      url: "https://www.tilbudjagt.dk/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.tilbudjagt.dk/icon.png",
+      },
+    },
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [

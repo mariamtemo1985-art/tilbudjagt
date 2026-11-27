@@ -4,7 +4,7 @@ import GuidesPage from "@/components/pages/guides-page";
 import {
   PAGE_META,
   isLocalizedLocale,
-  languageAlternates,
+  danishArabicAlternates,
   localeUrl,
 } from "@/lib/i18n";
 
@@ -18,7 +18,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: meta.title,
     description: meta.description,
-    alternates: { canonical: url, languages: languageAlternates("/guides") },
+    alternates: { canonical: url, languages: danishArabicAlternates("/guides") },
+    robots:
+      locale === "en"
+        ? { index: false, follow: true }
+        : { index: true, follow: true },
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_AR" : "en_US",

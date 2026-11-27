@@ -97,6 +97,19 @@ const siteJsonLd = {
         url: `${SITE}/icon.png`,
       },
       email: "support@tilbudjagt.dk",
+      description:
+        "Dansk tilbuds- og butiksoversigt med redaktionelle guides og tydelig angivelse af kommercielle partnerlinks.",
+      areaServed: {
+        "@type": "Country",
+        name: "Denmark",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "support@tilbudjagt.dk",
+        availableLanguage: ["Danish", "English", "Arabic"],
+        areaServed: "DK",
+      },
     },
   ],
 };

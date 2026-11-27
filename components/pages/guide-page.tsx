@@ -157,9 +157,17 @@ export default async function GuidePage({ slug, lang = "da" }: GuidePageProps) {
         image: "https://www.tilbudjagt.dk/og-image.png",
         author: {
           "@type": "Organization",
+          "@id": "https://www.tilbudjagt.dk/#organization",
           name: "TilbudJagt.dk",
           url: "https://www.tilbudjagt.dk/",
         },
+        editor: {
+          "@type": "Organization",
+          "@id": "https://www.tilbudjagt.dk/#organization",
+          name: "TilbudJagt.dk",
+          url: "https://www.tilbudjagt.dk/",
+        },
+        isAccessibleForFree: true,
         publisher: {
           "@type": "Organization",
           name: "TilbudJagt.dk",

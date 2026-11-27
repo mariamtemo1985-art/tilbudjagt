@@ -542,6 +542,330 @@ const CONTENT: Record<string, StoreSeoContent> = {
       { label: "Guides", href: "/guides" },
     ],
   },
+  "global-urban-jewelry": {
+    title: "Global Urban Jewelry smykker og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Global Urban Jewelry, vandfaste smykker i guld- og sølvlook, materialer og hvordan du vælger ringe, øreringe og halskæder.",
+    intro:
+      "Global Urban Jewelry er en dansk smykkebrand med vandfaste smykker i guld- og sølvlook. Sortimentet omfatter ringe, øreringe, halskæder og armbånd i flere kollektioner. På denne side samler vi den praktiske butiksinfo, så du lettere kan vurdere, om et smykke passer til din stil og dit brug.",
+    sections: [
+      {
+        heading: "Hvad finder du hos Global Urban Jewelry?",
+        body:
+          "Butikken henvender sig til kunder, der ønsker smykker til hverdagen og til særlige anledninger. Udvalget kan variere mellem kollektionerne, så tjek altid den aktuelle vare og størrelse hos butikken.",
+        bullets: [
+          "Ringe i forskellige størrelser og designs",
+          "Øreringe, herunder modeller til både hverdag og fest",
+          "Halskæder og vedhæng",
+          "Armbånd og andre accessories",
+        ],
+      },
+      {
+        heading: "Sådan vælger du et smykke, der holder",
+        body:
+          "Vælg størrelse og materiale efter dit daglige brug. Vandfaste smykker er beregnet til mere aktiv brug end almindelige smykker, men de skal stadig passes efter butikkens plejeanvisning. Undgå unødvendig kontakt med parfume, creme og stærke rengøringsmidler, og tør smykket efter bad, hvis butikken anbefaler det.",
+      },
+      {
+        heading: "Sådan bruger du siden, før du køber",
+        body:
+          "Vi viser butiksinfo og et link videre til Global Urban Jewelry. Pris, lager, levering og retur bestemmes af butikken og kan ændre sig. Kontroller derfor altid den aktuelle pris og de gældende vilkår direkte hos butikken, før du gennemfører et køb.",
+      },
+    ],
+    faq: [
+      {
+        question: "Er Global Urban Jewelrys smykker vandfaste?",
+        answer:
+          "Butikken beskriver sine smykker som vandfaste. Det betyder dog ikke, at alle materialer tåler alle former for vand og kemikalier. Følg butikkens plejeanvisning, og kontakt butikken, hvis du er i tvivl om et bestemt materiale.",
+      },
+      {
+        question: "Kan jeg købe ringe og halskæder hos Global Urban Jewelry?",
+        answer:
+          "Ja. Sortimentet omfatter blandt andet ringe, øreringe, halskæder og armbånd. Se den aktuelle kollektion og størrelsesguide hos butikken, da udvalget kan ændre sig.",
+      },
+      {
+        question: "Får TilbudJagt provision, når jeg klikker videre?",
+        answer:
+          "Nogle links på TilbudJagt er kommercielle partnerlinks. Hvis du klikker videre og køber hos butikken, kan vi modtage en provision uden ekstra omkostning for dig. Prisen hos butikken ændres ikke.",
+      },
+    ],
+    related: [
+      { label: "Trendysun", href: "/butikker/trendysun" },
+      { label: "House Lab", href: "/butikker/house-lab" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
+  cleanstream: {
+    title: "Cleanstream kalkopløser og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Cleanstream, en elektronisk kalkopløser til enfamiliehuse, og læs hvad du bør undersøge før køb og installation.",
+    intro:
+      "Cleanstream er en dansk butik med en elektronisk kalkopløser til enfamiliehuse. Ifølge butikken kan enheden monteres uden VVS-hjælp og skal give mindre kalk, lettere rengøring og mindre slid på husholdningsapparater. Her samler vi den praktiske information, du bør kende, før du vurderer produktet.",
+    sections: [
+      {
+        heading: "Hvad er en elektronisk kalkopløser?",
+        body:
+          "En kalkopløser er et hjælpemiddel til boliger med hårdt vand. Cleanstream beskriver sin løsning som en elektronisk enhed til enfamiliehuse. Effekten afhænger af vandkvalitet, installation og brug, så sammenlign altid oplysningerne fra butikken med din egen boligs forhold.",
+      },
+      {
+        heading: "Sådan vurderer du løsningen før køb",
+        body:
+          "Undersøg, om enheden passer til din boligs vandinstallation, og læs monterings- og vedligeholdelsesvejledningen. Spørg butikken, hvis du er i tvivl om garantien, returneringsretten eller hvordan enheden fungerer sammen med eksisterende hårde hvidevarer. En lavere pris er ikke det eneste kriterium, hvis installation eller service bliver besværlig.",
+        bullets: [
+          "Kontroller boligens vandtype og installation",
+          "Læs butikkens monterings- og plejevejledning",
+          "Sammenlign garanti, returret og samlet pris",
+          "Spørg butikken, hvis du er i tvivl om effekten",
+        ],
+      },
+      {
+        heading: "Sådan bruger du TilbudJagt-siden",
+        body:
+          "Vi formidler butiksinfo og et link videre til Cleanstream. Vi opfinder ikke priser eller effektmål, og konkrete påstande om besparelser skal altid dokumenteres af butikken selv. Kontroller derfor produktets aktuelle beskrivelse, pris og vilkår direkte hos Cleanstream.",
+      },
+    ],
+    faq: [
+      {
+        question: "Kræver Cleanstream professionel installation?",
+        answer:
+          "Cleanstream beskriver sin kalkopløser som en enhed, der kan monteres uden VVS-hjælp. Følg butikkens installationsvejledning, og kontakt butikken, hvis din bolig har en usædvanlig vandinstallation.",
+      },
+      {
+        question: "Kan Cleanstream fjerne kalk i hele boligen?",
+        answer:
+          "Det afhænger af produktets funktion og boligens forhold. Læs butikkens konkrete beskrivelse, og spørg butikken, hvis du har brug for at vide, hvordan enheden passer til dit vand og dine hvidevarer.",
+      },
+      {
+        question: "Hvor køber jeg Cleanstream?",
+        answer:
+          "Du kan bruge linket på denne side til at gå videre til Cleanstreams butik. Pris, lager og levering vises og opdateres af butikken selv.",
+      },
+    ],
+    related: [
+      { label: "CopenhagenPure", href: "/butikker/copenhagenpure" },
+      { label: "House Lab", href: "/butikker/house-lab" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
+  "house-lab": {
+    title: "House Lab møbler og boligtilbehør 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om House Lab, møbler, belysning, tekstiler og boligtilbehør med personligt design, og læs hvad du bør overveje før køb.",
+    intro:
+      "House Lab er en dansk boligbutik med møbler, belysning, tekstiler og boligtilbehør. Sortimentet er kendetegnet ved design, der skal give hjemmet et personligt præg. På denne side samler vi den praktiske butiksinfo, så du lettere kan vurdere, om en vare passer til din bolig og dine behov.",
+    sections: [
+      {
+        heading: "Hvad finder du hos House Lab?",
+        body:
+          "Butikken henvender sig til kunder, der vil indrette hjemmet med både funktionelle og dekorative elementer. Det konkrete udvalg kan ændre sig, så tjek altid mål, materiale, farve og lagerstatus hos butikken.",
+        bullets: [
+          "Møbler til stue, spisestue og soveværelse",
+          "Belysning og lamper",
+          "Tekstiler som plaider, puder og tæpper",
+          "Dekoration og praktisk boligtilbehør",
+        ],
+      },
+      {
+        heading: "Sådan planlægger du et køb",
+        body:
+          "Mål området, før du vælger møbler eller belysning. Kontroller målene på varen, om den skal samles, og hvordan den leveres. Sammenlign den samlede pris inklusive fragt med andre boligbutikker, og læs butikkens retur- og garantivilkår, før du bestiller.",
+      },
+      {
+        heading: "Sådan bruger du siden",
+        body:
+          "TilbudJagt viser butiksinfo og et link videre til House Lab. Vi viser ikke aktuelle priser fra butikken, medmindre de kommer fra et godkendt partnerfeed. Kontroller derfor altid den aktuelle pris og lagerstatus direkte hos House Lab.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvilke typer produkter sælger House Lab?",
+        answer:
+          "House Lab sælger møbler, belysning, tekstiler og boligtilbehør. Se butikkens aktuelle kategorier for at finde det nyeste udvalg.",
+      },
+      {
+        question: "Kan jeg se priser på House Lab via TilbudJagt?",
+        answer:
+          "Vi viser kun priser, når de kommer fra et godkendt partnerfeed. Ellers skal du kontrollere den aktuelle pris direkte på House Labs side.",
+      },
+      {
+        question: "Hvad skal jeg tjekke før jeg køber møbler?",
+        answer:
+          "Mål, materiale, samlingskrav, levering, garanti og returret er vigtige at kontrollere. Læs også butikkens beskrivelse af varen, så du ikke sammenligner forskellige størrelser eller kvaliteter.",
+      },
+    ],
+    related: [
+      { label: "JYSK", href: "/butikker/jysk" },
+      { label: "Boligcenter", href: "/butikker/boligcenter" },
+      { label: "CopenhagenPure", href: "/butikker/copenhagenpure" },
+      { label: "Alle butikker", href: "/butikker" },
+    ],
+  },
+  ampmshop: {
+    title: "AMPMshop.dk pulver og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om AMPMshop.dk, et plantebaseret all-in-one pulver med ærte- og risprotein, vitaminer, mineraler og greens til hverdagen.",
+    intro:
+      "AMPMshop.dk er en dansk butik med et plantebaseret all-in-one pulver. Ifølge butikken indeholder produktet ærte- og risprotein, vitaminer, mineraler og greens til hverdagen. Her samler vi den praktiske information, du bør kende, før du vurderer, om produktet passer til dine behov.",
+    sections: [
+      {
+        heading: "Hvad er et all-in-one pulver?",
+        body:
+          "Et all-in-one pulver er et pulver, der blandes med vand eller en anden drik. AMPMshop beskriver sit produkt som plantebaseret og med flere ingredienser i samme produkt. Læs ingredienslisten og næringsindholdet på butikkens side, så du ved præcis, hvad du får.",
+      },
+      {
+        heading: "Sådan sammenligner du pulveret med andre produkter",
+        body:
+          "Sammenlign indhold pr. portion, proteinmængde, vitaminer og mineraler samt antal portioner pr. pakke. Kontroller også, om produktet indeholder allergener, og om det passer til din kost. En højere pris er ikke automatisk ensbetydende med et bedre produkt.",
+        bullets: [
+          "Læs ingrediens- og næringsdeklarationen",
+          "Sammenlign indhold pr. portion og pris pr. portion",
+          "Kontroller allergener og eventuelle sødestoffer",
+          "Læs butikkens leverings- og returvilkår",
+        ],
+      },
+      {
+        heading: "Vigtig information om kosttilskud",
+        body:
+          "Et pulver er ikke en erstatning for en varieret kost. Har du særlige ernæringsbehov, er gravid, ammer eller tager medicin, bør du tale med en sundhedsfaglig person, før du begynder på et nyt kosttilskud. TilbudJagt yder ikke personlig ernæringsrådgivning.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvilke ingredienser indeholder AMPMshop-pulveret?",
+        answer:
+          "Butikken beskriver produktet som et plantebaseret all-in-one pulver med ærte- og risprotein, vitaminer, mineraler og greens. Læs den aktuelle ingrediensliste hos butikken, da opskriften kan ændre sig.",
+      },
+      {
+        question: "Kan jeg bruge pulveret som erstatning for et måltid?",
+        answer:
+          "Det afhænger af produktets sammensætning og dit behov. Læs butikkens anbefalinger, og søg sundhedsfaglig rådgivning, hvis du vil erstatte hele måltider.",
+      },
+      {
+        question: "Hvor køber jeg AMPMshop.dk?",
+        answer:
+          "Brug linket på denne side for at gå videre til butikken. Pris, lager og levering vises af AMPMshop.dk selv.",
+      },
+    ],
+    related: [
+      { label: "Matas", href: "/butikker/matas" },
+      { label: "Sephora", href: "/butikker/sephora" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
+  trendysun: {
+    title: "Trendysun solbriller og butiksinfo 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om Trendysun, klassiske solbriller i metal og acetat samt smartsolbriller med Bluetooth og højtaler, og læs hvad du bør overveje.",
+    intro:
+      "Trendysun er en dansk butik med solbriller i metal og acetat samt smartsolbriller med Bluetooth og højtaler. Sortimentet kombinerer klassiske designs med mere teknologiske modeller. Her samler vi den praktiske butiksinfo, så du lettere kan vælge den type solbriller, der passer til dit brug.",
+    sections: [
+      {
+        heading: "Hvad finder du hos Trendysun?",
+        body:
+          "Butikken henvender sig til kunder, der både vil beskytte øjnene og have et stilrent accessory. Udvalget kan variere, så tjek altid model, farve, størrelse og linsetype hos butikken.",
+        bullets: [
+          "Klassiske solbriller i metal",
+          "Solbriller i acetat",
+          "Smartsolbriller med Bluetooth og højtaler",
+          "Forskellige stel- og linseformer",
+        ],
+      },
+      {
+        heading: "Sådan vælger du solbriller",
+        body:
+          "Kontroller, at brillen sidder godt og ikke trykker på næse eller tindinger. Læs om linsernes UV-beskyttelse, og vælg en model, der passer til dit ansigt og din brug. Til sport og aktiv ferie kan et mere stabilt stel være vigtigere end et meget let design.",
+      },
+      {
+        heading: "Sådan vurderer du smartsolbriller",
+        body:
+          "Smartsolbriller med Bluetooth og højtaler kan være praktiske til musik og opkald, men batteritid, pasform og lydkvalitet varierer. Læs butikkens produktbeskrivelse og betjeningsvejledning, og overvej, om du har brug for funktionerne i hverdagen.",
+      },
+    ],
+    faq: [
+      {
+        question: "Sælger Trendysun både klassiske og smarte solbriller?",
+        answer:
+          "Ja. Butikken beskriver et sortiment med klassiske solbriller i metal og acetat samt smartsolbriller med Bluetooth og højtaler. Se det aktuelle udvalg hos butikken.",
+      },
+      {
+        question: "Hvordan vælger jeg den rigtige størrelse?",
+        answer:
+          "Sammenlign målene på stellet med dine nuværende solbriller, og læs butikkens størrelsesinformation. Pasform er individuelt, så kontakt butikken, hvis du er i tvivl.",
+      },
+      {
+        question: "Kan jeg se priser på Trendysun her?",
+        answer:
+          "Vi viser kun priser, når de kommer fra et godkendt partnerfeed. Ellers skal du kontrollere den aktuelle pris og lagerstatus direkte hos Trendysun.",
+      },
+    ],
+    related: [
+      { label: "Global Urban Jewelry", href: "/butikker/global-urban-jewelry" },
+      { label: "House Lab", href: "/butikker/house-lab" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
+  copenhagenpure: {
+    title: "CopenhagenPure luftrensere og filtre 2026 | TilbudJagt.dk",
+    description:
+      "Se butiksinfo om CopenhagenPure, luftrensere og HEPA-filtre til hjemmet, og læs hvad du bør overveje om størrelse, støj og filterdrift.",
+    intro:
+      "CopenhagenPure er en dansk butik med luftrensere og HEPA-filtre til hjemmet. Produkterne henvender sig til kunder, der vil forbedre indeluften og reducere støv og partikler i boligen. Her samler vi den praktiske butiksinfo, du bør kende, før du vælger en luftrenser.",
+    sections: [
+      {
+        heading: "Hvad finder du hos CopenhagenPure?",
+        body:
+          "Butikken sælger luftrensere i forskellige størrelser og HEPA-filtre til hjemmet. Det konkrete udvalg kan ændre sig, så tjek altid, hvilket rum og hvilken størrelse produktet er beregnet til.",
+        bullets: [
+          "Luftrensere til forskellige rumstørrelser",
+          "HEPA-filtre og reservedele",
+          "Produkter til hjemmet og daglig brug",
+          "Information om filter og vedligeholdelse",
+        ],
+      },
+      {
+        heading: "Sådan vælger du en luftrenser",
+        body:
+          "Vælg en model, der passer til rummets størrelse og den luftmængde, du vil rense. Sammenlign støjniveau, energiforbrug, filtertype og prisen på nye filtre. Et billigt produkt kan blive dyrere over tid, hvis filtrene skal skiftes ofte.",
+        bullets: [
+          "Kontroller anbefalet rumstørrelse",
+          "Sammenlign støjniveau og energiforbrug",
+          "Undersøg filterpris og skiftinterval",
+          "Læs garanti og returvilkår",
+        ],
+      },
+      {
+        heading: "Sådan bruger du siden",
+        body:
+          "TilbudJagt viser butiksinfo og et link videre til CopenhagenPure. Vi lover ikke en bestemt luftkvalitet eller sundhedseffekt. Kontroller produktets dokumentation, pris og leveringsvilkår direkte hos butikken.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hvilke produkter sælger CopenhagenPure?",
+        answer:
+          "CopenhagenPure sælger luftrensere og HEPA-filtre til hjemmet. Se butikkens aktuelle kategorier for at finde modeller og reservedele.",
+      },
+      {
+        question: "Hvor ofte skal et HEPA-filter skiftes?",
+        answer:
+          "Det afhænger af filtertype, brug og luftforhold. Følg butikkens og producentens anbefaling, og kontroller filterets tilstand regelmæssigt.",
+      },
+      {
+        question: "Kan en luftrenser erstatte ventilation?",
+        answer:
+          "En luftrenser er ikke det samme som ventilation. Den kan hjælpe med at filtrere partikler i indeluften, men boligen skal stadig ventileres efter gældende anbefalinger.",
+      },
+    ],
+    related: [
+      { label: "Cleanstream", href: "/butikker/cleanstream" },
+      { label: "House Lab", href: "/butikker/house-lab" },
+      { label: "Alle butikker", href: "/butikker" },
+      { label: "Guides", href: "/guides" },
+    ],
+  },
 };
 
 export function getStoreSeoContent(slug: string): StoreSeoContent | undefined {
