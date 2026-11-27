@@ -34,6 +34,7 @@ const copy = {
     noOffersTitle: "Ingen verificerede tilbud endnu.",
     noOffersText:
       "Vi viser først priser og tilbud, når de kommer fra butikkens egne data eller et godkendt partnerfeed. Kontroller altid aktuelle priser hos butikken.",
+    lastChecked: "Sidst tjekket",
     advertising: "Annoncering",
     privacy: "Privatlivspolitik",
     language: "Sprog",
@@ -55,6 +56,7 @@ const copy = {
     noOffersTitle: "No verified offers yet.",
     noOffersText:
       "We only show prices and offers when they come from the store’s own data or an approved partner feed. Always check current prices with the store.",
+    lastChecked: "Last checked",
     advertising: "Advertising",
     privacy: "Privacy policy",
     language: "Language",
@@ -76,6 +78,7 @@ const copy = {
     noOffersTitle: "لا توجد عروض مؤكدة بعد.",
     noOffersText:
       "نعرض الأسعار والعروض فقط عندما تأتي من بيانات المتجر نفسه أو من مصدر شركاء معتمد. تحقق دائمًا من السعر الحالي عند المتجر.",
+    lastChecked: "آخر تحقق",
     advertising: "الإعلان",
     privacy: "سياسة الخصوصية",
     language: "اللغة",
@@ -84,6 +87,15 @@ const copy = {
 
 function isLanguage(value: string | null): value is Language {
   return value === "da" || value === "en" || value === "ar";
+}
+
+function formatCheckedAt(value?: string) {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  return `${day}.${month}.${date.getUTCFullYear()}`;
 }
 
 export default function StoreDetail({
@@ -101,6 +113,7 @@ export default function StoreDetail({
   const partner = isAffiliateLink(store);
   const href = partner ? store.affiliateUrl! : store.website;
   const t = copy[lang];
+  const checked = formatCheckedAt(store.checkedAt);
   const rtl = lang === "ar";
   const prefix = forcedLang ? `/${initialLang}` : "";
 
@@ -182,6 +195,11 @@ export default function StoreDetail({
                 </>
               )}
             </span>
+            {checked && (
+              <small className="store-checked">
+                {t.lastChecked}: {checked}
+              </small>
+            )}
           </div>
         </div>
         <div className="store-detail-actions">

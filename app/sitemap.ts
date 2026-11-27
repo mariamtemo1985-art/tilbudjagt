@@ -3,6 +3,7 @@ import productsMeta from "@/content/products-meta.json";
 import { DEAL_CATEGORIES } from "@/lib/deal-categories";
 import { getPublishedGuides } from "@/lib/guides";
 import { STORES } from "@/lib/stores";
+import { getStoreSeoContentEn } from "@/lib/store-seo-content-en";
 import {
   danishArabicAlternates,
   languageAlternates,
@@ -66,15 +67,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ["da", "ar"],
     ),
   );
-  const storePages = STORES.flatMap((store) =>
-    translatedPages(
-      `/butikker/${store.slug}`,
+  const storePages = STORES.flatMap((store) => {
+    const path = `/butikker/${store.slug}`;
+    const hasEnglishContent = Boolean(getStoreSeoContentEn(store.slug));
+    const locales: Locale[] = hasEnglishContent
+      ? ["da", "en", "ar"]
+      : ["da", "ar"];
+    return translatedPages(
+      path,
       safeDate(store.checkedAt),
       "monthly",
       0.6,
-      languageAlternates(`/butikker/${store.slug}`),
-    ),
-  );
+      hasEnglishContent
+        ? languageAlternates(path)
+        : danishArabicAlternates(path),
+      locales,
+    );
+  });
   const categoryPages: MetadataRoute.Sitemap = [
     {
       url: "https://www.tilbudjagt.dk/tilbud",

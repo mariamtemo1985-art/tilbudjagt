@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import StoreDetail from "@/app/butikker/[slug]/store-detail";
+import StoreSeoContent from "@/components/store-seo-content";
 import { STORES, getStore } from "@/lib/stores";
+import { getStoreSeoContentEn } from "@/lib/store-seo-content-en";
 import {
   LOCALIZED_LOCALES,
+  danishArabicAlternates,
   isLocalizedLocale,
   languageAlternates,
-  localePath,
   localeUrl,
   type Locale,
 } from "@/lib/i18n";
@@ -30,16 +32,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isLocalizedLocale(locale)) return {};
   const store = getStore(slug);
   if (!store) return { title: locale === "ar" ? "المتجر غير موجود" : "Store not found" };
-  const title = storeTitle(store.name, locale);
-  const description = store.description[locale];
+  const seo = locale === "en" ? getStoreSeoContentEn(store.slug) : undefined;
+  const title = seo?.title ?? storeTitle(store.name, locale);
+  const description = seo?.description ?? store.description[locale];
   const url = localeUrl(locale, `/butikker/${store.slug}`);
   return {
-    title,
+    title: seo ? { absolute: seo.title } : title,
     description,
     alternates: {
       canonical: url,
-      languages: languageAlternates(`/butikker/${store.slug}`),
+      languages:
+        locale === "en" && !seo
+          ? danishArabicAlternates(`/butikker/${store.slug}`)
+          : languageAlternates(`/butikker/${store.slug}`),
     },
+    robots:
+      locale === "en" && !seo
+        ? { index: false, follow: true }
+        : { index: true, follow: true },
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_AR" : "en_US",
@@ -58,13 +68,24 @@ export default async function LocalizedStorePage({ params }: PageProps) {
   if (!store) notFound();
   const lang = locale as Locale;
   const url = localeUrl(lang, `/butikker/${store.slug}`);
+  const seo = lang === "en" ? getStoreSeoContentEn(store.slug) : undefined;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: storeTitle(store.name, locale),
-    description: store.description[lang],
+    name: seo?.title ?? storeTitle(store.name, locale),
+    description: seo?.description ?? store.description[lang],
     url,
     inLanguage: lang === "ar" ? "ar" : "en",
+    dateModified: store.checkedAt,
+    publisher: {
+      "@type": "Organization",
+      name: "TilbudJagt.dk",
+      url: "https://www.tilbudjagt.dk/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.tilbudjagt.dk/icon.png",
+      },
+    },
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
@@ -89,6 +110,20 @@ export default async function LocalizedStorePage({ params }: PageProps) {
       ],
     },
   };
+  const faqJsonLd = seo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: seo.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
@@ -96,7 +131,22 @@ export default async function LocalizedStorePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <StoreDetail store={store} initialLang={lang} forcedLang />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+      <StoreDetail store={store} initialLang={lang} forcedLang>
+        {seo && (
+          <StoreSeoContent
+            storeName={store.name}
+            slug={store.slug}
+            content={seo}
+            lang="en"
+          />
+        )}
+      </StoreDetail>
     </>
   );
 }

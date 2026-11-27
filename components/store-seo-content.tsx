@@ -4,15 +4,35 @@ type Props = {
   storeName: string;
   slug: string;
   content: StoreSeoContentType;
+  lang?: "da" | "en";
 };
 
-export default function StoreSeoContent({ storeName, slug, content }: Props) {
+const COPY = {
+  da: {
+    about: "Om",
+    faq: "Ofte stillede spørgsmål om",
+    related: "Relaterede sider",
+  },
+  en: {
+    about: "About",
+    faq: "Frequently asked questions about",
+    related: "Related pages",
+  },
+} as const;
+
+export default function StoreSeoContent({
+  storeName,
+  slug,
+  content,
+  lang = "da",
+}: Props) {
   const headingId = `store-seo-${slug}`;
+  const t = COPY[lang];
 
   return (
     <section className="store-seo" aria-labelledby={headingId}>
       <div className="store-seo-block">
-        <h2 id={headingId}>Om {storeName}</h2>
+        <h2 id={headingId}>{t.about} {storeName}</h2>
         <p>{content.intro}</p>
       </div>
 
@@ -31,7 +51,7 @@ export default function StoreSeoContent({ storeName, slug, content }: Props) {
       ))}
 
       <div className="store-seo-block">
-        <h2>Ofte stillede spørgsmål om {storeName}</h2>
+        <h2>{t.faq} {storeName}</h2>
         <div className="store-seo-faq">
           {content.faq.map((item) => (
             <details key={item.question}>
@@ -43,7 +63,7 @@ export default function StoreSeoContent({ storeName, slug, content }: Props) {
       </div>
 
       <div className="store-seo-block">
-        <h2>Relaterede sider</h2>
+        <h2>{t.related}</h2>
         <div className="store-seo-links">
           {content.related.map((link) => (
             <a key={link.href} href={link.href}>
