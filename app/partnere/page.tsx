@@ -134,6 +134,18 @@ export default function PartnersPage() {
           egen hjemmeside, og TilbudJagt modtager ingen provision.
         </p>
         <PartnerTable stores={direct} direct />
+        <p className="partners-note">
+          <strong>Eksempel – Vivara:</strong> Vivara er et direkte link uden
+          partneraftale. Linket går til{" "}
+          <a
+            href="https://www.vivara.dk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.vivara.dk
+          </a>
+          , og TilbudJagt tilføjer ingen sporingsparameter og modtager 0% provision.
+        </p>
       </section>
 
       <footer className="footer">
