@@ -44,6 +44,7 @@ const copy = {
     commissionLabel: "Provision til TilbudJagt",
     commissionValue: (rate: number) =>
       rate > 0 ? `${rate}% af købet` : "0% – ingen provision",
+    commissionUnknown: "Partneraftale – sats ikke verificeret",
     linkTypeLabel: "Linktype",
     linkTypePartner: "Kommercielt partnerlink",
     linkTypeDirect: "Direkte link til butikkens egen side",
@@ -83,6 +84,7 @@ const copy = {
     commissionLabel: "Commission to TilbudJagt",
     commissionValue: (rate: number) =>
       rate > 0 ? `${rate}% of the purchase` : "0% – no commission",
+    commissionUnknown: "Partner agreement – rate not verified",
     linkTypeLabel: "Link type",
     linkTypePartner: "Commercial partner link",
     linkTypeDirect: "Direct link to the store’s own website",
@@ -122,6 +124,7 @@ const copy = {
     commissionLabel: "العمولة إلى TilbudJagt",
     commissionValue: (rate: number) =>
       rate > 0 ? `${rate}% من قيمة الشراء` : "0% – لا توجد عمولة",
+    commissionUnknown: "اتفاقية شراكة – النسبة غير موثقة",
     linkTypeLabel: "نوع الرابط",
     linkTypePartner: "رابط تسويق بالعمولة",
     linkTypeDirect: "رابط مباشر إلى الموقع الرسمي للمتجر",
@@ -304,7 +307,11 @@ export default function StoreDetail({
                 </tr>
                 <tr>
                   <th scope="row">{t.commissionLabel}</th>
-                  <td>{t.commissionValue(commission)}</td>
+                  <td>
+                    {partner && commission === 0
+                      ? t.commissionUnknown
+                      : t.commissionValue(commission)}
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">{t.linkTypeLabel}</th>
