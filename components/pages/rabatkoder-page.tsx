@@ -38,6 +38,7 @@ const COPY: Record<Locale, {
   eyebrow: string;
   title: string;
   intro: string;
+  couponGuide: string;
   updated: string;
   disclosure: string;
   couponsTitle: string;
@@ -63,6 +64,7 @@ const COPY: Record<Locale, {
     title: "Rabatkoder og aktuelle tilbud",
     intro:
       "Her samler vi officielle rabatkoder fra vores partnerbutikker og et udvalg af nedsatte produkter. Priserne kommer direkte fra butikkernes produktfeeds og kan ændre sig, så tjek altid den endelige pris hos butikken.",
+    couponGuide: "Sådan bruger du en rabatkode",
     updated: "Opdateret 25. november 2026",
     disclosure:
       "Vi kan modtage provision, når du handler via vores links. Det koster ikke ekstra for dig.",
@@ -91,6 +93,7 @@ const COPY: Record<Locale, {
     title: "Coupon codes and current deals",
     intro:
       "We collect official coupon codes from our partner stores and a selection of discounted products. Prices come directly from the stores’ product feeds and can change, so always check the final price with the store.",
+    couponGuide: "How to use a coupon code",
     updated: "Updated 25 November 2026",
     disclosure:
       "We may receive a commission when you shop through our links. It costs you nothing extra.",
@@ -119,6 +122,7 @@ const COPY: Record<Locale, {
     title: "أكواد الخصم والعروض الحالية",
     intro:
       "نجمع هنا أكواد خصم رسمية من المتاجر الشريكة ومجموعة مختارة من المنتجات المخفّضة. تأتي الأسعار مباشرة من مصادر المتاجر وقد تتغير، لذا تحقق دائمًا من السعر النهائي عند المتجر.",
+    couponGuide: "كيف تستخدم كود الخصم",
     updated: "آخر تحديث 25 نوفمبر 2026",
     disclosure:
       "قد نحصل على عمولة عندما تتسوق عبر روابطنا. لا يكلفك ذلك أي مبلغ إضافي.",
@@ -190,6 +194,9 @@ export default function RabatkoderPage({ lang = "da" }: { lang?: Locale }) {
         <p className="deals-updated">
           <RefreshCw size={13} /> {t.updated} · <span>{t.disclosure}</span>
         </p>
+        <a className="text-link" href={localePath(lang, "/guides/saadan-bruger-du-en-rabatkode")}>
+          {t.couponGuide} <ArrowRight size={15} />
+        </a>
       </section>
       <section className="wrap deals-section">
         <h2>{t.couponsTitle}</h2>

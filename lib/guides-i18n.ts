@@ -17,8 +17,17 @@ export function localizeGuide(guide: Guide, locale: Locale): Guide {
     description: translate(guide.description, locale),
     lead: translate(guide.lead, locale),
     sections: guide.sections.map((section) => ({
+      ...section,
       heading: translate(section.heading, locale),
       paragraphs: section.paragraphs.map((paragraph) => translate(paragraph, locale)),
+      links: section.links?.map((link) => ({
+        ...link,
+        label: translate(link.label, locale),
+      })),
+    })),
+    faq: guide.faq?.map((item) => ({
+      question: translate(item.question, locale),
+      answer: translate(item.answer, locale),
     })),
   };
 }

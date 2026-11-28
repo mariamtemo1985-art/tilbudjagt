@@ -28,6 +28,7 @@ const COPY: Record<Locale, {
   title: string;
   intro: string;
   readGuide: string;
+  methodology: string;
   ctaTitle: string;
   ctaText: string;
   seeStores: string;
@@ -45,6 +46,7 @@ const COPY: Record<Locale, {
     intro:
       "Vi viser først priser, når de kommer fra butikken selv. Indtil da kan du bruge vores guides til at vurdere, om et tilbud er værd at tage.",
     readGuide: "Læs guiden",
+    methodology: "Sådan tjekker vi tilbud og butikker",
     ctaTitle: "Find butikkerne bag tilbuddene",
     ctaText: "Søg på navn eller kategori og se, hvilke butikker der er godkendte partnere.",
     seeStores: "Se butikker",
@@ -62,6 +64,7 @@ const COPY: Record<Locale, {
     intro:
       "We only show prices when they come from the store itself. Until then, use our guides to judge whether an offer is worth taking.",
     readGuide: "Read the guide",
+    methodology: "How we check offers and stores",
     ctaTitle: "Find the stores behind the deals",
     ctaText: "Search by name or category and see which stores are approved partners.",
     seeStores: "See stores",
@@ -79,6 +82,7 @@ const COPY: Record<Locale, {
     intro:
       "لا نعرض الأسعار إلا عندما تأتي من المتجر نفسه. حتى ذلك الحين، استخدم أدلتنا لتقييم ما إذا كان العرض يستحق المتابعة.",
     readGuide: "اقرأ الدليل",
+    methodology: "كيف نتحقق من العروض والمتاجر",
     ctaTitle: "اكتشف المتاجر وراء العروض",
     ctaText: "ابحث بالاسم أو الفئة وتعرّف على المتاجر الشريكة المعتمدة.",
     seeStores: "شاهد المتاجر",
@@ -120,6 +124,9 @@ export default function GuidesPage({ lang = "da" }: { lang?: Locale }) {
         <span className="eyebrow muted"><BookOpen size={14} /> {t.eyebrow}</span>
         <h1>{t.title}</h1>
         <p>{t.intro}</p>
+        <a className="text-link" href={guideHref(lang, "saadan-tjekker-vi-tilbud")}>
+          {t.methodology} <ArrowRight size={15} />
+        </a>
       </section>
       <section className="wrap guides-list">
         {guides.map((guide) => (

@@ -39,6 +39,8 @@ const COPY: Record<Locale, {
   readMore: string;
   relatedStoresTitle: string;
   visitStore: string;
+  faqTitle: string;
+  methodology: string;
   disclaimer: string;
   footer: string;
   footerLinks: string;
@@ -57,6 +59,8 @@ const COPY: Record<Locale, {
     readMore: "Læs flere guides",
     relatedStoresTitle: "Butikker du kan sammenligne",
     visitStore: "Se butik",
+    faqTitle: "Ofte stillede spørgsmål",
+    methodology: "Sådan tjekker vi tilbud",
     disclaimer:
       "Guiden er generel forbrugerinformation og ikke personlig rådgivning. Kontroller altid pris, lager og vilkår hos butikken, før du køber.",
     footer: "Guiderne er generel forbrugerinformation, ikke personlig rådgivning.",
@@ -76,6 +80,8 @@ const COPY: Record<Locale, {
     readMore: "Read more guides",
     relatedStoresTitle: "Stores to compare",
     visitStore: "View store",
+    faqTitle: "Frequently asked questions",
+    methodology: "How we check offers",
     disclaimer:
       "This guide is general consumer information, not personal advice. Always check price, stock and terms with the store before buying.",
     footer: "The guides are general consumer information, not personal advice.",
@@ -95,6 +101,8 @@ const COPY: Record<Locale, {
     readMore: "اقرأ المزيد من الأدلة",
     relatedStoresTitle: "متاجر يمكنك مقارنتها",
     visitStore: "شاهد المتجر",
+    faqTitle: "الأسئلة الشائعة",
+    methodology: "كيف نتحقق من العروض",
     disclaimer:
       "هذا الدليل معلومات عامة للمستهلك وليس نصيحة شخصية. تحقق دائمًا من السعر والتوفر والشروط عند المتجر قبل الشراء.",
     footer: "الأدلة معلومات عامة للمستهلك وليست نصيحة شخصية.",
@@ -104,6 +112,10 @@ const COPY: Record<Locale, {
 
 function guideHref(lang: Locale, slug: string) {
   return lang === "da" ? `/guides/${slug}` : localePath(lang, `/guides/${slug}`);
+}
+function contentHref(lang: Locale, href: string) {
+  if (href.endsWith(".html")) return href;
+  return localePath(lang, href);
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -144,6 +156,21 @@ export default async function GuidePage({ slug, lang = "da" }: GuidePageProps) {
     .filter((item) => item.slug !== guide.slug)
     .slice(0, 3)
     .map((item) => localizeGuide(item, lang));
+  const faqJsonLd = guide.faq?.length
+    ? [
+        {
+          "@type": "FAQPage",
+          mainEntity: guide.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        },
+      ]
+    : [];
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -199,6 +226,7 @@ export default async function GuidePage({ slug, lang = "da" }: GuidePageProps) {
           },
         ],
       },
+      ...faqJsonLd,
     ],
   };
 
@@ -245,8 +273,28 @@ export default async function GuidePage({ slug, lang = "da" }: GuidePageProps) {
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
+            {section.links && section.links.length > 0 && (
+              <p className="guide-section-links">
+                {section.links.map((link) => (
+                  <a className="text-link" href={contentHref(lang, link.href)} key={link.href}>
+                    {link.label} <ArrowRight size={15} />
+                  </a>
+                ))}
+              </p>
+            )}
           </section>
         ))}
+        {guide.faq && guide.faq.length > 0 && (
+          <section className="guide-faq">
+            <h2>{t.faqTitle}</h2>
+            {guide.faq.map((item) => (
+              <details key={item.question}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </section>
+        )}
         {guide.relatedStores && guide.relatedStores.length > 0 && (
           <section className="guide-related-stores">
             <h2>{t.relatedStoresTitle}</h2>
@@ -290,6 +338,14 @@ export default async function GuidePage({ slug, lang = "da" }: GuidePageProps) {
           <a className="store-card-info" href={localePath(lang, "/rabatkoder")}>
             {t.seeCoupons}
           </a>
+          {guide.slug !== "saadan-tjekker-vi-tilbud" && (
+            <a
+              className="store-card-info"
+              href={localePath(lang, "/guides/saadan-tjekker-vi-tilbud")}
+            >
+              {t.methodology}
+            </a>
+          )}
           <a className="store-card-info" href={guidesPath}>
             {t.readMore}
           </a>

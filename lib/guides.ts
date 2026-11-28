@@ -1,4 +1,10 @@
-export type GuideSection = { heading: string; paragraphs: string[] };
+export type GuideLink = { label: string; href: string };
+export type GuideFaq = { question: string; answer: string };
+export type GuideSection = {
+  heading: string;
+  paragraphs: string[];
+  links?: GuideLink[];
+};
 
 export type Guide = {
   slug: string;
@@ -10,6 +16,7 @@ export type Guide = {
   /** ISO-dato (YYYY-MM-DD). Artiklen vises først fra denne dato. */
   publishAt?: string;
   sections: GuideSection[];
+  faq?: GuideFaq[];
   /** Slugs for relevant stores shown at the end of the guide. */
   relatedStores?: string[];
 };
@@ -700,10 +707,332 @@ export const GUIDES: Guide[] = [
       "kirlund",
       "cleanstream",
       "nordic-water",
-      "brusefilteret",
-      "aeloa"
-    ],
+    "brusefilteret",
+    "aeloa"
+  ],
 
+  },
+  {
+    slug: "saadan-bruger-du-en-rabatkode",
+    kicker: "Rabatkoder",
+    title: "Sådan bruger du en rabatkode: tjek listen før du betaler",
+    description:
+      "Find officielle rabatkoder, læs betingelserne og undgå at betale for en kode, der ikke virker. En praktisk tjekliste til danske webshops.",
+    lead:
+      "En rabatkode kan spare dig penge, men kun hvis den er officiel, stadig gyldig og passer til din kurv. Her er rækkefølgen, vi selv bruger.",
+    updated: "28. november 2026",
+    publishAt: "2026-11-28",
+    sections: [
+      {
+        heading: "1. Start med butikkens egne kanaler",
+        paragraphs: [
+          "Den mest pålidelige rabatkode findes normalt på butikkens egen hjemmeside, i dens nyhedsbrev eller i dens app. Mange butikker giver også en velkomstrabat, når du tilmelder dig nyhedsbrevet. Det er sjældent nødvendigt at betale for en kode, og du bør være varsom med sider, der kræver betaling eller mange personlige oplysninger, før du kan se koden.",
+          "På TilbudJagt samler vi officielle koder fra vores partnerbutikker på siden Rabatkoder. Hvis der ikke er en aktiv kode til den butik, du leder efter, så brug butikkens egne tilbud og sammenlign den samlede pris i stedet for at jagte en kode, der måske er udløbet.",
+        ],
+        links: [
+          { label: "Se alle rabatkoder", href: "/rabatkoder" },
+          { label: "POWER", href: "/butikker/power" },
+          { label: "Elgiganten", href: "/butikker/elgiganten" },
+        ],
+      },
+      {
+        heading: "2. Læs betingelserne, før du kopierer koden",
+        paragraphs: [
+          "En rabatkode er ikke et frit gavekort. De fleste koder har et minimumskøb, gælder kun for bestemte varegrupper, kræver en ny kundekonto eller kan ikke kombineres med andre tilbud. Nogle koder virker kun én gang pr. kunde, og andre udløber på en bestemt dato.",
+          "Regn værdien igennem, hvis koden kræver et medlemskab eller et større køb, end du havde planlagt. En rabat på 100 kroner er ikke en besparelse, hvis du køber varer for 400 kroner, som du ellers ikke havde brugt.",
+        ],
+      },
+      {
+        heading: "3. Indtast koden i kurven – før du betaler",
+        paragraphs: [
+          "Læg varen i kurven, find feltet med rabatkode eller gavekort, og indsæt koden uden ekstra mellemrum. Tryk på knappen, der aktiverer koden, og kontrollér, at rabatten faktisk fremgår som en særskilt linje i ordreoversigten.",
+          "Hvis rabatten ikke vises, så gå et skridt tilbage og prøv igen, før du betaler. Tag et skærmbillede af kurven og af ordrebekræftelsen, hvis rabatten er vigtig for din beslutning.",
+        ],
+      },
+      {
+        heading: "4. Hvis koden ikke virker",
+        paragraphs: [
+          "Kontrollér først, om koden er udløbet, om du har nået minimumskøbet, og om varen er omfattet af tilbuddet. Prøv også at indtaste koden i et almindeligt browservindue uden andre udvidelser, hvis feltet ikke reagerer.",
+          "Hvis koden stadig ikke virker, så kontakt butikkens kundeservice, før du opretter en ny ordre. Undgå at gennemføre købet to gange, fordi det kan give ekstra arbejde med betaling og returnering.",
+        ],
+      },
+      {
+        heading: "5. Gem dokumentationen",
+        paragraphs: [
+          "Gem ordrebekræftelse, kvittering og et skærmbillede af rabatten, indtil varen er modtaget og kontrolleret. Det gør det lettere at dokumentere, hvad du faktisk betalte, hvis du senere skal returnere varen eller reklamere over en fejl.",
+          "Ved retur beregnes tilbagebetalingen normalt ud fra det beløb, du betalte efter rabat. Derfor er det en god vane at gemme både førprisen og den endelige pris.",
+        ],
+      },
+      {
+        heading: "6. Brug koden som en del af en større beslutning",
+        paragraphs: [
+          "En rabatkode er kun én del af regnestykket. Sammenlign den samlede pris inklusive fragt, levering og eventuelle gebyrer, og overvej, om varen faktisk løser et behov, du har. En kode, der får dig til at købe noget unødvendigt, er dyrere end ingen rabat.",
+          "Hvis du er i tvivl, så vent et døgn. Mange koder gælder i flere dage, og en kort pause gør det lettere at skelne et reelt behov fra et impulskøb.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Kan jeg bruge flere rabatkoder på samme ordre?",
+        answer:
+          "Det afhænger af butikkens betingelser. Mange butikker tillader kun én rabatkode pr. ordre, og nogle koder kan ikke kombineres med udsalg eller medlemspriser. Læs vilkårene, før du betaler.",
+      },
+      {
+        question: "Koster det noget at bruge en rabatkode?",
+        answer:
+          "Nej. En officiel rabatkode bør være gratis at bruge. Vær varsom med sider, der kræver betaling, abonnement eller følsomme oplysninger, før de viser en kode.",
+      },
+      {
+        question: "Hvorfor virker min rabatkode ikke?",
+        answer:
+          "Koden kan være udløbet, kræve et minimumskøb, gælde en bestemt varegruppe eller allerede være brugt på din konto. Kontrollér betingelserne og kontakt butikken, hvis du er i tvivl.",
+      },
+      {
+        question: "Får jeg hele beløbet tilbage, hvis jeg returnerer en vare købt med rabat?",
+        answer:
+          "Du får som udgangspunkt det beløb tilbage, du faktisk betalte efter rabat. Gem ordrebekræftelse og kvittering, så du kan dokumentere den endelige pris.",
+      },
+    ],
+    relatedStores: ["elgiganten", "power", "jysk", "matas", "proshop"],
+  },
+  {
+    slug: "power-tilbud-og-rabatkode",
+    kicker: "Elektronik",
+    title: "POWER tilbud og rabatkode: find en reel besparelse",
+    description:
+      "Sådan finder du POWERs aktuelle tilbud, vurderer rabatkoder og sammenligner den samlede pris på elektronik, før du køber.",
+    lead:
+      "POWER kører ofte kampagner, men et stort prisskilt er ikke det samme som en god pris. Her er en enkel metode til at tjekke tilbud og rabatkoder.",
+    updated: "28. november 2026",
+    publishAt: "2026-11-28",
+    sections: [
+      {
+        heading: "Hvor finder du POWERs aktuelle tilbud?",
+        paragraphs: [
+          "Start på power.dk, i POWERs app og i butikkernes egne kampagnekanaler. Her fremgår gyldighedsperioden, lagerstatus og eventuelle betingelser. Vores butiksside samler et overblik og fører dig videre til butikken, så du kan tjekke den nyeste pris.",
+          "Priser og lagerbeholdning kan ændre sig i løbet af dagen. Kontrollér derfor altid den endelige pris i kurven, før du betaler – især ved populære varer og i udsalgperioder.",
+        ],
+        links: [
+          { label: "Se POWER-siden", href: "/butikker/power" },
+          { label: "Mobiltelefoner", href: "/tilbud/mobiltelefoner" },
+          { label: "Printere og blæk", href: "/tilbud/printere-og-blaek" },
+        ],
+      },
+      {
+        heading: "Rabatkoder: brug kun dem, der kommer fra POWER selv",
+        paragraphs: [
+          "Der findes ikke altid en offentlig rabatkode til POWER. Når der er en kampagnekode, kommer den normalt fra POWERs egen hjemmeside, nyhedsbrev, app eller en officiel partner. En kode, der ligger på en tilfældig kuponside, kan være udløbet eller have betingelser, som ikke fremgår tydeligt.",
+          "Betal aldrig for en rabatkode. Læs også, om koden gælder hele sortimentet eller kun udvalgte varer, og om den kan bruges sammen med et allerede nedsat produkt.",
+        ],
+      },
+      {
+        heading: "Sammenlign modelnummer og samlet pris",
+        paragraphs: [
+          "Elektronikprodukter kan hedde næsten det samme på tværs af årgange. Skriv det præcise modelnummer ned, og sammenlign den samme model hos flere forhandlere. En ældre model til en ny pris er ikke et godt tilbud.",
+          "Læg levering, installation, ophugning af den gamle vare, tilbehør og eventuel forsikring oveni prisen. Hvis butikken tilbyder prismatch eller prisgaranti, så læs betingelserne, før du regner med den.",
+        ],
+      },
+      {
+        heading: "Black Friday og andre udsalg",
+        paragraphs: [
+          "Ved store udsalg er det især vigtigt at kende den normale pris i forvejen. Skriv prisen ned, når du ser en vare, du overvejer at købe senere, så du kan vurdere, om rabatten er reel.",
+          "Tjek lagerstatus, leveringstid og returvilkår, før du slår til. Et tidsbegrænset tilbud er ikke en god handel, hvis varen ikke passer til dit behov, eller hvis den først leveres efter lang tid.",
+        ],
+      },
+      {
+        heading: "Returnering, garanti og reklamation",
+        paragraphs: [
+          "Når du handler online hos en dansk forhandler, har du som udgangspunkt 14 dages fortrydelsesret. Der kan være undtagelser for visse varer, så læs butikkens returvilkår, før du køber.",
+          "Gem ordrebekræftelse og kvittering. Hvis varen er defekt, gælder reklamationsretten efter de danske regler – også efter at fortrydelsesfristen er udløbet.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Har POWER altid en rabatkode?",
+        answer:
+          "Nej. POWER kører kampagner og tilbud, men der er ikke nødvendigvis en offentlig rabatkode hele tiden. Brug butikkens egne kanaler og sammenlign den samlede pris i stedet for at forvente en fast kode.",
+      },
+      {
+        question: "Kan jeg bruge en rabatkode på et produkt, der allerede er nedsat?",
+        answer:
+          "Det afhænger af kampagnens betingelser. Nogle koder kan ikke kombineres med andre tilbud. Læs vilkårene, eller spørg butikkens kundeservice, før du betaler.",
+      },
+      {
+        question: "Er POWER altid den billigste butik?",
+        answer:
+          "Det kan du ikke regne med. Prisen afhænger af model, tidspunkt og lager. Sammenlign det samme modelnummer og den samlede pris inklusive levering og eventuelle gebyrer.",
+      },
+      {
+        question: "Hvordan vurderer jeg, om et POWER-tilbud er reelt?",
+        answer:
+          "Sammenlign med den pris, du selv har set tidligere, tjek modelnummeret, og regn levering og eventuelle ekstraomkostninger med. Et stort prisskilt er ikke i sig selv dokumentation for en reel besparelse.",
+      },
+    ],
+    relatedStores: ["power", "elgiganten", "proshop", "komplett", "holdit"],
+  },
+  {
+    slug: "elgiganten-rabatkode-og-tilbud",
+    kicker: "Elektronik",
+    title: "Elgiganten rabatkode og tilbud: tjek prisen før du køber",
+    description:
+      "Find Elgigantens officielle tilbud, forstå rabatkoder og sammenlign elektronikpriser uden at gå glip af levering, garanti og returvilkår.",
+    lead:
+      "Elgiganten er en af Danmarks største elektronikkæder, og tilbuddene skifter ofte. Her er, hvordan du tjekker et tilbud og en rabatkode uden at betale for meget.",
+    updated: "28. november 2026",
+    publishAt: "2026-11-28",
+    sections: [
+      {
+        heading: "Find de officielle tilbud",
+        paragraphs: [
+          "De aktuelle tilbud findes på elgiganten.dk, i Elgigantens app og i butikkernes kampagnekanaler. Vores butiksside giver dig et samlet overblik og et direkte link til butikken, hvor du kan se den nyeste pris og lagerstatus.",
+          "Kampagner kan have forskellige slutdatoer, og nogle varer sælges kun i begrænsede mængder. Tjek derfor datoen på det enkelte tilbud, før du tager afsted.",
+        ],
+        links: [
+          { label: "Se Elgiganten-siden", href: "/butikker/elgiganten" },
+          { label: "Mobiltelefoner", href: "/tilbud/mobiltelefoner" },
+          { label: "Printere og blæk", href: "/tilbud/printere-og-blaek" },
+        ],
+      },
+      {
+        heading: "Rabatkoder og medlemsfordele",
+        paragraphs: [
+          "Elgiganten har ikke nødvendigvis en offentlig rabatkode til alle køb. Når der findes en kode eller en medlemsfordel, kommer den fra butikkens egne kanaler. Læs betingelserne for minimumskøb, varegrupper og gyldighed, før du regner med rabatten.",
+          "Brug ikke en kode, som du har fået fra en ukendt side, uden at kontrollere den hos butikken. Betal heller ikke for en kode – en ægte rabatkode bør være gratis at bruge.",
+        ],
+      },
+      {
+        heading: "Sammenlign modelnummer og samlet pris",
+        paragraphs: [
+          "To produkter kan se ens ud, men have forskellige modelnumre, årgange og garantier. Skriv modelnummeret ned, og sammenlign den samme model hos andre forhandlere. Ellers risikerer du at sammenligne en ny model med en ældre udgave.",
+          "Læg levering, installation, bortskaffelse af den gamle vare og tilbehør oveni prisen. Hvis butikken tilbyder prismatch, så læs de præcise betingelser, før du antager, at prisen automatisk matcher en anden butik.",
+        ],
+      },
+      {
+        heading: "Outlet og åbne kasser",
+        paragraphs: [
+          "Outletvarer og åbne kasser kan give en lavere pris, men tjek hvad der mangler af tilbehør, om varen har kosmetiske skader, og hvilken garanti der følger med. Læs også returvilkårene, før du køber.",
+          "En åben kasse er ikke nødvendigvis et dårligt køb, men den skal sammenlignes med prisen på en ny vare med fuld garanti og tilbehør.",
+        ],
+      },
+      {
+        heading: "Black Friday og retur",
+        paragraphs: [
+          "Ved Black Friday og andre udsalg er det ekstra vigtigt at have en liste og et prismind. Tjek lager, leveringstid og returfrister, før du køber. Et stort prisskilt er ikke en garanti for, at prisen er den laveste i året.",
+          "Gem ordrebekræftelse og kvittering. Ved onlinekøb gælder som udgangspunkt 14 dages fortrydelsesret, og reklamationsretten gælder, hvis varen er defekt.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Har Elgiganten altid en rabatkode?",
+        answer:
+          "Nej. Elgiganten kører løbende kampagner, men der er ikke nødvendigvis en offentlig rabatkode hele tiden. Brug butikkens egne kanaler, og sammenlign den samlede pris.",
+      },
+      {
+        question: "Kan jeg kombinere en rabatkode med et andet tilbud?",
+        answer:
+          "Det afhænger af betingelserne. Mange kampagner tillader ikke, at koden kombineres med udsalg eller andre rabatter. Læs vilkårene, før du betaler.",
+      },
+      {
+        question: "Hvad betyder prismatch, og kan jeg regne med det?",
+        answer:
+          "Prismatch er en frivillig ordning, som butikken selv fastsætter reglerne for. Læs betingelserne, og sammenlign det samme modelnummer. Hvis ordningen ikke gælder, er den samlede pris stadig det vigtigste sammenligningsgrundlag.",
+      },
+      {
+        question: "Er outletvarer dækket af garanti?",
+        answer:
+          "Det afhænger af varen og butikkens vilkår. Tjek, om der følger fuld garanti, om tilbehør mangler, og hvordan returretten fungerer, før du køber.",
+      },
+    ],
+    relatedStores: ["elgiganten", "power", "proshop", "komplett", "holdit"],
+  },
+  {
+    slug: "saadan-tjekker-vi-tilbud",
+    kicker: "Om TilbudJagt",
+    title: "Sådan tjekker vi tilbud og butikker",
+    description:
+      "Vores metode: hvordan vi vælger butikker, verificerer priser, mærker reklamelinks og retter fejl. Åbenhed om, hvad vi kan – og ikke kan – garantere.",
+    lead:
+      "Tillid kræver åbenhed. Her forklarer vi, hvordan TilbudJagt samler butikker og tilbud, hvordan vi tjener penge, og hvordan du kan få en fejl rettet.",
+    updated: "28. november 2026",
+    publishAt: "2026-11-28",
+    sections: [
+      {
+        heading: "Hvem står bag TilbudJagt?",
+        paragraphs: [
+          "TilbudJagt.dk er en uafhængig dansk tilbuds- og butiksoversigt. Vi samler butikker, produktfeeds, rabatkoder og redaktionelle guides for at gøre det lettere at sammenligne et tilbud, før du køber.",
+          "Vi er ikke en butik og sælger ikke varerne selv. Hvis du har spørgsmål om en ordre, en levering eller en returnering, skal du kontakte den butik, du har handlet hos.",
+        ],
+        links: [
+          { label: "Om TilbudJagt", href: "/about.html" },
+          { label: "Kontakt os", href: "/contact.html" },
+        ],
+      },
+      {
+        heading: "Hvordan vælger vi butikker?",
+        paragraphs: [
+          "Vi viser et bredt udvalg af danske butikker fordelt på dagligvarer, elektronik, hjem, mode, skønhed, sport og personlig pleje. Nogle butikker er godkendte partnere med et affiliate-link, mens andre vises som direkte links uden provision.",
+          "En partneraftale er ikke en betingelse for at blive vist i oversigten. Vi bestræber os på at gøre forskellen tydelig, så du kan se, hvornår et link er et reklamelink, og hvornår det er et almindeligt link til butikken.",
+        ],
+      },
+      {
+        heading: "Hvordan verificerer vi priser og tilbud?",
+        paragraphs: [
+          "Mange priser kommer fra butikkernes egne produktfeeds, som kan opdateres med mellemrum. På butikssiderne angiver vi, hvornår indholdet sidst er kontrolleret, når en sådan dato er tilgængelig.",
+          "Vi kan ikke garantere, at en pris er gældende i det øjeblik, du besøger butikken. Lager, kampagner og leveringsvilkår kan ændre sig. Den pris, der vises i butikkens kurv, er den gældende pris.",
+        ],
+      },
+      {
+        heading: "Sådan mærker vi reklame",
+        paragraphs: [
+          "Nogle links er affiliate-links. Hvis du klikker på et sådant link og køber en vare, kan vi modtage en provision fra butikken. Provisionen lægges ikke oveni den pris, du betaler.",
+          "Vi mærker kommercielle links med «Reklamelink» eller en tilsvarende forklaring, og de tekniske links er markeret med rel-attributter som sponsored og nofollow. Du kan læse mere i guiden Affiliate-links forklaret.",
+        ],
+        links: [
+          { label: "Affiliate-links forklaret", href: "/guides/affiliate-links-forklaret" },
+          { label: "Se rabatkoder", href: "/rabatkoder" },
+        ],
+      },
+      {
+        heading: "Sådan retter vi fejl",
+        paragraphs: [
+          "Hvis du finder en pris, der er forkert, et link der ikke virker, eller et tilbud der er udløbet, så skriv til os med sidens adresse og gerne et skærmbillede. Vi prioriterer fejl, der kan føre til et forkert køb.",
+          "Vi retter indholdet, når vi kan bekræfte fejlen, og vi fjerner eller opdaterer tilbud, der ikke længere er gyldige. Vi kan ikke garantere en bestemt responstid, men vi læser alle henvendelser.",
+        ],
+        links: [{ label: "Kontakt os", href: "/contact.html" }],
+      },
+      {
+        heading: "Hvad vi ikke gør",
+        paragraphs: [
+          "Vi opfinder ikke rabatkoder, vi skriver ikke falske anmeldelser, og vi lover ikke en bestemt besparelse. Guiderne er generel forbrugerinformation, ikke personlig rådgivning.",
+          "Hvis en butik eller et tilbud ikke lever op til vores forventninger, kan vi fjerne det fra oversigten. Men vi kan ikke garantere, at alle butikker altid har de laveste priser, eller at alle tilbud er tilgængelige i hele landet.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Tjener TilbudJagt penge på mine køb?",
+        answer:
+          "Nogle gange. Hvis du køber via et affiliate-link, kan vi modtage en provision fra butikken. Det koster ikke ekstra for dig, og det påvirker ikke den pris, du betaler.",
+      },
+      {
+        question: "Er alle butikker på TilbudJagt partnere?",
+        answer:
+          "Nej. Oversigten indeholder både godkendte partnere med affiliate-links og butikker, der vises som direkte links uden provision. Vi markerer forskellen, så du kan se, hvornår et link er kommercielt.",
+      },
+      {
+        question: "Kan jeg regne med, at prisen på siden er den nyeste?",
+        answer:
+          "Priser kan ændre sig, og vi kan ikke garantere, at de er opdateret i det øjeblik, du læser dem. Kontrollér altid den endelige pris i butikkens kurv, før du betaler.",
+      },
+      {
+        question: "Hvordan får jeg rettet en fejl på siden?",
+        answer:
+          "Send os en besked via kontaktformularen med sidens adresse og gerne et skærmbillede. Beskriv kort, hvad der er forkert, så vi kan undersøge det.",
+      },
+    ],
+    relatedStores: ["proshop", "power", "matas", "jysk"],
   },
 
 ];
