@@ -721,3 +721,4 @@ html[dir="rtl"] .deal-badge{left:auto;right:8px}
   .partners-table th,.partners-table td{padding:8px 9px}
   .partners-table{font-size:10px}
 }
+.partners-note a{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:2px}
