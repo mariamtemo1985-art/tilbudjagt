@@ -15,6 +15,8 @@ declare global {
   }
 }
 
+type ClarityQueue = ((...args: unknown[]) => void) & { q?: unknown[][] };
+
 function loadGa(id: string) {
   if (document.querySelector('script[data-tj-ga="1"]')) return;
   const script = document.createElement("script");
@@ -34,6 +36,14 @@ function loadGa(id: string) {
 
 function loadClarity(id: string) {
   if (document.querySelector('script[data-tj-clarity="1"]')) return;
+  // Clarity's tag expects window.clarity to exist before it runs and will
+  // otherwise throw "Cannot read properties of undefined (reading 'v')".
+  // This is the same command queue used by Microsoft's official snippet.
+  const clarity: ClarityQueue = (...args) => {
+    clarity.q = clarity.q || [];
+    clarity.q.push(args);
+  };
+  window.clarity = clarity;
   const script = document.createElement("script");
   script.async = true;
   script.dataset.tjClarity = "1";
