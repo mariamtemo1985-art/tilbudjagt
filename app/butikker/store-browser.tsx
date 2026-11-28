@@ -8,7 +8,6 @@ import {
   getStoreCategoryLabel,
   type Store,
   type StoreCategory,
-  type StoreSpecialty,
 } from "@/lib/stores";
 import StoreLogo from "@/components/store-logo";
 import ShareStoreButton from "@/components/ShareStoreButton";
@@ -25,7 +24,7 @@ const COPY: Record<
     supermarkets: string;
     electronicsKicker: string;
     electronicsTitle: string;
-    electronicsDescription: (count: number, specialties: number) => string;
+    electronicsDescription: (count: number) => string;
     visit: string;
     storeInfo: string;
     share: string;
@@ -48,19 +47,20 @@ const COPY: Record<
     othersKicker: string;
     othersTitle: string;
     othersDescription: string;
+    categoryKicker: string;
+    categoryDescription: (label: string) => string;
     featuredKicker: string;
     featuredTitle: string;
     featuredDescription: string;
-    otherElectronics: string;
   }
 > = {
   da: {
     all: "Alle",
     supermarkets: "Supermarkeder",
     electronicsKicker: "ELEKTRONIK",
-    electronicsTitle: "Elektronik efter speciale",
-    electronicsDescription: (count, specialties) =>
-      `${count} butikker opdelt i ${specialties} specialer, så det er nemt at finde den rigtige type butik.`,
+    electronicsTitle: "Elektronik",
+    electronicsDescription: (count) =>
+      `${count} elektronikbutikker samlet i ét overblik. Brug specialet på kortet til at finde den rigtige type butik.`,
     visit: "Besøg",
     storeInfo: "Butiksinfo",
     share: "Del",
@@ -86,19 +86,21 @@ const COPY: Record<
     othersTitle: "Andre butikker",
     othersDescription:
       "Øvrige butikker uden en godkendt partneraftale. Linket går direkte til butikken uden provision.",
+    categoryKicker: "KATEGORI",
+    categoryDescription: (label) =>
+      `Butikker i kategorien ${label}. Klik på et logo for at besøge butikken.`,
     featuredKicker: "UDVALGTE",
     featuredTitle: "Fremhævede partnerbutikker",
     featuredDescription:
       "Et udvalg af vores godkendte partnere samlet øverst. Links er reklame, og vi kan få provision, hvis du køber.",
-    otherElectronics: "Andet elektronik",
   },
   en: {
     all: "All",
     supermarkets: "Supermarkets",
     electronicsKicker: "ELECTRONICS",
-    electronicsTitle: "Electronics by specialty",
-    electronicsDescription: (count, specialties) =>
-      `${count} stores across ${specialties} specialties, making it easier to find the right kind of store.`,
+    electronicsTitle: "Electronics",
+    electronicsDescription: (count) =>
+      `${count} electronics stores in one overview. Use the specialty label on each card to find the right type of store.`,
     visit: "Visit",
     storeInfo: "Store info",
     share: "Share",
@@ -124,19 +126,21 @@ const COPY: Record<
     othersTitle: "Other stores",
     othersDescription:
       "Other stores without an approved partner agreement. The link goes directly to the store without commission.",
+    categoryKicker: "CATEGORY",
+    categoryDescription: (label) =>
+      `Stores in ${label}. Click a logo to visit the store.`,
     featuredKicker: "FEATURED",
     featuredTitle: "Featured partner stores",
     featuredDescription:
       "A selection of our approved partners at the top. Links are advertising and we may earn a commission if you buy.",
-    otherElectronics: "Other electronics",
   },
   ar: {
     all: "الكل",
     supermarkets: "محلات السوبر ماركت",
     electronicsKicker: "إلكترونيات",
-    electronicsTitle: "إلكترونيات حسب الاختصاص",
-    electronicsDescription: (count, specialties) =>
-      `${count} متجرًا موزعة على ${specialties} اختصاصات، لتسهيل العثور على نوع المتجر المناسب.`,
+    electronicsTitle: "إلكترونيات",
+    electronicsDescription: (count) =>
+      `${count} متجر إلكترونيات في نظرة واحدة. استخدم اختصاص المتجر الظاهر على البطاقة للعثور على النوع المناسب.`,
     visit: "زيارة",
     storeInfo: "تفاصيل المتجر",
     share: "شارك",
@@ -162,11 +166,13 @@ const COPY: Record<
     othersTitle: "متاجر أخرى",
     othersDescription:
       "متاجر أخرى دون اتفاقية شراكة معتمدة. يفتح الرابط المتجر مباشرة دون عمولة.",
+    categoryKicker: "تصنيف",
+    categoryDescription: (label) =>
+      `متاجر في تصنيف ${label}. اضغط على الشعار لزيارة المتجر.`,
     featuredKicker: "مختارة",
     featuredTitle: "متاجر شركاء مميزة",
     featuredDescription:
       "مجموعة مختارة من شركائنا المعتمدين في الأعلى. الروابط إعلانية وقد نحصل على عمولة إذا اشتريت.",
-    otherElectronics: "إلكترونيات أخرى",
   },
 };
 
@@ -182,17 +188,8 @@ const CATEGORY_ORDER: CategoryKey[] = [
   "pleje",
 ];
 
-const SPECIALTY_ORDER: StoreSpecialty[] = [
-  "tv-lyd",
-  "computer",
-  "mobil",
-  "printer",
-  "batterier",
-  "kamera",
-];
-
 type StoreGroup = {
-  key: "fremhaevede" | "supermarkeder" | "partnere" | "andre";
+  key: "fremhaevede" | StoreCategory;
   kicker: string;
   title: string;
   description: string;
@@ -232,7 +229,12 @@ function StoreCard({
         />
         <span className="store-card-body">
           <strong>{store.name}</strong>
-          <small>{getStoreCategoryLabel(store, lang)}</small>
+          <small>
+            {getStoreCategoryLabel(store, lang)}
+            {store.specialty
+              ? ` · ${STORE_SPECIALTIES[store.specialty][lang]}`
+              : ""}
+          </small>
           <span
             className={
               store.status === "partner"
@@ -293,14 +295,9 @@ function StoreGroupSection({
           <h2>{group.title}</h2>
           <p>{group.description}</p>
         </div>
+        <span className="store-group-count">{group.stores.length}</span>
       </div>
-      <div
-        className={
-          group.key === "supermarkeder"
-            ? "store-grid supermarket-grid"
-            : "store-grid"
-        }
-      >
+      <div className="store-grid">
         {group.stores.map((store) => (
           <StoreCard key={store.slug} store={store} lang={lang} prefix={prefix} />
         ))}
@@ -372,101 +369,68 @@ export default function StoreBrowser({
   }, [stores, query, category, lang]);
 
   // Highest verified sales commission first; shown as the first row on the page.
+  // Only in the default view: a filtered or searched list should keep its own
+  // category heading instead of being relabelled as "featured".
   const featured = useMemo(
     () =>
-      sortStoresByCommission(
-        visible.filter((store) => store.status === "partner"),
-      ).slice(0, FEATURED_COUNT),
-    [visible],
+      category === "alle" && query.trim() === ""
+        ? sortStoresByCommission(
+            visible.filter((store) => store.status === "partner"),
+          ).slice(0, FEATURED_COUNT)
+        : [],
+    [visible, category, query],
   );
   const featuredSlugs = useMemo(
     () => new Set(featured.map((store) => store.slug)),
     [featured],
   );
 
-  type SpecialtyKey = StoreSpecialty | "andet";
-  const electronicsBySpecialty = useMemo<{ key: SpecialtyKey; stores: Store[] }[]>(
-    () => {
-      const groups: { key: SpecialtyKey; stores: Store[] }[] = SPECIALTY_ORDER.map((key) => ({
-        key,
-        stores: sortStoresByCommission(
-          visible.filter(
-            (store) =>
-              store.category === "elektronik" &&
-              store.specialty === key &&
-              !featuredSlugs.has(store.slug),
-          ),
-        ),
-      }));
-      const other = sortStoresByCommission(
-        visible.filter(
-          (store) =>
-            store.category === "elektronik" &&
-            !store.specialty &&
-            !featuredSlugs.has(store.slug),
-        ),
-      );
-      if (other.length > 0) groups.push({ key: "andet", stores: other });
-      return groups.filter((group) => group.stores.length > 0);
-    },
-    [visible, featuredSlugs],
-  );
-  const visibleElectronicsCount = electronicsBySpecialty.reduce(
-    (total, group) => total + group.stores.length,
-    0,
-  );
-
   const groups = useMemo<StoreGroup[]>(() => {
     const remaining = visible.filter((store) => !featuredSlugs.has(store.slug));
-    const supermarkets = remaining.filter((store) => store.category === "dagligvarer");
-    const partners = sortStoresByCommission(
-      remaining.filter(
-        (store) =>
-          store.category !== "dagligvarer" &&
-          store.category !== "elektronik" &&
-          store.status === "partner",
-      ),
-    );
-    const others = visible.filter(
-      (store) =>
-        store.category !== "dagligvarer" &&
-        store.category !== "elektronik" &&
-        store.status !== "partner",
-    );
+    const categoryGroups = (Object.keys(STORE_CATEGORIES) as StoreCategory[])
+      .map((key) => {
+        const stores = sortStoresByCommission(
+          remaining.filter((store) => store.category === key),
+        );
+        if (stores.length === 0) return null;
+        const label = STORE_CATEGORIES[key][lang];
+        const isSupermarket = key === "dagligvarer";
+        const isElectronics = key === "elektronik";
+        return {
+          key,
+          kicker: isSupermarket
+            ? copy.supermarketKicker
+            : isElectronics
+              ? copy.electronicsKicker
+              : copy.categoryKicker,
+          title: isSupermarket
+            ? copy.supermarketTitle
+            : isElectronics
+              ? copy.electronicsTitle
+              : label,
+          description: isSupermarket
+            ? copy.supermarketDescription
+            : isElectronics
+              ? copy.electronicsDescription(stores.length)
+              : copy.categoryDescription(label),
+          stores,
+        } satisfies StoreGroup;
+      })
+      .filter((group): group is NonNullable<typeof group> => group !== null);
 
-    const allGroups: StoreGroup[] = [
-      {
+    const result: StoreGroup[] = [];
+    if (featured.length > 0) {
+      result.push({
         key: "fremhaevede",
         kicker: copy.featuredKicker,
         title: copy.featuredTitle,
         description: copy.featuredDescription,
         stores: featured,
-      },
-      {
-        key: "supermarkeder",
-        kicker: copy.supermarketKicker,
-        title: copy.supermarketTitle,
-        description: copy.supermarketDescription,
-        stores: supermarkets,
-      },
-      {
-        key: "partnere",
-        kicker: copy.partnersKicker,
-        title: copy.partnersTitle,
-        description: copy.partnersDescription,
-        stores: partners,
-      },
-      {
-        key: "andre",
-        kicker: copy.othersKicker,
-        title: copy.othersTitle,
-        description: copy.othersDescription,
-        stores: others,
-      },
-    ];
-
-    return allGroups.filter((group) => group.stores.length > 0);
-  }, [visible, featured, featuredSlugs, copy]);
+      });
+    }
+    result.push(...categoryGroups);
+    return result;
+  }, [visible, featured, featuredSlugs, copy, lang]);
 
   return (
     <>
@@ -512,57 +476,9 @@ export default function StoreBrowser({
             </button>
           ))}
         </div>
-        {groups
-          .filter(
-            (group) => group.key === "fremhaevede" || group.key === "supermarkeder",
-          )
-          .map((group) => (
-            <StoreGroupSection key={group.key} group={group} lang={lang} prefix={prefix} />
-          ))}
-
-        {electronicsBySpecialty.length > 0 && (
-          <section className="store-group store-group-elektronik">
-            <div className="store-group-head">
-              <div>
-                <span className="eyebrow muted">{copy.electronicsKicker}</span>
-                <h2>{copy.electronicsTitle}</h2>
-                <p>
-                  {copy.electronicsDescription(
-                    visibleElectronicsCount,
-                    electronicsBySpecialty.length,
-                  )}
-                </p>
-              </div>
-            </div>
-            <div className="specialty-groups">
-              {electronicsBySpecialty.map(({ key, stores: specialtyStores }) => (
-                <div className="specialty-group" key={key}>
-                  <div className="specialty-head">
-                    <h3>
-                      {key === "andet"
-                        ? copy.otherElectronics
-                        : STORE_SPECIALTIES[key][lang]}
-                    </h3>
-                  </div>
-                  <div className="store-grid">
-                    {specialtyStores.map((store) => (
-                      <StoreCard key={store.slug} store={store} lang={lang} prefix={prefix} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {groups
-          .filter(
-            (group) =>
-              group.key !== "fremhaevede" && group.key !== "supermarkeder",
-          )
-          .map((group) => (
-            <StoreGroupSection key={group.key} group={group} lang={lang} prefix={prefix} />
-          ))}
+        {groups.map((group) => (
+          <StoreGroupSection key={group.key} group={group} lang={lang} prefix={prefix} />
+        ))}
 
         {visible.length === 0 && (
           <div className="empty-state">{copy.empty}</div>
