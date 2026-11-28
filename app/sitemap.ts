@@ -106,6 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: "https://www.tilbudjagt.dk/partnere",
+      lastModified: FALLBACK_DATE,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
       url: "https://www.tilbudjagt.dk/about.html",
       lastModified: FALLBACK_DATE,
       changeFrequency: "monthly",

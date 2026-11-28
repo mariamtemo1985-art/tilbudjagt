@@ -64,6 +64,11 @@ export default function StoresPage() {
       </div>
       <BlackFridayStrip lang="da" />
       <StoreBrowser stores={STORES} />
+      <div className="wrap partner-table-link">
+        <a className="text-link" href="/partnere">
+          Se partnerstatus og linkdetaljer for alle butikker
+        </a>
+      </div>
       <footer className="footer">
         <div className="wrap footer-inner">
           <a className="brand footer-brand" href="/">
