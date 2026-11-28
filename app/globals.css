@@ -16,14 +16,14 @@
 @media(max-width:900px){.nav{display:none;position:absolute;z-index:8;top:96px;left:14px;right:14px;background:var(--white);padding:16px;border-radius:11px;box-shadow:0 12px 30px #1d3c2418;flex-direction:column}.nav-open{display:flex}.menu-btn{display:block;padding:6px}.login-btn{display:none}}
 /* Butikker */
 .store-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.home-store-grid{margin-bottom:12px}
-.store-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;transition:.18s;color:var(--ink)}
-.store-card:hover{border-color:#a9c9ad;transform:translateY(-2px);box-shadow:0 10px 24px #1b50300f}
-.store-card-main{display:flex;align-items:center;gap:11px;padding:13px;color:inherit;flex:1;min-width:0}.store-card-main>svg{color:#9aa79d;flex-shrink:0}.store-card-info{font-size:10px;font-weight:800;color:var(--green);padding:0 13px 11px;align-self:flex-start;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.store-visit{display:inline-flex;align-items:center;gap:4px;margin-top:3px;font-size:10px;font-weight:800;color:var(--green);min-width:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.visit-hint{display:block;font-size:10px;color:#5d6b61;font-weight:700;margin-bottom:6px}
+.store-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;min-width:0;background:#fff;border:1px solid #dfe9dc;border-radius:15px;transition:.18s;color:var(--ink);box-shadow:0 3px 12px #1b503008;overflow:hidden}
+.store-card:hover{border-color:#9fc7a3;transform:translateY(-3px);box-shadow:0 14px 30px #1b503016}
+.store-card-main{display:flex;align-items:center;gap:12px;padding:14px;color:inherit;flex:1;min-width:0}.store-card-main>svg{color:#9aa79d;flex-shrink:0}.store-card-info{font-size:10px;font-weight:800;color:var(--green);padding:0 14px 12px;align-self:flex-start;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.store-visit{display:inline-flex;align-items:center;gap:4px;margin-top:4px;font-size:10px;font-weight:800;color:var(--green);min-width:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.visit-hint{display:block;font-size:10px;color:#5d6b61;font-weight:700;margin-bottom:6px}
 .store-card-body{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
 .store-card-body strong{font:800 13px Manrope;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .store-card-body small{font-size:9px;color:#8a958d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-.store-avatar{width:52px;height:40px;border-radius:9px;background:#eaf3e7;color:var(--green);display:grid;place-items:center;font:800 16px Manrope;flex-shrink:0;overflow:hidden}.store-avatar-logo{background:#fff;border:1px solid #e1ebe0;padding:5px}.store-avatar-logo img{width:100%;height:100%;object-fit:contain;display:block}
-.store-avatar.large{width:76px;height:58px;border-radius:12px;font-size:24px}
+.store-avatar{width:58px;height:46px;border-radius:12px;background:#eaf3e7;color:var(--green);display:grid;place-items:center;font:800 16px Manrope;flex-shrink:0;overflow:hidden}.store-avatar-logo{position:relative;background:linear-gradient(145deg,#fff 20%,#f3f8ef);border:1px solid #d9e7d6;padding:0;box-shadow:inset 0 0 0 1px #fff,0 4px 10px #1b50300f}.store-avatar-logo picture{display:contents}.store-avatar-logo img{position:absolute;inset:0;width:100%;height:100%;padding:6px;object-fit:contain;display:block;transition:transform .2s ease}.store-card:hover .store-avatar-logo img{transform:scale(1.05)}
+.store-avatar.large{width:88px;height:68px;border-radius:15px;font-size:26px}
 .status-badge{display:inline-flex;align-items:center;gap:4px;font-size:8px;font-weight:800;border-radius:20px;padding:3px 7px;width:fit-content;max-width:100%;margin-top:4px}
 .status-badge.partner{background:#e6f2e2;color:#176b45}
 .status-badge.directory{background:#f1f2f0;color:#77847c}
@@ -41,7 +41,7 @@
 .store-direct-cta{display:inline-flex;align-items:center;gap:7px;width:fit-content;background:var(--green);border:1px solid var(--green);color:#fff;border-radius:8px;padding:11px 14px;font-size:11px;font-weight:800}
 .store-detail-note{margin:0}
 @media(max-width:900px){.store-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.store-card{padding:0}.store-card-main{padding:10px;gap:7px}.store-card-body strong{font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.store-avatar{width:48px;height:36px;font-size:14px}.store-avatar.large{width:64px;height:48px}.stores-hero{padding-top:22px}.store-detail-card{padding:16px;gap:12px}.store-detail-card h1{font-size:22px}}
+@media(max-width:650px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.store-card{padding:0}.store-card-main{padding:10px;gap:8px}.store-card-body strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.store-avatar{width:54px;height:42px;font-size:14px}.store-avatar.large{width:76px;height:58px}.stores-hero{padding-top:22px}.store-detail-card{padding:16px;gap:12px}.store-detail-card h1{font-size:22px}}
 /* Partner redirect page (/go/[slug]) */
 .go-page{padding-top:30px;padding-bottom:55px;max-width:720px}
 .go-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
@@ -221,13 +221,22 @@
 .supermarket-card .store-card-info{padding-top:1px}
 .store-group-andre .store-card{background:#fcfcfa}
 .store-group-fremhaevede{margin-top:24px;padding:18px 18px 4px;border:1px solid #d9e8cf;border-radius:14px;background:linear-gradient(180deg,#f7fbf2,#fff);min-width:0;overflow:hidden}
-.store-group-fremhaevede .store-card{border-color:#d5e6c8}
+.store-group-fremhaevede .store-card{position:relative;border-color:#cfe3c2;background:linear-gradient(180deg,#fff,#f8fcf5);box-shadow:0 7px 20px #1b50300f}
+.store-group-fremhaevede .store-card::before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--lime));pointer-events:none}
+.store-group-fremhaevede .store-card-main{flex-direction:column;align-items:center;text-align:center;gap:8px;padding:18px 12px 10px}
+.store-group-fremhaevede .store-avatar.large{width:180px;height:92px;max-width:100%;border-radius:20px;padding:0;background:linear-gradient(145deg,#fff 15%,#eef7e8)}
+.store-group-fremhaevede .store-avatar-logo img{padding:7px}
+.store-group-fremhaevede .store-card-body{align-items:center;width:100%}
+.store-group-fremhaevede .store-card-body strong{font-size:14px;max-width:100%}
+.store-group-fremhaevede .store-card-body small{font-size:10px}
+.store-group-fremhaevede .store-visit{margin-top:6px;padding:6px 12px;border-radius:999px;background:var(--green);color:#fff}
+.store-group-fremhaevede .store-card-info{align-self:center;padding:0 10px 13px}
 .specialty-groups{display:flex;flex-direction:column;gap:20px}
 .specialty-group{padding-top:0}
 .specialty-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
 .specialty-head h3{font:800 14px Manrope;letter-spacing:-.2px;margin:0;color:#405246}
 @media(max-width:900px){.supermarket-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){.supermarket-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.store-group{margin-top:27px}.store-group-head{align-items:flex-start;gap:9px}.store-group-head h2{font-size:20px}.store-group-head p{font-size:10px}.store-group-count{min-width:29px;height:29px;font-size:11px}.supermarket-card .store-card-main{padding:9px;gap:8px}.supermarket-card .store-card-body strong{font-size:10px}.specialty-groups{gap:16px}.specialty-group{padding-top:12px}.specialty-head h3{font-size:13px}}
+@media(max-width:650px){.supermarket-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.store-group{margin-top:27px}.store-group-head{align-items:flex-start;gap:9px}.store-group-head h2{font-size:20px}.store-group-head p{font-size:10px}.store-group-count{min-width:29px;height:29px;font-size:11px}.supermarket-card .store-card-main{padding:9px;gap:8px}.supermarket-card .store-card-body strong{font-size:10px}.store-group-fremhaevede{padding:14px 12px 2px}.store-group-fremhaevede .store-card-main{padding:14px 8px 8px}.store-group-fremhaevede .store-avatar.large{width:140px;height:86px;max-width:100%;border-radius:18px;padding:0}.store-group-fremhaevede .store-avatar-logo img{padding:6px}.store-group-fremhaevede .store-card-body strong{font-size:12px}.specialty-groups{gap:16px}.specialty-group{padding-top:12px}.specialty-head h3{font-size:13px}}
 
 /* Monetisation: labelled ad and sponsor slots */
 .tj-ad {

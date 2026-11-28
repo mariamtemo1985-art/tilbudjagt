@@ -204,7 +204,11 @@ function StoreCard({
         }
         aria-label={`${copy.visit} ${store.name} – ${lang === "ar" ? "يفتح موقع المتجر في تبويب جديد" : lang === "en" ? "opens the store website in a new tab" : "åbner butikkens hjemmeside i ny fane"}`}
       >
-        <StoreLogo slug={store.slug} name={store.name} large={isSupermarket} />
+        <StoreLogo
+          slug={store.slug}
+          name={store.name}
+          large={isSupermarket || store.status === "partner"}
+        />
         <span className="store-card-body">
           <strong>{store.name}</strong>
           <small>{getStoreCategoryLabel(store, lang)}</small>
