@@ -16,6 +16,7 @@ export function localizeGuide(guide: Guide, locale: Locale): Guide {
     title: translate(guide.title, locale),
     description: translate(guide.description, locale),
     lead: translate(guide.lead, locale),
+    updated: translate(guide.updated, locale),
     sections: guide.sections.map((section) => ({
       ...section,
       heading: translate(section.heading, locale),

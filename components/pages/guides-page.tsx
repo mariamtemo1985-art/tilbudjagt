@@ -101,7 +101,13 @@ export default function GuidesPage({ lang = "da" }: { lang?: Locale }) {
   const home = localePath(lang, "/");
   const stores = `${home}#butikker`;
   const guidesPath = localePath(lang, "/guides");
-  const guides = getPublishedGuides().map((guide) => localizeGuide(guide, lang));
+  const guides = getPublishedGuides()
+    .sort(
+      (a, b) =>
+        new Date(b.publishAt ?? "2026-11-19").getTime() -
+        new Date(a.publishAt ?? "2026-11-19").getTime(),
+    )
+    .map((guide) => localizeGuide(guide, lang));
 
   return (
     <main lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>

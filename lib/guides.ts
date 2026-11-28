@@ -1,3 +1,5 @@
+import { NEW_GUIDES } from "@/lib/guides-new";
+
 export type GuideLink = { label: string; href: string };
 export type GuideFaq = { question: string; answer: string };
 export type GuideSection = {
@@ -1035,6 +1037,7 @@ export const GUIDES: Guide[] = [
     relatedStores: ["proshop", "power", "matas", "jysk"],
   },
 
+  ...NEW_GUIDES,
 ];
 
 export function isGuidePublished(guide: Guide, now = new Date()): boolean {
