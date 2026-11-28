@@ -683,3 +683,20 @@ html[dir="rtl"] .deal-badge{left:auto;right:8px}
   .category-tips{grid-template-columns:1fr}
   .category-grid{grid-template-columns:1fr}
 }
+
+/* Partner status table on store pages */
+.partner-status{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.partner-status h2{font:800 16px Manrope;color:var(--ink);margin:0 0 6px}
+.partner-status>p{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 12px}
+.partner-status-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.partner-status table{width:100%;border-collapse:collapse;font-size:11px;line-height:1.5}
+.partner-status th,.partner-status td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.partner-status th{width:42%;color:var(--muted);font-weight:700;background:#f8faf7}
+.partner-status tr:last-child th,.partner-status tr:last-child td{border-bottom:0}
+.partner-status td{color:var(--ink)}
+.partner-status td a{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.status-pill{display:inline-block;border-radius:999px;padding:3px 8px;font-size:10px;font-weight:800}
+.status-pill.partner{background:#e7f3e9;color:#176b45}
+.status-pill.direct{background:#f4f1e7;color:#816a34}
+[dir=rtl] .partner-status th{text-align:right}
+[dir=rtl] .partner-status td{text-align:right}

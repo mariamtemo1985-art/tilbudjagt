@@ -6,6 +6,7 @@ import ShareStoreButton from "@/components/ShareStoreButton";
 import StoreLogo from "@/components/store-logo";
 import AdSlot from "@/components/AdSlot";
 import SiteNav from "@/components/site-nav";
+import { getStoreCommission } from "@/lib/store-commissions";
 import {
   getStoreCategoryLabel,
   type Store,
@@ -34,6 +35,23 @@ const copy = {
     noOffersTitle: "Ingen verificerede tilbud endnu.",
     noOffersText:
       "Vi viser først priser og tilbud, når de kommer fra butikkens egne data eller et godkendt partnerfeed. Kontroller altid aktuelle priser hos butikken.",
+    partnerStatusTitle: "Partnerstatus og linkdetaljer",
+    partnerStatusIntro:
+      "Her kan du se, hvordan TilbudJagt linker til denne butik, og om vi modtager provision.",
+    statusLabel: "Partneraftale",
+    statusPartner: "Godkendt partneraftale",
+    statusDirect: "Direkte link – ingen partneraftale",
+    commissionLabel: "Provision til TilbudJagt",
+    commissionValue: (rate: number) =>
+      rate > 0 ? `${rate}% af købet` : "0% – ingen provision",
+    linkTypeLabel: "Linktype",
+    linkTypePartner: "Kommercielt partnerlink",
+    linkTypeDirect: "Direkte link til butikkens egen side",
+    trackingLabel: "Sporingsparameter",
+    trackingPartner: "Ja, via partnerlink",
+    trackingDirect: "Nej – TilbudJagt tilføjer ingen sporingsparameter",
+    checkedLabel: "Sidst kontrolleret",
+    destinationLabel: "Destination",
     lastChecked: "Sidst tjekket",
     advertising: "Annoncering",
     privacy: "Privatlivspolitik",
@@ -56,6 +74,23 @@ const copy = {
     noOffersTitle: "No verified offers yet.",
     noOffersText:
       "We only show prices and offers when they come from the store’s own data or an approved partner feed. Always check current prices with the store.",
+    partnerStatusTitle: "Partner status and link details",
+    partnerStatusIntro:
+      "Here you can see how TilbudJagt links to this store and whether we receive a commission.",
+    statusLabel: "Partner agreement",
+    statusPartner: "Approved partner agreement",
+    statusDirect: "Direct link – no partner agreement",
+    commissionLabel: "Commission to TilbudJagt",
+    commissionValue: (rate: number) =>
+      rate > 0 ? `${rate}% of the purchase` : "0% – no commission",
+    linkTypeLabel: "Link type",
+    linkTypePartner: "Commercial partner link",
+    linkTypeDirect: "Direct link to the store’s own website",
+    trackingLabel: "Tracking parameter",
+    trackingPartner: "Yes, through the partner link",
+    trackingDirect: "No – TilbudJagt adds no tracking parameter",
+    checkedLabel: "Last checked",
+    destinationLabel: "Destination",
     lastChecked: "Last checked",
     advertising: "Advertising",
     privacy: "Privacy policy",
@@ -78,6 +113,23 @@ const copy = {
     noOffersTitle: "لا توجد عروض مؤكدة بعد.",
     noOffersText:
       "نعرض الأسعار والعروض فقط عندما تأتي من بيانات المتجر نفسه أو من مصدر شركاء معتمد. تحقق دائمًا من السعر الحالي عند المتجر.",
+    partnerStatusTitle: "حالة الشراكة وتفاصيل الرابط",
+    partnerStatusIntro:
+      "هنا يمكنك معرفة كيف يربط TilbudJagt إلى هذا المتجر وما إذا كان يحصل على عمولة.",
+    statusLabel: "اتفاقية الشراكة",
+    statusPartner: "اتفاقية شراكة معتمدة",
+    statusDirect: "رابط مباشر – لا توجد اتفاقية شراكة",
+    commissionLabel: "العمولة إلى TilbudJagt",
+    commissionValue: (rate: number) =>
+      rate > 0 ? `${rate}% من قيمة الشراء` : "0% – لا توجد عمولة",
+    linkTypeLabel: "نوع الرابط",
+    linkTypePartner: "رابط تسويق بالعمولة",
+    linkTypeDirect: "رابط مباشر إلى الموقع الرسمي للمتجر",
+    trackingLabel: "معامل التتبع",
+    trackingPartner: "نعم، عبر رابط الشراكة",
+    trackingDirect: "لا – لا يضيف TilbudJagt أي معامل تتبع",
+    checkedLabel: "آخر تحقق",
+    destinationLabel: "وجهة الرابط",
     lastChecked: "آخر تحقق",
     advertising: "الإعلان",
     privacy: "سياسة الخصوصية",
@@ -98,6 +150,14 @@ function formatCheckedAt(value?: string) {
   return `${day}.${month}.${date.getUTCFullYear()}`;
 }
 
+function linkHostname(value: string) {
+  try {
+    return new URL(value).hostname;
+  } catch {
+    return value;
+  }
+}
+
 export default function StoreDetail({
   store,
   initialLang = "da",
@@ -114,6 +174,8 @@ export default function StoreDetail({
   const href = partner ? store.affiliateUrl! : store.website;
   const t = copy[lang];
   const checked = formatCheckedAt(store.checkedAt);
+  const commission = getStoreCommission(store.slug);
+  const destination = linkHostname(href);
   const rtl = lang === "ar";
   const prefix = forcedLang ? `/${initialLang}` : "";
 
@@ -226,6 +288,54 @@ export default function StoreDetail({
               : t.directoryDisclosure(store.name)}
           </p>
         </div>
+        <section className="partner-status" aria-labelledby="partner-status-title">
+          <h2 id="partner-status-title">{t.partnerStatusTitle}</h2>
+          <p>{t.partnerStatusIntro}</p>
+          <div className="partner-status-table-wrap">
+            <table>
+              <tbody>
+                <tr>
+                  <th scope="row">{t.statusLabel}</th>
+                  <td>
+                    <span className={partner ? "status-pill partner" : "status-pill direct"}>
+                      {partner ? t.statusPartner : t.statusDirect}
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">{t.commissionLabel}</th>
+                  <td>{t.commissionValue(commission)}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{t.linkTypeLabel}</th>
+                  <td>{partner ? t.linkTypePartner : t.linkTypeDirect}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{t.trackingLabel}</th>
+                  <td>{partner ? t.trackingPartner : t.trackingDirect}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{t.destinationLabel}</th>
+                  <td>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel={partner ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
+                    >
+                      {destination}
+                    </a>
+                  </td>
+                </tr>
+                {checked && (
+                  <tr>
+                    <th scope="row">{t.checkedLabel}</th>
+                    <td>{checked}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </section>
         <div className="demo-note store-detail-note">
           <Tag size={15} />
           <span>
