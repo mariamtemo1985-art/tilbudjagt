@@ -11,6 +11,7 @@ import {
   type StoreSpecialty,
 } from "@/lib/stores";
 import StoreLogo from "@/components/store-logo";
+import ShareStoreButton from "@/components/ShareStoreButton";
 import { sortStoresByCommission } from "@/lib/store-commissions";
 
 type CategoryKey = "alle" | StoreCategory;
@@ -27,6 +28,11 @@ const COPY: Record<
     electronicsDescription: (count: number, specialties: number) => string;
     visit: string;
     storeInfo: string;
+    share: string;
+    shareCopied: string;
+    shareText: (name: string) => string;
+    shareAria: (name: string) => string;
+    sharePrompt: string;
     partner: string;
     direct: string;
     searchPlaceholder: string;
@@ -57,6 +63,11 @@ const COPY: Record<
       `${count} butikker opdelt i ${specialties} specialer, så det er nemt at finde den rigtige type butik.`,
     visit: "Besøg",
     storeInfo: "Butiksinfo",
+    share: "Del",
+    shareCopied: "Kopieret",
+    shareText: (name) => `Se ${name} på TilbudJagt.dk`,
+    shareAria: (name) => `Del ${name}`,
+    sharePrompt: "Kopiér linket:",
     partner: "Godkendt partner",
     direct: "Direkte link",
     searchPlaceholder: "Søg butik, fx Netto, Elgiganten, JYSK…",
@@ -90,6 +101,11 @@ const COPY: Record<
       `${count} stores across ${specialties} specialties, making it easier to find the right kind of store.`,
     visit: "Visit",
     storeInfo: "Store info",
+    share: "Share",
+    shareCopied: "Copied",
+    shareText: (name) => `Check out ${name} on TilbudJagt.dk`,
+    shareAria: (name) => `Share ${name}`,
+    sharePrompt: "Copy link:",
     partner: "Approved partner",
     direct: "Direct link",
     searchPlaceholder: "Search a store, e.g. Netto, Elgiganten, JYSK…",
@@ -123,6 +139,11 @@ const COPY: Record<
       `${count} متجرًا موزعة على ${specialties} اختصاصات، لتسهيل العثور على نوع المتجر المناسب.`,
     visit: "زيارة",
     storeInfo: "تفاصيل المتجر",
+    share: "شارك",
+    shareCopied: "تم النسخ",
+    shareText: (name) => `شاهدي ${name} على TilbudJagt.dk`,
+    shareAria: (name) => `شارك متجر ${name}`,
+    sharePrompt: "انسخ الرابط:",
     partner: "شريك معتمد",
     direct: "رابط مباشر",
     searchPlaceholder: "ابحث عن متجر، مثل Netto أو Elgiganten أو JYSK…",
@@ -234,9 +255,23 @@ function StoreCard({
           </span>
         </span>
       </a>
-      <a className="store-card-info" href={`${prefix}/butikker/${store.slug}`}>
-        {copy.storeInfo}
-      </a>
+      <div className="store-card-footer">
+        <a className="store-card-info" href={`${prefix}/butikker/${store.slug}`}>
+          {copy.storeInfo}
+        </a>
+        {store.status === "partner" && (
+          <ShareStoreButton
+            name={store.name}
+            url={`https://www.tilbudjagt.dk/go/${store.slug}?uid=share`}
+            label={copy.share}
+            copiedLabel={copy.shareCopied}
+            copyPrompt={copy.sharePrompt}
+            text={copy.shareText(store.name)}
+            ariaLabel={copy.shareAria(store.name)}
+            className="store-share"
+          />
+        )}
+      </div>
     </div>
   );
 }

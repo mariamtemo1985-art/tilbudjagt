@@ -28,6 +28,11 @@ const copy = {
     directory: "Direkte link",
     visitHint: "Klik her for at åbne butikkens hjemmeside:",
     visit: (name: string) => `Besøg ${name}`,
+    share: "Del",
+    shareCopied: "Kopieret",
+    shareText: (name: string) => `Se ${name} på TilbudJagt.dk`,
+    shareAria: (name: string) => `Del ${name}`,
+    sharePrompt: "Kopiér linket:",
     partnerDisclosure: (name: string) =>
       `Reklamelink: TilbudJagt kan modtage provision, hvis du klikker på linket og handler hos ${name}. Din pris ændres ikke.`,
     directoryDisclosure: (name: string) =>
@@ -68,6 +73,11 @@ const copy = {
     directory: "Direct link",
     visitHint: "Click here to open the store’s website:",
     visit: (name: string) => `Visit ${name}`,
+    share: "Share",
+    shareCopied: "Copied",
+    shareText: (name: string) => `Check out ${name} on TilbudJagt.dk`,
+    shareAria: (name: string) => `Share ${name}`,
+    sharePrompt: "Copy link:",
     partnerDisclosure: (name: string) =>
       `Affiliate link: TilbudJagt may receive a commission if you click the link and buy from ${name}. Your price does not change.`,
     directoryDisclosure: (name: string) =>
@@ -108,6 +118,11 @@ const copy = {
     directory: "رابط مباشر",
     visitHint: "اضغط هنا لفتح الموقع الرسمي للمتجر:",
     visit: (name: string) => `زيارة ${name}`,
+    share: "شارك",
+    shareCopied: "تم النسخ",
+    shareText: (name: string) => `شاهدي ${name} على TilbudJagt.dk`,
+    shareAria: (name: string) => `شارك متجر ${name}`,
+    sharePrompt: "انسخ الرابط:",
     partnerDisclosure: (name: string) =>
       `رابط تسويق بالعمولة: قد تحصل TilbudJagt على عمولة إذا ضغطت على الرابط وأتممت شراءً لدى ${name}. السعر عليك لا يتغير.`,
     directoryDisclosure: (name: string) =>
@@ -283,7 +298,17 @@ export default function StoreDetail({
           </a>
           <ShareStoreButton
             name={store.name}
-            url={`https://www.tilbudjagt.dk${prefix}/butikker/${store.slug}`}
+            url={
+              partner
+                ? `https://www.tilbudjagt.dk/go/${store.slug}?uid=share`
+                : `https://www.tilbudjagt.dk${prefix}/butikker/${store.slug}`
+            }
+            label={t.share}
+            copiedLabel={t.shareCopied}
+            copyPrompt={t.sharePrompt}
+            text={t.shareText(store.name)}
+            ariaLabel={t.shareAria(store.name)}
+            className="store-share"
           />
           <p className="partner-disclosure">
             {partner

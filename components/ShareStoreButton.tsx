@@ -7,16 +7,22 @@ type ShareStoreButtonProps = {
   name: string;
   url: string;
   label?: string;
+  copiedLabel?: string;
+  copyPrompt?: string;
   text?: string;
   ariaLabel?: string;
+  className?: string;
 };
 
 export default function ShareStoreButton({
   name,
   url,
   label = "Del butik",
+  copiedLabel = "Link kopieret",
+  copyPrompt = "Kopiér linket:",
   text,
   ariaLabel,
+  className,
 }: ShareStoreButtonProps) {
   const [copied, setCopied] = useState(false);
 
@@ -43,19 +49,21 @@ export default function ShareStoreButton({
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2200);
     } catch {
-      window.prompt("Kopiér linket:", url);
+      window.prompt(copyPrompt, url);
     }
   }
 
   return (
     <button
       type="button"
-      className={copied ? "share-store copied" : "share-store"}
+      className={`share-store${className ? ` ${className}` : ""}${
+        copied ? " copied" : ""
+      }`}
       onClick={handleShare}
       aria-label={ariaLabel ?? `Del ${name}`}
     >
       {copied ? <Check size={16} /> : <Share2 size={16} />}
-      <span>{copied ? "Link kopieret" : label}</span>
+      <span>{copied ? copiedLabel : label}</span>
     </button>
   );
 }

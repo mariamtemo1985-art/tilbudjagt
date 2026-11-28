@@ -19,6 +19,7 @@
 .store-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;min-width:0;background:#fff;border:1px solid #dfe9dc;border-radius:15px;transition:.18s;color:var(--ink);box-shadow:0 3px 12px #1b503008;overflow:hidden}
 .store-card:hover{border-color:#9fc7a3;transform:translateY(-3px);box-shadow:0 14px 30px #1b503016}
 .store-card-main{display:flex;align-items:center;gap:12px;padding:14px;color:inherit;flex:1;min-width:0}.store-card-main>svg{color:#9aa79d;flex-shrink:0}.store-card-info{font-size:10px;font-weight:800;color:var(--green);padding:0 14px 12px;align-self:flex-start;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.store-visit{display:inline-flex;align-items:center;gap:4px;margin-top:4px;font-size:10px;font-weight:800;color:var(--green);min-width:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.visit-hint{display:block;font-size:10px;color:#5d6b61;font-weight:700;margin-bottom:6px}
+.store-card-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:0 14px 12px;min-width:0}.store-card-footer .store-card-info{padding:0;align-self:auto;flex:1;min-width:0}.share-store.store-share{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex-shrink:0;border:1px solid #c9e35a;background:var(--lime);color:#234b34;border-radius:999px;padding:6px 8px;font:800 10px Manrope;white-space:nowrap;transition:.18s;box-shadow:0 2px 7px #1b50300f}.share-store.store-share:hover{background:#e5fa7a;border-color:#b6d545;transform:translateY(-1px)}.share-store.store-share.copied{background:var(--green);border-color:var(--green);color:#fff}.share-store.store-share svg{width:13px;height:13px;flex-shrink:0}
 .store-card-body{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
 .store-card-body strong{font:800 13px Manrope;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .store-card-body small{font-size:9px;color:#8a958d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
@@ -41,7 +42,7 @@
 .store-direct-cta{display:inline-flex;align-items:center;gap:7px;width:fit-content;background:var(--green);border:1px solid var(--green);color:#fff;border-radius:8px;padding:11px 14px;font-size:11px;font-weight:800}
 .store-detail-note{margin:0}
 @media(max-width:900px){.store-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.store-card{padding:0}.store-card-main{padding:10px;gap:8px}.store-card-body strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.store-avatar{width:54px;height:42px;font-size:14px}.store-avatar.large{width:76px;height:58px}.stores-hero{padding-top:22px}.store-detail-card{padding:16px;gap:12px}.store-detail-card h1{font-size:22px}}
+@media(max-width:650px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.store-card{padding:0}.store-card-main{padding:10px;gap:8px}.store-card-body strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.store-avatar{width:54px;height:42px;font-size:14px}.store-avatar.large{width:76px;height:58px}.store-card-footer{padding:0 10px 10px;gap:5px}.share-store.store-share{padding:5px 7px;font-size:9px;gap:3px}.share-store.store-share svg{width:12px;height:12px}.stores-hero{padding-top:22px}.store-detail-card{padding:16px;gap:12px}.store-detail-card h1{font-size:22px}}
 /* Partner redirect page (/go/[slug]) */
 .go-page{padding-top:30px;padding-bottom:55px;max-width:720px}
 .go-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
@@ -230,7 +231,9 @@
 .store-group-fremhaevede .store-card-body strong{font-size:14px;max-width:100%}
 .store-group-fremhaevede .store-card-body small{font-size:10px}
 .store-group-fremhaevede .store-visit{margin-top:6px;padding:6px 12px;border-radius:999px;background:var(--green);color:#fff}
-.store-group-fremhaevede .store-card-info{align-self:center;padding:0 10px 13px}
+.store-group-fremhaevede .store-card-footer{justify-content:center;gap:10px;padding:0 10px 13px}
+.store-group-fremhaevede .store-card-footer .store-card-info{padding:0}
+.store-group-fremhaevede .share-store.store-share{padding:7px 11px;font-size:10px;background:var(--lime)}
 .specialty-groups{display:flex;flex-direction:column;gap:20px}
 .specialty-group{padding-top:0}
 .specialty-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
